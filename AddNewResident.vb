@@ -1,0 +1,115 @@
+﻿Imports System.Data.OleDb
+
+Public Class AddNewResident
+    ReadOnly con As New OleDbConnection(My.Settings.strCon)
+    ReadOnly cmd As New OleDbCommand
+    ReadOnly sql As String
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(ManageResidents)
+    End Sub
+
+    Private Async Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+
+        Dim i As Integer = Await InsertQuery()
+        If i > 0 Then
+            MessageBox.Show("Resident Successfully Added!", "IMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            TxtName.ResetText()
+            TxtAddress.ResetText()
+            TxtBirth.ResetText()
+            LabelAge.Text = "0"
+            CmbCivilStat.SelectedItem = ""
+            CmbGender.SelectedItem = ""
+            TxtOccupation.ResetText()
+            TxtCitizen.ResetText()
+
+        End If
+
+
+
+    End Sub
+
+    Async Function InsertQuery() As Task(Of Integer)
+        Dim arrImage As Byte()
+        Dim mstream As New System.IO.MemoryStream
+        Dim i As Integer
+        PictureBox1.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+        arrImage = mstream.GetBuffer()
+
+        Dim fileSize As UInt32
+        fileSize = mstream.Length
+        mstream.Close()
+
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+        Try
+
+
+            Using mycmd As New OleDbCommand("INSERT INTO tbl_residents 
+                                         (FULLNAME, FULLADDRESS,BIRTHPLACE,BIRTHDATE,AGE,GENDER,CIVILSTATUS,CITIZENSHIP, OCCUPATION,PHOTO)
+                                        VALUES(@FULLNAME,@FULLADDRESS,@BIRTHPLACE,@BIRTHDATE,@AGE,@GENDER,@CIVILSTATUS,@CITIZENSHIP, @OCCUPATION,@PHOTO)", con)
+                With mycmd
+                    .Parameters.AddWithValue("@FULLNAME", TxtName.Text)
+                    .Parameters.AddWithValue("@FULLADDRESS", TxtAddress.Text)
+                    .Parameters.AddWithValue("@BIRTHPLACE", TxtBirth.Text)
+                    .Parameters.AddWithValue("@BIRTHDATE", TxtBdate.Value)
+                    .Parameters.AddWithValue("@AGE", Val(LabelAge.Text))
+                    .Parameters.AddWithValue("@GENDER", CmbGender.Text)
+                    .Parameters.AddWithValue("@CIVILSTATUS", CmbCivilStat.Text)
+                    .Parameters.AddWithValue("@CITIZENSHIP", TxtCitizen.Text)
+                    If TxtOccupation.Text = "" Then
+                        .Parameters.AddWithValue("@OCCUPATION", "N/A")
+                    Else
+                        .Parameters.AddWithValue("@OCCUPATION", TxtOccupation.Text)
+                    End If
+                    .Parameters.AddWithValue("@PHOTO", arrImage)
+                End With
+                If TxtName.Text = "" Or TxtAddress.Text = "" Or TxtBirth.Text = "" Or TxtCitizen.Text = "" Or CmbCivilStat.Text = "" Or CmbGender.Text = "" Then
+
+                    MessageBox.Show("There's some field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+
+
+                Else
+                    i = Await mycmd.ExecuteNonQueryAsync
+                End If
+
+            End Using
+
+        Catch ex As Exception
+
+        End Try
+        Return i
+    End Function
+
+
+    Private Sub TxtBdate_ValueChanged(sender As Object, e As EventArgs) Handles TxtBdate.ValueChanged
+        Dim today, dob As Integer
+        today = Date.Today.Year
+        dob = TxtBdate.Value.Year
+        Dim age As Integer = today - dob
+        LabelAge.Text = age
+    End Sub
+
+    Private Sub AddNewResident_Load(sender As Object, e As EventArgs) Handles Me.Load
+        TxtBdate.Format = DateTimePickerFormat.Custom
+        TxtBdate.CustomFormat = "MMM dd yyyy"
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        OpenFileDialog1.Filter = "File Name | *.jpg"
+        If OpenFileDialog1.ShowDialog = DialogResult.OK Then
+            Try
+                PictureBox1.Image = Image.FromFile(OpenFileDialog1.FileName)
+
+            Catch ex As Exception
+                Throw ex
+            End Try
+        End If
+    End Sub
+
+
+End Class
