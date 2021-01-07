@@ -25,14 +25,13 @@ Partial Class AddNewResident
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddNewResident))
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.txtid = New System.Windows.Forms.TextBox()
         Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtBdate = New System.Windows.Forms.DateTimePicker()
         Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.TxtCitizen = New Guna.UI2.WinForms.Guna2TextBox()
         Me.LabelAge = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.BtnBack = New Guna.UI2.WinForms.Guna2Button()
-        Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -45,12 +44,15 @@ Partial Class AddNewResident
         Me.CmbGender = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.CmbCivilStat = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.TxtBirth = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.TxtAddress = New Guna.UI2.WinForms.Guna2TextBox()
         Me.TxtName = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
+        Me.LblHeader = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LblHeader2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TxtAddress = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
+        Me.BtnBack = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,14 +64,16 @@ Partial Class AddNewResident
         Me.Guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Guna2Panel1.BorderColor = System.Drawing.Color.DimGray
         Me.Guna2Panel1.BorderThickness = 4
+        Me.Guna2Panel1.Controls.Add(Me.BtnBack)
+        Me.Guna2Panel1.Controls.Add(Me.BtnSave)
+        Me.Guna2Panel1.Controls.Add(Me.TxtAddress)
+        Me.Guna2Panel1.Controls.Add(Me.txtid)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel9)
         Me.Guna2Panel1.Controls.Add(Me.PictureBox1)
         Me.Guna2Panel1.Controls.Add(Me.TxtBdate)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel11)
         Me.Guna2Panel1.Controls.Add(Me.TxtCitizen)
         Me.Guna2Panel1.Controls.Add(Me.LabelAge)
-        Me.Guna2Panel1.Controls.Add(Me.BtnBack)
-        Me.Guna2Panel1.Controls.Add(Me.BtnSave)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel8)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel7)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel6)
@@ -82,21 +86,29 @@ Partial Class AddNewResident
         Me.Guna2Panel1.Controls.Add(Me.CmbGender)
         Me.Guna2Panel1.Controls.Add(Me.CmbCivilStat)
         Me.Guna2Panel1.Controls.Add(Me.TxtBirth)
-        Me.Guna2Panel1.Controls.Add(Me.TxtAddress)
         Me.Guna2Panel1.Controls.Add(Me.TxtName)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(23, 56)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(23, 48)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(10)
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0)
-        Me.Guna2Panel1.Size = New System.Drawing.Size(718, 489)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(718, 482)
         Me.Guna2Panel1.TabIndex = 0
+        '
+        'txtid
+        '
+        Me.txtid.Location = New System.Drawing.Point(25, 18)
+        Me.txtid.Name = "txtid"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.txtid, False)
+        Me.txtid.Size = New System.Drawing.Size(100, 20)
+        Me.txtid.TabIndex = 27
+        Me.txtid.Visible = False
         '
         'Guna2HtmlLabel9
         '
         Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(560, 136)
+        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(565, 136)
         Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
         Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(56, 21)
         Me.Guna2HtmlLabel9.TabIndex = 25
@@ -104,7 +116,7 @@ Partial Class AddNewResident
         '
         'PictureBox1
         '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(527, 13)
         Me.PictureBox1.Name = "PictureBox1"
@@ -113,6 +125,7 @@ Partial Class AddNewResident
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 24
         Me.PictureBox1.TabStop = False
+        Me.PictureBox1.UseWaitCursor = True
         '
         'TxtBdate
         '
@@ -171,48 +184,8 @@ Partial Class AddNewResident
         Me.LabelAge.Name = "LabelAge"
         Me.LabelAge.Size = New System.Drawing.Size(40, 27)
         Me.LabelAge.TabIndex = 20
-        Me.LabelAge.Text = "21"
+        Me.LabelAge.Text = "0"
         Me.LabelAge.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'BtnBack
-        '
-        Me.BtnBack.CheckedState.Parent = Me.BtnBack
-        Me.BtnBack.CustomImages.Parent = Me.BtnBack
-        Me.BtnBack.FillColor = System.Drawing.Color.Maroon
-        Me.BtnBack.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBack.ForeColor = System.Drawing.Color.White
-        Me.BtnBack.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtnBack.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnBack.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtnBack.HoverState.Parent = Me.BtnBack
-        Me.BtnBack.Location = New System.Drawing.Point(493, 436)
-        Me.BtnBack.Name = "BtnBack"
-        Me.BtnBack.ShadowDecoration.Enabled = True
-        Me.BtnBack.ShadowDecoration.Parent = Me.BtnBack
-        Me.BtnBack.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.BtnBack.Size = New System.Drawing.Size(190, 40)
-        Me.BtnBack.TabIndex = 19
-        Me.BtnBack.Text = "BACK"
-        '
-        'BtnSave
-        '
-        Me.BtnSave.CheckedState.Parent = Me.BtnSave
-        Me.BtnSave.CustomImages.Parent = Me.BtnSave
-        Me.BtnSave.FillColor = System.Drawing.Color.Maroon
-        Me.BtnSave.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSave.ForeColor = System.Drawing.Color.White
-        Me.BtnSave.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnSave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtnSave.HoverState.Parent = Me.BtnSave
-        Me.BtnSave.Location = New System.Drawing.Point(302, 436)
-        Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.ShadowDecoration.Enabled = True
-        Me.BtnSave.ShadowDecoration.Parent = Me.BtnSave
-        Me.BtnSave.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.BtnSave.Size = New System.Drawing.Size(185, 40)
-        Me.BtnSave.TabIndex = 18
-        Me.BtnSave.Text = "SAVE"
         '
         'Guna2HtmlLabel8
         '
@@ -268,7 +241,7 @@ Partial Class AddNewResident
         '
         Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(24, 200)
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(24, 214)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
         Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(124, 21)
         Me.Guna2HtmlLabel3.TabIndex = 11
@@ -278,7 +251,7 @@ Partial Class AddNewResident
         '
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(26, 122)
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(26, 127)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(110, 21)
         Me.Guna2HtmlLabel2.TabIndex = 10
@@ -380,7 +353,7 @@ Partial Class AddNewResident
         Me.TxtBirth.ForeColor = System.Drawing.Color.Black
         Me.TxtBirth.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtBirth.HoverState.Parent = Me.TxtBirth
-        Me.TxtBirth.Location = New System.Drawing.Point(26, 223)
+        Me.TxtBirth.Location = New System.Drawing.Point(26, 238)
         Me.TxtBirth.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.TxtBirth.Name = "TxtBirth"
         Me.TxtBirth.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -389,36 +362,6 @@ Partial Class AddNewResident
         Me.TxtBirth.ShadowDecoration.Parent = Me.TxtBirth
         Me.TxtBirth.Size = New System.Drawing.Size(370, 37)
         Me.TxtBirth.TabIndex = 2
-        '
-        'TxtAddress
-        '
-        Me.TxtAddress.AcceptsReturn = True
-        Me.TxtAddress.AcceptsTab = True
-        Me.TxtAddress.BorderColor = System.Drawing.Color.Gray
-        Me.TxtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TxtAddress.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtAddress.DefaultText = ""
-        Me.TxtAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtAddress.DisabledState.Parent = Me.TxtAddress
-        Me.TxtAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtAddress.FocusedState.Parent = Me.TxtAddress
-        Me.TxtAddress.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAddress.ForeColor = System.Drawing.Color.Black
-        Me.TxtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtAddress.HoverState.Parent = Me.TxtAddress
-        Me.TxtAddress.Location = New System.Drawing.Point(25, 145)
-        Me.TxtAddress.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
-        Me.TxtAddress.Multiline = True
-        Me.TxtAddress.Name = "TxtAddress"
-        Me.TxtAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtAddress.PlaceholderText = ""
-        Me.TxtAddress.SelectedText = ""
-        Me.TxtAddress.ShadowDecoration.Parent = Me.TxtAddress
-        Me.TxtAddress.Size = New System.Drawing.Size(370, 43)
-        Me.TxtAddress.TabIndex = 1
         '
         'TxtName
         '
@@ -447,34 +390,117 @@ Partial Class AddNewResident
         Me.TxtName.Size = New System.Drawing.Size(370, 40)
         Me.TxtName.TabIndex = 0
         '
-        'Guna2HtmlLabel10
+        'OpenFileDialog1
         '
-        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel10.ForeColor = System.Drawing.Color.Yellow
-        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(234, 4)
-        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
-        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(368, 40)
-        Me.Guna2HtmlLabel10.TabIndex = 18
-        Me.Guna2HtmlLabel10.Text = "RESIDENT REGISTRATION"
-        Me.Guna2HtmlLabel10.TextAlignment = System.Drawing.ContentAlignment.TopCenter
+        Me.OpenFileDialog1.DefaultExt = "jpg"
         '
         'NetResize1
         '
+        Me.NetResize1.FormFadeEffect = True
         Me.NetResize1.ParentControl = Me
+        '
+        'LblHeader
+        '
+        Me.LblHeader.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.LblHeader.BackColor = System.Drawing.Color.Transparent
+        Me.LblHeader.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblHeader.ForeColor = System.Drawing.Color.Yellow
+        Me.LblHeader.Location = New System.Drawing.Point(221, 12)
+        Me.LblHeader.Name = "LblHeader"
+        Me.LblHeader.Size = New System.Drawing.Size(368, 40)
+        Me.LblHeader.TabIndex = 18
+        Me.LblHeader.Text = "RESIDENT REGISTRATION"
+        Me.LblHeader.TextAlignment = System.Drawing.ContentAlignment.TopCenter
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Controls.Add(Me.Guna2HtmlLabel10)
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Controls.Add(Me.LblHeader2)
+        Me.Panel1.Location = New System.Drawing.Point(2, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(764, 50)
-        Me.Panel1.TabIndex = 19
+        Me.Panel1.Size = New System.Drawing.Size(763, 41)
+        Me.Panel1.TabIndex = 21
         '
-        'OpenFileDialog1
+        'LblHeader2
         '
-        Me.OpenFileDialog1.DefaultExt = "jpg"
+        Me.LblHeader2.BackColor = System.Drawing.Color.Maroon
+        Me.LblHeader2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblHeader2.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblHeader2.ForeColor = System.Drawing.SystemColors.Info
+        Me.LblHeader2.Location = New System.Drawing.Point(234, 7)
+        Me.LblHeader2.Name = "LblHeader2"
+        Me.LblHeader2.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.LblHeader2.Size = New System.Drawing.Size(343, 36)
+        Me.LblHeader2.TabIndex = 0
+        Me.LblHeader2.Text = "RESIDENT'S REGISTRATION"
+        '
+        'TxtAddress
+        '
+        Me.TxtAddress.BorderColor = System.Drawing.Color.Gray
+        Me.TxtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtAddress.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtAddress.DefaultText = ""
+        Me.TxtAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtAddress.DisabledState.Parent = Me.TxtAddress
+        Me.TxtAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtAddress.FocusedState.Parent = Me.TxtAddress
+        Me.TxtAddress.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtAddress.ForeColor = System.Drawing.Color.Black
+        Me.TxtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtAddress.HoverState.Parent = Me.TxtAddress
+        Me.TxtAddress.Location = New System.Drawing.Point(27, 156)
+        Me.TxtAddress.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.TxtAddress.Name = "TxtAddress"
+        Me.TxtAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtAddress.PlaceholderText = ""
+        Me.TxtAddress.SelectedText = ""
+        Me.TxtAddress.ShadowDecoration.Parent = Me.TxtAddress
+        Me.TxtAddress.Size = New System.Drawing.Size(370, 40)
+        Me.TxtAddress.TabIndex = 28
+        '
+        'BtnSave
+        '
+        Me.BtnSave.CheckedState.Parent = Me.BtnSave
+        Me.BtnSave.CustomImages.Parent = Me.BtnSave
+        Me.BtnSave.FillColor = System.Drawing.Color.Maroon
+        Me.BtnSave.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSave.ForeColor = System.Drawing.Color.White
+        Me.BtnSave.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnSave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnSave.HoverState.Parent = Me.BtnSave
+        Me.BtnSave.Location = New System.Drawing.Point(361, 430)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.ShadowDecoration.Enabled = True
+        Me.BtnSave.ShadowDecoration.Parent = Me.BtnSave
+        Me.BtnSave.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
+        Me.BtnSave.Size = New System.Drawing.Size(146, 32)
+        Me.BtnSave.TabIndex = 29
+        Me.BtnSave.Text = "SAVE"
+        '
+        'BtnBack
+        '
+        Me.BtnBack.CheckedState.Parent = Me.BtnBack
+        Me.BtnBack.CustomImages.Parent = Me.BtnBack
+        Me.BtnBack.FillColor = System.Drawing.Color.Maroon
+        Me.BtnBack.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBack.ForeColor = System.Drawing.Color.White
+        Me.BtnBack.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnBack.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnBack.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnBack.HoverState.Parent = Me.BtnBack
+        Me.BtnBack.Location = New System.Drawing.Point(525, 430)
+        Me.BtnBack.Name = "BtnBack"
+        Me.BtnBack.ShadowDecoration.Enabled = True
+        Me.BtnBack.ShadowDecoration.Parent = Me.BtnBack
+        Me.BtnBack.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
+        Me.BtnBack.Size = New System.Drawing.Size(158, 32)
+        Me.BtnBack.TabIndex = 30
+        Me.BtnBack.Text = "BACK"
         '
         'AddNewResident
         '
@@ -514,18 +540,20 @@ Partial Class AddNewResident
     Friend WithEvents TxtOccupation As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents CmbCivilStat As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents TxtBirth As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents CmbGender As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents BtnSave As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents BtnBack As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents LabelAge As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel11 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents TxtCitizen As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents TxtBdate As DateTimePicker
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TxtAddress As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Guna2HtmlLabel9 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
+    Friend WithEvents LblHeader As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents LblHeader2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents txtid As TextBox
+    Friend WithEvents TxtAddress As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents BtnSave As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BtnBack As Guna.UI2.WinForms.Guna2Button
 End Class

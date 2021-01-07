@@ -4,32 +4,11 @@ Public Class AddNewResident
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
     ReadOnly cmd As New OleDbCommand
     ReadOnly sql As String
-    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
-        Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(ManageResidents)
-    End Sub
+    Private myid As Integer
 
-    Private Async Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-
-        Dim i As Integer = Await InsertQuery()
-        If i > 0 Then
-            MessageBox.Show("Resident Successfully Added!", "IMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            TxtName.ResetText()
-            TxtAddress.ResetText()
-            TxtBirth.ResetText()
-            LabelAge.Text = "0"
-            CmbCivilStat.SelectedItem = ""
-            CmbGender.SelectedItem = ""
-            TxtOccupation.ResetText()
-            TxtCitizen.ResetText()
-
-        End If
-
-
-
-    End Sub
 
     Async Function InsertQuery() As Task(Of Integer)
+        Dim dtfrmat As String = "M/d/yyyy"
         Dim arrImage As Byte()
         Dim mstream As New System.IO.MemoryStream
         Dim i As Integer
@@ -53,7 +32,7 @@ Public Class AddNewResident
                     .Parameters.AddWithValue("@FULLNAME", TxtName.Text)
                     .Parameters.AddWithValue("@FULLADDRESS", TxtAddress.Text)
                     .Parameters.AddWithValue("@BIRTHPLACE", TxtBirth.Text)
-                    .Parameters.AddWithValue("@BIRTHDATE", TxtBdate.Value)
+                    .Parameters.AddWithValue("@BIRTHDATE", TxtBdate.Value.ToString(dtfrmat))
                     .Parameters.AddWithValue("@AGE", Val(LabelAge.Text))
                     .Parameters.AddWithValue("@GENDER", CmbGender.Text)
                     .Parameters.AddWithValue("@CIVILSTATUS", CmbCivilStat.Text)
@@ -67,10 +46,7 @@ Public Class AddNewResident
                 End With
                 If TxtName.Text = "" Or TxtAddress.Text = "" Or TxtBirth.Text = "" Or TxtCitizen.Text = "" Or CmbCivilStat.Text = "" Or CmbGender.Text = "" Then
 
-                    MessageBox.Show("There's some field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-
-
+                    MessageBox.Show("There's some blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
                 Else
                     i = Await mycmd.ExecuteNonQueryAsync
@@ -83,6 +59,7 @@ Public Class AddNewResident
         End Try
         Return i
     End Function
+
 
 
     Private Sub TxtBdate_ValueChanged(sender As Object, e As EventArgs) Handles TxtBdate.ValueChanged
@@ -111,5 +88,61 @@ Public Class AddNewResident
         End If
     End Sub
 
+    Async Function UpdateQuery() As Task(Of Integer)
+        Dim frmat As String = "M/d/yyyy"
+        Dim i As Integer
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
 
+        Using mycmd As New OleDbCommand("UPDATE tbl_residents 
+                                         SET FULLNAME = '" & TxtName.Text & "',
+                                         FULLADDRESS = '" & TxtAddress.Text & "',
+                                         BIRTHPLACE = '" & TxtBirth.Text & "',
+                                         BIRTHDATE = '" & TxtBdate.Value.ToString(frmat) & "',
+                                         AGE = '" & LabelAge.Text & "',
+                                         GENDER = '" & CmbGender.Text & "',
+                                         CIVILSTATUS = '" & CmbCivilStat.Text & "',
+                                         CITIZENSHIP = '" & TxtCitizen.Text & "',
+                                         OCCUPATION = '" & TxtOccupation.Text & "'
+                                         WHERE ID=@ID", con)
+            mycmd.Parameters.AddWithValue("ID", txtid.Text)
+            If TxtName.Text = "" Or TxtAddress.Text = "" Or TxtBirth.Text = "" Or TxtCitizen.Text = "" Or CmbCivilStat.Text = "" Or CmbGender.Text = "" Then
+                MessageBox.Show("There's some blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                i = Await mycmd.ExecuteNonQueryAsync
+            End If
+        End Using
+        Return i
+    End Function
+
+    Private Async Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+        If BtnSave.Text = "SAVE" Then
+            Dim i As Integer = Await InsertQuery()
+            If i > 0 Then
+                MessageBox.Show("Resident Successfully Added!", "IMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                TxtName.ResetText()
+                TxtAddress.ResetText()
+                TxtBirth.ResetText()
+                LabelAge.Text = "0"
+                CmbCivilStat.SelectedItem = ""
+                CmbGender.SelectedItem = ""
+                TxtOccupation.ResetText()
+                TxtCitizen.ResetText()
+
+            End If
+        Else
+
+            Dim i As Integer = Await UpdateQuery()
+            If i > 0 Then
+                MessageBox.Show("Resident successfully updated!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            End If
+        End If
+    End Sub
+
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(residents)
+    End Sub
 End Class

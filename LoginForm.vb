@@ -61,4 +61,8 @@ Public Class LoginForm
             TxtPassword.ResetText()
         End If
     End Sub
+
+    Private Sub TxtPassword_TextChanged(sender As Object, e As EventArgs) Handles TxtPassword.TextChanged
+
+    End Sub
 End Class

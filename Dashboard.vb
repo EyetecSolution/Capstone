@@ -34,10 +34,12 @@ Public Class Dashboard
             BtnSlide.Location = New Point(10)
             SeparatorLine.Visible = False
 
+
         Else
             CleanButton()
             HomeContent.CovidPanel.Visible = True
             HomeContent.PanelSlide.Dock = DockStyle.Top
+            HomeContent.CovidPanel.Dock = DockStyle.Top
             BtnSlide.Image = Image.FromFile("..\..\Resources\images\back_48px.png")
             LabelNotes.Visible = True
             PanelNotes.Visible = True
@@ -184,8 +186,7 @@ Public Class Dashboard
     End Sub
 
     Private Sub BtnCert_Click(sender As Object, e As EventArgs) Handles BtnCert.Click
-        activefrm.Close()
-        OpenFormChild(FormDocument)
+
         If PanelSlider.Width = 50 Then
             ActiveButton(BtnCert)
         End If
@@ -193,31 +194,38 @@ Public Class Dashboard
 
     Private Sub BtnResidents_Click(sender As Object, e As EventArgs) Handles BtnResidents.Click
         activefrm.Close()
-        OpenFormChild(ManageResidents)
+        OpenFormChild(residents)
         If PanelSlider.Width = 50 Then
             ActiveButton(BtnResidents)
         End If
     End Sub
 
     Private Sub BtnRecords_Click(sender As Object, e As EventArgs) Handles BtnRecords.Click
+        activefrm.Close()
+        OpenFormChild(BlotterRecords)
         If PanelSlider.Width = 50 Then
             ActiveButton(BtnRecords)
         End If
     End Sub
 
     Private Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles BtnPayment.Click
+
         If PanelSlider.Width = 50 Then
             ActiveButton(BtnPayment)
         End If
     End Sub
 
     Private Sub BtnCovid_Click(sender As Object, e As EventArgs) Handles BtnCovid.Click
+        activefrm.Close()
+        OpenFormChild(CovidCases)
         If PanelSlider.Width = 50 Then
             ActiveButton(BtnCovid)
         End If
     End Sub
 
     Private Sub BtnUsers_Click(sender As Object, e As EventArgs) Handles BtnUsers.Click
+        activefrm.Close()
+        OpenFormChild(useraccount)
         If PanelSlider.Width = 50 Then
             ActiveButton(BtnUsers)
         End If
@@ -251,11 +259,4 @@ Public Class Dashboard
         HomeContent.CovidPanel.Visible = True
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub PanelContent_Paint(sender As Object, e As PaintEventArgs) Handles PanelContent.Paint
-
-    End Sub
 End Class

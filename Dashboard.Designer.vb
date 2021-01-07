@@ -66,7 +66,6 @@ Partial Class Dashboard
         '
         'PanelSlider
         '
-        Me.PanelSlider.AutoScroll = True
         Me.PanelSlider.AutoScrollMargin = New System.Drawing.Size(10, 0)
         Me.PanelSlider.BackColor = System.Drawing.Color.Maroon
         Me.PanelSlider.Controls.Add(Me.Guna2Panel4)
@@ -134,7 +133,7 @@ Partial Class Dashboard
         Me.BtnSlide.HoverState.Parent = Me.BtnSlide
         Me.BtnSlide.Image = CType(resources.GetObject("BtnSlide.Image"), System.Drawing.Image)
         Me.BtnSlide.ImageSize = New System.Drawing.Size(32, 32)
-        Me.BtnSlide.Location = New System.Drawing.Point(162, 33)
+        Me.BtnSlide.Location = New System.Drawing.Point(162, 21)
         Me.BtnSlide.Name = "BtnSlide"
         Me.BtnSlide.PressedColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnSlide.PressedDepth = 50
@@ -457,7 +456,7 @@ Partial Class Dashboard
         Me.PanelContent.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelContent.Location = New System.Drawing.Point(366, 0)
         Me.PanelContent.Name = "PanelContent"
-        Me.PanelContent.Size = New System.Drawing.Size(857, 705)
+        Me.PanelContent.Size = New System.Drawing.Size(857, 708)
         Me.PanelContent.TabIndex = 2
         '
         'Guna2Panel2
@@ -467,10 +466,10 @@ Partial Class Dashboard
         Me.Guna2Panel2.Controls.Add(Me.Guna2Panel3)
         Me.Guna2Panel2.Controls.Add(Me.Guna2Panel6)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel2.Location = New System.Drawing.Point(366, 705)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(366, 709)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(857, 44)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(857, 40)
         Me.Guna2Panel2.TabIndex = 0
         '
         'Guna2Panel7
@@ -481,7 +480,7 @@ Partial Class Dashboard
         Me.Guna2Panel7.Location = New System.Drawing.Point(258, 0)
         Me.Guna2Panel7.Name = "Guna2Panel7"
         Me.Guna2Panel7.ShadowDecoration.Parent = Me.Guna2Panel7
-        Me.Guna2Panel7.Size = New System.Drawing.Size(298, 44)
+        Me.Guna2Panel7.Size = New System.Drawing.Size(298, 40)
         Me.Guna2Panel7.TabIndex = 3
         '
         'LabelMarque
@@ -509,7 +508,7 @@ Partial Class Dashboard
         Me.Guna2Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
-        Me.Guna2Panel3.Size = New System.Drawing.Size(258, 44)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(258, 40)
         Me.Guna2Panel3.TabIndex = 3
         '
         'LabelTime
@@ -537,7 +536,7 @@ Partial Class Dashboard
         Me.Guna2Panel6.Location = New System.Drawing.Point(556, 0)
         Me.Guna2Panel6.Name = "Guna2Panel6"
         Me.Guna2Panel6.ShadowDecoration.Parent = Me.Guna2Panel6
-        Me.Guna2Panel6.Size = New System.Drawing.Size(301, 44)
+        Me.Guna2Panel6.Size = New System.Drawing.Size(301, 40)
         Me.Guna2Panel6.TabIndex = 2
         '
         'LabelDate
