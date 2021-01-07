@@ -71,6 +71,7 @@ Public Class BlotterRecords
                 Try
                     Await InsertQuery()
                     MessageBox.Show("Blotter added successfully")
+                    LoadMe()
                 Catch ex As Exception
                     MessageBox.Show("Error Occured: " & ex.Message)
                 End Try

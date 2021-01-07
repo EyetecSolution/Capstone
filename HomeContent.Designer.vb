@@ -23,11 +23,11 @@ Partial Class HomeContent
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ContextButton5 As DevExpress.Utils.ContextButton = New DevExpress.Utils.ContextButton()
+        Dim ContextButton1 As DevExpress.Utils.ContextButton = New DevExpress.Utils.ContextButton()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HomeContent))
-        Dim SuperToolTip5 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem5 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem5 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.ImageSlider1 = New DevExpress.XtraEditors.Controls.ImageSlider()
@@ -40,30 +40,30 @@ Partial Class HomeContent
         Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel10 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.LblPUMC = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel11 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel12 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel14 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.LblPUMO = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel15 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel13 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.LblRecovered = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel14 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel16 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.LblDeath = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.LblPUI = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.LblConfirmed = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
         CType(Me.ImageSlider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,26 +99,26 @@ Partial Class HomeContent
         Me.ImageSlider1.AllowLooping = True
         Me.ImageSlider1.AutoSlide = DevExpress.XtraEditors.Controls.AutoSlide.Forward
         Me.ImageSlider1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        ContextButton5.AnimationType = DevExpress.Utils.ContextAnimationType.OpacityAnimation
-        ContextButton5.AppearanceHover.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        ContextButton5.AppearanceHover.Options.UseImage = True
-        ContextButton5.AppearanceNormal.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        ContextButton5.AppearanceNormal.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        ContextButton5.AppearanceNormal.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ContextButton5.AppearanceNormal.Options.UseBackColor = True
-        ContextButton5.AppearanceNormal.Options.UseFont = True
-        ContextButton5.Id = New System.Guid("51bf049b-76be-4ca8-8bfc-51f71371b2c7")
-        ContextButton5.ImageOptions.HoverImage = CType(resources.GetObject("resource.HoverImage"), System.Drawing.Image)
-        ContextButton5.ImageOptions.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
-        ContextButton5.Name = "AddPhotos"
-        ToolTipTitleItem5.Text = "Add Photos"
-        ToolTipItem5.ImageOptions.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
-        ToolTipItem5.LeftIndent = 6
-        ToolTipItem5.Text = "Select folder to load photos in your slider"
-        SuperToolTip5.Items.Add(ToolTipTitleItem5)
-        SuperToolTip5.Items.Add(ToolTipItem5)
-        ContextButton5.SuperTip = SuperToolTip5
-        Me.ImageSlider1.ContextButtons.Add(ContextButton5)
+        ContextButton1.AnimationType = DevExpress.Utils.ContextAnimationType.OpacityAnimation
+        ContextButton1.AppearanceHover.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        ContextButton1.AppearanceHover.Options.UseImage = True
+        ContextButton1.AppearanceNormal.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        ContextButton1.AppearanceNormal.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        ContextButton1.AppearanceNormal.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ContextButton1.AppearanceNormal.Options.UseBackColor = True
+        ContextButton1.AppearanceNormal.Options.UseFont = True
+        ContextButton1.Id = New System.Guid("51bf049b-76be-4ca8-8bfc-51f71371b2c7")
+        ContextButton1.ImageOptions.HoverImage = CType(resources.GetObject("resource.HoverImage"), System.Drawing.Image)
+        ContextButton1.ImageOptions.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        ContextButton1.Name = "AddPhotos"
+        ToolTipTitleItem1.Text = "Add Photos"
+        ToolTipItem1.ImageOptions.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
+        ToolTipItem1.LeftIndent = 6
+        ToolTipItem1.Text = "Select folder to load photos in your slider"
+        SuperToolTip1.Items.Add(ToolTipTitleItem1)
+        SuperToolTip1.Items.Add(ToolTipItem1)
+        ContextButton1.SuperTip = SuperToolTip1
+        Me.ImageSlider1.ContextButtons.Add(ContextButton1)
         Me.ImageSlider1.CurrentImageIndex = 0
         Me.ImageSlider1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ImageSlider1.Images.Add(CType(resources.GetObject("ImageSlider1.Images"), System.Drawing.Image))
@@ -223,7 +223,7 @@ Partial Class HomeContent
         '
         Me.Guna2Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Guna2Panel9.Controls.Add(Me.Guna2Panel10)
-        Me.Guna2Panel9.Controls.Add(Me.Guna2HtmlLabel7)
+        Me.Guna2Panel9.Controls.Add(Me.LblPUMC)
         Me.Guna2Panel9.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Panel9.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 2)
         Me.Guna2Panel9.Dock = System.Windows.Forms.DockStyle.Top
@@ -257,16 +257,16 @@ Partial Class HomeContent
         Me.Guna2HtmlLabel6.TabIndex = 12
         Me.Guna2HtmlLabel6.Text = "PUM'S (ONGOING)"
         '
-        'Guna2HtmlLabel7
+        'LblPUMC
         '
-        Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel7.ForeColor = System.Drawing.Color.Black
-        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(92, 44)
-        Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
-        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(30, 58)
-        Me.Guna2HtmlLabel7.TabIndex = 14
-        Me.Guna2HtmlLabel7.Text = "0"
+        Me.LblPUMC.BackColor = System.Drawing.Color.Transparent
+        Me.LblPUMC.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblPUMC.ForeColor = System.Drawing.Color.Black
+        Me.LblPUMC.Location = New System.Drawing.Point(92, 44)
+        Me.LblPUMC.Name = "LblPUMC"
+        Me.LblPUMC.Size = New System.Drawing.Size(30, 58)
+        Me.LblPUMC.TabIndex = 14
+        Me.LblPUMC.Text = "0"
         '
         'Guna2Panel11
         '
@@ -284,7 +284,7 @@ Partial Class HomeContent
         'Guna2Panel12
         '
         Me.Guna2Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Guna2Panel12.Controls.Add(Me.Guna2HtmlLabel14)
+        Me.Guna2Panel12.Controls.Add(Me.LblPUMO)
         Me.Guna2Panel12.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Panel12.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 2)
         Me.Guna2Panel12.Dock = System.Windows.Forms.DockStyle.Top
@@ -294,16 +294,16 @@ Partial Class HomeContent
         Me.Guna2Panel12.Size = New System.Drawing.Size(215, 75)
         Me.Guna2Panel12.TabIndex = 6
         '
-        'Guna2HtmlLabel14
+        'LblPUMO
         '
-        Me.Guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel14.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel14.ForeColor = System.Drawing.Color.Black
-        Me.Guna2HtmlLabel14.Location = New System.Drawing.Point(92, 8)
-        Me.Guna2HtmlLabel14.Name = "Guna2HtmlLabel14"
-        Me.Guna2HtmlLabel14.Size = New System.Drawing.Size(30, 58)
-        Me.Guna2HtmlLabel14.TabIndex = 15
-        Me.Guna2HtmlLabel14.Text = "0"
+        Me.LblPUMO.BackColor = System.Drawing.Color.Transparent
+        Me.LblPUMO.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblPUMO.ForeColor = System.Drawing.Color.Black
+        Me.LblPUMO.Location = New System.Drawing.Point(92, 8)
+        Me.LblPUMO.Name = "LblPUMO"
+        Me.LblPUMO.Size = New System.Drawing.Size(30, 58)
+        Me.LblPUMO.TabIndex = 15
+        Me.LblPUMO.Text = "0"
         '
         'Guna2Panel3
         '
@@ -323,7 +323,7 @@ Partial Class HomeContent
         '
         Me.Guna2Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Guna2Panel15.Controls.Add(Me.Guna2Panel13)
-        Me.Guna2Panel15.Controls.Add(Me.Guna2HtmlLabel13)
+        Me.Guna2Panel15.Controls.Add(Me.LblRecovered)
         Me.Guna2Panel15.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Panel15.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 2)
         Me.Guna2Panel15.Dock = System.Windows.Forms.DockStyle.Top
@@ -357,16 +357,16 @@ Partial Class HomeContent
         Me.Guna2HtmlLabel8.TabIndex = 12
         Me.Guna2HtmlLabel8.Text = "DEATHS"
         '
-        'Guna2HtmlLabel13
+        'LblRecovered
         '
-        Me.Guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel13.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel13.ForeColor = System.Drawing.Color.Black
-        Me.Guna2HtmlLabel13.Location = New System.Drawing.Point(92, 44)
-        Me.Guna2HtmlLabel13.Name = "Guna2HtmlLabel13"
-        Me.Guna2HtmlLabel13.Size = New System.Drawing.Size(30, 58)
-        Me.Guna2HtmlLabel13.TabIndex = 14
-        Me.Guna2HtmlLabel13.Text = "0"
+        Me.LblRecovered.BackColor = System.Drawing.Color.Transparent
+        Me.LblRecovered.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblRecovered.ForeColor = System.Drawing.Color.Black
+        Me.LblRecovered.Location = New System.Drawing.Point(92, 44)
+        Me.LblRecovered.Name = "LblRecovered"
+        Me.LblRecovered.Size = New System.Drawing.Size(30, 58)
+        Me.LblRecovered.TabIndex = 14
+        Me.LblRecovered.Text = "0"
         '
         'Guna2HtmlLabel4
         '
@@ -395,7 +395,7 @@ Partial Class HomeContent
         'Guna2Panel14
         '
         Me.Guna2Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Guna2Panel14.Controls.Add(Me.Guna2HtmlLabel16)
+        Me.Guna2Panel14.Controls.Add(Me.LblDeath)
         Me.Guna2Panel14.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Panel14.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 2)
         Me.Guna2Panel14.Dock = System.Windows.Forms.DockStyle.Top
@@ -405,16 +405,16 @@ Partial Class HomeContent
         Me.Guna2Panel14.Size = New System.Drawing.Size(215, 75)
         Me.Guna2Panel14.TabIndex = 6
         '
-        'Guna2HtmlLabel16
+        'LblDeath
         '
-        Me.Guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel16.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel16.ForeColor = System.Drawing.Color.Black
-        Me.Guna2HtmlLabel16.Location = New System.Drawing.Point(92, 8)
-        Me.Guna2HtmlLabel16.Name = "Guna2HtmlLabel16"
-        Me.Guna2HtmlLabel16.Size = New System.Drawing.Size(30, 58)
-        Me.Guna2HtmlLabel16.TabIndex = 15
-        Me.Guna2HtmlLabel16.Text = "0"
+        Me.LblDeath.BackColor = System.Drawing.Color.Transparent
+        Me.LblDeath.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblDeath.ForeColor = System.Drawing.Color.Black
+        Me.LblDeath.Location = New System.Drawing.Point(92, 8)
+        Me.LblDeath.Name = "LblDeath"
+        Me.LblDeath.Size = New System.Drawing.Size(30, 58)
+        Me.LblDeath.TabIndex = 15
+        Me.LblDeath.Text = "0"
         '
         'Guna2HtmlLabel9
         '
@@ -478,7 +478,7 @@ Partial Class HomeContent
         'Guna2Panel7
         '
         Me.Guna2Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel11)
+        Me.Guna2Panel7.Controls.Add(Me.LblPUI)
         Me.Guna2Panel7.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Panel7.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 2)
         Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Top
@@ -488,16 +488,16 @@ Partial Class HomeContent
         Me.Guna2Panel7.Size = New System.Drawing.Size(215, 140)
         Me.Guna2Panel7.TabIndex = 3
         '
-        'Guna2HtmlLabel11
+        'LblPUI
         '
-        Me.Guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel11.ForeColor = System.Drawing.Color.Black
-        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(92, 41)
-        Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
-        Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(30, 58)
-        Me.Guna2HtmlLabel11.TabIndex = 14
-        Me.Guna2HtmlLabel11.Text = "0"
+        Me.LblPUI.BackColor = System.Drawing.Color.Transparent
+        Me.LblPUI.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblPUI.ForeColor = System.Drawing.Color.Black
+        Me.LblPUI.Location = New System.Drawing.Point(92, 41)
+        Me.LblPUI.Name = "LblPUI"
+        Me.LblPUI.Size = New System.Drawing.Size(30, 58)
+        Me.LblPUI.TabIndex = 14
+        Me.LblPUI.Text = "0"
         '
         'Guna2Panel1
         '
@@ -527,7 +527,7 @@ Partial Class HomeContent
         '
         Me.Guna2Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Guna2Panel4.BorderColor = System.Drawing.Color.White
-        Me.Guna2Panel4.Controls.Add(Me.Guna2HtmlLabel10)
+        Me.Guna2Panel4.Controls.Add(Me.LblConfirmed)
         Me.Guna2Panel4.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Panel4.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 2)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top
@@ -537,16 +537,16 @@ Partial Class HomeContent
         Me.Guna2Panel4.Size = New System.Drawing.Size(215, 140)
         Me.Guna2Panel4.TabIndex = 2
         '
-        'Guna2HtmlLabel10
+        'LblConfirmed
         '
-        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel10.ForeColor = System.Drawing.Color.Black
-        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(96, 51)
-        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
-        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(30, 58)
-        Me.Guna2HtmlLabel10.TabIndex = 13
-        Me.Guna2HtmlLabel10.Text = "0"
+        Me.LblConfirmed.BackColor = System.Drawing.Color.Transparent
+        Me.LblConfirmed.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblConfirmed.ForeColor = System.Drawing.Color.Black
+        Me.LblConfirmed.Location = New System.Drawing.Point(96, 51)
+        Me.LblConfirmed.Name = "LblConfirmed"
+        Me.LblConfirmed.Size = New System.Drawing.Size(30, 58)
+        Me.LblConfirmed.TabIndex = 13
+        Me.LblConfirmed.Text = "0"
         '
         'Guna2HtmlLabel2
         '
@@ -633,21 +633,21 @@ Partial Class HomeContent
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel9 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel11 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents LblPUI As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel15 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2HtmlLabel13 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents LblRecovered As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel14 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2HtmlLabel16 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents LblDeath As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents LblConfirmed As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel13 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel8 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel9 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel10 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents LblPUMC As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel11 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel12 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2HtmlLabel14 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents LblPUMO As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel12 As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class

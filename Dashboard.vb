@@ -33,7 +33,7 @@ Public Class Dashboard
             SliderTransition(50, True)
             BtnSlide.Location = New Point(10)
             SeparatorLine.Visible = False
-
+            FormDocument.addSpaces()
 
         Else
             CleanButton()
@@ -47,7 +47,7 @@ Public Class Dashboard
             BtnSlide.Location = New Point(162, 33)
             SeparatorLine.Visible = True
             SeparatorLine.SendToBack()
-
+            FormDocument.removeSpace()
 
         End If
     End Sub
@@ -186,7 +186,8 @@ Public Class Dashboard
     End Sub
 
     Private Sub BtnCert_Click(sender As Object, e As EventArgs) Handles BtnCert.Click
-
+        activefrm.Close()
+        OpenFormChild(FormDocument)
         If PanelSlider.Width = 50 Then
             ActiveButton(BtnCert)
         End If

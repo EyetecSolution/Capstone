@@ -168,3 +168,4 @@ C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.vbproj.CopyComplete
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.exe
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.xml
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.pdb
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.FormDocument.resources
