@@ -169,3 +169,5 @@ C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.exe
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.xml
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.pdb
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.FormDocument.resources
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.BClearance.resources
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.BCHistory.resources

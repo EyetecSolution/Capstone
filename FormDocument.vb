@@ -19,4 +19,9 @@
         Btn8.Text = "SPES                                     (For Out of School Youth)"
         Btn9.Text = "OATH OF      UNDERTAKING"
     End Sub
+
+    Private Sub Btn1_Click(sender As Object, e As EventArgs) Handles Btn1.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BCHistory)
+    End Sub
 End Class

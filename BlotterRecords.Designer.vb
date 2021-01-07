@@ -31,9 +31,11 @@ Partial Class BlotterRecords
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LblHeader2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.TxtDescription = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.TxtWhom = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -48,13 +50,11 @@ Partial Class BlotterRecords
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.TxtName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.print = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-        Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Panel1.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +65,7 @@ Partial Class BlotterRecords
         '
         Me.Panel1.BackColor = System.Drawing.Color.Maroon
         Me.Panel1.Controls.Add(Me.LblHeader2)
-        Me.Panel1.Location = New System.Drawing.Point(-12, 2)
+        Me.Panel1.Location = New System.Drawing.Point(-4, 2)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(678, 41)
@@ -113,42 +113,49 @@ Partial Class BlotterRecords
         Me.Guna2Panel1.Size = New System.Drawing.Size(646, 240)
         Me.Guna2Panel1.TabIndex = 25
         '
-        'TxtSearch
+        'Guna2HtmlLabel9
         '
-        Me.TxtSearch.Animated = True
-        Me.TxtSearch.BackColor = System.Drawing.Color.Transparent
-        Me.TxtSearch.BorderColor = System.Drawing.Color.Maroon
-        Me.TxtSearch.BorderRadius = 10
-        Me.TxtSearch.BorderThickness = 2
-        Me.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtSearch.DefaultText = ""
-        Me.TxtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSearch.DisabledState.Parent = Me.TxtSearch
-        Me.TxtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSearch.FocusedState.Parent = Me.TxtSearch
-        Me.TxtSearch.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSearch.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.TxtSearch.HoverState.BorderColor = System.Drawing.Color.Silver
-        Me.TxtSearch.HoverState.Parent = Me.TxtSearch
-        Me.TxtSearch.IconLeftOffset = New System.Drawing.Point(30, 0)
-        Me.TxtSearch.IconRight = CType(resources.GetObject("TxtSearch.IconRight"), System.Drawing.Image)
-        Me.TxtSearch.IconRightOffset = New System.Drawing.Point(15, 0)
-        Me.TxtSearch.Location = New System.Drawing.Point(15, 313)
-        Me.TxtSearch.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
-        Me.TxtSearch.Name = "TxtSearch"
-        Me.TxtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtSearch.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSearch.PlaceholderText = "Search..."
-        Me.TxtSearch.SelectedText = ""
-        Me.TxtSearch.ShadowDecoration.Depth = 18
-        Me.TxtSearch.ShadowDecoration.Enabled = True
-        Me.TxtSearch.ShadowDecoration.Parent = Me.TxtSearch
-        Me.TxtSearch.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.TxtSearch.Size = New System.Drawing.Size(252, 29)
-        Me.TxtSearch.TabIndex = 36
+        Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(485, 153)
+        Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
+        Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(23, 21)
+        Me.Guna2HtmlLabel9.TabIndex = 34
+        Me.Guna2HtmlLabel9.Text = "TO"
+        '
+        'DateTimePicker3
+        '
+        Me.DateTimePicker3.CalendarFont = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker3.CustomFormat = "h:mm tt"
+        Me.DateTimePicker3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker3.Location = New System.Drawing.Point(527, 148)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.ShowUpDown = True
+        Me.DateTimePicker3.Size = New System.Drawing.Size(101, 26)
+        Me.DateTimePicker3.TabIndex = 33
+        '
+        'Guna2HtmlLabel5
+        '
+        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(339, 127)
+        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
+        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(40, 21)
+        Me.Guna2HtmlLabel5.TabIndex = 32
+        Me.Guna2HtmlLabel5.Text = "TIME:"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.CustomFormat = "h:mm tt"
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(337, 148)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.ShowUpDown = True
+        Me.DateTimePicker1.Size = New System.Drawing.Size(131, 26)
+        Me.DateTimePicker1.TabIndex = 31
         '
         'TxtDescription
         '
@@ -175,26 +182,6 @@ Partial Class BlotterRecords
         Me.TxtDescription.ShadowDecoration.Parent = Me.TxtDescription
         Me.TxtDescription.Size = New System.Drawing.Size(313, 69)
         Me.TxtDescription.TabIndex = 29
-        '
-        'BtnSave
-        '
-        Me.BtnSave.CheckedState.Parent = Me.BtnSave
-        Me.BtnSave.CustomImages.Parent = Me.BtnSave
-        Me.BtnSave.FillColor = System.Drawing.Color.Maroon
-        Me.BtnSave.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSave.ForeColor = System.Drawing.Color.White
-        Me.BtnSave.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnSave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtnSave.HoverState.Parent = Me.BtnSave
-        Me.BtnSave.Location = New System.Drawing.Point(547, 310)
-        Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.ShadowDecoration.Enabled = True
-        Me.BtnSave.ShadowDecoration.Parent = Me.BtnSave
-        Me.BtnSave.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.BtnSave.Size = New System.Drawing.Size(102, 32)
-        Me.BtnSave.TabIndex = 28
-        Me.BtnSave.Text = "SAVE"
         '
         'TxtWhom
         '
@@ -406,6 +393,63 @@ Partial Class BlotterRecords
         Me.Guna2HtmlLabel1.TabIndex = 11
         Me.Guna2HtmlLabel1.Text = "FULL NAME :"
         '
+        'TxtSearch
+        '
+        Me.TxtSearch.Animated = True
+        Me.TxtSearch.BackColor = System.Drawing.Color.Transparent
+        Me.TxtSearch.BorderColor = System.Drawing.Color.Maroon
+        Me.TxtSearch.BorderRadius = 10
+        Me.TxtSearch.BorderThickness = 2
+        Me.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtSearch.DefaultText = ""
+        Me.TxtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSearch.DisabledState.Parent = Me.TxtSearch
+        Me.TxtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtSearch.FocusedState.Parent = Me.TxtSearch
+        Me.TxtSearch.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSearch.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.TxtSearch.HoverState.BorderColor = System.Drawing.Color.Silver
+        Me.TxtSearch.HoverState.Parent = Me.TxtSearch
+        Me.TxtSearch.IconLeftOffset = New System.Drawing.Point(30, 0)
+        Me.TxtSearch.IconRight = CType(resources.GetObject("TxtSearch.IconRight"), System.Drawing.Image)
+        Me.TxtSearch.IconRightOffset = New System.Drawing.Point(15, 0)
+        Me.TxtSearch.Location = New System.Drawing.Point(15, 313)
+        Me.TxtSearch.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtSearch.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtSearch.PlaceholderText = "Search..."
+        Me.TxtSearch.SelectedText = ""
+        Me.TxtSearch.ShadowDecoration.Depth = 18
+        Me.TxtSearch.ShadowDecoration.Enabled = True
+        Me.TxtSearch.ShadowDecoration.Parent = Me.TxtSearch
+        Me.TxtSearch.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.TxtSearch.Size = New System.Drawing.Size(252, 29)
+        Me.TxtSearch.TabIndex = 36
+        '
+        'BtnSave
+        '
+        Me.BtnSave.CheckedState.Parent = Me.BtnSave
+        Me.BtnSave.CustomImages.Parent = Me.BtnSave
+        Me.BtnSave.FillColor = System.Drawing.Color.Maroon
+        Me.BtnSave.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSave.ForeColor = System.Drawing.Color.White
+        Me.BtnSave.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnSave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnSave.HoverState.Parent = Me.BtnSave
+        Me.BtnSave.Location = New System.Drawing.Point(547, 310)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.ShadowDecoration.Enabled = True
+        Me.BtnSave.ShadowDecoration.Parent = Me.BtnSave
+        Me.BtnSave.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
+        Me.BtnSave.Size = New System.Drawing.Size(102, 32)
+        Me.BtnSave.TabIndex = 28
+        Me.BtnSave.Text = "SAVE"
+        '
         'NetResize1
         '
         Me.NetResize1.ParentControl = Me
@@ -472,50 +516,6 @@ Partial Class BlotterRecords
         Me.print.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.print.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.print.Width = 30
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.CustomFormat = "h:mm tt"
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(337, 148)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.ShowUpDown = True
-        Me.DateTimePicker1.Size = New System.Drawing.Size(131, 26)
-        Me.DateTimePicker1.TabIndex = 31
-        '
-        'Guna2HtmlLabel5
-        '
-        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(339, 127)
-        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
-        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(40, 21)
-        Me.Guna2HtmlLabel5.TabIndex = 32
-        Me.Guna2HtmlLabel5.Text = "TIME:"
-        '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.CalendarFont = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker3.CustomFormat = "h:mm tt"
-        Me.DateTimePicker3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker3.Location = New System.Drawing.Point(527, 148)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.ShowUpDown = True
-        Me.DateTimePicker3.Size = New System.Drawing.Size(101, 26)
-        Me.DateTimePicker3.TabIndex = 33
-        '
-        'Guna2HtmlLabel9
-        '
-        Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(485, 153)
-        Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
-        Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(23, 21)
-        Me.Guna2HtmlLabel9.TabIndex = 34
-        Me.Guna2HtmlLabel9.Text = "TO"
         '
         'BlotterRecords
         '

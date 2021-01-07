@@ -32,7 +32,7 @@ Partial Class residents
         Me.LblHeader2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.BtnUse = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnView = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
@@ -72,7 +72,7 @@ Partial Class residents
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Guna2Button3)
+        Me.GroupBox1.Controls.Add(Me.BtnUse)
         Me.GroupBox1.Controls.Add(Me.BtnView)
         Me.GroupBox1.Controls.Add(Me.BtnSave)
         Me.GroupBox1.Controls.Add(Me.TxtSearch)
@@ -85,30 +85,31 @@ Partial Class residents
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.UseCompatibleTextRendering = True
         '
-        'Guna2Button3
+        'BtnUse
         '
-        Me.Guna2Button3.Animated = True
-        Me.Guna2Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button3.BorderColor = System.Drawing.Color.White
-        Me.Guna2Button3.BorderRadius = 10
-        Me.Guna2Button3.BorderThickness = 1
-        Me.Guna2Button3.CheckedState.Parent = Me.Guna2Button3
-        Me.Guna2Button3.CustomImages.Parent = Me.Guna2Button3
-        Me.Guna2Button3.FillColor = System.Drawing.Color.Maroon
-        Me.Guna2Button3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Guna2Button3.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
-        Me.Guna2Button3.Location = New System.Drawing.Point(676, 10)
-        Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Guna2Button3.ShadowDecoration.Enabled = True
-        Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
-        Me.Guna2Button3.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.Guna2Button3.Size = New System.Drawing.Size(86, 38)
-        Me.Guna2Button3.TabIndex = 24
-        Me.Guna2Button3.Text = "PRINT"
+        Me.BtnUse.Animated = True
+        Me.BtnUse.BackColor = System.Drawing.Color.Transparent
+        Me.BtnUse.BorderColor = System.Drawing.Color.White
+        Me.BtnUse.BorderRadius = 10
+        Me.BtnUse.BorderThickness = 1
+        Me.BtnUse.CheckedState.Parent = Me.BtnUse
+        Me.BtnUse.CustomImages.Parent = Me.BtnUse
+        Me.BtnUse.FillColor = System.Drawing.Color.Maroon
+        Me.BtnUse.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnUse.ForeColor = System.Drawing.Color.White
+        Me.BtnUse.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnUse.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.BtnUse.HoverState.Parent = Me.BtnUse
+        Me.BtnUse.Location = New System.Drawing.Point(497, 10)
+        Me.BtnUse.Name = "BtnUse"
+        Me.BtnUse.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.BtnUse.ShadowDecoration.Enabled = True
+        Me.BtnUse.ShadowDecoration.Parent = Me.BtnUse
+        Me.BtnUse.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
+        Me.BtnUse.Size = New System.Drawing.Size(86, 33)
+        Me.BtnUse.TabIndex = 24
+        Me.BtnUse.Text = "USE"
+        Me.BtnUse.Visible = False
         '
         'BtnView
         '
@@ -125,13 +126,13 @@ Partial Class residents
         Me.BtnView.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnView.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BtnView.HoverState.Parent = Me.BtnView
-        Me.BtnView.Location = New System.Drawing.Point(584, 10)
+        Me.BtnView.Location = New System.Drawing.Point(681, 10)
         Me.BtnView.Name = "BtnView"
         Me.BtnView.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.BtnView.ShadowDecoration.Enabled = True
         Me.BtnView.ShadowDecoration.Parent = Me.BtnView
         Me.BtnView.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.BtnView.Size = New System.Drawing.Size(86, 38)
+        Me.BtnView.Size = New System.Drawing.Size(86, 32)
         Me.BtnView.TabIndex = 23
         Me.BtnView.Text = "VIEW"
         '
@@ -150,13 +151,13 @@ Partial Class residents
         Me.BtnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnSave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BtnSave.HoverState.Parent = Me.BtnSave
-        Me.BtnSave.Location = New System.Drawing.Point(492, 9)
+        Me.BtnSave.Location = New System.Drawing.Point(589, 10)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.BtnSave.ShadowDecoration.Enabled = True
         Me.BtnSave.ShadowDecoration.Parent = Me.BtnSave
         Me.BtnSave.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.BtnSave.Size = New System.Drawing.Size(86, 39)
+        Me.BtnSave.Size = New System.Drawing.Size(86, 33)
         Me.BtnSave.TabIndex = 22
         Me.BtnSave.Text = "ADD NEW"
         '
@@ -165,7 +166,7 @@ Partial Class residents
         Me.TxtSearch.Animated = True
         Me.TxtSearch.BackColor = System.Drawing.Color.Transparent
         Me.TxtSearch.BorderColor = System.Drawing.Color.Gray
-        Me.TxtSearch.BorderRadius = 14
+        Me.TxtSearch.BorderRadius = 10
         Me.TxtSearch.BorderThickness = 2
         Me.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TxtSearch.DefaultText = ""
@@ -194,7 +195,7 @@ Partial Class residents
         Me.TxtSearch.ShadowDecoration.Enabled = True
         Me.TxtSearch.ShadowDecoration.Parent = Me.TxtSearch
         Me.TxtSearch.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.TxtSearch.Size = New System.Drawing.Size(275, 36)
+        Me.TxtSearch.Size = New System.Drawing.Size(275, 30)
         Me.TxtSearch.TabIndex = 0
         '
         'DataGridView1
@@ -223,7 +224,7 @@ Partial Class residents
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 105)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 107)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -246,7 +247,7 @@ Partial Class residents
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.RowTemplate.Height = 30
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(751, 419)
+        Me.DataGridView1.Size = New System.Drawing.Size(751, 412)
         Me.DataGridView1.TabIndex = 1
         '
         'residents
@@ -276,7 +277,7 @@ Partial Class residents
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents TxtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents BtnSave As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents BtnView As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents BtnUse As Guna.UI2.WinForms.Guna2Button
 End Class

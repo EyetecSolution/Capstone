@@ -5,6 +5,7 @@ Public Class residents
     Public id As Integer
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
 
+
     Private Async Sub loadData()
         Dim sql As String = "SELECT ID, FULLNAME, FULLADDRESS, BIRTHPLACE, BIRTHDATE, AGE, GENDER, CIVILSTATUS, CITIZENSHIP, OCCUPATION
                              FROM tbl_residents"
@@ -91,13 +92,17 @@ Public Class residents
     End Function
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+
         AddNewResident.BtnSave.Text = "SAVE"
-        Dashboard.activefrm.Close()
+        Me.Hide()
         Dashboard.OpenFormChild(AddNewResident)
+
+
     End Sub
 
     Private Async Sub BtnView_Click(sender As Object, e As EventArgs) Handles BtnView.Click
-        Dashboard.activefrm.Close()
+
+        Me.Hide()
         Dashboard.OpenFormChild(AddNewResident)
 
         AddNewResident.BtnSave.Text = "UPDATE"
@@ -145,5 +150,9 @@ Public Class residents
 
     End Sub
 
-
+    Private Sub BtnUse_Click(sender As Object, e As EventArgs) Handles BtnUse.Click
+        BtnUse.Visible = False
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BClearance)
+    End Sub
 End Class

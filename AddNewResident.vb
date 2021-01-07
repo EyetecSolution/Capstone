@@ -5,7 +5,7 @@ Public Class AddNewResident
     ReadOnly cmd As New OleDbCommand
     ReadOnly sql As String
     Private myid As Integer
-
+    Public checkActive As Boolean = False
 
     Async Function InsertQuery() As Task(Of Integer)
         Dim dtfrmat As String = "M/d/yyyy"
@@ -142,7 +142,8 @@ Public Class AddNewResident
     End Sub
 
     Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
-        Dashboard.activefrm.Close()
+
+        Me.Close()
         Dashboard.OpenFormChild(residents)
     End Sub
 End Class
