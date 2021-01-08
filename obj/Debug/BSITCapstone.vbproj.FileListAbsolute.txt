@@ -171,3 +171,15 @@ C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.pdb
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.FormDocument.resources
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.BClearance.resources
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.BCHistory.resources
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.vbproj.ResolveComReference.cache
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.Sample.resources
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.PrintPreview.resources
+C:\Capstone\BSITCapstone\bin\Debug\Spire.DocViewer.Forms.dll
+C:\Capstone\BSITCapstone\bin\Debug\Spire.License.dll
+C:\Capstone\BSITCapstone\bin\Debug\Spire.Pdf.dll
+C:\Capstone\BSITCapstone\bin\Debug\Spire.Doc.dll
+C:\Capstone\BSITCapstone\bin\Debug\Microsoft.mshtml.dll
+C:\Capstone\BSITCapstone\bin\Debug\Spire.DocViewer.Forms.xml
+C:\Capstone\BSITCapstone\bin\Debug\Spire.License.xml
+C:\Capstone\BSITCapstone\bin\Debug\Spire.Pdf.xml
+C:\Capstone\BSITCapstone\bin\Debug\Spire.Doc.xml
