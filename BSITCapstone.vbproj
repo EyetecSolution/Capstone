@@ -142,16 +142,52 @@
     <Compile Include="FormDocument.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Indigency.Designer.vb">
+      <DependentUpon>Indigency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Indigency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NonResidency.Designer.vb">
+      <DependentUpon>NonResidency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NonResidency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OATH.Designer.vb">
+      <DependentUpon>OATH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OATH.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PrintPreview.Designer.vb">
       <DependentUpon>PrintPreview.vb</DependentUpon>
     </Compile>
     <Compile Include="PrintPreview.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sample.Designer.vb">
-      <DependentUpon>Sample.vb</DependentUpon>
+    <Compile Include="Residency.Designer.vb">
+      <DependentUpon>Residency.vb</DependentUpon>
     </Compile>
-    <Compile Include="Sample.vb">
+    <Compile Include="Residency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoloParent.Designer.vb">
+      <DependentUpon>SoloParent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SoloParent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spes.Designer.vb">
+      <DependentUpon>Spes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Spes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spes1.Designer.vb">
+      <DependentUpon>Spes1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Spes1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="useraccount.Designer.vb">
@@ -227,14 +263,32 @@
     <EmbeddedResource Include="FormDocument.resx">
       <DependentUpon>FormDocument.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Indigency.resx">
+      <DependentUpon>Indigency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NonResidency.resx">
+      <DependentUpon>NonResidency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OATH.resx">
+      <DependentUpon>OATH.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrintPreview.resx">
       <DependentUpon>PrintPreview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Residency.resx">
+      <DependentUpon>Residency.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="residents.resx">
       <DependentUpon>residents.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sample.resx">
-      <DependentUpon>Sample.vb</DependentUpon>
+    <EmbeddedResource Include="SoloParent.resx">
+      <DependentUpon>SoloParent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spes.resx">
+      <DependentUpon>Spes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spes1.resx">
+      <DependentUpon>Spes1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="useraccount.resx">
       <DependentUpon>useraccount.vb</DependentUpon>

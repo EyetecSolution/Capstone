@@ -172,7 +172,6 @@ C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.FormDocument.resources
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.BClearance.resources
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.BCHistory.resources
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.vbproj.ResolveComReference.cache
-C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.Sample.resources
 C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.PrintPreview.resources
 C:\Capstone\BSITCapstone\bin\Debug\Spire.DocViewer.Forms.dll
 C:\Capstone\BSITCapstone\bin\Debug\Spire.License.dll
@@ -183,3 +182,10 @@ C:\Capstone\BSITCapstone\bin\Debug\Spire.DocViewer.Forms.xml
 C:\Capstone\BSITCapstone\bin\Debug\Spire.License.xml
 C:\Capstone\BSITCapstone\bin\Debug\Spire.Pdf.xml
 C:\Capstone\BSITCapstone\bin\Debug\Spire.Doc.xml
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.Indigency.resources
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.NonResidency.resources
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.Residency.resources
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.SoloParent.resources
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.Spes.resources
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.Spes1.resources
+C:\Capstone\BSITCapstone\obj\Debug\BSITCapstone.OATH.resources

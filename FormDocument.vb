@@ -24,4 +24,39 @@
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
     End Sub
+
+    Private Sub Btn3_Click(sender As Object, e As EventArgs) Handles Btn3.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(Indigency)
+    End Sub
+
+    Private Sub Btn4_Click(sender As Object, e As EventArgs) Handles Btn4.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(Residency)
+    End Sub
+
+    Private Sub Btn5_Click(sender As Object, e As EventArgs) Handles Btn5.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(NonResidency)
+    End Sub
+
+    Private Sub Btn6_Click(sender As Object, e As EventArgs) Handles Btn6.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(SoloParent)
+    End Sub
+
+    Private Sub Btn7_Click(sender As Object, e As EventArgs) Handles Btn7.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(Spes)
+    End Sub
+
+    Private Sub Btn8_Click(sender As Object, e As EventArgs) Handles Btn8.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(Spes1)
+    End Sub
+
+    Private Sub Btn9_Click(sender As Object, e As EventArgs) Handles Btn9.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(OATH)
+    End Sub
 End Class

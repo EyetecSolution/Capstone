@@ -25,7 +25,7 @@ Public Class BClearance
         Try
             Await InsertQuery()
             MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            UpdateWordDocs()
+            UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempClearance.docx")
             ResetTextField()
         Catch ex As Exception
             MessageBox.Show("Database Error occured: Please contact your software developer in order to fix this issue", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -45,12 +45,12 @@ Public Class BClearance
 
     Dim dayStr() As String = {"1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th"}
 
-    Private Sub UpdateWordDocs()
+    Private Sub UpdateWordDocs(sPath As String)
         Dim dtFormat As String = "MM/d/yyyy"
         Dim monthFrmat As String = "MMMM"
         Dim objWordApp = New Word.Application
         objWordApp.Visible = False
-        Dim wdDoc As Word.Document = objWordApp.Documents.Open("C:\Capstone\BSITCapstone\Docs\TempClearance.docx", [ReadOnly]:=False)
+        Dim wdDoc As Word.Document = objWordApp.Documents.Open(sPath, [ReadOnly]:=False)
         wdDoc = objWordApp.ActiveDocument
 
         UpdateBookMark("fName", TxtName.Text.Trim, wdDoc)
@@ -107,5 +107,9 @@ Public Class BClearance
     Private Sub BtnPreview_Click(sender As Object, e As EventArgs) Handles BtnPreview.Click
         PrintPreview.checkLoad = "BClearance"
         PrintPreview.Show()
+    End Sub
+
+    Private Sub BClearance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

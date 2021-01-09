@@ -36,7 +36,6 @@ Partial Class FormDocument
         Me.Btn7 = New Guna.UI2.WinForms.Guna2Button()
         Me.Btn8 = New Guna.UI2.WinForms.Guna2Button()
         Me.Btn9 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Btn10 = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel1.SuspendLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -306,42 +305,17 @@ Partial Class FormDocument
         Me.Btn9.ShadowDecoration.Parent = Me.Btn9
         Me.Btn9.Size = New System.Drawing.Size(207, 68)
         Me.Btn9.TabIndex = 29
-        Me.Btn9.Text = "OATH OF      UNDERTAKING"
+        Me.Btn9.Text = "OATH OF      UNDERTAKING/                  CERTIFICATION"
         Me.Btn9.TextOffset = New System.Drawing.Point(15, 0)
-        '
-        'Btn10
-        '
-        Me.Btn10.Animated = True
-        Me.Btn10.BorderColor = System.Drawing.Color.White
-        Me.Btn10.BorderRadius = 8
-        Me.Btn10.BorderThickness = 2
-        Me.Btn10.CheckedState.Parent = Me.Btn10
-        Me.Btn10.CustomBorderColor = System.Drawing.Color.White
-        Me.Btn10.CustomImages.Parent = Me.Btn10
-        Me.Btn10.FillColor = System.Drawing.Color.Maroon
-        Me.Btn10.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn10.ForeColor = System.Drawing.Color.White
-        Me.Btn10.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Btn10.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Btn10.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Btn10.HoverState.Parent = Me.Btn10
-        Me.Btn10.Image = CType(resources.GetObject("Btn10.Image"), System.Drawing.Image)
-        Me.Btn10.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Btn10.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Btn10.Location = New System.Drawing.Point(510, 199)
-        Me.Btn10.Name = "Btn10"
-        Me.Btn10.ShadowDecoration.Parent = Me.Btn10
-        Me.Btn10.Size = New System.Drawing.Size(207, 68)
-        Me.Btn10.TabIndex = 30
-        Me.Btn10.Text = "FIRST TIME                         JOBSEEKERS                      ASSISTANCE"
-        Me.Btn10.TextOffset = New System.Drawing.Point(15, 0)
         '
         'FormDocument
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(748, 515)
-        Me.Controls.Add(Me.Btn10)
         Me.Controls.Add(Me.Btn9)
         Me.Controls.Add(Me.Btn8)
         Me.Controls.Add(Me.Btn7)
@@ -352,6 +326,7 @@ Partial Class FormDocument
         Me.Controls.Add(Me.Btn2)
         Me.Controls.Add(Me.Btn1)
         Me.Controls.Add(Me.Panel1)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormDocument"
         Me.Text = "FromDocumentSection"
@@ -365,7 +340,6 @@ Partial Class FormDocument
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
-    Friend WithEvents Btn10 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Btn9 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Btn8 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Btn7 As Guna.UI2.WinForms.Guna2Button

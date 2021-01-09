@@ -5,13 +5,28 @@
         Spire.License.LicenseProvider.SetLicenseKey(My.Resources.strKey)
         Select Case checkLoad
             Case "BClearance"
-                LoadBClearance()
+                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempClearance.docx")
+            Case "Indigency"
+                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempIndigency.docx")
+            Case "Residency"
+                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempResidency.docx")
+            Case "Non-Residency"
+                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempNonresidency.docx")
+            Case "Solo-Parent"
+                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempSoloparent.docx")
+            Case "SPES"
+                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempSpes.docx")
+            Case "SPES1"
+                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempSpesout.docx")
+            Case "OATH"
+                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempJobOath.docx")
+
         End Select
     End Sub
 
-    Sub LoadBClearance()
+    Sub LoadDocs(sPath As String)
         Try
-            DocViewer1.LoadFromFile("C:\Capstone\BSITCapstone\Docs\TempClearance.docx")
+            DocViewer1.LoadFromFile(sPath)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
