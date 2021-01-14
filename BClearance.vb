@@ -43,7 +43,7 @@ Public Class BClearance
 
     End Sub
 
-    Dim dayStr() As String = {"1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th"}
+
 
     Private Sub UpdateWordDocs(sPath As String)
         Dim dtFormat As String = "MM/d/yyyy"
@@ -57,7 +57,7 @@ Public Class BClearance
         UpdateBookMark("fName2", TxtName.Text.Trim, wdDoc)
         UpdateBookMark("fName3", TxtName.Text.Trim, wdDoc)
         UpdateBookMark("fAddress", TxtAddress.Text.Trim, wdDoc)
-        UpdateBookMark("dtoday", $"{DateTimePicker2.Value.Day.ToString()}", wdDoc)
+        UpdateBookMark("dtoday", DateTimePicker2.Value.Day.ToString(), wdDoc)
         UpdateBookMark("mYear", DateTimePicker2.Value.ToString("Y").ToUpper, wdDoc)
         UpdateBookMark("orNo", TxtOR.Text.Trim, wdDoc)
         UpdateBookMark("ctcNo", TxtCtc.Text.Trim, wdDoc)
@@ -109,7 +109,42 @@ Public Class BClearance
         PrintPreview.Show()
     End Sub
 
-    Private Sub BClearance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
     End Sub
+    Private Sub CmbPurpose_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CmbPurpose.KeyPress
+        e.Handled = True
+    End Sub
+
+
+    Private Sub TxtCtc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCtc.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtOR_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtOR.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+
+    Private Sub TxtFees_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtFees.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub Txtissued_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txtissued.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub TxtValidity_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtValidity.KeyPress
+        e.Handled = True
+    End Sub
+
+
+
 End Class

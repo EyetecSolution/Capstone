@@ -26,12 +26,12 @@ Partial Class Dashboard
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Me.PanelSlider = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.BtnReports = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.SeparatorLine = New Guna.UI2.WinForms.Guna2Separator()
         Me.BtnSlide = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.BtnUsers = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnCovid = New Guna.UI2.WinForms.Guna2Button()
-        Me.BtnPayment = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnRecords = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnResidents = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnCert = New Guna.UI2.WinForms.Guna2Button()
@@ -85,10 +85,10 @@ Partial Class Dashboard
         '
         'Guna2Panel4
         '
+        Me.Guna2Panel4.Controls.Add(Me.BtnReports)
         Me.Guna2Panel4.Controls.Add(Me.Guna2Panel5)
         Me.Guna2Panel4.Controls.Add(Me.BtnUsers)
         Me.Guna2Panel4.Controls.Add(Me.BtnCovid)
-        Me.Guna2Panel4.Controls.Add(Me.BtnPayment)
         Me.Guna2Panel4.Controls.Add(Me.BtnRecords)
         Me.Guna2Panel4.Controls.Add(Me.BtnResidents)
         Me.Guna2Panel4.Controls.Add(Me.BtnCert)
@@ -101,11 +101,36 @@ Partial Class Dashboard
         Me.Guna2Panel4.Size = New System.Drawing.Size(366, 491)
         Me.Guna2Panel4.TabIndex = 1
         '
+        'BtnReports
+        '
+        Me.BtnReports.Animated = True
+        Me.BtnReports.CheckedState.Parent = Me.BtnReports
+        Me.BtnReports.CustomImages.Parent = Me.BtnReports
+        Me.BtnReports.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BtnReports.FillColor = System.Drawing.Color.Maroon
+        Me.BtnReports.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnReports.ForeColor = System.Drawing.Color.White
+        Me.BtnReports.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnReports.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.BtnReports.HoverState.Image = CType(resources.GetObject("BtnReports.HoverState.Image"), System.Drawing.Image)
+        Me.BtnReports.HoverState.Parent = Me.BtnReports
+        Me.BtnReports.Image = CType(resources.GetObject("BtnReports.Image"), System.Drawing.Image)
+        Me.BtnReports.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.BtnReports.ImageSize = New System.Drawing.Size(32, 32)
+        Me.BtnReports.Location = New System.Drawing.Point(0, 318)
+        Me.BtnReports.Name = "BtnReports"
+        Me.BtnReports.ShadowDecoration.Parent = Me.BtnReports
+        Me.BtnReports.Size = New System.Drawing.Size(366, 53)
+        Me.BtnReports.TabIndex = 22
+        Me.BtnReports.Text = "Reports"
+        Me.BtnReports.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.BtnReports.TextOffset = New System.Drawing.Point(5, 0)
+        '
         'Guna2Panel5
         '
         Me.Guna2Panel5.Controls.Add(Me.SeparatorLine)
         Me.Guna2Panel5.Controls.Add(Me.BtnSlide)
-        Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel5.FillColor = System.Drawing.Color.Maroon
         Me.Guna2Panel5.Location = New System.Drawing.Point(0, 424)
         Me.Guna2Panel5.Name = "Guna2Panel5"
@@ -147,7 +172,6 @@ Partial Class Dashboard
         Me.BtnUsers.Animated = True
         Me.BtnUsers.CheckedState.Parent = Me.BtnUsers
         Me.BtnUsers.CustomImages.Parent = Me.BtnUsers
-        Me.BtnUsers.Dock = System.Windows.Forms.DockStyle.Top
         Me.BtnUsers.FillColor = System.Drawing.Color.Maroon
         Me.BtnUsers.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUsers.ForeColor = System.Drawing.Color.White
@@ -183,7 +207,7 @@ Partial Class Dashboard
         Me.BtnCovid.Image = CType(resources.GetObject("BtnCovid.Image"), System.Drawing.Image)
         Me.BtnCovid.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.BtnCovid.ImageSize = New System.Drawing.Size(32, 32)
-        Me.BtnCovid.Location = New System.Drawing.Point(0, 318)
+        Me.BtnCovid.Location = New System.Drawing.Point(0, 265)
         Me.BtnCovid.Name = "BtnCovid"
         Me.BtnCovid.ShadowDecoration.Parent = Me.BtnCovid
         Me.BtnCovid.Size = New System.Drawing.Size(366, 53)
@@ -191,31 +215,6 @@ Partial Class Dashboard
         Me.BtnCovid.Text = "COVID-19 Cases"
         Me.BtnCovid.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.BtnCovid.TextOffset = New System.Drawing.Point(5, 0)
-        '
-        'BtnPayment
-        '
-        Me.BtnPayment.Animated = True
-        Me.BtnPayment.CheckedState.Parent = Me.BtnPayment
-        Me.BtnPayment.CustomImages.Parent = Me.BtnPayment
-        Me.BtnPayment.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BtnPayment.FillColor = System.Drawing.Color.Maroon
-        Me.BtnPayment.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPayment.ForeColor = System.Drawing.Color.White
-        Me.BtnPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnPayment.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.BtnPayment.HoverState.Image = CType(resources.GetObject("BtnPayment.HoverState.Image"), System.Drawing.Image)
-        Me.BtnPayment.HoverState.Parent = Me.BtnPayment
-        Me.BtnPayment.Image = CType(resources.GetObject("BtnPayment.Image"), System.Drawing.Image)
-        Me.BtnPayment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.BtnPayment.ImageSize = New System.Drawing.Size(32, 32)
-        Me.BtnPayment.Location = New System.Drawing.Point(0, 265)
-        Me.BtnPayment.Name = "BtnPayment"
-        Me.BtnPayment.ShadowDecoration.Parent = Me.BtnPayment
-        Me.BtnPayment.Size = New System.Drawing.Size(366, 53)
-        Me.BtnPayment.TabIndex = 19
-        Me.BtnPayment.Text = "Payment"
-        Me.BtnPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.BtnPayment.TextOffset = New System.Drawing.Point(5, 0)
         '
         'BtnRecords
         '
@@ -601,7 +600,6 @@ Partial Class Dashboard
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents BtnUsers As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents BtnCovid As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents BtnPayment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents BtnRecords As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents BtnResidents As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents BtnCert As Guna.UI2.WinForms.Guna2Button
@@ -620,4 +618,5 @@ Partial Class Dashboard
     Friend WithEvents LabelTime As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents TxtNotes As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents BtnReports As Guna.UI2.WinForms.Guna2Button
 End Class

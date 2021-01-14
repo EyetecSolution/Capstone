@@ -16,7 +16,7 @@ Public Class Dashboard
     'Clean before slide 
     Private Sub CleanButton()
         Dim arrCtrl() As Guna.UI2.WinForms.Guna2Button =
-        {BtnHome, BtnBM, BtnCert, BtnResidents, BtnRecords, BtnPayment, BtnCovid, BtnUsers}
+        {BtnHome, BtnBM, BtnCert, BtnResidents, BtnRecords, BtnReports, BtnCovid, BtnUsers}
         For Each myctrl As Guna.UI2.WinForms.Guna2Button In arrCtrl
             myctrl.FillColor = Color.Maroon
         Next
@@ -141,6 +141,8 @@ Public Class Dashboard
     End Sub
 
     Private Sub BtnBM_Click(sender As Object, e As EventArgs) Handles BtnBM.Click
+        activefrm.Close()
+        OpenFormChild(BarangayManagement)
         If PanelSlider.Width = 50 Then
             ActiveButton(BtnBM)
         End If
@@ -150,7 +152,7 @@ Public Class Dashboard
 
     Private Sub ActiveButton(ctrl As Guna.UI2.WinForms.Guna2Button)
         Dim arrCtrl() As Guna.UI2.WinForms.Guna2Button =
-        {BtnHome, BtnBM, BtnCert, BtnResidents, BtnRecords, BtnPayment, BtnCovid, BtnUsers}
+        {BtnHome, BtnBM, BtnCert, BtnResidents, BtnRecords, BtnReports, BtnCovid, BtnUsers}
 
 
 
@@ -209,12 +211,6 @@ Public Class Dashboard
         End If
     End Sub
 
-    Private Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles BtnPayment.Click
-
-        If PanelSlider.Width = 50 Then
-            ActiveButton(BtnPayment)
-        End If
-    End Sub
 
     Private Sub BtnCovid_Click(sender As Object, e As EventArgs) Handles BtnCovid.Click
         activefrm.Close()
@@ -259,5 +255,13 @@ Public Class Dashboard
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HomeContent.CovidPanel.Visible = True
     End Sub
+
+    Private Sub BtnReports_Click(sender As Object, e As EventArgs) Handles BtnReports.Click
+        ReportsList.ShowDialog()
+        If PanelSlider.Width = 50 Then
+            ActiveButton(BtnReports)
+        End If
+    End Sub
+
 
 End Class

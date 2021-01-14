@@ -86,6 +86,7 @@ Partial Class LoginForm
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Copperplate Gothic Bold", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.Yellow
+        Me.Guna2HtmlLabel1.IsSelectionEnabled = False
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(0, 21)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(280, 122)

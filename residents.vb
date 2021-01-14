@@ -59,6 +59,24 @@ Public Class residents
         Return dt
     End Function
 
+    Public Async Function RetrieveClearance() As Task
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_residents 
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                BClearance.TxtName.Text = myReader("FULLNAME")
+                BClearance.TxtAddress.Text = myReader("FULLADDRESS")
+            End If
+        End Using
+
+    End Function
+
     Public Async Function RetrieveData() As Task
         If con.State = ConnectionState.Closed Then
             con.Open()
@@ -94,7 +112,7 @@ Public Class residents
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
 
         AddNewResident.BtnSave.Text = "SAVE"
-        Me.Hide()
+        Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(AddNewResident)
 
 
@@ -141,8 +159,6 @@ Public Class residents
     Private Sub residents_Load(sender As Object, e As EventArgs) Handles Me.Load
         loadData()
         Dgv_rowstyle()
-
-
     End Sub
 
     Private Sub DataGridView1_DataSourceChanged(sender As Object, e As EventArgs) Handles DataGridView1.DataSourceChanged
@@ -150,9 +166,11 @@ Public Class residents
 
     End Sub
 
-    Private Sub BtnUse_Click(sender As Object, e As EventArgs) Handles BtnUse.Click
+    Private Async Sub BtnUse_Click(sender As Object, e As EventArgs) Handles BtnUse.Click
         BtnUse.Visible = False
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BClearance)
+        Await RetrieveClearance()
     End Sub
+
 End Class

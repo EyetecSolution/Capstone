@@ -145,5 +145,6 @@ Public Class AddNewResident
 
         Me.Close()
         Dashboard.OpenFormChild(residents)
+        residents.BtnUse.Visible = True
     End Sub
 End Class

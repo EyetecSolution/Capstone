@@ -23,11 +23,11 @@ Partial Class HomeContent
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ContextButton1 As DevExpress.Utils.ContextButton = New DevExpress.Utils.ContextButton()
+        Dim ContextButton3 As DevExpress.Utils.ContextButton = New DevExpress.Utils.ContextButton()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HomeContent))
-        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip3 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem3 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem3 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.ImageSlider1 = New DevExpress.XtraEditors.Controls.ImageSlider()
@@ -99,26 +99,26 @@ Partial Class HomeContent
         Me.ImageSlider1.AllowLooping = True
         Me.ImageSlider1.AutoSlide = DevExpress.XtraEditors.Controls.AutoSlide.Forward
         Me.ImageSlider1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        ContextButton1.AnimationType = DevExpress.Utils.ContextAnimationType.OpacityAnimation
-        ContextButton1.AppearanceHover.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        ContextButton1.AppearanceHover.Options.UseImage = True
-        ContextButton1.AppearanceNormal.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        ContextButton1.AppearanceNormal.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        ContextButton1.AppearanceNormal.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ContextButton1.AppearanceNormal.Options.UseBackColor = True
-        ContextButton1.AppearanceNormal.Options.UseFont = True
-        ContextButton1.Id = New System.Guid("51bf049b-76be-4ca8-8bfc-51f71371b2c7")
-        ContextButton1.ImageOptions.HoverImage = CType(resources.GetObject("resource.HoverImage"), System.Drawing.Image)
-        ContextButton1.ImageOptions.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
-        ContextButton1.Name = "AddPhotos"
-        ToolTipTitleItem1.Text = "Add Photos"
-        ToolTipItem1.ImageOptions.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
-        ToolTipItem1.LeftIndent = 6
-        ToolTipItem1.Text = "Select folder to load photos in your slider"
-        SuperToolTip1.Items.Add(ToolTipTitleItem1)
-        SuperToolTip1.Items.Add(ToolTipItem1)
-        ContextButton1.SuperTip = SuperToolTip1
-        Me.ImageSlider1.ContextButtons.Add(ContextButton1)
+        ContextButton3.AnimationType = DevExpress.Utils.ContextAnimationType.OpacityAnimation
+        ContextButton3.AppearanceHover.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        ContextButton3.AppearanceHover.Options.UseImage = True
+        ContextButton3.AppearanceNormal.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        ContextButton3.AppearanceNormal.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        ContextButton3.AppearanceNormal.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ContextButton3.AppearanceNormal.Options.UseBackColor = True
+        ContextButton3.AppearanceNormal.Options.UseFont = True
+        ContextButton3.Id = New System.Guid("51bf049b-76be-4ca8-8bfc-51f71371b2c7")
+        ContextButton3.ImageOptions.HoverImage = CType(resources.GetObject("resource.HoverImage"), System.Drawing.Image)
+        ContextButton3.ImageOptions.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        ContextButton3.Name = "AddPhotos"
+        ToolTipTitleItem3.Text = "Add Photos"
+        ToolTipItem3.ImageOptions.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
+        ToolTipItem3.LeftIndent = 6
+        ToolTipItem3.Text = "Select folder to load photos in your slider"
+        SuperToolTip3.Items.Add(ToolTipTitleItem3)
+        SuperToolTip3.Items.Add(ToolTipItem3)
+        ContextButton3.SuperTip = SuperToolTip3
+        Me.ImageSlider1.ContextButtons.Add(ContextButton3)
         Me.ImageSlider1.CurrentImageIndex = 0
         Me.ImageSlider1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ImageSlider1.Images.Add(CType(resources.GetObject("ImageSlider1.Images"), System.Drawing.Image))
@@ -213,6 +213,7 @@ Partial Class HomeContent
         Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel12.ForeColor = System.Drawing.Color.Yellow
+        Me.Guna2HtmlLabel12.IsSelectionEnabled = False
         Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(28, 186)
         Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
         Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(158, 25)
@@ -251,6 +252,7 @@ Partial Class HomeContent
         Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel6.ForeColor = System.Drawing.Color.Yellow
+        Me.Guna2HtmlLabel6.IsSelectionEnabled = False
         Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(21, 6)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
         Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(174, 25)
@@ -262,6 +264,7 @@ Partial Class HomeContent
         Me.LblPUMC.BackColor = System.Drawing.Color.Transparent
         Me.LblPUMC.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPUMC.ForeColor = System.Drawing.Color.Black
+        Me.LblPUMC.IsSelectionEnabled = False
         Me.LblPUMC.Location = New System.Drawing.Point(92, 44)
         Me.LblPUMC.Name = "LblPUMC"
         Me.LblPUMC.Size = New System.Drawing.Size(30, 58)
@@ -299,6 +302,7 @@ Partial Class HomeContent
         Me.LblPUMO.BackColor = System.Drawing.Color.Transparent
         Me.LblPUMO.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPUMO.ForeColor = System.Drawing.Color.Black
+        Me.LblPUMO.IsSelectionEnabled = False
         Me.LblPUMO.Location = New System.Drawing.Point(92, 8)
         Me.LblPUMO.Name = "LblPUMO"
         Me.LblPUMO.Size = New System.Drawing.Size(30, 58)
@@ -351,6 +355,7 @@ Partial Class HomeContent
         Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel8.ForeColor = System.Drawing.Color.Yellow
+        Me.Guna2HtmlLabel8.IsSelectionEnabled = False
         Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(72, 6)
         Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
         Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(71, 25)
@@ -362,6 +367,7 @@ Partial Class HomeContent
         Me.LblRecovered.BackColor = System.Drawing.Color.Transparent
         Me.LblRecovered.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblRecovered.ForeColor = System.Drawing.Color.Black
+        Me.LblRecovered.IsSelectionEnabled = False
         Me.LblRecovered.Location = New System.Drawing.Point(92, 44)
         Me.LblRecovered.Name = "LblRecovered"
         Me.LblRecovered.Size = New System.Drawing.Size(30, 58)
@@ -373,6 +379,7 @@ Partial Class HomeContent
         Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel4.ForeColor = System.Drawing.Color.Yellow
+        Me.Guna2HtmlLabel4.IsSelectionEnabled = False
         Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(54, 184)
         Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
         Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(112, 25)
@@ -410,6 +417,7 @@ Partial Class HomeContent
         Me.LblDeath.BackColor = System.Drawing.Color.Transparent
         Me.LblDeath.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblDeath.ForeColor = System.Drawing.Color.Black
+        Me.LblDeath.IsSelectionEnabled = False
         Me.LblDeath.Location = New System.Drawing.Point(92, 8)
         Me.LblDeath.Name = "LblDeath"
         Me.LblDeath.Size = New System.Drawing.Size(30, 58)
@@ -468,6 +476,7 @@ Partial Class HomeContent
         Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel5.ForeColor = System.Drawing.Color.Yellow
+        Me.Guna2HtmlLabel5.IsSelectionEnabled = False
         Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(20, 156)
         Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
         Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(174, 50)
@@ -493,6 +502,7 @@ Partial Class HomeContent
         Me.LblPUI.BackColor = System.Drawing.Color.Transparent
         Me.LblPUI.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPUI.ForeColor = System.Drawing.Color.Black
+        Me.LblPUI.IsSelectionEnabled = False
         Me.LblPUI.Location = New System.Drawing.Point(92, 41)
         Me.LblPUI.Name = "LblPUI"
         Me.LblPUI.Size = New System.Drawing.Size(30, 58)
@@ -517,6 +527,7 @@ Partial Class HomeContent
         Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.Yellow
+        Me.Guna2HtmlLabel3.IsSelectionEnabled = False
         Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(20, 167)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
         Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(177, 25)
@@ -542,6 +553,7 @@ Partial Class HomeContent
         Me.LblConfirmed.BackColor = System.Drawing.Color.Transparent
         Me.LblConfirmed.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblConfirmed.ForeColor = System.Drawing.Color.Black
+        Me.LblConfirmed.IsSelectionEnabled = False
         Me.LblConfirmed.Location = New System.Drawing.Point(96, 51)
         Me.LblConfirmed.Name = "LblConfirmed"
         Me.LblConfirmed.Size = New System.Drawing.Size(30, 58)
@@ -553,6 +565,7 @@ Partial Class HomeContent
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Cooper Black", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.Yellow
+        Me.Guna2HtmlLabel2.IsSelectionEnabled = False
         Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(264, 5)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(475, 57)

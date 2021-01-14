@@ -29,10 +29,10 @@ Partial Class BlotterRecords
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LblHeader2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.TxtDescription = New Guna.UI2.WinForms.Guna2TextBox()
@@ -51,38 +51,26 @@ Partial Class BlotterRecords
         Me.TxtName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.print = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Panel1.SuspendLayout()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Controls.Add(Me.LblHeader2)
         Me.Panel1.Location = New System.Drawing.Point(-4, 2)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(678, 41)
         Me.Panel1.TabIndex = 24
-        '
-        'LblHeader2
-        '
-        Me.LblHeader2.BackColor = System.Drawing.Color.Maroon
-        Me.LblHeader2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblHeader2.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblHeader2.ForeColor = System.Drawing.SystemColors.Info
-        Me.LblHeader2.Location = New System.Drawing.Point(223, 7)
-        Me.LblHeader2.Name = "LblHeader2"
-        Me.LblHeader2.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.LblHeader2.Size = New System.Drawing.Size(269, 36)
-        Me.LblHeader2.TabIndex = 0
-        Me.LblHeader2.Text = "BLOTTER RECORD(S)"
         '
         'Guna2Panel1
         '
@@ -90,6 +78,7 @@ Partial Class BlotterRecords
         Me.Guna2Panel1.BorderThickness = 5
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel9)
         Me.Guna2Panel1.Controls.Add(Me.DateTimePicker3)
+        Me.Guna2Panel1.Controls.Add(Me.BtnSave)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel5)
         Me.Guna2Panel1.Controls.Add(Me.DateTimePicker1)
         Me.Guna2Panel1.Controls.Add(Me.TxtDescription)
@@ -107,17 +96,17 @@ Partial Class BlotterRecords
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Guna2Panel1.Controls.Add(Me.TxtName)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(12, 61)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(6, 283)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(646, 240)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(665, 225)
         Me.Guna2Panel1.TabIndex = 25
         '
         'Guna2HtmlLabel9
         '
         Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(485, 153)
+        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(485, 139)
         Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
         Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(23, 21)
         Me.Guna2HtmlLabel9.TabIndex = 34
@@ -129,17 +118,37 @@ Partial Class BlotterRecords
         Me.DateTimePicker3.CustomFormat = "h:mm tt"
         Me.DateTimePicker3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker3.Location = New System.Drawing.Point(527, 148)
+        Me.DateTimePicker3.Location = New System.Drawing.Point(527, 134)
         Me.DateTimePicker3.Name = "DateTimePicker3"
         Me.DateTimePicker3.ShowUpDown = True
         Me.DateTimePicker3.Size = New System.Drawing.Size(101, 26)
         Me.DateTimePicker3.TabIndex = 33
         '
+        'BtnSave
+        '
+        Me.BtnSave.CheckedState.Parent = Me.BtnSave
+        Me.BtnSave.CustomImages.Parent = Me.BtnSave
+        Me.BtnSave.FillColor = System.Drawing.Color.Maroon
+        Me.BtnSave.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSave.ForeColor = System.Drawing.Color.White
+        Me.BtnSave.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnSave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnSave.HoverState.Parent = Me.BtnSave
+        Me.BtnSave.Location = New System.Drawing.Point(526, 184)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.ShadowDecoration.Enabled = True
+        Me.BtnSave.ShadowDecoration.Parent = Me.BtnSave
+        Me.BtnSave.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
+        Me.BtnSave.Size = New System.Drawing.Size(128, 32)
+        Me.BtnSave.TabIndex = 28
+        Me.BtnSave.Text = "SAVE"
+        '
         'Guna2HtmlLabel5
         '
         Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(339, 127)
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(339, 113)
         Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
         Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(40, 21)
         Me.Guna2HtmlLabel5.TabIndex = 32
@@ -151,7 +160,7 @@ Partial Class BlotterRecords
         Me.DateTimePicker1.CustomFormat = "h:mm tt"
         Me.DateTimePicker1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(337, 148)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(337, 134)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.ShowUpDown = True
         Me.DateTimePicker1.Size = New System.Drawing.Size(131, 26)
@@ -170,17 +179,17 @@ Partial Class BlotterRecords
         Me.TxtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtDescription.FocusedState.Parent = Me.TxtDescription
         Me.TxtDescription.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDescription.ForeColor = System.Drawing.Color.Black
+        Me.TxtDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.TxtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtDescription.HoverState.Parent = Me.TxtDescription
-        Me.TxtDescription.Location = New System.Drawing.Point(13, 163)
+        Me.TxtDescription.Location = New System.Drawing.Point(13, 135)
         Me.TxtDescription.Margin = New System.Windows.Forms.Padding(8)
         Me.TxtDescription.Name = "TxtDescription"
         Me.TxtDescription.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtDescription.PlaceholderText = ""
         Me.TxtDescription.SelectedText = ""
         Me.TxtDescription.ShadowDecoration.Parent = Me.TxtDescription
-        Me.TxtDescription.Size = New System.Drawing.Size(313, 69)
+        Me.TxtDescription.Size = New System.Drawing.Size(313, 25)
         Me.TxtDescription.TabIndex = 29
         '
         'TxtWhom
@@ -196,23 +205,24 @@ Partial Class BlotterRecords
         Me.TxtWhom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtWhom.FocusedState.Parent = Me.TxtWhom
         Me.TxtWhom.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtWhom.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.TxtWhom.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtWhom.HoverState.Parent = Me.TxtWhom
-        Me.TxtWhom.Location = New System.Drawing.Point(339, 200)
+        Me.TxtWhom.Location = New System.Drawing.Point(13, 184)
         Me.TxtWhom.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.TxtWhom.Name = "TxtWhom"
         Me.TxtWhom.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtWhom.PlaceholderText = ""
         Me.TxtWhom.SelectedText = ""
         Me.TxtWhom.ShadowDecoration.Parent = Me.TxtWhom
-        Me.TxtWhom.Size = New System.Drawing.Size(291, 32)
+        Me.TxtWhom.Size = New System.Drawing.Size(313, 32)
         Me.TxtWhom.TabIndex = 27
         '
         'Guna2HtmlLabel8
         '
         Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(339, 180)
+        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(13, 165)
         Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
         Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(82, 21)
         Me.Guna2HtmlLabel8.TabIndex = 26
@@ -222,7 +232,7 @@ Partial Class BlotterRecords
         '
         Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(13, 144)
+        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(13, 116)
         Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
         Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(104, 21)
         Me.Guna2HtmlLabel7.TabIndex = 24
@@ -235,7 +245,7 @@ Partial Class BlotterRecords
         Me.ChkNone.CheckedState.BorderRadius = 2
         Me.ChkNone.CheckedState.BorderThickness = 0
         Me.ChkNone.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkNone.Location = New System.Drawing.Point(576, 78)
+        Me.ChkNone.Location = New System.Drawing.Point(576, 66)
         Me.ChkNone.Name = "ChkNone"
         Me.ChkNone.Size = New System.Drawing.Size(61, 17)
         Me.ChkNone.TabIndex = 23
@@ -250,7 +260,7 @@ Partial Class BlotterRecords
         '
         Me.DateTimePicker2.CalendarFont = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker2.Location = New System.Drawing.Point(339, 96)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(337, 87)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(289, 26)
         Me.DateTimePicker2.TabIndex = 22
@@ -259,7 +269,7 @@ Partial Class BlotterRecords
         '
         Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(339, 74)
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(339, 67)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
         Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(82, 21)
         Me.Guna2HtmlLabel6.TabIndex = 21
@@ -267,11 +277,10 @@ Partial Class BlotterRecords
         '
         'CmbGender
         '
-        Me.CmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbGender.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbGender.FormattingEnabled = True
         Me.CmbGender.Items.AddRange(New Object() {"MALE", "FEMALE"})
-        Me.CmbGender.Location = New System.Drawing.Point(339, 33)
+        Me.CmbGender.Location = New System.Drawing.Point(339, 30)
         Me.CmbGender.Name = "CmbGender"
         Me.CmbGender.Size = New System.Drawing.Size(155, 29)
         Me.CmbGender.TabIndex = 18
@@ -280,7 +289,7 @@ Partial Class BlotterRecords
         '
         Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(339, 13)
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(339, 10)
         Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
         Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(68, 21)
         Me.Guna2HtmlLabel4.TabIndex = 17
@@ -302,7 +311,7 @@ Partial Class BlotterRecords
         Me.TxtAge.ForeColor = System.Drawing.Color.Black
         Me.TxtAge.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtAge.HoverState.Parent = Me.TxtAge
-        Me.TxtAge.Location = New System.Drawing.Point(514, 33)
+        Me.TxtAge.Location = New System.Drawing.Point(514, 30)
         Me.TxtAge.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.TxtAge.Name = "TxtAge"
         Me.TxtAge.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -316,7 +325,7 @@ Partial Class BlotterRecords
         '
         Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(515, 13)
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(515, 10)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
         Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(40, 21)
         Me.Guna2HtmlLabel3.TabIndex = 15
@@ -335,23 +344,24 @@ Partial Class BlotterRecords
         Me.TxtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtAddress.FocusedState.Parent = Me.TxtAddress
         Me.TxtAddress.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtAddress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.TxtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtAddress.HoverState.Parent = Me.TxtAddress
-        Me.TxtAddress.Location = New System.Drawing.Point(13, 104)
+        Me.TxtAddress.Location = New System.Drawing.Point(13, 88)
         Me.TxtAddress.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.TxtAddress.Name = "TxtAddress"
         Me.TxtAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtAddress.PlaceholderText = ""
         Me.TxtAddress.SelectedText = ""
         Me.TxtAddress.ShadowDecoration.Parent = Me.TxtAddress
-        Me.TxtAddress.Size = New System.Drawing.Size(313, 30)
+        Me.TxtAddress.Size = New System.Drawing.Size(313, 25)
         Me.TxtAddress.TabIndex = 14
         '
         'Guna2HtmlLabel2
         '
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(13, 83)
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(13, 67)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(114, 21)
         Me.Guna2HtmlLabel2.TabIndex = 13
@@ -370,24 +380,24 @@ Partial Class BlotterRecords
         Me.TxtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtName.FocusedState.Parent = Me.TxtName
         Me.TxtName.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtName.ForeColor = System.Drawing.Color.Black
+        Me.TxtName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.TxtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtName.HoverState.Parent = Me.TxtName
-        Me.TxtName.Location = New System.Drawing.Point(13, 33)
+        Me.TxtName.Location = New System.Drawing.Point(13, 30)
         Me.TxtName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.TxtName.Name = "TxtName"
         Me.TxtName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtName.PlaceholderText = ""
         Me.TxtName.SelectedText = ""
         Me.TxtName.ShadowDecoration.Parent = Me.TxtName
-        Me.TxtName.Size = New System.Drawing.Size(313, 33)
+        Me.TxtName.Size = New System.Drawing.Size(313, 25)
         Me.TxtName.TabIndex = 12
         '
         'Guna2HtmlLabel1
         '
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(13, 13)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(13, 10)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(93, 21)
         Me.Guna2HtmlLabel1.TabIndex = 11
@@ -416,7 +426,7 @@ Partial Class BlotterRecords
         Me.TxtSearch.IconLeftOffset = New System.Drawing.Point(30, 0)
         Me.TxtSearch.IconRight = CType(resources.GetObject("TxtSearch.IconRight"), System.Drawing.Image)
         Me.TxtSearch.IconRightOffset = New System.Drawing.Point(15, 0)
-        Me.TxtSearch.Location = New System.Drawing.Point(15, 313)
+        Me.TxtSearch.Location = New System.Drawing.Point(7, 16)
         Me.TxtSearch.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.TxtSearch.Name = "TxtSearch"
         Me.TxtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -429,26 +439,6 @@ Partial Class BlotterRecords
         Me.TxtSearch.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
         Me.TxtSearch.Size = New System.Drawing.Size(252, 29)
         Me.TxtSearch.TabIndex = 36
-        '
-        'BtnSave
-        '
-        Me.BtnSave.CheckedState.Parent = Me.BtnSave
-        Me.BtnSave.CustomImages.Parent = Me.BtnSave
-        Me.BtnSave.FillColor = System.Drawing.Color.Maroon
-        Me.BtnSave.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSave.ForeColor = System.Drawing.Color.White
-        Me.BtnSave.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnSave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtnSave.HoverState.Parent = Me.BtnSave
-        Me.BtnSave.Location = New System.Drawing.Point(547, 310)
-        Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.ShadowDecoration.Enabled = True
-        Me.BtnSave.ShadowDecoration.Parent = Me.BtnSave
-        Me.BtnSave.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.BtnSave.Size = New System.Drawing.Size(102, 32)
-        Me.BtnSave.TabIndex = 28
-        Me.BtnSave.Text = "SAVE"
         '
         'NetResize1
         '
@@ -481,7 +471,7 @@ Partial Class BlotterRecords
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 347)
+        Me.DataGridView1.Location = New System.Drawing.Point(10, 48)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -504,7 +494,7 @@ Partial Class BlotterRecords
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.RowTemplate.Height = 30
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(646, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(646, 147)
         Me.DataGridView1.TabIndex = 26
         '
         'print
@@ -517,32 +507,65 @@ Partial Class BlotterRecords
         Me.print.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.print.Width = 30
         '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.BorderColor = System.Drawing.Color.Gray
+        Me.Guna2Panel2.BorderThickness = 5
+        Me.Guna2Panel2.Controls.Add(Me.DataGridView1)
+        Me.Guna2Panel2.Controls.Add(Me.TxtSearch)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(6, 59)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
+        Me.Guna2Panel2.Size = New System.Drawing.Size(665, 206)
+        Me.Guna2Panel2.TabIndex = 37
+        '
+        'Guna2HtmlLabel10
+        '
+        Me.Guna2HtmlLabel10.BackColor = System.Drawing.SystemColors.Control
+        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel10.ForeColor = System.Drawing.Color.Black
+        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(25, 271)
+        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
+        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(263, 30)
+        Me.Guna2HtmlLabel10.TabIndex = 44
+        Me.Guna2HtmlLabel10.Text = "INFORMATION DETAILS"
+        '
+        'Guna2HtmlLabel11
+        '
+        Me.Guna2HtmlLabel11.BackColor = System.Drawing.SystemColors.Control
+        Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel11.ForeColor = System.Drawing.Color.Black
+        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(26, 46)
+        Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
+        Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(141, 30)
+        Me.Guna2HtmlLabel11.TabIndex = 45
+        Me.Guna2HtmlLabel11.Text = "BLOTTER LIST"
+        '
         'BlotterRecords
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(670, 519)
-        Me.Controls.Add(Me.TxtSearch)
-        Me.Controls.Add(Me.BtnSave)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(672, 531)
+        Me.Controls.Add(Me.Guna2HtmlLabel11)
+        Me.Controls.Add(Me.Guna2HtmlLabel10)
+        Me.Controls.Add(Me.Guna2Panel2)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BlotterRecords"
         Me.Text = "Form1"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents LblHeader2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
     Friend WithEvents CmbGender As ComboBox
@@ -568,4 +591,7 @@ Partial Class BlotterRecords
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Guna2HtmlLabel9 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents DateTimePicker3 As DateTimePicker
+    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel11 As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class

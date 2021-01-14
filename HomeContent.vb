@@ -3,6 +3,7 @@ Imports System.Data.OleDb
 
 Public Class HomeContent
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
+
     Public Async Function LoadDataTable(sql As String) As Task(Of Integer)
         Dim i As Integer
         If con.State = ConnectionState.Closed Then
@@ -19,7 +20,7 @@ Public Class HomeContent
         ImageSlider1.SlideNext()
     End Sub
 
-    Private Sub ImageSlider1_ContextButtonClick(sender As Object, e As DevExpress.Utils.ContextItemClickEventArgs) Handles ImageSlider1.ContextButtonClick
+    Private Async Sub ImageSlider1_ContextButtonClick(sender As Object, e As DevExpress.Utils.ContextItemClickEventArgs) Handles ImageSlider1.ContextButtonClick
         Dim currentBtn As String = e.Item.Name
         Select Case currentBtn
             Case "AddPhotos"
@@ -33,6 +34,7 @@ Public Class HomeContent
                             ImageSlider1.Images.Add(Image.FromFile(fle))
                         Next
                         MessageBox.Show("Images loaded successfully!", "ims", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Await UpdatePath(mypath)
                     Else
                         MessageBox.Show("There's something wrong with the directory check if contains of images", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
@@ -44,6 +46,15 @@ Public Class HomeContent
     End Sub
 
     Private Async Sub HomeContent_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim pth As String = Await RetrievePaths()
+        Dim filters As String() = {"*.jpg", "*.png"}
+        Dim filePaths As String() = filters.SelectMany(Function(f) Directory.GetFiles(pth, f)).ToArray()
+        If filePaths.Length > 0 Then
+            ImageSlider1.Images.Clear()
+            For Each fle As String In filePaths
+                ImageSlider1.Images.Add(Image.FromFile(fle))
+            Next
+        End If
 
         Dim sql1 As String = "SELECT COUNT(*) FROM tbl_covid WHERE CONDITION='CONFIRMED'"
         Dim sql2 As String = "SELECT COUNT(*) FROM tbl_covid WHERE CONDITION='PUI'"
@@ -57,5 +68,32 @@ Public Class HomeContent
         LblPUMC.Text = Await LoadDataTable(sql4)
         LblDeath.Text = Await LoadDataTable(sql5)
         LblRecovered.Text = Await LoadDataTable(sql6)
+
     End Sub
+
+
+    Public Async Function RetrievePaths() As Task(Of String)
+        Dim p As String = Nothing
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+        Using mycmd As New OleDbCommand("SELECT path FROM slider", con)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                p = myReader("path")
+            End If
+        End Using
+        Return p
+    End Function
+
+    Public Async Function UpdatePath(mypath As String) As Task
+
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+        Using mycmd As New OleDbCommand("UPDATE slider SET path = '" & mypath & "'", con)
+            Await mycmd.ExecuteNonQueryAsync()
+        End Using
+
+    End Function
 End Class

@@ -3,9 +3,7 @@ Public Class BlotterRecords
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
 
 
-
-    Private Async Sub LoadMe()
-        Dim sql As String = "SELECT * FROM tbl_blotter"
+    Public Async Sub LoadMe(sql As String)
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("ID").Width = 150
@@ -57,7 +55,11 @@ Public Class BlotterRecords
             mycmd.Parameters.AddWithValue("AGE", TxtAge.Text)
             mycmd.Parameters.AddWithValue("GENDER", CmbGender.Text)
             mycmd.Parameters.AddWithValue("FILINGDATE", dt.ToString(dtfrmat))
-            mycmd.Parameters.AddWithValue("SCHEDULE", $"{DateTimePicker2.Value.ToString(dt2frmat)} {DateTimePicker1.Value.ToString(tmefrmat)} TO {DateTimePicker3.Value.ToString(tmefrmat)}")
+            If ChkNone.Checked = True Then
+                mycmd.Parameters.AddWithValue("SCHEDULE", "NONE")
+            Else
+                mycmd.Parameters.AddWithValue("SCHEDULE", $"{DateTimePicker2.Value.ToString(dt2frmat)} {DateTimePicker1.Value.ToString(tmefrmat)} TO {DateTimePicker3.Value.ToString(tmefrmat)}")
+            End If
             mycmd.Parameters.AddWithValue("BYWHOM", TxtWhom.Text)
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
@@ -71,7 +73,7 @@ Public Class BlotterRecords
                 Try
                     Await InsertQuery()
                     MessageBox.Show("Blotter added successfully")
-                    LoadMe()
+                    LoadMe("SELECT * FROM tbl_blotter")
                 Catch ex As Exception
                     MessageBox.Show("Error Occured: " & ex.Message)
                 End Try
@@ -82,7 +84,7 @@ Public Class BlotterRecords
     End Sub
 
     Private Sub BlotterRecords_Load(sender As Object, e As EventArgs) Handles Me.Load
-        LoadMe()
+        LoadMe("SELECT * FROM tbl_blotter")
 
     End Sub
 
@@ -98,4 +100,38 @@ Public Class BlotterRecords
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
     End Sub
+
+    Private Sub Guna2HtmlLabel10_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel10.Click
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel7_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel7.Click
+
+    End Sub
+
+    Private Sub CmbGender_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbGender.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub CmbGender_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CmbGender.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub TxtAge_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtAge.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub TxtWhom_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtWhom.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
 End Class

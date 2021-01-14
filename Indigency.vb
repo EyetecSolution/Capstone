@@ -95,4 +95,14 @@ Public Class Indigency
         Dashboard.OpenFormChild(residents)
         residents.BtnUse.Visible = True
     End Sub
+
+
+    Private Sub CmbPurpose_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CmbPurpose.KeyPress
+        e.Handled = True
+    End Sub
+    Private Sub TxtAge_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtAge.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

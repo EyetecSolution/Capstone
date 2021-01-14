@@ -1,5 +1,6 @@
 ﻿Public Class FormDocument
-    Sub addSpaces()
+
+    Sub AddSpaces()
         Btn1.Text = "BARANGAY                        CLEARANCE"
         Btn3.Text = "CERTIFICATE                              OF INDIGENCY"
         Btn4.Text = "CERTIFICATE                              OF RESIDENCY"
@@ -7,9 +8,9 @@
         Btn6.Text = "CERTIFICATE                              OF SOLO PARENT"
         Btn7.Text = "SPES                                             (For School Youth)"
         Btn8.Text = "SPES                                             (For Out of School Youth)"
-        Btn9.Text = "OATH                                          OF UNDERTAKING"
+        Btn9.Text = "OATH                                          OF UNDERTAKING/CERTIFICATION"
     End Sub
-    Sub removeSpace()
+    Sub RemoveSpace()
         Btn1.Text = "BARANGAY               CLEARANCE"
         Btn3.Text = "CERTIFICATE                       OF INDIGENCY"
         Btn4.Text = "CERTIFICATE                   OF RESIDENCY"
@@ -17,46 +18,75 @@
         Btn6.Text = "CERTIFICATE OF           SOLO PARENT"
         Btn7.Text = "SPES                             (For School Youth)"
         Btn8.Text = "SPES                                     (For Out of School Youth)"
-        Btn9.Text = "OATH OF      UNDERTAKING"
+        Btn9.Text = "OATH OF      UNDERTAKING/CERTIFICATION"
     End Sub
 
     Private Sub Btn1_Click(sender As Object, e As EventArgs) Handles Btn1.Click
+        BCHistory.catTitle = "Barangay Clearance"
+        BCHistory.LblTitle.Text = "LIST OF BARANGAY CLEARANCE CLAIMED"
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
+        BCHistory.BtnPayment.Visible = True
+
+
     End Sub
 
     Private Sub Btn3_Click(sender As Object, e As EventArgs) Handles Btn3.Click
+        BCHistory.catTitle = "indigency"
+        BCHistory.LblTitle.Text = "LIST OF BARANGAY INDIGENCY CLAIMED"
         Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(Indigency)
+        Dashboard.OpenFormChild(BCHistory)
+
+
     End Sub
 
     Private Sub Btn4_Click(sender As Object, e As EventArgs) Handles Btn4.Click
+        BCHistory.catTitle = "residency"
         Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(Residency)
+        Dashboard.OpenFormChild(BCHistory)
+        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF RESIDENCY CLAIMED"
+
     End Sub
 
     Private Sub Btn5_Click(sender As Object, e As EventArgs) Handles Btn5.Click
+        BCHistory.catTitle = "non-residency"
+        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF NON-RESIDENCY CLAIMED"
         Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(NonResidency)
+        Dashboard.OpenFormChild(BCHistory)
+
+
     End Sub
 
     Private Sub Btn6_Click(sender As Object, e As EventArgs) Handles Btn6.Click
+        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF SOLO PARENT CLAIMED"
+        BCHistory.catTitle = "solo-parent"
         Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(SoloParent)
+        Dashboard.OpenFormChild(BCHistory)
+
     End Sub
 
     Private Sub Btn7_Click(sender As Object, e As EventArgs) Handles Btn7.Click
+        BCHistory.catTitle = "SPES1"
         Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(Spes)
+        Dashboard.OpenFormChild(BCHistory)
+        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF SPES(for school youth) CLAIMED"
+
     End Sub
 
     Private Sub Btn8_Click(sender As Object, e As EventArgs) Handles Btn8.Click
+        BCHistory.catTitle = "SPES"
         Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(Spes1)
+        Dashboard.OpenFormChild(BCHistory)
+        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF SPES(for out of school youth) CLAIMED"
+
     End Sub
 
     Private Sub Btn9_Click(sender As Object, e As EventArgs) Handles Btn9.Click
+        BCHistory.catTitle = "OATH"
         Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(OATH)
+        Dashboard.OpenFormChild(BCHistory)
+        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF OATH UNDERTAKING/CERTIFICATION CLAIMED"
     End Sub
+
+
 End Class

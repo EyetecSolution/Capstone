@@ -11,11 +11,14 @@ Public Class NonResidency
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_nonresidency(FULLNAME,FULLADDRESS,DATEISSUED) 
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_nonresidency(FULLNAME,FULLADDRESS,DATEISSUED,FEES,ISSUEDAT) 
                                          VALUES(@FULLNAME, @FULLADDRESS,@DATEISSUED)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("DATEISSUED", DateTimePicker2.Value.ToString(dtFrmat))
+            mycmd.Parameters.AddWithValue("FEES", TxtAmount.Text)
+            mycmd.Parameters.AddWithValue("ISSUEDAT", Txtissued.Text)
+
 
 
             i = Await mycmd.ExecuteNonQueryAsync
@@ -83,5 +86,25 @@ Public Class NonResidency
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
+    End Sub
+
+
+    Private Sub Txtissued_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txtissued.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub TxtAmount_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtAmount.KeyPress
+        e.Handled = True
+    End Sub
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(residents)
+        residents.BtnUse.Visible = True
     End Sub
 End Class
