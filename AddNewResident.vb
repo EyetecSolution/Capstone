@@ -4,7 +4,7 @@ Public Class AddNewResident
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
     ReadOnly cmd As New OleDbCommand
     ReadOnly sql As String
-    Private myid As Integer
+    ReadOnly myid As Integer
     Public checkActive As Boolean = False
 
     Async Function InsertQuery() As Task(Of Integer)

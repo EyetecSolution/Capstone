@@ -23,8 +23,35 @@ Partial Class Schedule
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.CmbPurpose = New System.Windows.Forms.ComboBox()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.TxtSunday = New System.Windows.Forms.TextBox()
+        Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TxtSat = New System.Windows.Forms.TextBox()
+        Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TxtFriday = New System.Windows.Forms.TextBox()
+        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TxtThursday = New System.Windows.Forms.TextBox()
+        Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TxtWednesday = New System.Windows.Forms.TextBox()
+        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TxtTuesday = New System.Windows.Forms.TextBox()
+        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TxtMonday = New System.Windows.Forms.TextBox()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -32,30 +59,9 @@ Partial Class Schedule
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Me.CmbPurpose = New System.Windows.Forms.ComboBox()
-        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1.SuspendLayout()
+        Me.Guna2Panel2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -72,7 +78,6 @@ Partial Class Schedule
         '
         Me.Guna2Panel1.BorderColor = System.Drawing.Color.Gray
         Me.Guna2Panel1.BorderThickness = 5
-        Me.Guna2Panel1.Controls.Add(Me.Guna2Button3)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel12)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel11)
         Me.Guna2Panel1.Controls.Add(Me.DateTimePicker1)
@@ -81,19 +86,19 @@ Partial Class Schedule
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel10)
         Me.Guna2Panel1.Controls.Add(Me.CmbPurpose)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Button2)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox7)
+        Me.Guna2Panel1.Controls.Add(Me.TxtSunday)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel9)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox6)
+        Me.Guna2Panel1.Controls.Add(Me.TxtSat)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel8)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox5)
+        Me.Guna2Panel1.Controls.Add(Me.TxtFriday)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel6)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox4)
+        Me.Guna2Panel1.Controls.Add(Me.TxtThursday)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel5)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox3)
+        Me.Guna2Panel1.Controls.Add(Me.TxtWednesday)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel4)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox2)
+        Me.Guna2Panel1.Controls.Add(Me.TxtTuesday)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel3)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox1)
+        Me.Guna2Panel1.Controls.Add(Me.TxtMonday)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Button1)
         Me.Guna2Panel1.Controls.Add(Me.BtnSave)
@@ -105,6 +110,297 @@ Partial Class Schedule
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(646, 411)
         Me.Guna2Panel1.TabIndex = 28
+        '
+        'Guna2HtmlLabel12
+        '
+        Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(50, 107)
+        Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
+        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(40, 18)
+        Me.Guna2HtmlLabel12.TabIndex = 98
+        Me.Guna2HtmlLabel12.Text = "FROM"
+        '
+        'Guna2HtmlLabel11
+        '
+        Me.Guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(240, 124)
+        Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
+        Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(20, 18)
+        Me.Guna2HtmlLabel11.TabIndex = 97
+        Me.Guna2HtmlLabel11.Text = "TO"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.CustomFormat = "MMMM d      yyyy"
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(262, 120)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(180, 23)
+        Me.DateTimePicker1.TabIndex = 96
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.CalendarFont = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker2.CustomFormat = "MMMM d      yyyy"
+        Me.DateTimePicker2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker2.Location = New System.Drawing.Point(50, 120)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(180, 23)
+        Me.DateTimePicker2.TabIndex = 95
+        '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.BorderColor = System.Drawing.Color.Maroon
+        Me.Guna2Panel2.BorderThickness = 3
+        Me.Guna2Panel2.Controls.Add(Me.DataGridView1)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(13, 236)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
+        Me.Guna2Panel2.Size = New System.Drawing.Size(621, 163)
+        Me.Guna2Panel2.TabIndex = 94
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.DarkGray
+        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.ColumnHeadersHeight = 30
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 4)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1.RowHeadersVisible = False
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridView1.RowTemplate.Height = 30
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(610, 155)
+        Me.DataGridView1.TabIndex = 2
+        '
+        'Guna2HtmlLabel10
+        '
+        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(13, 100)
+        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
+        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(43, 18)
+        Me.Guna2HtmlLabel10.TabIndex = 92
+        Me.Guna2HtmlLabel10.Text = "DATE :"
+        '
+        'CmbPurpose
+        '
+        Me.CmbPurpose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbPurpose.FormattingEnabled = True
+        Me.CmbPurpose.Items.AddRange(New Object() {"BRGY.OFFICIAL", "BRGY.STAFF", "TANOD"})
+        Me.CmbPurpose.Location = New System.Drawing.Point(13, 25)
+        Me.CmbPurpose.Name = "CmbPurpose"
+        Me.CmbPurpose.Size = New System.Drawing.Size(215, 24)
+        Me.CmbPurpose.TabIndex = 91
+        Me.CmbPurpose.Text = "SELECT POSITION"
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.Animated = True
+        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button2.BorderColor = System.Drawing.Color.White
+        Me.Guna2Button2.BorderRadius = 5
+        Me.Guna2Button2.BorderThickness = 1
+        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
+        Me.Guna2Button2.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Guna2Button2.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Location = New System.Drawing.Point(469, 14)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Guna2Button2.ShadowDecoration.Enabled = True
+        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
+        Me.Guna2Button2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
+        Me.Guna2Button2.Size = New System.Drawing.Size(165, 25)
+        Me.Guna2Button2.TabIndex = 90
+        Me.Guna2Button2.Text = "ATTENDANCE"
+        '
+        'TxtSunday
+        '
+        Me.TxtSunday.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtSunday.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSunday.Location = New System.Drawing.Point(338, 207)
+        Me.TxtSunday.Name = "TxtSunday"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtSunday, False)
+        Me.TxtSunday.Size = New System.Drawing.Size(134, 23)
+        Me.TxtSunday.TabIndex = 89
+        '
+        'Guna2HtmlLabel9
+        '
+        Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(338, 193)
+        Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
+        Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(63, 18)
+        Me.Guna2HtmlLabel9.TabIndex = 88
+        Me.Guna2HtmlLabel9.Text = "SUNDAY :"
+        '
+        'TxtSat
+        '
+        Me.TxtSat.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtSat.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSat.Location = New System.Drawing.Point(176, 207)
+        Me.TxtSat.Name = "TxtSat"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtSat, False)
+        Me.TxtSat.Size = New System.Drawing.Size(134, 23)
+        Me.TxtSat.TabIndex = 87
+        '
+        'Guna2HtmlLabel8
+        '
+        Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(176, 193)
+        Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
+        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(77, 18)
+        Me.Guna2HtmlLabel8.TabIndex = 86
+        Me.Guna2HtmlLabel8.Text = "SATURDAY :"
+        '
+        'TxtFriday
+        '
+        Me.TxtFriday.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtFriday.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtFriday.Location = New System.Drawing.Point(13, 207)
+        Me.TxtFriday.Name = "TxtFriday"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtFriday, False)
+        Me.TxtFriday.Size = New System.Drawing.Size(134, 23)
+        Me.TxtFriday.TabIndex = 85
+        '
+        'Guna2HtmlLabel6
+        '
+        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(13, 193)
+        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(56, 18)
+        Me.Guna2HtmlLabel6.TabIndex = 84
+        Me.Guna2HtmlLabel6.Text = "FRIDAY :"
+        '
+        'TxtThursday
+        '
+        Me.TxtThursday.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtThursday.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtThursday.Location = New System.Drawing.Point(500, 166)
+        Me.TxtThursday.Name = "TxtThursday"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtThursday, False)
+        Me.TxtThursday.Size = New System.Drawing.Size(134, 23)
+        Me.TxtThursday.TabIndex = 83
+        '
+        'Guna2HtmlLabel5
+        '
+        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(500, 151)
+        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
+        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(76, 18)
+        Me.Guna2HtmlLabel5.TabIndex = 82
+        Me.Guna2HtmlLabel5.Text = "THURSDAY :"
+        '
+        'TxtWednesday
+        '
+        Me.TxtWednesday.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtWednesday.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtWednesday.Location = New System.Drawing.Point(338, 166)
+        Me.TxtWednesday.Name = "TxtWednesday"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtWednesday, False)
+        Me.TxtWednesday.Size = New System.Drawing.Size(134, 23)
+        Me.TxtWednesday.TabIndex = 81
+        '
+        'Guna2HtmlLabel4
+        '
+        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(338, 151)
+        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(90, 18)
+        Me.Guna2HtmlLabel4.TabIndex = 80
+        Me.Guna2HtmlLabel4.Text = "WEDNESDAY :"
+        '
+        'TxtTuesday
+        '
+        Me.TxtTuesday.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtTuesday.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtTuesday.Location = New System.Drawing.Point(176, 166)
+        Me.TxtTuesday.Name = "TxtTuesday"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtTuesday, False)
+        Me.TxtTuesday.Size = New System.Drawing.Size(134, 23)
+        Me.TxtTuesday.TabIndex = 79
+        '
+        'Guna2HtmlLabel3
+        '
+        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(176, 151)
+        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(66, 18)
+        Me.Guna2HtmlLabel3.TabIndex = 78
+        Me.Guna2HtmlLabel3.Text = "TUESDAY :"
+        '
+        'TxtMonday
+        '
+        Me.TxtMonday.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtMonday.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtMonday.Location = New System.Drawing.Point(13, 165)
+        Me.TxtMonday.Name = "TxtMonday"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtMonday, False)
+        Me.TxtMonday.Size = New System.Drawing.Size(134, 23)
+        Me.TxtMonday.TabIndex = 77
+        '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(13, 151)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(71, 18)
+        Me.Guna2HtmlLabel2.TabIndex = 76
+        Me.Guna2HtmlLabel2.Text = "MONDAY :"
         '
         'Guna2Button1
         '
@@ -182,9 +478,9 @@ Partial Class Schedule
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(13, 55)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(80, 18)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(76, 18)
         Me.Guna2HtmlLabel1.TabIndex = 11
-        Me.Guna2HtmlLabel1.Text = "FULL NAME :"
+        Me.Guna2HtmlLabel1.Text = "FULL NAME:"
         '
         'LblTitle
         '
@@ -200,269 +496,6 @@ Partial Class Schedule
         '
         Me.NetResize1.ParentControl = Me
         '
-        'Guna2HtmlLabel2
-        '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(13, 151)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(71, 18)
-        Me.Guna2HtmlLabel2.TabIndex = 76
-        Me.Guna2HtmlLabel2.Text = "MONDAY :"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(13, 165)
-        Me.TextBox1.Name = "TextBox1"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox1, False)
-        Me.TextBox1.Size = New System.Drawing.Size(134, 23)
-        Me.TextBox1.TabIndex = 77
-        '
-        'TextBox2
-        '
-        Me.TextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(176, 166)
-        Me.TextBox2.Name = "TextBox2"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox2, False)
-        Me.TextBox2.Size = New System.Drawing.Size(134, 23)
-        Me.TextBox2.TabIndex = 79
-        '
-        'Guna2HtmlLabel3
-        '
-        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(176, 151)
-        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(66, 18)
-        Me.Guna2HtmlLabel3.TabIndex = 78
-        Me.Guna2HtmlLabel3.Text = "TUESDAY :"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(338, 166)
-        Me.TextBox3.Name = "TextBox3"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox3, False)
-        Me.TextBox3.Size = New System.Drawing.Size(134, 23)
-        Me.TextBox3.TabIndex = 81
-        '
-        'Guna2HtmlLabel4
-        '
-        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(338, 151)
-        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(90, 18)
-        Me.Guna2HtmlLabel4.TabIndex = 80
-        Me.Guna2HtmlLabel4.Text = "WEDNESDAY :"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(500, 166)
-        Me.TextBox4.Name = "TextBox4"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox4, False)
-        Me.TextBox4.Size = New System.Drawing.Size(134, 23)
-        Me.TextBox4.TabIndex = 83
-        '
-        'Guna2HtmlLabel5
-        '
-        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(500, 151)
-        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
-        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(76, 18)
-        Me.Guna2HtmlLabel5.TabIndex = 82
-        Me.Guna2HtmlLabel5.Text = "THURSDAY :"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(13, 207)
-        Me.TextBox5.Name = "TextBox5"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox5, False)
-        Me.TextBox5.Size = New System.Drawing.Size(134, 23)
-        Me.TextBox5.TabIndex = 85
-        '
-        'Guna2HtmlLabel6
-        '
-        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(13, 193)
-        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
-        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(56, 18)
-        Me.Guna2HtmlLabel6.TabIndex = 84
-        Me.Guna2HtmlLabel6.Text = "FRIDAY :"
-        '
-        'TextBox6
-        '
-        Me.TextBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(176, 207)
-        Me.TextBox6.Name = "TextBox6"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox6, False)
-        Me.TextBox6.Size = New System.Drawing.Size(134, 23)
-        Me.TextBox6.TabIndex = 87
-        '
-        'Guna2HtmlLabel8
-        '
-        Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(176, 193)
-        Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(77, 18)
-        Me.Guna2HtmlLabel8.TabIndex = 86
-        Me.Guna2HtmlLabel8.Text = "SATURDAY :"
-        '
-        'TextBox7
-        '
-        Me.TextBox7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(338, 207)
-        Me.TextBox7.Name = "TextBox7"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox7, False)
-        Me.TextBox7.Size = New System.Drawing.Size(134, 23)
-        Me.TextBox7.TabIndex = 89
-        '
-        'Guna2HtmlLabel9
-        '
-        Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(338, 193)
-        Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
-        Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(63, 18)
-        Me.Guna2HtmlLabel9.TabIndex = 88
-        Me.Guna2HtmlLabel9.Text = "SUNDAY :"
-        '
-        'Guna2Button2
-        '
-        Me.Guna2Button2.Animated = True
-        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.BorderColor = System.Drawing.Color.White
-        Me.Guna2Button2.BorderRadius = 5
-        Me.Guna2Button2.BorderThickness = 1
-        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
-        Me.Guna2Button2.FillColor = System.Drawing.Color.Maroon
-        Me.Guna2Button2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Guna2Button2.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Location = New System.Drawing.Point(469, 14)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Guna2Button2.ShadowDecoration.Enabled = True
-        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
-        Me.Guna2Button2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.Guna2Button2.Size = New System.Drawing.Size(165, 25)
-        Me.Guna2Button2.TabIndex = 90
-        Me.Guna2Button2.Text = "ATTENDANCE"
-        '
-        'CmbPurpose
-        '
-        Me.CmbPurpose.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CmbPurpose.FormattingEnabled = True
-        Me.CmbPurpose.Items.AddRange(New Object() {"BRGY.OFFICIAL", "BRGY.STAFF", "TANOD"})
-        Me.CmbPurpose.Location = New System.Drawing.Point(13, 25)
-        Me.CmbPurpose.Name = "CmbPurpose"
-        Me.CmbPurpose.Size = New System.Drawing.Size(215, 24)
-        Me.CmbPurpose.TabIndex = 91
-        Me.CmbPurpose.Text = "SELECT POSITION"
-        '
-        'Guna2HtmlLabel10
-        '
-        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(13, 100)
-        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
-        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(43, 18)
-        Me.Guna2HtmlLabel10.TabIndex = 92
-        Me.Guna2HtmlLabel10.Text = "DATE :"
-        '
-        'Guna2Panel2
-        '
-        Me.Guna2Panel2.BorderColor = System.Drawing.Color.Maroon
-        Me.Guna2Panel2.BorderThickness = 3
-        Me.Guna2Panel2.Location = New System.Drawing.Point(13, 236)
-        Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(621, 163)
-        Me.Guna2Panel2.TabIndex = 94
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.CalendarFont = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker2.CustomFormat = "MMMM d      yyyy"
-        Me.DateTimePicker2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(50, 120)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(180, 23)
-        Me.DateTimePicker2.TabIndex = 95
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.CustomFormat = "MMMM d      yyyy"
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(262, 120)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(180, 23)
-        Me.DateTimePicker1.TabIndex = 96
-        '
-        'Guna2HtmlLabel11
-        '
-        Me.Guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(240, 124)
-        Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
-        Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(20, 18)
-        Me.Guna2HtmlLabel11.TabIndex = 97
-        Me.Guna2HtmlLabel11.Text = "TO"
-        '
-        'Guna2HtmlLabel12
-        '
-        Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(50, 107)
-        Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
-        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(40, 18)
-        Me.Guna2HtmlLabel12.TabIndex = 98
-        Me.Guna2HtmlLabel12.Text = "FROM"
-        '
-        'Guna2Button3
-        '
-        Me.Guna2Button3.Animated = True
-        Me.Guna2Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button3.BorderColor = System.Drawing.Color.White
-        Me.Guna2Button3.BorderRadius = 5
-        Me.Guna2Button3.BorderThickness = 1
-        Me.Guna2Button3.CheckedState.Parent = Me.Guna2Button3
-        Me.Guna2Button3.CustomImages.Parent = Me.Guna2Button3
-        Me.Guna2Button3.FillColor = System.Drawing.Color.Maroon
-        Me.Guna2Button3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Guna2Button3.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
-        Me.Guna2Button3.Location = New System.Drawing.Point(469, 89)
-        Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Guna2Button3.ShadowDecoration.Enabled = True
-        Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
-        Me.Guna2Button3.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.Guna2Button3.Size = New System.Drawing.Size(165, 25)
-        Me.Guna2Button3.TabIndex = 99
-        Me.Guna2Button3.Text = "BACK"
-        '
         'Schedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -476,6 +509,8 @@ Partial Class Schedule
         Me.Text = "Schedule"
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
+        Me.Guna2Panel2.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -491,20 +526,20 @@ Partial Class Schedule
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents LblTitle As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TxtSunday As TextBox
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
     Friend WithEvents Guna2HtmlLabel9 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TxtSat As TextBox
     Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TxtFriday As TextBox
     Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TxtThursday As TextBox
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TxtWednesday As TextBox
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TxtTuesday As TextBox
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtMonday As TextBox
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents CmbPurpose As ComboBox
@@ -513,5 +548,5 @@ Partial Class Schedule
     Friend WithEvents Guna2HtmlLabel11 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents DateTimePicker2 As DateTimePicker
-    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

@@ -22,6 +22,9 @@
                 LoadDocs("C:\Capstone\BSITCapstone\Docs\TempSpesout.docx")
             Case "OATH"
                 LoadDocs("C:\Capstone\BSITCapstone\Docs\TempJobOath.docx")
+            Case "healthmonitoring"
+                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempHealthMonitoring.docx")
+
 
         End Select
     End Sub

@@ -170,10 +170,10 @@ Public Class useraccount
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         BtnBack.Text = "SAVE"
-        clear()
+        Clear()
     End Sub
 
-    Sub clear()
+    Sub Clear()
         TxtUser.ResetText()
         TxtPass.ResetText()
         TxtConfirm.ResetText()

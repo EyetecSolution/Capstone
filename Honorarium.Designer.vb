@@ -23,6 +23,10 @@ Partial Class Honorarium
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Honorarium))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -31,19 +35,22 @@ Partial Class Honorarium
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.CmbPurpose = New System.Windows.Forms.ComboBox()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TxtRecieved = New System.Windows.Forms.TextBox()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Txtnet = New System.Windows.Forms.TextBox()
+        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TxtDeduct = New System.Windows.Forms.TextBox()
+        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TxtHonor = New System.Windows.Forms.TextBox()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
+        Me.Guna2Panel2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -73,8 +80,9 @@ Partial Class Honorarium
         Me.TxtName.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtName.Location = New System.Drawing.Point(13, 67)
         Me.TxtName.Name = "TxtName"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtName, False)
         Me.TxtName.Size = New System.Drawing.Size(349, 23)
-        Me.TxtName.TabIndex = 47
+        Me.TxtName.TabIndex = 1
         '
         'BtnSave
         '
@@ -141,24 +149,77 @@ Partial Class Honorarium
         '
         Me.Guna2Panel2.BorderColor = System.Drawing.Color.Maroon
         Me.Guna2Panel2.BorderThickness = 3
+        Me.Guna2Panel2.Controls.Add(Me.DataGridView1)
         Me.Guna2Panel2.Location = New System.Drawing.Point(13, 222)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
         Me.Guna2Panel2.Size = New System.Drawing.Size(621, 177)
         Me.Guna2Panel2.TabIndex = 94
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.DarkGray
+        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.ColumnHeadersHeight = 30
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 5)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1.RowHeadersVisible = False
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridView1.RowTemplate.Height = 30
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(610, 168)
+        Me.DataGridView1.TabIndex = 64
+        '
         'Guna2Panel1
         '
         Me.Guna2Panel1.BorderColor = System.Drawing.Color.Gray
         Me.Guna2Panel1.BorderThickness = 5
-        Me.Guna2Panel1.Controls.Add(Me.TextBox4)
+        Me.Guna2Panel1.Controls.Add(Me.TxtRecieved)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel5)
         Me.Guna2Panel1.Controls.Add(Me.TxtSearch)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox3)
+        Me.Guna2Panel1.Controls.Add(Me.Txtnet)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel4)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox2)
+        Me.Guna2Panel1.Controls.Add(Me.TxtDeduct)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel3)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox1)
+        Me.Guna2Panel1.Controls.Add(Me.TxtHonor)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Panel2)
         Me.Guna2Panel1.Controls.Add(Me.CmbPurpose)
@@ -173,82 +234,27 @@ Partial Class Honorarium
         Me.Guna2Panel1.Size = New System.Drawing.Size(646, 411)
         Me.Guna2Panel1.TabIndex = 29
         '
-        'Guna2HtmlLabel1
+        'TxtRecieved
         '
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(13, 51)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(80, 18)
-        Me.Guna2HtmlLabel1.TabIndex = 11
-        Me.Guna2HtmlLabel1.Text = "FULL NAME :"
+        Me.TxtRecieved.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtRecieved.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtRecieved.HideSelection = False
+        Me.TxtRecieved.Location = New System.Drawing.Point(419, 106)
+        Me.TxtRecieved.Name = "TxtRecieved"
+        Me.TxtRecieved.ReadOnly = True
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtRecieved, False)
+        Me.TxtRecieved.Size = New System.Drawing.Size(215, 23)
+        Me.TxtRecieved.TabIndex = 103
         '
-        'Guna2HtmlLabel7
+        'Guna2HtmlLabel5
         '
-        Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(21, 201)
-        Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
-        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(3, 2)
-        Me.Guna2HtmlLabel7.TabIndex = 56
-        Me.Guna2HtmlLabel7.Text = Nothing
-        '
-        'TextBox1
-        '
-        Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(13, 106)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(215, 23)
-        Me.TextBox1.TabIndex = 96
-        '
-        'Guna2HtmlLabel2
-        '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(13, 90)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(94, 18)
-        Me.Guna2HtmlLabel2.TabIndex = 95
-        Me.Guna2HtmlLabel2.Text = "HONORARIUM"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(13, 145)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(215, 23)
-        Me.TextBox2.TabIndex = 98
-        '
-        'Guna2HtmlLabel3
-        '
-        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(13, 129)
-        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(85, 18)
-        Me.Guna2HtmlLabel3.TabIndex = 97
-        Me.Guna2HtmlLabel3.Text = "DEDUCTION :"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(419, 145)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(215, 23)
-        Me.TextBox3.TabIndex = 100
-        '
-        'Guna2HtmlLabel4
-        '
-        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(419, 129)
-        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(63, 18)
-        Me.Guna2HtmlLabel4.TabIndex = 99
-        Me.Guna2HtmlLabel4.Text = "NET PAY :"
+        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(419, 90)
+        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
+        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(108, 18)
+        Me.Guna2HtmlLabel5.TabIndex = 102
+        Me.Guna2HtmlLabel5.Text = "DATE RECEIVED :"
         '
         'TxtSearch
         '
@@ -287,29 +293,91 @@ Partial Class Honorarium
         Me.TxtSearch.Size = New System.Drawing.Size(252, 29)
         Me.TxtSearch.TabIndex = 101
         '
+        'Txtnet
+        '
+        Me.Txtnet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txtnet.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtnet.HideSelection = False
+        Me.Txtnet.Location = New System.Drawing.Point(419, 145)
+        Me.Txtnet.Name = "Txtnet"
+        Me.Txtnet.ReadOnly = True
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.Txtnet, False)
+        Me.Txtnet.Size = New System.Drawing.Size(215, 23)
+        Me.Txtnet.TabIndex = 100
+        '
+        'Guna2HtmlLabel4
+        '
+        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(419, 129)
+        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(63, 18)
+        Me.Guna2HtmlLabel4.TabIndex = 99
+        Me.Guna2HtmlLabel4.Text = "NET PAY :"
+        '
+        'TxtDeduct
+        '
+        Me.TxtDeduct.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtDeduct.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtDeduct.Location = New System.Drawing.Point(13, 145)
+        Me.TxtDeduct.Name = "TxtDeduct"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtDeduct, False)
+        Me.TxtDeduct.Size = New System.Drawing.Size(215, 23)
+        Me.TxtDeduct.TabIndex = 3
+        '
+        'Guna2HtmlLabel3
+        '
+        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(13, 129)
+        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(85, 18)
+        Me.Guna2HtmlLabel3.TabIndex = 97
+        Me.Guna2HtmlLabel3.Text = "DEDUCTION :"
+        '
+        'TxtHonor
+        '
+        Me.TxtHonor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtHonor.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtHonor.Location = New System.Drawing.Point(13, 106)
+        Me.TxtHonor.Name = "TxtHonor"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtHonor, False)
+        Me.TxtHonor.Size = New System.Drawing.Size(215, 23)
+        Me.TxtHonor.TabIndex = 2
+        '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(13, 90)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(94, 18)
+        Me.Guna2HtmlLabel2.TabIndex = 95
+        Me.Guna2HtmlLabel2.Text = "HONORARIUM"
+        '
+        'Guna2HtmlLabel7
+        '
+        Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(21, 201)
+        Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
+        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(3, 2)
+        Me.Guna2HtmlLabel7.TabIndex = 56
+        Me.Guna2HtmlLabel7.Text = Nothing
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(13, 51)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(80, 18)
+        Me.Guna2HtmlLabel1.TabIndex = 11
+        Me.Guna2HtmlLabel1.Text = "FULL NAME :"
+        '
         'NetResize1
         '
         Me.NetResize1.ParentControl = Me
-        '
-        'TextBox4
-        '
-        Me.TextBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(419, 106)
-        Me.TextBox4.Name = "TextBox4"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox4, False)
-        Me.TextBox4.Size = New System.Drawing.Size(215, 23)
-        Me.TextBox4.TabIndex = 103
-        '
-        'Guna2HtmlLabel5
-        '
-        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(419, 90)
-        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
-        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(108, 18)
-        Me.Guna2HtmlLabel5.TabIndex = 102
-        Me.Guna2HtmlLabel5.Text = "DATE RECEIVED :"
         '
         'Honorarium
         '
@@ -322,6 +390,8 @@ Partial Class Honorarium
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Honorarium"
         Me.Text = "Honorarium"
+        Me.Guna2Panel2.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -338,16 +408,17 @@ Partial Class Honorarium
     Friend WithEvents CmbPurpose As ComboBox
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Txtnet As TextBox
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents TxtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TxtRecieved As TextBox
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents TxtDeduct As TextBox
+    Friend WithEvents TxtHonor As TextBox
 End Class

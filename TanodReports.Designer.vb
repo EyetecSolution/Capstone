@@ -24,20 +24,24 @@ Partial Class TanodReports
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TanodReports))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TxtMainSubject = New System.Windows.Forms.TextBox()
+        Me.TxtStatement = New System.Windows.Forms.TextBox()
+        Me.TxtDayTime = New System.Windows.Forms.TextBox()
+        Me.TxtInvolved = New System.Windows.Forms.TextBox()
+        Me.TxtLocation = New System.Windows.Forms.TextBox()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtCaseType = New System.Windows.Forms.TextBox()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.TxtName = New System.Windows.Forms.TextBox()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -45,8 +49,10 @@ Partial Class TanodReports
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -63,17 +69,17 @@ Partial Class TanodReports
         Me.Guna2Panel1.BorderColor = System.Drawing.Color.Gray
         Me.Guna2Panel1.BorderThickness = 5
         Me.Guna2Panel1.Controls.Add(Me.BtnSave)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox6)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox2)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox5)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox4)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox3)
+        Me.Guna2Panel1.Controls.Add(Me.TxtMainSubject)
+        Me.Guna2Panel1.Controls.Add(Me.TxtStatement)
+        Me.Guna2Panel1.Controls.Add(Me.TxtDayTime)
+        Me.Guna2Panel1.Controls.Add(Me.TxtInvolved)
+        Me.Guna2Panel1.Controls.Add(Me.TxtLocation)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel8)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel7)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel6)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel5)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel4)
-        Me.Guna2Panel1.Controls.Add(Me.TextBox1)
+        Me.Guna2Panel1.Controls.Add(Me.TxtCaseType)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Guna2Panel1.Controls.Add(Me.TxtName)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel1)
@@ -108,55 +114,55 @@ Partial Class TanodReports
         Me.BtnSave.TabIndex = 62
         Me.BtnSave.Text = "SAVE"
         '
-        'TextBox6
+        'TxtMainSubject
         '
-        Me.TextBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(334, 80)
-        Me.TextBox6.Name = "TextBox6"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox6, False)
-        Me.TextBox6.Size = New System.Drawing.Size(292, 23)
-        Me.TextBox6.TabIndex = 61
+        Me.TxtMainSubject.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtMainSubject.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtMainSubject.Location = New System.Drawing.Point(334, 80)
+        Me.TxtMainSubject.Name = "TxtMainSubject"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtMainSubject, False)
+        Me.TxtMainSubject.Size = New System.Drawing.Size(292, 23)
+        Me.TxtMainSubject.TabIndex = 61
         '
-        'TextBox2
+        'TxtStatement
         '
-        Me.TextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(13, 174)
-        Me.TextBox2.Name = "TextBox2"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox2, False)
-        Me.TextBox2.Size = New System.Drawing.Size(613, 23)
-        Me.TextBox2.TabIndex = 60
+        Me.TxtStatement.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtStatement.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtStatement.Location = New System.Drawing.Point(13, 174)
+        Me.TxtStatement.Name = "TxtStatement"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtStatement, False)
+        Me.TxtStatement.Size = New System.Drawing.Size(613, 23)
+        Me.TxtStatement.TabIndex = 60
         '
-        'TextBox5
+        'TxtDayTime
         '
-        Me.TextBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(334, 35)
-        Me.TextBox5.Name = "TextBox5"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox5, False)
-        Me.TextBox5.Size = New System.Drawing.Size(292, 23)
-        Me.TextBox5.TabIndex = 59
+        Me.TxtDayTime.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtDayTime.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtDayTime.Location = New System.Drawing.Point(334, 35)
+        Me.TxtDayTime.Name = "TxtDayTime"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtDayTime, False)
+        Me.TxtDayTime.Size = New System.Drawing.Size(292, 23)
+        Me.TxtDayTime.TabIndex = 59
         '
-        'TextBox4
+        'TxtInvolved
         '
-        Me.TextBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(334, 127)
-        Me.TextBox4.Name = "TextBox4"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox4, False)
-        Me.TextBox4.Size = New System.Drawing.Size(292, 23)
-        Me.TextBox4.TabIndex = 58
+        Me.TxtInvolved.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtInvolved.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtInvolved.Location = New System.Drawing.Point(334, 127)
+        Me.TxtInvolved.Name = "TxtInvolved"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtInvolved, False)
+        Me.TxtInvolved.Size = New System.Drawing.Size(292, 23)
+        Me.TxtInvolved.TabIndex = 58
         '
-        'TextBox3
+        'TxtLocation
         '
-        Me.TextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(13, 127)
-        Me.TextBox3.Name = "TextBox3"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox3, False)
-        Me.TextBox3.Size = New System.Drawing.Size(292, 23)
-        Me.TextBox3.TabIndex = 57
+        Me.TxtLocation.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtLocation.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtLocation.Location = New System.Drawing.Point(13, 127)
+        Me.TxtLocation.Name = "TxtLocation"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtLocation, False)
+        Me.TxtLocation.Size = New System.Drawing.Size(292, 23)
+        Me.TxtLocation.TabIndex = 57
         '
         'Guna2HtmlLabel8
         '
@@ -208,15 +214,15 @@ Partial Class TanodReports
         Me.Guna2HtmlLabel4.TabIndex = 52
         Me.Guna2HtmlLabel4.Text = "LUGAR NG PINANGYARIHAN :"
         '
-        'TextBox1
+        'TxtCaseType
         '
-        Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(13, 80)
-        Me.TextBox1.Name = "TextBox1"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox1, False)
-        Me.TextBox1.Size = New System.Drawing.Size(292, 23)
-        Me.TextBox1.TabIndex = 50
+        Me.TxtCaseType.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtCaseType.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCaseType.Location = New System.Drawing.Point(13, 80)
+        Me.TxtCaseType.Name = "TxtCaseType"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtCaseType, False)
+        Me.TxtCaseType.Size = New System.Drawing.Size(292, 23)
+        Me.TxtCaseType.TabIndex = 50
         '
         'Guna2HtmlLabel2
         '
@@ -309,11 +315,64 @@ Partial Class TanodReports
         Me.TxtSearch.Size = New System.Drawing.Size(252, 29)
         Me.TxtSearch.TabIndex = 37
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.DarkGray
+        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.ColumnHeadersHeight = 30
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.Location = New System.Drawing.Point(10, 328)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1.RowHeadersVisible = False
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridView1.RowTemplate.Height = 30
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(634, 135)
+        Me.DataGridView1.TabIndex = 63
+        '
         'TanodReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(654, 493)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.TxtSearch)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.Controls.Add(Me.LblTitle)
@@ -325,6 +384,7 @@ Partial Class TanodReports
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -332,23 +392,24 @@ Partial Class TanodReports
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtCaseType As TextBox
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents TxtName As TextBox
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TxtDayTime As TextBox
+    Friend WithEvents TxtInvolved As TextBox
+    Friend WithEvents TxtLocation As TextBox
     Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents LblTitle As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TxtMainSubject As TextBox
+    Friend WithEvents TxtStatement As TextBox
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
     Friend WithEvents BtnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents TxtSearch As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents DataGridView1 As DataGridView
 End Class
