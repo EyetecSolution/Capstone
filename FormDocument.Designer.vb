@@ -24,7 +24,6 @@ Partial Class FormDocument
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormDocument))
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
         Me.Btn1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Btn2 = New Guna.UI2.WinForms.Guna2Button()
@@ -35,16 +34,9 @@ Partial Class FormDocument
         Me.Btn7 = New Guna.UI2.WinForms.Guna2Button()
         Me.Btn8 = New Guna.UI2.WinForms.Guna2Button()
         Me.Btn9 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Location = New System.Drawing.Point(2, 1)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(751, 41)
-        Me.Panel1.TabIndex = 20
         '
         'NetResize1
         '
@@ -69,7 +61,7 @@ Partial Class FormDocument
         Me.Btn1.Image = CType(resources.GetObject("Btn1.Image"), System.Drawing.Image)
         Me.Btn1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Btn1.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Btn1.Location = New System.Drawing.Point(24, 68)
+        Me.Btn1.Location = New System.Drawing.Point(25, 80)
         Me.Btn1.Name = "Btn1"
         Me.Btn1.ShadowDecoration.Parent = Me.Btn1
         Me.Btn1.Size = New System.Drawing.Size(207, 68)
@@ -96,7 +88,7 @@ Partial Class FormDocument
         Me.Btn2.Image = CType(resources.GetObject("Btn2.Image"), System.Drawing.Image)
         Me.Btn2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Btn2.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Btn2.Location = New System.Drawing.Point(24, 160)
+        Me.Btn2.Location = New System.Drawing.Point(25, 172)
         Me.Btn2.Name = "Btn2"
         Me.Btn2.ShadowDecoration.Parent = Me.Btn2
         Me.Btn2.Size = New System.Drawing.Size(207, 68)
@@ -123,7 +115,7 @@ Partial Class FormDocument
         Me.Btn3.Image = CType(resources.GetObject("Btn3.Image"), System.Drawing.Image)
         Me.Btn3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Btn3.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Btn3.Location = New System.Drawing.Point(24, 252)
+        Me.Btn3.Location = New System.Drawing.Point(25, 264)
         Me.Btn3.Name = "Btn3"
         Me.Btn3.ShadowDecoration.Parent = Me.Btn3
         Me.Btn3.Size = New System.Drawing.Size(207, 68)
@@ -150,7 +142,7 @@ Partial Class FormDocument
         Me.Btn4.Image = CType(resources.GetObject("Btn4.Image"), System.Drawing.Image)
         Me.Btn4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Btn4.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Btn4.Location = New System.Drawing.Point(268, 160)
+        Me.Btn4.Location = New System.Drawing.Point(269, 172)
         Me.Btn4.Name = "Btn4"
         Me.Btn4.ShadowDecoration.Parent = Me.Btn4
         Me.Btn4.Size = New System.Drawing.Size(207, 68)
@@ -177,7 +169,7 @@ Partial Class FormDocument
         Me.Btn5.Image = CType(resources.GetObject("Btn5.Image"), System.Drawing.Image)
         Me.Btn5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Btn5.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Btn5.Location = New System.Drawing.Point(268, 68)
+        Me.Btn5.Location = New System.Drawing.Point(269, 80)
         Me.Btn5.Name = "Btn5"
         Me.Btn5.ShadowDecoration.Parent = Me.Btn5
         Me.Btn5.Size = New System.Drawing.Size(207, 68)
@@ -204,7 +196,7 @@ Partial Class FormDocument
         Me.Btn6.Image = CType(resources.GetObject("Btn6.Image"), System.Drawing.Image)
         Me.Btn6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Btn6.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Btn6.Location = New System.Drawing.Point(268, 252)
+        Me.Btn6.Location = New System.Drawing.Point(269, 264)
         Me.Btn6.Name = "Btn6"
         Me.Btn6.ShadowDecoration.Parent = Me.Btn6
         Me.Btn6.Size = New System.Drawing.Size(207, 68)
@@ -231,7 +223,7 @@ Partial Class FormDocument
         Me.Btn7.Image = CType(resources.GetObject("Btn7.Image"), System.Drawing.Image)
         Me.Btn7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Btn7.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Btn7.Location = New System.Drawing.Point(507, 252)
+        Me.Btn7.Location = New System.Drawing.Point(508, 172)
         Me.Btn7.Name = "Btn7"
         Me.Btn7.ShadowDecoration.Parent = Me.Btn7
         Me.Btn7.Size = New System.Drawing.Size(207, 68)
@@ -258,7 +250,7 @@ Partial Class FormDocument
         Me.Btn8.Image = CType(resources.GetObject("Btn8.Image"), System.Drawing.Image)
         Me.Btn8.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Btn8.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Btn8.Location = New System.Drawing.Point(507, 160)
+        Me.Btn8.Location = New System.Drawing.Point(508, 264)
         Me.Btn8.Name = "Btn8"
         Me.Btn8.ShadowDecoration.Parent = Me.Btn8
         Me.Btn8.Size = New System.Drawing.Size(207, 68)
@@ -285,13 +277,22 @@ Partial Class FormDocument
         Me.Btn9.Image = CType(resources.GetObject("Btn9.Image"), System.Drawing.Image)
         Me.Btn9.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Btn9.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Btn9.Location = New System.Drawing.Point(507, 68)
+        Me.Btn9.Location = New System.Drawing.Point(508, 80)
         Me.Btn9.Name = "Btn9"
         Me.Btn9.ShadowDecoration.Parent = Me.Btn9
         Me.Btn9.Size = New System.Drawing.Size(207, 68)
         Me.Btn9.TabIndex = 29
         Me.Btn9.Text = "OATH OF      UNDERTAKING/                  CERTIFICATION"
         Me.Btn9.TextOffset = New System.Drawing.Point(15, 0)
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Maroon
+        Me.Panel1.Location = New System.Drawing.Point(-25, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(779, 32)
+        Me.Panel1.TabIndex = 30
         '
         'FormDocument
         '
@@ -300,6 +301,7 @@ Partial Class FormDocument
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(748, 411)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Btn9)
         Me.Controls.Add(Me.Btn8)
         Me.Controls.Add(Me.Btn7)
@@ -309,7 +311,6 @@ Partial Class FormDocument
         Me.Controls.Add(Me.Btn3)
         Me.Controls.Add(Me.Btn2)
         Me.Controls.Add(Me.Btn1)
-        Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormDocument"
@@ -318,8 +319,6 @@ Partial Class FormDocument
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
     Friend WithEvents Btn9 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Btn8 As Guna.UI2.WinForms.Guna2Button
@@ -330,4 +329,5 @@ Partial Class FormDocument
     Friend WithEvents Btn3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Btn2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Btn1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel1 As Panel
 End Class

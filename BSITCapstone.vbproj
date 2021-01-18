@@ -56,29 +56,11 @@
     <Reference Include="Guna.UI2">
       <HintPath>DLL\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Softgroup.NetResize">
       <HintPath>..\..\..\..\..\Program Files (x86)\Softgroup .Net Forms Resize\Softgroup.NetResize.dll</HintPath>
@@ -149,6 +131,12 @@
     <Compile Include="BClearance.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BusinessClearance.Designer.vb">
+      <DependentUpon>BusinessClearance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessClearance.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dashboard.Designer.vb">
       <DependentUpon>Dashboard.vb</DependentUpon>
     </Compile>
@@ -177,6 +165,12 @@
       <DependentUpon>HealthMonitoring.vb</DependentUpon>
     </Compile>
     <Compile Include="HealthMonitoring.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Honorarium.Designer.vb">
+      <DependentUpon>Honorarium.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Honorarium.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Indigency.Designer.vb">
@@ -215,12 +209,6 @@
     <Compile Include="Payment.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PreviewReport.Designer.vb">
-      <DependentUpon>PreviewReport.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PreviewReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="PrintPreview.Designer.vb">
       <DependentUpon>PrintPreview.vb</DependentUpon>
     </Compile>
@@ -233,10 +221,22 @@
     <Compile Include="ReportsList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportViewer.Designer.vb">
+      <DependentUpon>ReportViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Residency.Designer.vb">
       <DependentUpon>Residency.vb</DependentUpon>
     </Compile>
     <Compile Include="Residency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schedule.Designer.vb">
+      <DependentUpon>Schedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SoloParent.Designer.vb">
@@ -257,16 +257,22 @@
     <Compile Include="Spes1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TanodReports.Designer.vb">
+      <DependentUpon>TanodReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TanodReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="useraccount.Designer.vb">
       <DependentUpon>useraccount.vb</DependentUpon>
     </Compile>
     <Compile Include="useraccount.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="residents.Designer.vb">
-      <DependentUpon>residents.vb</DependentUpon>
+    <Compile Include="Residents.Designer.vb">
+      <DependentUpon>Residents.vb</DependentUpon>
     </Compile>
-    <Compile Include="residents.vb">
+    <Compile Include="Residents.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PrintResidentInformation.Designer.vb">
@@ -321,6 +327,9 @@
     <EmbeddedResource Include="BClearance.resx">
       <DependentUpon>BClearance.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BusinessClearance.resx">
+      <DependentUpon>BusinessClearance.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CovidCases.resx">
       <DependentUpon>CovidCases.vb</DependentUpon>
     </EmbeddedResource>
@@ -335,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HealthMonitoring.resx">
       <DependentUpon>HealthMonitoring.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Honorarium.resx">
+      <DependentUpon>Honorarium.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Indigency.resx">
       <DependentUpon>Indigency.vb</DependentUpon>
@@ -354,20 +366,23 @@
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreviewReport.resx">
-      <DependentUpon>PreviewReport.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PrintPreview.resx">
       <DependentUpon>PrintPreview.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsList.resx">
       <DependentUpon>ReportsList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportViewer.resx">
+      <DependentUpon>ReportViewer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Residency.resx">
       <DependentUpon>Residency.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="residents.resx">
-      <DependentUpon>residents.vb</DependentUpon>
+    <EmbeddedResource Include="Residents.resx">
+      <DependentUpon>Residents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schedule.resx">
+      <DependentUpon>Schedule.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SoloParent.resx">
       <DependentUpon>SoloParent.vb</DependentUpon>
@@ -377,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Spes1.resx">
       <DependentUpon>Spes1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TanodReports.resx">
+      <DependentUpon>TanodReports.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="useraccount.resx">
       <DependentUpon>useraccount.vb</DependentUpon>

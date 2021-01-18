@@ -27,6 +27,7 @@ Partial Class BClearance
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
         Me.TxtName = New System.Windows.Forms.TextBox()
         Me.TxtAddress = New System.Windows.Forms.TextBox()
+        Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.TxtCtc = New Guna.UI2.WinForms.Guna2TextBox()
@@ -49,7 +50,6 @@ Partial Class BClearance
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -87,6 +87,17 @@ Partial Class BClearance
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtAddress, False)
         Me.TxtAddress.Size = New System.Drawing.Size(529, 27)
         Me.TxtAddress.TabIndex = 48
+        '
+        'LblTitle
+        '
+        Me.LblTitle.BackColor = System.Drawing.Color.Transparent
+        Me.LblTitle.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTitle.Location = New System.Drawing.Point(33, 45)
+        Me.LblTitle.Name = "LblTitle"
+        Me.NetResize1.SetResizeFont(Me.LblTitle, False)
+        Me.LblTitle.Size = New System.Drawing.Size(360, 29)
+        Me.LblTitle.TabIndex = 53
+        Me.LblTitle.Text = "BARANGAY CLEARANCE FORM"
         '
         'BtnSave
         '
@@ -265,18 +276,20 @@ Partial Class BClearance
         Me.BtnS.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnS.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnS.HoverState.Parent = Me.BtnS
-        Me.BtnS.Location = New System.Drawing.Point(157, 17)
+        Me.BtnS.Location = New System.Drawing.Point(116, 17)
         Me.BtnS.Name = "BtnS"
         Me.BtnS.ShadowDecoration.Enabled = True
         Me.BtnS.ShadowDecoration.Parent = Me.BtnS
         Me.BtnS.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.BtnS.Size = New System.Drawing.Size(78, 33)
+        Me.BtnS.Size = New System.Drawing.Size(78, 23)
         Me.BtnS.TabIndex = 42
         Me.BtnS.Text = "SAVE"
         '
         'BtnPreview
         '
         Me.BtnPreview.CheckedState.Parent = Me.BtnPreview
+        Me.BtnPreview.CustomBorderColor = System.Drawing.Color.Transparent
+        Me.BtnPreview.CustomBorderThickness = New System.Windows.Forms.Padding(1)
         Me.BtnPreview.CustomImages.Parent = Me.BtnPreview
         Me.BtnPreview.FillColor = System.Drawing.Color.Maroon
         Me.BtnPreview.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -285,14 +298,14 @@ Partial Class BClearance
         Me.BtnPreview.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnPreview.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnPreview.HoverState.Parent = Me.BtnPreview
-        Me.BtnPreview.Location = New System.Drawing.Point(6, 16)
+        Me.BtnPreview.Location = New System.Drawing.Point(6, 17)
         Me.BtnPreview.Name = "BtnPreview"
         Me.BtnPreview.ShadowDecoration.Enabled = True
         Me.BtnPreview.ShadowDecoration.Parent = Me.BtnPreview
         Me.BtnPreview.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.BtnPreview.Size = New System.Drawing.Size(145, 33)
+        Me.BtnPreview.Size = New System.Drawing.Size(104, 23)
         Me.BtnPreview.TabIndex = 43
-        Me.BtnPreview.Text = "PRINT PREVIEW"
+        Me.BtnPreview.Text = "PREVIEW"
         '
         'Guna2Button3
         '
@@ -305,12 +318,12 @@ Partial Class BClearance
         Me.Guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Guna2Button3.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
-        Me.Guna2Button3.Location = New System.Drawing.Point(241, 17)
+        Me.Guna2Button3.Location = New System.Drawing.Point(200, 17)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.ShadowDecoration.Enabled = True
         Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
         Me.Guna2Button3.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.Guna2Button3.Size = New System.Drawing.Size(75, 33)
+        Me.Guna2Button3.Size = New System.Drawing.Size(75, 23)
         Me.Guna2Button3.TabIndex = 44
         Me.Guna2Button3.Text = "BACK"
         '
@@ -352,9 +365,9 @@ Partial Class BClearance
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox1.Location = New System.Drawing.Point(311, 336)
+        Me.GroupBox1.Location = New System.Drawing.Point(356, 339)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(325, 54)
+        Me.GroupBox1.Size = New System.Drawing.Size(286, 49)
         Me.GroupBox1.TabIndex = 49
         Me.GroupBox1.TabStop = False
         '
@@ -458,17 +471,6 @@ Partial Class BClearance
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(93, 21)
         Me.Guna2HtmlLabel1.TabIndex = 11
         Me.Guna2HtmlLabel1.Text = "FULL NAME :"
-        '
-        'LblTitle
-        '
-        Me.LblTitle.BackColor = System.Drawing.Color.Transparent
-        Me.LblTitle.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTitle.Location = New System.Drawing.Point(33, 45)
-        Me.LblTitle.Name = "LblTitle"
-        Me.NetResize1.SetResizeFont(Me.LblTitle, False)
-        Me.LblTitle.Size = New System.Drawing.Size(360, 29)
-        Me.LblTitle.TabIndex = 53
-        Me.LblTitle.Text = "BARANGAY CLEARANCE FORM"
         '
         'BClearance
         '

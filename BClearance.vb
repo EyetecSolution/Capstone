@@ -12,10 +12,34 @@ Public Class BClearance
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+
+        If BCHistory.catTitle = "Barangay Clearance" Then
+            BCHistory.LoadBclearance()
+        End If
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
     End Sub
+    Async Function UpdateQuery() As Task(Of Integer)
+        Dim frmat As String = "M/d/yyyy"
+        Dim i As Integer
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
 
+        Using mycmd As New OleDbCommand("UPDATE tbl_clearance
+                                         SET FULLNAME= '" & TxtName.Text & "',
+                                             FULLADDRESS= '" & TxtAddress.Text & "',
+                                             PURPOSE= '" & CmbPurpose.SelectedItem & "',
+                                             DATEISSUED= '" & DateTimePicker2.Value.ToString(frmat) & "',
+                                             CTCNO='" & TxtCtc.Text & "',
+                                             ORNO= '" & TxtOR.Text & "'
+                                         WHERE ID=@ID", con)
+            mycmd.Parameters.AddWithValue("ID", BCHistory.id)
+
+            i = Await mycmd.ExecuteNonQueryAsync
+        End Using
+        Return i
+    End Function
     Private Async Sub BtnS_Click(sender As Object, e As EventArgs) Handles BtnS.Click
         If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtAddress.Text) Or String.IsNullOrEmpty(TxtCtc.Text) Or String.IsNullOrEmpty(TxtOR.Text) Then
             MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -23,12 +47,19 @@ Public Class BClearance
         End If
 
         Try
-            Await InsertQuery()
-            MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempClearance.docx")
-            ResetTextField()
+            If BtnS.Text = "SAVE" Then
+                Await InsertQuery()
+                MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempClearance.docx")
+                ResetTextField()
+            Else
+                Await UpdateQuery()
+                MessageBox.Show("Update successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempClearance.docx")
+                ResetTextField()
+            End If
         Catch ex As Exception
-            MessageBox.Show("Database Error occured: Please contact your software developer in order to fix this issue", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message)
         End Try
 
 
@@ -48,8 +79,9 @@ Public Class BClearance
     Private Sub UpdateWordDocs(sPath As String)
         Dim dtFormat As String = "MM/d/yyyy"
         Dim monthFrmat As String = "MMMM"
-        Dim objWordApp = New Word.Application
-        objWordApp.Visible = False
+        Dim objWordApp = New Word.Application With {
+            .Visible = False
+        }
         Dim wdDoc As Word.Document = objWordApp.Documents.Open(sPath, [ReadOnly]:=False)
         wdDoc = objWordApp.ActiveDocument
 
@@ -144,7 +176,6 @@ Public Class BClearance
     Private Sub TxtValidity_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtValidity.KeyPress
         e.Handled = True
     End Sub
-
 
 
 End Class

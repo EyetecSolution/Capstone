@@ -1,12 +1,32 @@
 ﻿Imports System.Data.OleDb
 
-Public Class residents
+Public Class Residents
 
     Public id As Integer
+    Public ResidentName, ResidentAddress As String
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
+    Public Async Function RetrieveData1() As Task
+
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
 
 
-    Private Async Sub loadData()
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_residents 
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                ResidentName = myReader("FULLNAME")
+                ResidentAddress = myReader("FULLADDRESS")
+            End If
+        End Using
+
+    End Function
+
+    Private Async Sub LoadData()
         Dim sql As String = "SELECT ID, FULLNAME, FULLADDRESS, BIRTHPLACE, BIRTHDATE, AGE, GENDER, CIVILSTATUS, CITIZENSHIP, OCCUPATION
                              FROM tbl_residents"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
@@ -59,23 +79,7 @@ Public Class residents
         Return dt
     End Function
 
-    Public Async Function RetrieveClearance() As Task
-        If con.State = ConnectionState.Closed Then
-            con.Open()
-        End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_residents 
-                                         WHERE ID= @ID", con)
-            mycmd.Parameters.AddWithValue("@ID", id)
-            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
-            If myReader.Read Then
-                BClearance.TxtName.Text = myReader("FULLNAME")
-                BClearance.TxtAddress.Text = myReader("FULLADDRESS")
-            End If
-        End Using
-
-    End Function
 
     Public Async Function RetrieveData() As Task
         If con.State = ConnectionState.Closed Then
@@ -124,7 +128,7 @@ Public Class residents
         Dashboard.OpenFormChild(AddNewResident)
 
         AddNewResident.BtnSave.Text = "UPDATE"
-        AddNewResident.LblHeader2.Text = "UPDATE INFORMATION"
+
         Await RetrieveData()
     End Sub
 
@@ -156,8 +160,8 @@ Public Class residents
         DataGridView1.DataSource = dtsample
     End Sub
 
-    Private Sub residents_Load(sender As Object, e As EventArgs) Handles Me.Load
-        loadData()
+    Private Sub Residents_Load(sender As Object, e As EventArgs) Handles Me.Load
+        LoadData()
         Dgv_rowstyle()
     End Sub
 
@@ -166,11 +170,69 @@ Public Class residents
 
     End Sub
 
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
     Private Async Sub BtnUse_Click(sender As Object, e As EventArgs) Handles BtnUse.Click
         BtnUse.Visible = False
-        Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(BClearance)
-        Await RetrieveClearance()
+        Select Case BCHistory.catTitle
+            Case "Barangay Clearance"
+                Dashboard.activefrm.Close()
+                Dashboard.OpenFormChild(BClearance)
+                Await RetrieveData1()
+                BClearance.TxtName.Text = ResidentName
+                BClearance.TxtAddress.Text = ResidentAddress
+            Case "businessc"
+                Dashboard.activefrm.Close()
+                Dashboard.OpenFormChild(BClearance)
+                Await RetrieveData1()
+                BClearance.TxtName.Text = ResidentName
+                BClearance.TxtAddress.Text = ResidentAddress
+            Case "indigency"
+                Dashboard.activefrm.Close()
+                Dashboard.OpenFormChild(Indigency)
+                Await RetrieveData1()
+                Indigency.TxtName.Text = ResidentName
+                Indigency.TxtAddress.Text = ResidentAddress
+            Case "non-residency"
+                Dashboard.activefrm.Close()
+                Dashboard.OpenFormChild(NonResidency)
+                Await RetrieveData1()
+                NonResidency.TxtName.Text = ResidentName
+                NonResidency.TxtAddress.Text = ResidentAddress
+            Case "residency"
+                Dashboard.activefrm.Close()
+                Dashboard.OpenFormChild(Residency)
+                Await RetrieveData1()
+                Residency.TxtName.Text = ResidentName
+                Residency.TxtAddress.Text = ResidentAddress
+            Case "solo-parent"
+                Dashboard.activefrm.Close()
+                Dashboard.OpenFormChild(SoloParent)
+                Await RetrieveData1()
+                SoloParent.TxtName.Text = ResidentName
+                SoloParent.TxtAddress.Text = ResidentAddress
+            Case "OATH"
+                Dashboard.activefrm.Close()
+                Dashboard.OpenFormChild(OATH)
+                Await RetrieveData1()
+                OATH.TxtName.Text = ResidentName
+                OATH.TxtAddress.Text = ResidentAddress
+            Case "SPES"
+                Dashboard.activefrm.Close()
+                Dashboard.OpenFormChild(Spes)
+                Await RetrieveData1()
+                Spes.TxtName.Text = ResidentName
+                Spes.TxtAddress.Text = ResidentAddress
+            Case "SPES1"
+                Dashboard.activefrm.Close()
+                Dashboard.OpenFormChild(Spes1)
+                Await RetrieveData1()
+                Spes1.TxtName.Text = ResidentName
+                Spes1.TxtAddress.Text = ResidentAddress
+
+        End Select
     End Sub
 
 End Class

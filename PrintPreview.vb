@@ -6,6 +6,8 @@
         Select Case checkLoad
             Case "BClearance"
                 LoadDocs("C:\Capstone\BSITCapstone\Docs\TempClearance.docx")
+            Case "businessc"
+                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempBusinessC.docx")
             Case "Indigency"
                 LoadDocs("C:\Capstone\BSITCapstone\Docs\TempIndigency.docx")
             Case "Residency"

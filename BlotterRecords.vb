@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Public Class BlotterRecords
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
-
+    Public id As Integer
 
     Public Async Sub LoadMe(sql As String)
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
@@ -16,7 +16,6 @@ Public Class BlotterRecords
         DataGridView1.Columns("FILINGDATE").Width = 250
         DataGridView1.Columns("SCHEDULE").Width = 350
         DataGridView1.Columns("BYWHOM").Width = 250
-        DataGridView1.Columns("print").DisplayIndex = 0
 
 
     End Sub
@@ -101,18 +100,6 @@ Public Class BlotterRecords
         DataGridView1.DataSource = dtsample
     End Sub
 
-    Private Sub Guna2HtmlLabel10_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel10.Click
-
-    End Sub
-
-    Private Sub Guna2HtmlLabel7_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel7.Click
-
-    End Sub
-
-    Private Sub CmbGender_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbGender.SelectedIndexChanged
-
-    End Sub
-
     Private Sub CmbGender_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CmbGender.KeyPress
         e.Handled = True
     End Sub
@@ -134,4 +121,45 @@ Public Class BlotterRecords
         End If
     End Sub
 
+
+    Private Async Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Dim index As Integer
+        Try
+
+            index = e.RowIndex
+            If index = -1 Then
+                Exit Sub
+            Else
+                Dim selectedRow As DataGridViewRow
+                selectedRow = DataGridView1.Rows(index)
+                id = selectedRow.Cells(0).Value
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Await RetrieveData()
+
+    End Sub
+
+    Public Async Function RetrieveData() As Task
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_blotter
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                TxtName.Text = myReader("FULLNAME")
+                TxtAddress.Text = myReader("FULLADDRESS")
+                TxtDescription.Text = myReader("DESCRIPTION")
+                TxtAge.Text = myReader("AGE")
+                CmbGender.Text = myReader("GENDER")
+                TxtWhom.Text = myReader("BYWHOM")
+
+            End If
+        End Using
+    End Function
 End Class

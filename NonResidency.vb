@@ -12,14 +12,33 @@ Public Class NonResidency
         End If
 
         Using mycmd As New OleDbCommand("INSERT INTO tbl_nonresidency(FULLNAME,FULLADDRESS,DATEISSUED,FEES,ISSUEDAT) 
-                                         VALUES(@FULLNAME, @FULLADDRESS,@DATEISSUED)", con)
+                                         VALUES(@FULLNAME, @FULLADDRESS,@DATEISSUED, @FEES, @ISSUEDAT)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("DATEISSUED", DateTimePicker2.Value.ToString(dtFrmat))
             mycmd.Parameters.AddWithValue("FEES", TxtAmount.Text)
-            mycmd.Parameters.AddWithValue("ISSUEDAT", Txtissued.Text)
+            mycmd.Parameters.AddWithValue("ISSUEDAT", TxtIssued.Text)
 
 
+
+            i = Await mycmd.ExecuteNonQueryAsync
+        End Using
+        Return i
+    End Function
+
+    Async Function UpdateQuery() As Task(Of Integer)
+        Dim frmat As String = "M/d/yyyy"
+        Dim i As Integer
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("UPDATE tbl_nonresidency
+                                         SET FULLNAME= '" & TxtName.Text & "',
+                                             FULLADDRESS= '" & TxtAddress.Text & "',
+                                             DATEISSUED= '" & DateTimePicker2.Value & "'
+                                         WHERE ID=@ID", con)
+            mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
@@ -67,15 +86,25 @@ Public Class NonResidency
             MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
-
-        Try
-            Await InsertQuery()
-            MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempNonresidency.docx")
-            ResetTextField()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        If BtnS.Text = "SAVE" Then
+            Try
+                Await InsertQuery()
+                MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempNonresidency.docx")
+                ResetTextField()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        Else
+            Try
+                Await UpdateQuery()
+                MessageBox.Show("Update successfully.", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempNonresidency.docx")
+                ResetTextField()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End If
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
@@ -84,20 +113,16 @@ Public Class NonResidency
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        If BCHistory.catTitle = "non-residency" Then
+            BCHistory.LoadNonRes()
+        End If
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
     End Sub
 
 
-    Private Sub Txtissued_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txtissued.KeyPress
-        e.Handled = True
-    End Sub
-
-    Private Sub TxtAmount_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtAmount.KeyPress
-        e.Handled = True
-    End Sub
     Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
-        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
@@ -106,5 +131,13 @@ Public Class NonResidency
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(residents)
         residents.BtnUse.Visible = True
+    End Sub
+    Private Sub TxtAmount_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtAmount.KeyPress
+        e.Handled = True
+    End Sub
+
+
+    Private Sub TxtIssued_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtIssued.KeyPress
+        e.Handled = True
     End Sub
 End Class

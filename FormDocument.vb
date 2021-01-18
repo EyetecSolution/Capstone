@@ -41,14 +41,16 @@
     End Sub
 
     Private Sub Btn4_Click(sender As Object, e As EventArgs) Handles Btn4.Click
+        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF RESIDENCY CLAIMED"
         BCHistory.catTitle = "residency"
+        BCHistory.BtnPayment.Visible = True
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
-        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF RESIDENCY CLAIMED"
 
     End Sub
 
     Private Sub Btn5_Click(sender As Object, e As EventArgs) Handles Btn5.Click
+        BCHistory.BtnPayment.Visible = True
         BCHistory.catTitle = "non-residency"
         BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF NON-RESIDENCY CLAIMED"
         Dashboard.activefrm.Close()
@@ -58,6 +60,7 @@
     End Sub
 
     Private Sub Btn6_Click(sender As Object, e As EventArgs) Handles Btn6.Click
+        BCHistory.BtnPayment.Visible = True
         BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF SOLO PARENT CLAIMED"
         BCHistory.catTitle = "solo-parent"
         Dashboard.activefrm.Close()
@@ -66,27 +69,33 @@
     End Sub
 
     Private Sub Btn7_Click(sender As Object, e As EventArgs) Handles Btn7.Click
-        BCHistory.catTitle = "SPES1"
+        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF SPES(for school youth) CLAIMED"
+        BCHistory.catTitle = "SPES"
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
-        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF SPES(for school youth) CLAIMED"
 
     End Sub
 
     Private Sub Btn8_Click(sender As Object, e As EventArgs) Handles Btn8.Click
-        BCHistory.catTitle = "SPES"
+        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF SPES(for out of school youth) CLAIMED"
+        BCHistory.catTitle = "SPES1"
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
-        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF SPES(for out of school youth) CLAIMED"
 
     End Sub
 
     Private Sub Btn9_Click(sender As Object, e As EventArgs) Handles Btn9.Click
+        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF OATH UNDERTAKING/CERTIFICATION CLAIMED"
         BCHistory.catTitle = "OATH"
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
-        BCHistory.LblTitle.Text = "LIST OF CERTIFICATE OF OATH UNDERTAKING/CERTIFICATION CLAIMED"
     End Sub
 
+    Private Sub Btn2_Click(sender As Object, e As EventArgs) Handles Btn2.Click
+        BCHistory.LblTitle.Text = "LIST OF BUSINESS CLEARANCE CLAIMED"
+        BCHistory.catTitle = "businessc"
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BCHistory)
+    End Sub
 
 End Class

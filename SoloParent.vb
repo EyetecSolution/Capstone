@@ -19,8 +19,28 @@ Public Class SoloParent
                                          VALUES(@FULLNAME, @FULLADDRESS, @NOOFCHILDREND, @DATEISSUED)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
-            mycmd.Parameters.AddWithValue("NOOFCHILDREN", TxtChild.Text)
+            mycmd.Parameters.AddWithValue("NOOFCHILDREN", TxtChildNo.Text)
             mycmd.Parameters.AddWithValue("DATEISSUED", DateTimePicker2.Value.ToString(dtFrmat))
+
+            i = Await mycmd.ExecuteNonQueryAsync
+        End Using
+        Return i
+    End Function
+
+    Async Function UpdateQuery() As Task(Of Integer)
+        Dim i As Integer
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("UPDATE tbl_soloparent
+                                         SET FULLNAME= '" & TxtName.Text & "',
+                                             FULLADDRESS= '" & TxtAddress.Text & "',
+                                             NOOFCHILDREN= '" & TxtChildNo.Text & "',
+                                             DATEISSUED='" & DateTimePicker2.Value & "'
+                                             
+                                         WHERE ID=@ID", con)
+            mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
@@ -44,15 +64,16 @@ Public Class SoloParent
     Private Sub UpdateWordDocs(sPath As String)
         Dim dtFormat As String = "MM/d/yyyy"
         Dim monthFrmat As String = "MMMM"
-        Dim objWordApp = New Word.Application
-        objWordApp.Visible = False
+        Dim objWordApp = New Word.Application With {
+            .Visible = False
+        }
         Dim wdDoc As Word.Document = objWordApp.Documents.Open(sPath, [ReadOnly]:=False)
         wdDoc = objWordApp.ActiveDocument
 
         UpdateBookMark("name", TxtName.Text.Trim, wdDoc)
-        UpdateBookMark("childCount", TxtChild.Text.Trim, wdDoc)
+        UpdateBookMark("childCount", TxtChildNo.Text.Trim, wdDoc)
         UpdateBookMark("address", TxtAddress.Text.Trim, wdDoc)
-        UpdateBookMark("day", $"{DateTimePicker2.Value.Day.ToString()}th", wdDoc)
+        UpdateBookMark("day", $"{DateTimePicker2.Value.Day}th", wdDoc)
         UpdateBookMark("myear", DateTimePicker2.Value.ToString("Y").ToUpper, wdDoc)
 
 
@@ -66,19 +87,30 @@ Public Class SoloParent
     End Sub
 
     Private Async Sub BtnS_Click(sender As Object, e As EventArgs) Handles BtnS.Click
-        If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtAddress.Text) Or String.IsNullOrEmpty(TxtChild.Text) Then
+        If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtAddress.Text) Or String.IsNullOrEmpty(TxtChildNo.Text) Then
             MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
-        Try
-            Await InsertQuery()
-            MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempSoloparent.docx")
-            ResetTextField()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        If BtnS.Text = "SAVE" Then
+            Try
+                Await InsertQuery()
+                MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempSoloparent.docx")
+                ResetTextField()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        Else
+            Try
+                Await UpdateQuery()
+                MessageBox.Show("UpdateQuery successfully.", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempSoloparent.docx")
+                ResetTextField()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End If
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
@@ -87,9 +119,36 @@ Public Class SoloParent
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        If BCHistory.catTitle = "solo-parent" Then
+            BCHistory.LoadSoloParent()
+        End If
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
     End Sub
 
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
 
+    Private Sub TxtChildNo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtChildNo.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(residents)
+        residents.BtnUse.Visible = True
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
+        e.Handled = True
+    End Sub
 End Class

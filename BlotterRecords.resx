@@ -141,18 +141,4 @@
   <metadata name="NetResize1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="print.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="print.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAASJJREFUSEtj
-        GJ6g//R3h/6TPxtIwkA9UO2EAUjDhFM//5OCQXqg2gmDoW2Bk5NTQ2bbPKyG4MMgPSC9UGMwQUJCAkdS
-        UlJaeHj4kqSSpgvFU9Y/IAWD9ID1As3Izc1lhxqLAImJiWuB+D+V8GqosQgAFPyJpohk7NCf+d+hLwPE
-        /gE1FgHQFVOKocYiADZFlGCosQgQEBDwn5oYaiwCAJMYKJlRDUONRQCYhJ2d3X8jIyOyMEgvQQssLCz+
-        G6f2/nda+pUkDNID0ovPgp8wSQpyMgxjJlOg4FqYAmQLJMsu4cWhC55iswAzozk4OHA4OjqmASXLy+ft
-        3w2zgFgM0gPSCzLD09MTs6hABsilKTZXgzDM5TA8eIprEKB5lTmEAAMDADO3ZoZSNv/iAAAAAElFTkSu
-        QmCC
-</value>
-  </data>
 </root>

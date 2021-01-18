@@ -9,4 +9,24 @@
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(Organizational)
     End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(HealthMonitoring)
+    End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(TanodReports)
+    End Sub
+
+    Private Sub Btn1_Click_1(sender As Object, e As EventArgs) Handles Btn1.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(Schedule)
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(Honorarium)
+    End Sub
 End Class

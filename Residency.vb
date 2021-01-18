@@ -10,15 +10,47 @@ Public Class Residency
             Exit Sub
         End If
 
-        Try
-            Await InsertQuery()
-            MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempResidency.docx")
-            ResetTextField()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        If BtnS.Text = "SAVE" Then
+            Try
+                Await InsertQuery()
+                MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempResidency.docx")
+                ResetTextField()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        Else
+            Try
+                Await UpdateQuery()
+                MessageBox.Show("Update successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempResidency.docx")
+                ResetTextField()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End If
+
     End Sub
+
+    Async Function UpdateQuery() As Task(Of Integer)
+        Dim frmat As String = "M/d/yyyy"
+        Dim i As Integer
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("UPDATE tbl_residency
+                                         SET FULLNAME= '" & TxtName.Text & "',
+                                             FULLADDRESS= '" & TxtAddress.Text & "',
+                                             PURPOSE= '" & TxtPurpose.Text & "',
+                                             DATEISSUED='" & DateTimePicker2.Value & "'
+                                         WHERE ID=@ID", con)
+            mycmd.Parameters.AddWithValue("ID", BCHistory.id)
+
+            i = Await mycmd.ExecuteNonQueryAsync
+        End Using
+        Return i
+    End Function
 
     Async Function InsertQuery() As Task(Of Integer)
         Dim dtFrmat As String = "MM/d/yyyy"
@@ -27,12 +59,13 @@ Public Class Residency
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_residency(FULLNAME,FULLADDRESS, PURPOSE, DATEISSUED) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @PURPOSE, @DATEISSUED)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_residency(FULLNAME,FULLADDRESS, PURPOSE, DATEISSUED, FEES) 
+                                         VALUES(@FULLNAME, @FULLADDRESS, @PURPOSE, @DATEISSUED, @FEES)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("PURPOSE", TxtPurpose.Text)
             mycmd.Parameters.AddWithValue("DATEISSUED", DateTimePicker2.Value.ToString(dtFrmat))
+            mycmd.Parameters.AddWithValue("FEES", TxtAmount.Text)
 
 
             i = Await mycmd.ExecuteNonQueryAsync
@@ -64,7 +97,8 @@ Public Class Residency
         wdDoc = objWordApp.ActiveDocument
 
         UpdateBookMark("name1", TxtName.Text.Trim, wdDoc)
-        UpdateBookMark("name2", TxtAddress.Text.Trim, wdDoc)
+        UpdateBookMark("name2", TxtName.Text.Trim, wdDoc)
+        UpdateBookMark("address", TxtAddress.Text.Trim, wdDoc)
         UpdateBookMark("purpose", TxtPurpose.Text.Trim, wdDoc)
         UpdateBookMark("day", $"{DateTimePicker2.Value.Day.ToString()}th", wdDoc)
         UpdateBookMark("myear", $"{DateTimePicker2.Value.ToString("Y").ToUpper}", wdDoc)
@@ -84,6 +118,21 @@ Public Class Residency
     End Sub
 
     Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
+        residents.BtnUse.Visible = True
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(residents)
+    End Sub
+
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        If BCHistory.catTitle = "residency" Then
+            BCHistory.LoadRes()
+        End If
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
     End Sub

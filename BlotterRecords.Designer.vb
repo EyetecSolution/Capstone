@@ -53,7 +53,6 @@ Partial Class BlotterRecords
         Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.print = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -313,6 +312,7 @@ Partial Class BlotterRecords
         Me.TxtAge.HoverState.Parent = Me.TxtAge
         Me.TxtAge.Location = New System.Drawing.Point(514, 30)
         Me.TxtAge.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.TxtAge.MaxLength = 3
         Me.TxtAge.Name = "TxtAge"
         Me.TxtAge.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtAge.PlaceholderText = ""
@@ -461,7 +461,6 @@ Partial Class BlotterRecords
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 30
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.print})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -496,16 +495,6 @@ Partial Class BlotterRecords
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(646, 147)
         Me.DataGridView1.TabIndex = 26
-        '
-        'print
-        '
-        Me.print.HeaderText = ""
-        Me.print.Image = CType(resources.GetObject("print.Image"), System.Drawing.Image)
-        Me.print.Name = "print"
-        Me.print.ReadOnly = True
-        Me.print.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.print.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.print.Width = 30
         '
         'Guna2Panel2
         '
@@ -585,7 +574,6 @@ Partial Class BlotterRecords
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents BtnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents TxtDescription As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents print As DataGridViewImageColumn
     Friend WithEvents TxtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents DateTimePicker1 As DateTimePicker

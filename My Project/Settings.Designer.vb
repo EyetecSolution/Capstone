@@ -66,6 +66,16 @@ Namespace My
                 Me("strCon") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Dbase\IMSDbase.mdb")>  _
+        Public ReadOnly Property IMSDbaseConnectionString() As String
+            Get
+                Return CType(Me("IMSDbaseConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

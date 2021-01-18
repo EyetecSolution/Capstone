@@ -1,9 +1,9 @@
 ﻿Imports System.Data.OleDb
 Public Class BCHistory
     Public catTitle As String
-    Public id As Integer
+    Public id As Integer = 1
 
-    Public Async Function RetrieveData() As Task
+    Public Async Function PaymentDetails(sql As String) As Task
         If con.State = ConnectionState.Closed Then
             con.Open()
         End If
@@ -11,9 +11,7 @@ Public Class BCHistory
 
 
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_clearance 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand(sql, con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -21,6 +19,204 @@ Public Class BCHistory
                 Payment.TxtAddress.Text = myReader("FULLADDRESS")
                 Payment.TxtDate.Text = myReader("DATEISSUED")
                 Payment.TxtAmount.Text = Format(myReader("FEES"), "0.00")
+            End If
+        End Using
+
+    End Function
+
+    Public Async Function RetrieveDataBarangayC(id As Integer) As Task
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_clearance 
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                BClearance.TxtName.Text = myReader("FULLNAME")
+                BClearance.TxtAddress.Text = myReader("FULLADDRESS")
+                BClearance.CmbPurpose.Text = myReader("PURPOSE")
+                BClearance.CmbPurpose.Text = myReader("DATEISSUED")
+                BClearance.TxtCtc.Text = myReader("CTCNO")
+                BClearance.TxtOR.Text = myReader("ORNO")
+
+            End If
+        End Using
+
+    End Function
+
+    Public Async Function RetrieveDataBusiness(id As Integer) As Task
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_business 
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                BusinessClearance.TxtName.Text = myReader("FULLNAME")
+                BusinessClearance.TxtBusinessname.Text = myReader("BUSINESSNAME")
+                BusinessClearance.TxtBusinesslocation.Text = myReader("BUSINESSLOCATION")
+                BusinessClearance.DateTimePicker2.Value = myReader("DATEISSUED")
+                BusinessClearance.TxtOr.Text = myReader("ORNO")
+                BusinessClearance.TxtCtc.Text = myReader("CTCNO")
+                BusinessClearance.DateTimePicker1.Value = myReader("VALIDITY")
+                BusinessClearance.TxtAmount.Text = myReader("AMOUNT")
+
+            End If
+        End Using
+
+    End Function
+
+    Public Async Function RetrieveDataIndigency(id As Integer) As Task
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_indigency 
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                Indigency.TxtName.Text = myReader("FULLNAME")
+                Indigency.TxtAddress.Text = myReader("FULLADDRESS")
+                Indigency.CmbPurpose.Text = myReader("PURPOSE")
+                Indigency.DateTimePicker1.Value = myReader("BIRTHDATE")
+                Indigency.TxtAge.Text = myReader("AGE")
+                Indigency.DateTimePicker2.Value = myReader("DATEISSUED")
+                Indigency.CmbPurpose.Text = myReader("PURPOSE")
+            End If
+        End Using
+
+    End Function
+
+    Public Async Function RetrieveResidency(id As Integer) As Task
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_residency 
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                Residency.TxtName.Text = myReader("FULLNAME")
+                Residency.TxtAddress.Text = myReader("FULLADDRESS")
+                Residency.TxtPurpose.Text = myReader("PURPOSE")
+                Residency.DateTimePicker2.Value = myReader("DATEISSUED")
+            End If
+        End Using
+
+    End Function
+
+    Public Async Function RetrieveNonResidency(id As Integer) As Task
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_nonresidency 
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                NonResidency.TxtName.Text = myReader("FULLNAME")
+                NonResidency.TxtAddress.Text = myReader("FULLADDRESS")
+                NonResidency.DateTimePicker2.Value = myReader("DATEISSUED")
+            End If
+        End Using
+
+    End Function
+
+    Public Async Function RetrieveSoloParent(id As Integer) As Task
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_soloparent 
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                SoloParent.TxtName.Text = myReader("FULLNAME")
+                SoloParent.TxtAddress.Text = myReader("FULLADDRESS")
+                SoloParent.TxtChildNo.Text = myReader("NOOFCHILDREN")
+                SoloParent.DateTimePicker2.Value = myReader("DATEISSUED")
+            End If
+        End Using
+
+    End Function
+
+    Public Async Function RetrieveOATH(id As Integer) As Task
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_oath 
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                OATH.TxtName.Text = myReader("FULLNAME")
+                OATH.TxtAddress.Text = myReader("FULLADDRESS")
+                OATH.TxtResiding.Text = myReader("NORESIDING")
+                OATH.CmbPurpose.Text = myReader("YEARMONTH")
+                OATH.DateTimePicker2.Value = myReader("DATEISSUED")
+                OATH.DateTimePicker1.Value = myReader("BIRTHDATE")
+                OATH.TxtAge.Text = myReader("AGE")
+                OATH.TxtWitness.Text = myReader("WITNESS")
+            End If
+        End Using
+
+    End Function
+
+    Public Async Function RetrieveSpes(id As Integer) As Task
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_spes 
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                Spes.TxtName.Text = myReader("FULLNAME")
+                Spes.TxtAddress.Text = myReader("FULLADDRESS")
+                Spes.TxtFather.Text = myReader("FATHERNAME")
+                Spes.TxtMother.Text = myReader("MOTHERNAME")
+                Spes.TxtOccu.Text = myReader("FATHEROCCU")
+                Spes.TxtOccu1.Text = myReader("MOTHEROCCU")
+                Spes.DateTimePicker2.Value = myReader("DATEISSUED")
+            End If
+        End Using
+
+    End Function
+
+    Public Async Function RetrieveSpes1(id As Integer) As Task
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        Using mycmd As New OleDbCommand("SELECT *
+                                         FROM tbl_spes1
+                                         WHERE ID= @ID", con)
+            mycmd.Parameters.AddWithValue("@ID", id)
+            Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
+            If myReader.Read Then
+                Spes1.TxtName.Text = myReader("FULLNAME")
+                Spes1.TxtAddress.Text = myReader("FULLADDRESS")
+                Spes1.TxtSchoolYear.Text = myReader("SCHOOLYEAR")
+                Spes1.TxtAge.Text = myReader("AGE")
+                Spes1.DateTimePicker2.Value = myReader("DATEISSUED")
             End If
         End Using
 
@@ -39,7 +235,7 @@ Public Class BCHistory
     End Function
 
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
-    Private Async Sub LoadBclearance()
+    Public Async Sub LoadBclearance()
         Dim sql As String = "SELECT * 
                              FROM tbl_clearance"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
@@ -56,7 +252,7 @@ Public Class BCHistory
         DataGridView1.Columns("ORNO").HeaderText = "O.R No."
     End Sub
 
-    Private Async Sub LoadIndigency()
+    Public Async Sub LoadIndigency()
         Dim sql As String = "SELECT * 
                              FROM tbl_indigency"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
@@ -73,7 +269,7 @@ Public Class BCHistory
 
     End Sub
 
-    Private Async Sub LoadNonRes()
+    Public Async Sub LoadNonRes()
         Dim sql As String = "SELECT * 
                              FROM tbl_nonresidency"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
@@ -89,6 +285,134 @@ Public Class BCHistory
 
     End Sub
 
+    Public Async Sub LoadRes()
+        Dim sql As String = "SELECT * 
+                             FROM tbl_residency"
+        Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+        DataGridView1.DataSource = dtsample
+        DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
+        DataGridView1.Columns("FULLADDRESS").HeaderText = "FULL ADDRESS"
+        DataGridView1.Columns("PURPOSE").HeaderText = "PURPOSE"
+        DataGridView1.Columns("DATEISSUED").HeaderText = "DATE ISSUED"
+        DataGridView1.Columns("FEES").HeaderText = "FEES"
+        DataGridView1.Columns("ID").Width = 40
+        DataGridView1.Columns("FULLNAME").Width = 200
+        DataGridView1.Columns("FULLADDRESS").Width = 500
+        DataGridView1.Columns("PURPOSE").Width = 200
+        DataGridView1.Columns("DATEISSUED").Width = 150
+        DataGridView1.Columns("FEES").Width = 70
+
+    End Sub
+
+    Public Async Sub LoadSoloParent()
+        Dim sql As String = "SELECT * 
+                             FROM tbl_soloparent"
+        Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+        DataGridView1.DataSource = dtsample
+        DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
+        DataGridView1.Columns("FULLADDRESS").HeaderText = "FULL ADDRESS"
+        DataGridView1.Columns("NOOFCHILDREN").HeaderText = "NO. OF CHILD"
+        DataGridView1.Columns("DATEISSUED").HeaderText = "DATE ISSUED"
+
+        DataGridView1.Columns("ID").Width = 40
+        DataGridView1.Columns("FULLNAME").Width = 200
+        DataGridView1.Columns("FULLADDRESS").Width = 500
+        DataGridView1.Columns("NOOFCHILDREN").Width = 200
+        DataGridView1.Columns("DATEISSUED").Width = 150
+
+    End Sub
+
+    Public Async Sub LoadOATH()
+        Dim sql As String = "SELECT * 
+                             FROM tbl_oath"
+        Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+        DataGridView1.DataSource = dtsample
+        DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
+        DataGridView1.Columns("FULLADDRESS").HeaderText = "FULL ADDRESS"
+        DataGridView1.Columns("NORESIDING").HeaderText = "NO. OF RESIDING"
+        DataGridView1.Columns("YEARMONTH").HeaderText = "YEARMONTH"
+        DataGridView1.Columns("DATEISSUED").HeaderText = "DATE ISSUED"
+        DataGridView1.Columns("AGE").HeaderText = "AGE"
+
+        DataGridView1.Columns("ID").Width = 40
+        DataGridView1.Columns("FULLNAME").Width = 200
+        DataGridView1.Columns("FULLADDRESS").Width = 500
+        DataGridView1.Columns("NORESIDING").Width = 250
+        DataGridView1.Columns("YEARMONTH").Width = 100
+        DataGridView1.Columns("DATEISSUED").Width = 150
+        DataGridView1.Columns("AGE").Width = 150
+
+    End Sub
+
+    Public Async Sub LoadSpes()
+        Dim sql As String = "SELECT * 
+                             FROM tbl_spes"
+        Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+        DataGridView1.DataSource = dtsample
+        DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
+        DataGridView1.Columns("FULLADDRESS").HeaderText = "FULL ADDRESS"
+        DataGridView1.Columns("FATHERNAME").HeaderText = "FATHER NAME"
+        DataGridView1.Columns("MOTHERNAME").HeaderText = "MOTHER NAME"
+        DataGridView1.Columns("FATHEROCCU").HeaderText = "FATHER OCCUPATION"
+        DataGridView1.Columns("MOTHEROCCU").HeaderText = "MOTHER OCCUPATION"
+        DataGridView1.Columns("DATEISSUED").HeaderText = "DATE ISSUED"
+
+        DataGridView1.Columns("ID").Width = 40
+        DataGridView1.Columns("FULLNAME").Width = 200
+        DataGridView1.Columns("FULLADDRESS").Width = 500
+        DataGridView1.Columns("FATHERNAME").Width = 200
+        DataGridView1.Columns("MOTHERNAME").Width = 200
+        DataGridView1.Columns("FATHEROCCU").Width = 200
+        DataGridView1.Columns("MOTHEROCCU").Width = 200
+        DataGridView1.Columns("DATEISSUED").Width = 150
+
+    End Sub
+
+    Public Async Sub LoadSpes1()
+        Dim sql As String = "SELECT * 
+                             FROM tbl_spes1"
+        Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+        DataGridView1.DataSource = dtsample
+        DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
+        DataGridView1.Columns("FULLADDRESS").HeaderText = "FULL ADDRESS"
+        DataGridView1.Columns("AGE").HeaderText = "AGE"
+        DataGridView1.Columns("SCHOOLYEAR").HeaderText = "SCHOOL YEAR"
+        DataGridView1.Columns("DATEISSUED").HeaderText = "DATE ISSUED"
+
+        DataGridView1.Columns("ID").Width = 40
+        DataGridView1.Columns("FULLNAME").Width = 200
+        DataGridView1.Columns("FULLADDRESS").Width = 500
+        DataGridView1.Columns("AGE").Width = 70
+        DataGridView1.Columns("SCHOOLYEAR").Width = 150
+        DataGridView1.Columns("DATEISSUED").Width = 150
+
+    End Sub
+
+    Public Async Sub LoadBusinessClearance()
+        Dim sql As String = "SELECT * 
+                             FROM tbl_business"
+        Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+        DataGridView1.DataSource = dtsample
+        DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
+        DataGridView1.Columns("BUSINESSNAME").HeaderText = "BUSINESS NAME"
+        DataGridView1.Columns("BUSINESSLOCATION").HeaderText = "BUSINESS LOCATION"
+        DataGridView1.Columns("DATEISSUED").HeaderText = "DATE ISSUED"
+        DataGridView1.Columns("ORNO").HeaderText = "OR NO."
+        DataGridView1.Columns("CTCNO").HeaderText = "CTC NO."
+        DataGridView1.Columns("VALIDITY").HeaderText = "VALIDITY"
+        DataGridView1.Columns("AMOUNT").HeaderText = "AMOUNT"
+
+        DataGridView1.Columns("ID").Width = 40
+        DataGridView1.Columns("FULLNAME").Width = 200
+        DataGridView1.Columns("BUSINESSNAME").Width = 400
+        DataGridView1.Columns("BUSINESSLOCATION").Width = 500
+        DataGridView1.Columns("DATEISSUED").Width = 150
+        DataGridView1.Columns("ORNO").Width = 100
+        DataGridView1.Columns("CTCNO").Width = 100
+        DataGridView1.Columns("VALIDITY").Width = 100
+        DataGridView1.Columns("AMOUNT").Width = 70
+
+    End Sub
 
 
     Public Function LoadDataTable(sql As String) As DataTable
@@ -113,6 +437,9 @@ Public Class BCHistory
             Case "Barangay Clearance"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(BClearance)
+            Case "businessc"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(BusinessClearance)
             Case "indigency"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(Indigency)
@@ -122,21 +449,60 @@ Public Class BCHistory
             Case "residency"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(Residency)
+            Case "solo-parent"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(SoloParent)
+            Case "OATH"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(OATH)
+            Case "SPES"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Spes)
+            Case "SPES1"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Spes1)
         End Select
     End Sub
 
     Private Async Sub BCHistory_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim sql As String = "SELECT COUNT(*) FROM tbl_clearance"
-        LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql)} )"
+        Dim sqlx As String = "SELECT COUNT(*) FROM tbl_business"
+        Dim sql1 As String = "SELECT COUNT(*) FROM tbl_indigency"
+        Dim sql2 As String = "SELECT COUNT(*) FROM tbl_nonresidency"
+        Dim sql3 As String = "SELECT COUNT(*) FROM tbl_residency"
+        Dim sql4 As String = "SELECT COUNT(*) FROM tbl_soloparent"
+        Dim sql5 As String = "SELECT COUNT(*) FROM tbl_oath"
+        Dim sql6 As String = "SELECT COUNT(*) FROM tbl_spes"
+        Dim sql7 As String = "SELECT COUNT(*) FROM tbl_spes1"
 
         Select Case catTitle
             Case "Barangay Clearance"
                 LoadBclearance()
+                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql)} )"
+            Case "businessc"
+                LoadBusinessClearance()
+                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sqlx)} )"
             Case "indigency"
                 LoadIndigency()
+                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql1)} )"
             Case "non-residency"
                 LoadNonRes()
+                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql2)} )"
             Case "residency"
+                LoadRes()
+                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql3)} )"
+            Case "solo-parent"
+                LoadSoloParent()
+                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql4)} )"
+            Case "OATH"
+                LoadOATH()
+                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql5)} )"
+            Case "SPES"
+                LoadSpes()
+                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql6)} )"
+            Case "SPES1"
+                LoadSpes1()
+                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql7)} )"
         End Select
     End Sub
 
@@ -144,6 +510,14 @@ Public Class BCHistory
         Select Case catTitle
             Case "Barangay Clearance"
                 Dim sql As String = "SELECT * FROM tbl_clearance
+                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
+                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
+
+                Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+                DataGridView1.DataSource = dtsample
+                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+            Case "businessc"
+                Dim sql As String = "SELECT * FROM tbl_business
                               WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
                                     DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
 
@@ -174,20 +548,133 @@ Public Class BCHistory
                 Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
                 DataGridView1.DataSource = dtsample
                 LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+            Case "solo-parent"
+                Dim sql As String = "SELECT * FROM tbl_soloparent
+                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
+                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
+
+                Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+                DataGridView1.DataSource = dtsample
+                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+            Case "OATH"
+                Dim sql As String = "SELECT * FROM tbl_oath
+                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
+                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
+
+                Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+                DataGridView1.DataSource = dtsample
+                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+
+            Case "SPES"
+                Dim sql As String = "SELECT * FROM tbl_spes
+                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
+                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
+
+                Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+                DataGridView1.DataSource = dtsample
+                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+            Case "SPES1"
+                Dim sql As String = "SELECT * FROM tbl_spes1
+                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
+                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
+
+                Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+                DataGridView1.DataSource = dtsample
+                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
         End Select
 
 
     End Sub
 
-    Private Sub BtnView_Click(sender As Object, e As EventArgs) Handles BtnView.Click
+
+
+    Private Async Sub BtnView_Click(sender As Object, e As EventArgs) Handles BtnView.Click
+        Select Case catTitle
+            Case "Barangay Clearance"
+                Await RetrieveDataBarangayC(id)
+                BClearance.BtnS.Text = "UPDATE"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(BClearance)
+            Case "businessc"
+                Await RetrieveDataBusiness(id)
+                BusinessClearance.BtnSave.Text = "UPDATE"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(BusinessClearance)
+            Case "indigency"
+                Await RetrieveDataIndigency(id)
+                Indigency.BtnS.Text = "UPDATE"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Indigency)
+            Case "non-residency"
+                Await RetrieveNonResidency(id)
+                NonResidency.BtnS.Text = "UPDATE"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(NonResidency)
+            Case "residency"
+                Await RetrieveResidency(id)
+                Residency.BtnS.Text = "UPDATE"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Residency)
+            Case "solo-parent"
+                Await RetrieveSoloParent(id)
+                SoloParent.BtnS.Text = "UPDATE"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(SoloParent)
+            Case "OATH"
+                Await RetrieveOATH(id)
+                OATH.BtnS.Text = "UPDATE"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(OATH)
+            Case "SPES"
+                Await RetrieveSpes(id)
+                Spes.BtnS.Text = "UPDATE"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Spes)
+            Case "SPES1"
+                Await RetrieveSpes1(id)
+                Spes1.BtnS.Text = "UPDATE"
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Spes1)
+        End Select
 
     End Sub
 
     Private Async Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles BtnPayment.Click
-        Dashboard.activefrm.Hide()
-        Dashboard.OpenFormChild(Payment)
-        Await RetrieveData()
-        Payment.category = "BARANGAY CLEARANCE"
+
+        Select Case catTitle
+            Case "Barangay Clearance"
+                Await PaymentDetails("SELECT * FROM tbl_clearance WHERE ID=@ID")
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Payment)
+                Payment.category = "BARANGAY CLEARANCE"
+            Case "businessc"
+                Await PaymentDetails("SELECT * FROM tbl_business WHERE ID=@ID")
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Payment)
+                Payment.category = "BUSINESS CLEARANCE"
+            Case "non-residency"
+                Await PaymentDetails("SELECT * FROM tbl_nonresidency WHERE ID=@ID")
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Payment)
+                Payment.category = "CERTIFICATE OF NON-RESIDENCY"
+            Case "residency"
+                Await PaymentDetails("SELECT * FROM tbl_residency WHERE ID=@ID")
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Payment)
+                Payment.category = "CERTIFICATE OF RESIDENCY"
+            Case "solo-parent"
+                Await PaymentDetails("SELECT * FROM tbl_soloparent WHERE ID=@ID")
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Payment)
+                Payment.category = "CERTIFICATE OF SOLO PARENT"
+            Case "OATH"
+                Await PaymentDetails("SELECT * FROM tbl_soloparent WHERE ID=@ID")
+                Dashboard.activefrm.Hide()
+                Dashboard.OpenFormChild(Payment)
+                Payment.category = "CERTIFICATE OF SOLO PARENT"
+        End Select
+
+
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -200,10 +687,14 @@ Public Class BCHistory
             Else
                 Dim selectedRow As DataGridViewRow
                 selectedRow = DataGridView1.Rows(index)
-                id = selectedRow.Cells(1).Value
+                id = selectedRow.Cells(0).Value
             End If
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
     End Sub
 End Class

@@ -145,6 +145,37 @@ Public Class AddNewResident
 
         Me.Close()
         Dashboard.OpenFormChild(residents)
-        residents.BtnUse.Visible = True
+
+        Select Case BCHistory.catTitle
+            Case "Barangay Clearance"
+                residents.BtnUse.Visible = True
+            'Case "businessc"
+            Case "indigency"
+                residents.BtnUse.Visible = True
+            Case "non-residency"
+                residents.BtnUse.Visible = True
+            Case "residency"
+                residents.BtnUse.Visible = True
+            Case "solo-parent"
+                residents.BtnUse.Visible = True
+            Case "SPES"
+                residents.BtnUse.Visible = True
+            Case "SPES1"
+                residents.BtnUse.Visible = True
+            Case "OATH"
+                residents.BtnUse.Visible = True
+        End Select
+    End Sub
+
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtCitizen_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCitizen.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
     End Sub
 End Class

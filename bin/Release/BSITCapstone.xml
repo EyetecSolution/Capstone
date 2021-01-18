@@ -1,0 +1,31 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BSITCapstone
+</name>
+</assembly>
+<members>
+<member name="T:BSITCapstone.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:BSITCapstone.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:BSITCapstone.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:BSITCapstone.My.Resources.Resources.strKey">
+<summary>
+  Looks up a localized string similar to xXOcAQCK0lzZkLVnvECLooo2PzvnmaVZkBuk+a4s65GYtLkOtECrGK7BL5XEQ80NXwgfPuKRhg5iKLNJhDDI1eqJk+mrcIjpXa0sAEw0pKItMvXvzsgA9dc5UwHVlowe7QEl1HR1XWSu/CxGUqiSlJEsTJNh1l7MqHJeIFNBuGK/oBF3UEO8YumsSfGXgqXRLPteCyIdztL5n5qEEmkwI6psIgC/awi3I4nDL7kQEt6edzCMyjIVBL41y1uqBizbj8FNtc6dCBemCWNDVr5QRL/lRZJyEsN3G0Pkm47gCrrD4A9CTFIlURSlpTrhN99z16JXzYVUZUgwFUi0A8XEJ21f8h6Bts0aLzdaJQ6VDQiLdj3Wy7HTSIcJ216+dhIuCq31JUK64IuEARzeUtTRI4Y7eT9mo6A1dppVWxZoms4a9R7XkNBPWb/8QI1HzU/zPzGV2yoU5JTruRB7BQ2UCu1Vqv3oQu+iBGvJ9PlXACbsrAdndMPpLLXLt8oQ07iX [rest of string was truncated]&quot;;.
+</summary>
+</member>
+</members>
+</doc>

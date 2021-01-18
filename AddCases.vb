@@ -42,15 +42,25 @@ Public Class AddCases
         Return i
     End Function
 
+    Sub ResetFields()
+        TxtName.ResetText()
+        TxtAddress.ResetText()
+        CmbGender.ResetText()
+        ComboBox1.Text = "--Choose Condition--"
+        TxtDescription.ResetText()
+        TxtAge.ResetText()
+    End Sub
 
     Private Async Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
 
         If BtnSave.Text = "UPDATE" Then
             Await UpdateQuery()
             MessageBox.Show("Patient Updated Successfully", "BSMIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ResetFields()
         Else
             Await InsertQuery()
             MessageBox.Show("Patient Added Successfully", "BSMIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ResetFields()
         End If
 
     End Sub
