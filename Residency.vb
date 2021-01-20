@@ -14,7 +14,7 @@ Public Class Residency
             Try
                 Await InsertQuery()
                 MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempResidency.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempResidency.docx")
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -23,7 +23,7 @@ Public Class Residency
             Try
                 Await UpdateQuery()
                 MessageBox.Show("Update successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempResidency.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempResidency.docx")
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -33,7 +33,6 @@ Public Class Residency
     End Sub
 
     Async Function UpdateQuery() As Task(Of Integer)
-        Dim frmat As String = "M/d/yyyy"
         Dim i As Integer
         If con.State = ConnectionState.Closed Then
             con.Open()
@@ -91,8 +90,9 @@ Public Class Residency
     Private Sub UpdateWordDocs(sPath As String)
         Dim dtFormat As String = "MM/d/yyyy"
         Dim monthFrmat As String = "MMMM"
-        Dim objWordApp = New Word.Application
-        objWordApp.Visible = False
+        Dim objWordApp = New Word.Application With {
+            .Visible = False
+        }
         Dim wdDoc As Word.Document = objWordApp.Documents.Open(sPath, [ReadOnly]:=False)
         wdDoc = objWordApp.ActiveDocument
 
@@ -100,7 +100,7 @@ Public Class Residency
         UpdateBookMark("name2", TxtName.Text.Trim, wdDoc)
         UpdateBookMark("address", TxtAddress.Text.Trim, wdDoc)
         UpdateBookMark("purpose", TxtPurpose.Text.Trim, wdDoc)
-        UpdateBookMark("day", $"{DateTimePicker2.Value.Day.ToString()}th", wdDoc)
+        UpdateBookMark("day", $"{DateTimePicker2.Value.Day}th", wdDoc)
         UpdateBookMark("myear", $"{DateTimePicker2.Value.ToString("Y").ToUpper}", wdDoc)
 
 

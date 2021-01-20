@@ -129,7 +129,7 @@ Public Class OATH
             Try
                 Await InsertQuery()
                 MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempJobOath.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempJobOath.docx")
                 ResetTextField()
             Catch ex As Exception
 
@@ -138,7 +138,7 @@ Public Class OATH
             Try
                 Await UpdateQuery()
                 MessageBox.Show("Update successfully.", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempJobOath.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempJobOath.docx")
                 ResetTextField()
             Catch ex As Exception
 
@@ -155,5 +155,11 @@ Public Class OATH
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
         PrintPreview.checkLoad = "OATH"
         PrintPreview.Show()
+    End Sub
+
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
     End Sub
 End Class

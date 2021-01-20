@@ -78,7 +78,7 @@ Public Class Spes1
             Try
                 Await InsertQuery()
                 MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempSpesout.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempSpesout.docx")
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -87,7 +87,7 @@ Public Class Spes1
             Try
                 Await UpdateQuery()
                 MessageBox.Show("Update successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempSpesout.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempSpesout.docx")
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -154,5 +154,9 @@ Public Class Spes1
         End If
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
+    End Sub
+
+    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs) Handles TxtName.TextChanged
+
     End Sub
 End Class

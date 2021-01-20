@@ -3,6 +3,8 @@ Public Class BCHistory
     Public catTitle As String
     Public id As Integer = 1
 
+
+
     Public Async Function PaymentDetails(sql As String) As Task
         If con.State = ConnectionState.Closed Then
             con.Open()
@@ -250,6 +252,7 @@ Public Class BCHistory
         DataGridView1.Columns("CTCNO").HeaderText = "CTC. No."
         DataGridView1.Columns("ORNO").HeaderText = "O.R No."
         DataGridView1.Columns("ORNO").HeaderText = "O.R No."
+        DataGridView1.Columns("paymentstatus").HeaderText = "STATUS"
     End Sub
 
     Public Async Sub LoadIndigency()
@@ -400,7 +403,7 @@ Public Class BCHistory
         DataGridView1.Columns("ORNO").HeaderText = "OR NO."
         DataGridView1.Columns("CTCNO").HeaderText = "CTC NO."
         DataGridView1.Columns("VALIDITY").HeaderText = "VALIDITY"
-        DataGridView1.Columns("AMOUNT").HeaderText = "AMOUNT"
+        DataGridView1.Columns("FEES").HeaderText = "FEES"
 
         DataGridView1.Columns("ID").Width = 40
         DataGridView1.Columns("FULLNAME").Width = 200
@@ -410,7 +413,7 @@ Public Class BCHistory
         DataGridView1.Columns("ORNO").Width = 100
         DataGridView1.Columns("CTCNO").Width = 100
         DataGridView1.Columns("VALIDITY").Width = 100
-        DataGridView1.Columns("AMOUNT").Width = 70
+        DataGridView1.Columns("FEES").Width = 70
 
     End Sub
 
@@ -647,26 +650,31 @@ Public Class BCHistory
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(Payment)
                 Payment.category = "BARANGAY CLEARANCE"
+                Payment.tblparam = "tbl_clearance"
             Case "businessc"
                 Await PaymentDetails("SELECT * FROM tbl_business WHERE ID=@ID")
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(Payment)
                 Payment.category = "BUSINESS CLEARANCE"
+                Payment.tblparam = "tbl_business"
             Case "non-residency"
                 Await PaymentDetails("SELECT * FROM tbl_nonresidency WHERE ID=@ID")
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(Payment)
                 Payment.category = "CERTIFICATE OF NON-RESIDENCY"
+                Payment.tblparam = "tbl_nonresidency"
             Case "residency"
                 Await PaymentDetails("SELECT * FROM tbl_residency WHERE ID=@ID")
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(Payment)
                 Payment.category = "CERTIFICATE OF RESIDENCY"
+                Payment.tblparam = "tbl_residency"
             Case "solo-parent"
                 Await PaymentDetails("SELECT * FROM tbl_soloparent WHERE ID=@ID")
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(Payment)
                 Payment.category = "CERTIFICATE OF SOLO PARENT"
+                Payment.tblparam = "tbl_soloparent"
             Case "OATH"
                 Await PaymentDetails("SELECT * FROM tbl_soloparent WHERE ID=@ID")
                 Dashboard.activefrm.Hide()
@@ -696,5 +704,10 @@ Public Class BCHistory
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(FormDocument)
     End Sub
 End Class

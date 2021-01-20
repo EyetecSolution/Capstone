@@ -56,7 +56,7 @@ Public Class Indigency
             Try
                 Await InsertQuery()
                 MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempIndigency.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempIndigency.docx")
                 ResetTextField()
             Catch ex As Exception
 
@@ -65,7 +65,7 @@ Public Class Indigency
             Try
                 Await UpdateQuery()
                 MessageBox.Show("Update successfully.", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempIndigency.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempIndigency.docx")
                 ResetTextField()
             Catch ex As Exception
 

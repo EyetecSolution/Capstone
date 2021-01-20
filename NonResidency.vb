@@ -27,7 +27,6 @@ Public Class NonResidency
     End Function
 
     Async Function UpdateQuery() As Task(Of Integer)
-        Dim frmat As String = "M/d/yyyy"
         Dim i As Integer
         If con.State = ConnectionState.Closed Then
             con.Open()
@@ -62,14 +61,15 @@ Public Class NonResidency
     Private Sub UpdateWordDocs(sPath As String)
         Dim dtFormat As String = "MM/d/yyyy"
         Dim monthFrmat As String = "MMMM"
-        Dim objWordApp = New Word.Application
-        objWordApp.Visible = False
+        Dim objWordApp = New Word.Application With {
+            .Visible = False
+        }
         Dim wdDoc As Word.Document = objWordApp.Documents.Open(sPath, [ReadOnly]:=False)
         wdDoc = objWordApp.ActiveDocument
 
         UpdateBookMark("name1", TxtName.Text.Trim, wdDoc)
         UpdateBookMark("address", TxtAddress.Text.Trim, wdDoc)
-        UpdateBookMark("day", $"{DateTimePicker2.Value.Day.ToString()}th", wdDoc)
+        UpdateBookMark("day", $"{DateTimePicker2.Value.Day}th", wdDoc)
         UpdateBookMark("myear", $"{DateTimePicker2.Value.ToString("Y").ToUpper}", wdDoc)
 
 
@@ -90,7 +90,7 @@ Public Class NonResidency
             Try
                 Await InsertQuery()
                 MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempNonresidency.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempNonresidency.docx")
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -99,7 +99,7 @@ Public Class NonResidency
             Try
                 Await UpdateQuery()
                 MessageBox.Show("Update successfully.", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempNonresidency.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempNonresidency.docx")
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)

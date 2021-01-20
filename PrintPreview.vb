@@ -1,29 +1,30 @@
-﻿Public Class PrintPreview
+﻿Imports System.ComponentModel
+Public Class PrintPreview
 
     Public checkLoad As String
     Private Sub PrintPreview_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Spire.License.LicenseProvider.SetLicenseKey(My.Resources.strKey)
         Select Case checkLoad
             Case "BClearance"
-                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempClearance.docx")
+                LoadDocs("C:\Capstone\Docs\TempClearance.docx")
             Case "businessc"
-                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempBusinessC.docx")
+                LoadDocs("C:\Capstone\Docs\TempBusinessC.docx")
             Case "Indigency"
-                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempIndigency.docx")
+                LoadDocs("C:\Capstone\Docs\TempIndigency.docx")
             Case "Residency"
-                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempResidency.docx")
+                LoadDocs("C:\Capstone\Docs\TempResidency.docx")
             Case "Non-Residency"
-                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempNonresidency.docx")
+                LoadDocs("C:\Capstone\Docs\TempNonresidency.docx")
             Case "Solo-Parent"
-                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempSoloparent.docx")
+                LoadDocs("C:\Capstone\Docs\TempSoloparent.docx")
             Case "SPES"
-                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempSpes.docx")
+                LoadDocs("C:\Capstone\Docs\TempSpes.docx")
             Case "SPES1"
-                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempSpesout.docx")
+                LoadDocs("C:\Capstone\Docs\TempSpesout.docx")
             Case "OATH"
-                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempJobOath.docx")
+                LoadDocs("C:\Capstone\Docs\TempJobOath.docx")
             Case "healthmonitoring"
-                LoadDocs("C:\Capstone\BSITCapstone\Docs\TempHealthMonitoring.docx")
+                LoadDocs("C:\Capstone\Docs\TempHealthMonitoring.docx")
 
 
         End Select
@@ -35,5 +36,9 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub PrintPreview_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Dashboard.Show()
     End Sub
 End Class

@@ -7,8 +7,8 @@
         Btn5.Text = "CERTIFICATE                              OF NON RESIDENCY"
         Btn6.Text = "CERTIFICATE                              OF SOLO PARENT"
         Btn7.Text = "SPES                                             (For School Youth)"
-        Btn8.Text = "SPES                                             (For Out of School Youth)"
-        Btn9.Text = "OATH                                          OF UNDERTAKING/CERTIFICATION"
+        Btn8.Text = "SPES                                                   (For Out of School Youth)"
+        Btn9.Text = "OATH                                          OF UNDERTAKING/         CERTIFICATION"
     End Sub
     Sub RemoveSpace()
         Btn1.Text = "BARANGAY               CLEARANCE"
@@ -18,15 +18,15 @@
         Btn6.Text = "CERTIFICATE OF           SOLO PARENT"
         Btn7.Text = "SPES                             (For School Youth)"
         Btn8.Text = "SPES                                     (For Out of School Youth)"
-        Btn9.Text = "OATH OF      UNDERTAKING/CERTIFICATION"
+        Btn9.Text = "OATH                                          OF UNDERTAKING/         CERTIFICATION"
     End Sub
 
     Private Sub Btn1_Click(sender As Object, e As EventArgs) Handles Btn1.Click
         BCHistory.catTitle = "Barangay Clearance"
+        BCHistory.BtnPayment.Visible = True
         BCHistory.LblTitle.Text = "LIST OF BARANGAY CLEARANCE CLAIMED"
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
-        BCHistory.BtnPayment.Visible = True
 
 
     End Sub
@@ -94,6 +94,7 @@
     Private Sub Btn2_Click(sender As Object, e As EventArgs) Handles Btn2.Click
         BCHistory.LblTitle.Text = "LIST OF BUSINESS CLEARANCE CLAIMED"
         BCHistory.catTitle = "businessc"
+        BCHistory.BtnPayment.Visible = True
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
     End Sub

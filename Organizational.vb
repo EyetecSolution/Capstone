@@ -82,4 +82,13 @@ Public Class Organizational
         Dim btnName As String = Btn11.Text
         Await RetrieveData(btnName)
     End Sub
+
+    Private Sub Organizational_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BarangayManagement)
+    End Sub
 End Class

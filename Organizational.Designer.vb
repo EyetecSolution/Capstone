@@ -64,8 +64,10 @@ Partial Class Organizational
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -273,7 +275,8 @@ Partial Class Organizational
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Location = New System.Drawing.Point(-5, 0)
+        Me.Panel1.Controls.Add(Me.Guna2Button4)
+        Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 17)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1050, 37)
@@ -484,6 +487,28 @@ Partial Class Organizational
         Me.Guna2PictureBox1.TabIndex = 52
         Me.Guna2PictureBox1.TabStop = False
         '
+        'Guna2Button4
+        '
+        Me.Guna2Button4.CheckedState.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.CheckedState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.CustomImages.CheckedImage = CType(resources.GetObject("Guna2Button4.CustomImages.CheckedImage"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.HoveredImage = CType(resources.GetObject("Guna2Button4.CustomImages.HoveredImage"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.Image = CType(resources.GetObject("Guna2Button4.CustomImages.Image"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.ImageOffset = New System.Drawing.Point(4, 0)
+        Me.Guna2Button4.CustomImages.ImageSize = New System.Drawing.Size(24, 24)
+        Me.Guna2Button4.CustomImages.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Button4.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button4.HoverState.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.HoverState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Button4.Name = "Guna2Button4"
+        Me.Guna2Button4.ShadowDecoration.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Size = New System.Drawing.Size(47, 37)
+        Me.Guna2Button4.TabIndex = 104
+        '
         'Organizational
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -534,6 +559,7 @@ Partial Class Organizational
         Me.Text = "Organizational"
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -579,4 +605,5 @@ Partial Class Organizational
     Friend WithEvents Label7 As Label
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
 End Class

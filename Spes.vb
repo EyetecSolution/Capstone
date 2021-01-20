@@ -14,7 +14,7 @@ Public Class Spes
             Try
                 Await InsertQuery()
                 MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempSpes.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempSpes.docx")
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -23,7 +23,7 @@ Public Class Spes
             Try
                 Await UpdateQuery()
                 MessageBox.Show("Update successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempSpes.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempSpes.docx")
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)

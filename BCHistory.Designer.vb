@@ -23,12 +23,13 @@ Partial Class BCHistory
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BCHistory))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BCHistory))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnView = New Guna.UI2.WinForms.Guna2Button()
@@ -38,6 +39,7 @@ Partial Class BCHistory
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.BtnPayment = New Guna.UI2.WinForms.Guna2Button()
         Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
@@ -46,11 +48,34 @@ Partial Class BCHistory
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Location = New System.Drawing.Point(-10, 0)
+        Me.Panel1.Controls.Add(Me.Guna2Button4)
+        Me.Panel1.Location = New System.Drawing.Point(4, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(678, 29)
+        Me.Panel1.Size = New System.Drawing.Size(646, 29)
         Me.Panel1.TabIndex = 26
+        '
+        'Guna2Button4
+        '
+        Me.Guna2Button4.CheckedState.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.CheckedState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.CustomImages.CheckedImage = CType(resources.GetObject("Guna2Button4.CustomImages.CheckedImage"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.HoveredImage = CType(resources.GetObject("Guna2Button4.CustomImages.HoveredImage"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.Image = CType(resources.GetObject("Guna2Button4.CustomImages.Image"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.ImageOffset = New System.Drawing.Point(4, 0)
+        Me.Guna2Button4.CustomImages.ImageSize = New System.Drawing.Size(24, 24)
+        Me.Guna2Button4.CustomImages.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Button4.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button4.HoverState.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.HoverState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Button4.Name = "Guna2Button4"
+        Me.Guna2Button4.ShadowDecoration.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Size = New System.Drawing.Size(47, 29)
+        Me.Guna2Button4.TabIndex = 103
         '
         'DataGridView1
         '
@@ -183,11 +208,11 @@ Partial Class BCHistory
         '
         Me.Guna2Panel1.BorderColor = System.Drawing.Color.Gray
         Me.Guna2Panel1.BorderThickness = 5
+        Me.Guna2Panel1.Controls.Add(Me.DataGridView1)
         Me.Guna2Panel1.Controls.Add(Me.BtnPayment)
         Me.Guna2Panel1.Controls.Add(Me.TxtSearch)
         Me.Guna2Panel1.Controls.Add(Me.BtnSave)
         Me.Guna2Panel1.Controls.Add(Me.BtnView)
-        Me.Guna2Panel1.Controls.Add(Me.DataGridView1)
         Me.Guna2Panel1.Location = New System.Drawing.Point(4, 52)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
@@ -270,6 +295,7 @@ Partial Class BCHistory
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BCHistory"
         Me.Text = "BCHistory"
+        Me.Panel1.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
@@ -288,4 +314,5 @@ Partial Class BCHistory
     Friend WithEvents TxtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents BtnPayment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents LblTitle As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
 End Class

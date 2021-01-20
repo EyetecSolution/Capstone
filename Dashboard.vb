@@ -27,7 +27,7 @@ Public Class Dashboard
         If PanelSlider.Width = 366 Then
             HomeContent.CovidPanel.Visible = False
             HomeContent.PanelSlide.Dock = DockStyle.Fill
-            BtnSlide.Image = Image.FromFile("..\..\Resources\images\forward_48px.png")
+            BtnSlide.Image = Image.FromFile("C:\Capstone\Resources\images\forward_48px.png")
             LabelNotes.Visible = False
             PanelNotes.Visible = False
             SliderTransition(50, True)
@@ -40,7 +40,7 @@ Public Class Dashboard
             HomeContent.CovidPanel.Visible = True
             HomeContent.PanelSlide.Dock = DockStyle.Top
             HomeContent.CovidPanel.Dock = DockStyle.Top
-            BtnSlide.Image = Image.FromFile("..\..\Resources\images\back_48px.png")
+            BtnSlide.Image = Image.FromFile("C:\Capstone\Resources\images\back_48px.png")
             LabelNotes.Visible = True
             PanelNotes.Visible = True
             SliderTransition(366, True)
@@ -263,5 +263,10 @@ Public Class Dashboard
         End If
     End Sub
 
-
+    Private Sub BtnQR_Click(sender As Object, e As EventArgs) Handles BtnQR.Click
+        GenQRCODE.ShowDialog()
+        If PanelSlider.Width = 50 Then
+            ActiveButton(BtnQR)
+        End If
+    End Sub
 End Class

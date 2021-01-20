@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+
 Public Class Attendance
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
 
@@ -20,26 +21,37 @@ Public Class Attendance
 
         Return dt
     End Function
-
-    Public Async Sub LoadMe()
-        Dim dt As DateTime = DateAndTime.Now
+    Public dt As DateTime = DateAndTime.Now
+    Public Async Sub LoadMe(sql As String)
         LblDate.Text = $"DATE: {dt:MMMM, d yyyy}"
-        Dim sql As String = "SELECT pstion, fname, tmein, tmeout
-                             FROM tbl_attendance WHERE dt = #" & dt.ToString("M/d/yyyy") & "#"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("pstion").HeaderText = "POSITION"
         DataGridView1.Columns("fname").HeaderText = "EMPLOYEE"
-        DataGridView1.Columns("tmein").HeaderText = "TIME IN"
-        DataGridView1.Columns("tmeout").HeaderText = "TIME OUT"
+        DataGridView1.Columns("TimeIN").HeaderText = "TIME IN"
+        DataGridView1.Columns("TimeOut").HeaderText = "TIME OUT"
 
         DataGridView1.Columns("pstion").Width = 300
         DataGridView1.Columns("fname").Width = 300
-        DataGridView1.Columns("tmein").Width = 100
-        DataGridView1.Columns("tmeout").Width = 100
+        DataGridView1.Columns("TimeIn").Width = 100
+        DataGridView1.Columns("TimeOut").Width = 100
     End Sub
 
     Private Sub Attendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadMe()
+        Dim sql As String = $"SELECT pstion, fname, TimeIN, TimeOut FROM tbl_attendance WHERE dt= #" & dt.ToString("M/d/yyyy") & "#"
+        LoadMe(sql)
     End Sub
+
+    Private Sub DTTo_ValueChanged(sender As Object, e As EventArgs) Handles DTTo.ValueChanged
+        Dim sql As String = $"SELECT pstion, fname, TimeIN, TimeOut FROM tbl_attendance WHERE dt= #" & DTTo.Value.ToString("M/d/yyyy") & "#"
+        LoadMe(sql)
+    End Sub
+
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BarangayManagement)
+    End Sub
+
+
 End Class

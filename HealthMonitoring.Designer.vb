@@ -23,7 +23,9 @@ Partial Class HealthMonitoring
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HealthMonitoring))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
         Me.TxtName = New System.Windows.Forms.TextBox()
@@ -64,6 +66,7 @@ Partial Class HealthMonitoring
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Panel1.SuspendLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel9.SuspendLayout()
@@ -79,11 +82,34 @@ Partial Class HealthMonitoring
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Location = New System.Drawing.Point(-40, 1)
+        Me.Panel1.Controls.Add(Me.Guna2Button4)
+        Me.Panel1.Location = New System.Drawing.Point(0, 1)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(698, 32)
+        Me.Panel1.Size = New System.Drawing.Size(650, 32)
         Me.Panel1.TabIndex = 26
+        '
+        'Guna2Button4
+        '
+        Me.Guna2Button4.CheckedState.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.CheckedState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.CustomImages.CheckedImage = CType(resources.GetObject("Guna2Button4.CustomImages.CheckedImage"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.HoveredImage = CType(resources.GetObject("Guna2Button4.CustomImages.HoveredImage"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.Image = CType(resources.GetObject("Guna2Button4.CustomImages.Image"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.ImageOffset = New System.Drawing.Point(4, 0)
+        Me.Guna2Button4.CustomImages.ImageSize = New System.Drawing.Size(24, 24)
+        Me.Guna2Button4.CustomImages.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Button4.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button4.HoverState.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.HoverState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Button4.Name = "Guna2Button4"
+        Me.Guna2Button4.ShadowDecoration.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Size = New System.Drawing.Size(47, 32)
+        Me.Guna2Button4.TabIndex = 101
         '
         'LblTitle
         '
@@ -107,7 +133,7 @@ Partial Class HealthMonitoring
         Me.TxtName.Name = "TxtName"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtName, False)
         Me.TxtName.Size = New System.Drawing.Size(349, 23)
-        Me.TxtName.TabIndex = 47
+        Me.TxtName.TabIndex = 1
         '
         'TxtAddress
         '
@@ -117,7 +143,7 @@ Partial Class HealthMonitoring
         Me.TxtAddress.Name = "TxtAddress"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtAddress, False)
         Me.TxtAddress.Size = New System.Drawing.Size(349, 23)
-        Me.TxtAddress.TabIndex = 50
+        Me.TxtAddress.TabIndex = 2
         '
         'TxtTemp
         '
@@ -127,17 +153,19 @@ Partial Class HealthMonitoring
         Me.TxtTemp.Name = "TxtTemp"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtTemp, False)
         Me.TxtTemp.Size = New System.Drawing.Size(64, 23)
-        Me.TxtTemp.TabIndex = 51
+        Me.TxtTemp.TabIndex = 4
         '
         'TxtContact
         '
         Me.TxtContact.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtContact.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtContact.HideSelection = False
         Me.TxtContact.Location = New System.Drawing.Point(412, 40)
+        Me.TxtContact.MaxLength = 11
         Me.TxtContact.Name = "TxtContact"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtContact, False)
         Me.TxtContact.Size = New System.Drawing.Size(116, 23)
-        Me.TxtContact.TabIndex = 77
+        Me.TxtContact.TabIndex = 3
         '
         'Guna2Panel1
         '
@@ -567,6 +595,7 @@ Partial Class HealthMonitoring
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "HealthMonitoring"
         Me.Text = "HealthMonitoring"
+        Me.Panel1.ResumeLayout(False)
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
@@ -632,4 +661,5 @@ Partial Class HealthMonitoring
     Friend WithEvents BtnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents TxtContact As TextBox
     Friend WithEvents Guna2HtmlLabel15 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
 End Class

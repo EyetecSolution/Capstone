@@ -23,11 +23,11 @@ Partial Class TanodReports
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TanodReports))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TanodReports))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
@@ -50,6 +50,8 @@ Partial Class TanodReports
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel1.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,10 +60,11 @@ Partial Class TanodReports
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Location = New System.Drawing.Point(-30, 1)
+        Me.Panel1.Controls.Add(Me.Guna2Button4)
+        Me.Panel1.Location = New System.Drawing.Point(0, 1)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(698, 32)
+        Me.Panel1.Size = New System.Drawing.Size(650, 32)
         Me.Panel1.TabIndex = 27
         '
         'Guna2Panel1
@@ -111,7 +114,7 @@ Partial Class TanodReports
         Me.BtnSave.ShadowDecoration.Parent = Me.BtnSave
         Me.BtnSave.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
         Me.BtnSave.Size = New System.Drawing.Size(86, 25)
-        Me.BtnSave.TabIndex = 62
+        Me.BtnSave.TabIndex = 8
         Me.BtnSave.Text = "SAVE"
         '
         'TxtMainSubject
@@ -122,7 +125,7 @@ Partial Class TanodReports
         Me.TxtMainSubject.Name = "TxtMainSubject"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtMainSubject, False)
         Me.TxtMainSubject.Size = New System.Drawing.Size(292, 23)
-        Me.TxtMainSubject.TabIndex = 61
+        Me.TxtMainSubject.TabIndex = 6
         '
         'TxtStatement
         '
@@ -132,7 +135,7 @@ Partial Class TanodReports
         Me.TxtStatement.Name = "TxtStatement"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtStatement, False)
         Me.TxtStatement.Size = New System.Drawing.Size(613, 23)
-        Me.TxtStatement.TabIndex = 60
+        Me.TxtStatement.TabIndex = 4
         '
         'TxtDayTime
         '
@@ -142,7 +145,7 @@ Partial Class TanodReports
         Me.TxtDayTime.Name = "TxtDayTime"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtDayTime, False)
         Me.TxtDayTime.Size = New System.Drawing.Size(292, 23)
-        Me.TxtDayTime.TabIndex = 59
+        Me.TxtDayTime.TabIndex = 5
         '
         'TxtInvolved
         '
@@ -152,7 +155,7 @@ Partial Class TanodReports
         Me.TxtInvolved.Name = "TxtInvolved"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtInvolved, False)
         Me.TxtInvolved.Size = New System.Drawing.Size(292, 23)
-        Me.TxtInvolved.TabIndex = 58
+        Me.TxtInvolved.TabIndex = 7
         '
         'TxtLocation
         '
@@ -162,7 +165,7 @@ Partial Class TanodReports
         Me.TxtLocation.Name = "TxtLocation"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtLocation, False)
         Me.TxtLocation.Size = New System.Drawing.Size(292, 23)
-        Me.TxtLocation.TabIndex = 57
+        Me.TxtLocation.TabIndex = 3
         '
         'Guna2HtmlLabel8
         '
@@ -222,7 +225,7 @@ Partial Class TanodReports
         Me.TxtCaseType.Name = "TxtCaseType"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtCaseType, False)
         Me.TxtCaseType.Size = New System.Drawing.Size(292, 23)
-        Me.TxtCaseType.TabIndex = 50
+        Me.TxtCaseType.TabIndex = 2
         '
         'Guna2HtmlLabel2
         '
@@ -242,7 +245,7 @@ Partial Class TanodReports
         Me.TxtName.Name = "TxtName"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtName, False)
         Me.TxtName.Size = New System.Drawing.Size(292, 23)
-        Me.TxtName.TabIndex = 47
+        Me.TxtName.TabIndex = 1
         '
         'Guna2HtmlLabel1
         '
@@ -313,7 +316,7 @@ Partial Class TanodReports
         Me.TxtSearch.ShadowDecoration.Parent = Me.TxtSearch
         Me.TxtSearch.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
         Me.TxtSearch.Size = New System.Drawing.Size(252, 29)
-        Me.TxtSearch.TabIndex = 37
+        Me.TxtSearch.TabIndex = 9
         '
         'DataGridView1
         '
@@ -367,6 +370,28 @@ Partial Class TanodReports
         Me.DataGridView1.Size = New System.Drawing.Size(634, 135)
         Me.DataGridView1.TabIndex = 63
         '
+        'Guna2Button4
+        '
+        Me.Guna2Button4.CheckedState.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.CheckedState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.CustomImages.CheckedImage = CType(resources.GetObject("Guna2Button4.CustomImages.CheckedImage"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.HoveredImage = CType(resources.GetObject("Guna2Button4.CustomImages.HoveredImage"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.Image = CType(resources.GetObject("Guna2Button4.CustomImages.Image"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.ImageOffset = New System.Drawing.Point(4, 0)
+        Me.Guna2Button4.CustomImages.ImageSize = New System.Drawing.Size(24, 24)
+        Me.Guna2Button4.CustomImages.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Button4.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button4.HoverState.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.HoverState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Button4.Name = "Guna2Button4"
+        Me.Guna2Button4.ShadowDecoration.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Size = New System.Drawing.Size(47, 32)
+        Me.Guna2Button4.TabIndex = 102
+        '
         'TanodReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -381,6 +406,7 @@ Partial Class TanodReports
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "TanodReports"
         Me.Text = "TanodReports"
+        Me.Panel1.ResumeLayout(False)
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -412,4 +438,5 @@ Partial Class TanodReports
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents TxtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
 End Class

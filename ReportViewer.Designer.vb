@@ -24,21 +24,16 @@ Partial Class ReportViewer
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DtClearanceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSet1 = New BSITCapstone.DataSet1()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.DtClearanceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DtClearanceBindingSource
         '
         Me.DtClearanceBindingSource.DataMember = "DtClearance"
-        Me.DtClearanceBindingSource.DataSource = Me.DataSet1
         '
         'DataSet1
         '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -59,11 +54,9 @@ Partial Class ReportViewer
         Me.Text = "ReportViewer"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DtClearanceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents DtClearanceBindingSource As BindingSource
-    Friend WithEvents DataSet1 As DataSet1
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
 End Class

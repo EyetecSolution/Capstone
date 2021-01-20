@@ -64,7 +64,15 @@ Public Class TanodReports
         End Using
         Return i
     End Function
-
+    Public Sub ResetFields()
+        TxtName.ResetText()
+        TxtLocation.ResetText()
+        TxtInvolved.ResetText()
+        TxtDayTime.ResetText()
+        TxtCaseType.ResetText()
+        TxtMainSubject.ResetText()
+        TxtStatement.ResetText()
+    End Sub
     Private Async Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         If String.IsNullOrEmpty(TxtName.Text) Then
             MessageBox.Show("Name field is required!", "Checking", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -76,6 +84,7 @@ Public Class TanodReports
                 Await InsertQuery()
                 MessageBox.Show("Report Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 LoadMe()
+                ResetFields()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
@@ -169,5 +178,20 @@ Public Class TanodReports
 
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
+    End Sub
+
+    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs) Handles TxtName.TextChanged
+
+    End Sub
+
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BarangayManagement)
     End Sub
 End Class

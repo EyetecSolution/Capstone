@@ -96,7 +96,7 @@ Public Class SoloParent
             Try
                 Await InsertQuery()
                 MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempSoloparent.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempSoloparent.docx")
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -105,7 +105,7 @@ Public Class SoloParent
             Try
                 Await UpdateQuery()
                 MessageBox.Show("UpdateQuery successfully.", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempSoloparent.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempSoloparent.docx")
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)

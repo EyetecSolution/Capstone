@@ -56,8 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Capstone\BSITCapstone\Dbase\IMSDb"& _ 
-            "ase.mdb")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Capstone\Dbase\IMSDbase.mdb")>  _
         Public Property strCon() As String
             Get
                 Return CType(Me("strCon"),String)

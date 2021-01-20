@@ -71,6 +71,13 @@ Public Class HealthMonitoring
         Return i
     End Function
 
+    Public Sub ResetFields()
+        TxtName.ResetText()
+        TxtAddress.ResetText()
+        TxtContact.ResetText()
+        TxtTemp.ResetText()
+    End Sub
+
     Private Async Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
 
         If Cmb1.Text = "SELECT" Or
@@ -88,7 +95,8 @@ Public Class HealthMonitoring
         Try
             Await InsertQuery()
             MessageBox.Show("Health Monitoring Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempHealthMonitoring.docx")
+            UpdateWordDocs("C:\Capstone\Docs\TempHealthMonitoring.docx")
+            ResetFields()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -97,5 +105,68 @@ Public Class HealthMonitoring
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         PrintPreview.checkLoad = "healthmonitoring"
         PrintPreview.Show()
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BarangayManagement)
+    End Sub
+
+    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs) Handles TxtName.TextChanged
+
+    End Sub
+
+    Private Sub TxtContact_TextChanged(sender As Object, e As EventArgs) Handles TxtContact.TextChanged
+
+    End Sub
+
+    Private Sub TxtContact_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtContact.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtTemp_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTemp.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Cmb1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Cmb1.KeyPress
+        e.Handled = True 
+    End Sub
+
+    Private Sub Cmb2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Cmb2.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub Cmb3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Cmb3.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub Cmb4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Cmb4.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub Cmb5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Cmb5.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub Cmb6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Cmb6.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub Cmb7_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Cmb7.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub Cmb8_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Cmb8.KeyPress
+        e.Handled = True
     End Sub
 End Class

@@ -47,64 +47,35 @@ Public Class ReportsList
 
         Return dt
     End Function
-    Private Sub ListOfBarangayClearanceToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        LoadDataClearance()
-        chkLoad = "BarangayC"
+
+    Public Sub LoadReport(sql As String, spath As String)
+        ReportViewer.ClearanceReport(sql, spath)
+        ReportViewer.Show()
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        Select Case chkLoad
-            Case "BarangayC"
-                Dim sql As String = "SELECT FULLNAME, FULLADDRESS, PURPOSE, DATEISSUED, CTCNO, ORNO, FEES FROM tbl_clearance"
-                Dim pathname As String = "C:\Capstone\BSITCapstone\Reports\Report1.rdlc"
-                ReportViewer.ClearanceReport(sql, pathname)
-                ReportViewer.Show()
-            Case "businessc"
-                Dim sql As String = "SELECT FULLNAME, BUSINESSNAME, BUSINESSLOCATION, DATEISSUED, CTCNO, ORNO, AMOUNT FROM tbl_business"
-                Dim pathname As String = "C:\Capstone\BSITCapstone\Reports\RepBusiness.rdlc"
-                ReportViewer.ClearanceReport(sql, pathname)
-                ReportViewer.Show()
-            Case "indigency"
-                Dim sql As String = "SELECT FULLNAME, FULLADDRESS, BIRTHDATE, AGE, DATEISSUED, PURPOSE FROM tbl_indigency"
-                Dim pathname As String = "C:\Capstone\BSITCapstone\Reports\RepIndigency.rdlc"
-                ReportViewer.ClearanceReport(sql, pathname)
-                ReportViewer.Show()
-            Case "residency"
-                Dim sql As String = "SELECT FULLNAME, FULLADDRESS, PURPOSE, DATEISSUED, FEES FROM tbl_residency"
-                Dim pathname As String = "C:\Capstone\BSITCapstone\Reports\RepResidency.rdlc"
-                ReportViewer.ClearanceReport(sql, pathname)
-                ReportViewer.Show()
-            Case "non-residency"
-                Dim sql As String = "SELECT FULLNAME, FULLADDRESS, DATEISSUED, FEES FROM tbl_nonresidency"
-                Dim pathname As String = "C:\Capstone\BSITCapstone\Reports\RepNonResidency.rdlc"
-                ReportViewer.ClearanceReport(sql, pathname)
-                ReportViewer.Show()
-            Case "soloparent"
-                Dim sql As String = "SELECT FULLNAME, FULLADDRESS, NOOFCHILDREN, DATEISSUED, FEES FROM tbl_soloparent"
-                Dim pathname As String = "C:\Capstone\BSITCapstone\Reports\RepSoloParent.rdlc"
-                ReportViewer.ClearanceReport(sql, pathname)
-                ReportViewer.Show()
-            Case "OATH"
-                Dim sql As String = "SELECT FULLNAME, FULLADDRESS, NORESIDING, YEARMONTH, DATEISSUED, BIRTHDATE, AGE, WITNESS FROM tbl_oath"
-                Dim pathname As String = "C:\Capstone\BSITCapstone\Reports\RepOATH.rdlc"
-                ReportViewer.ClearanceReport(sql, pathname)
-                ReportViewer.Show()
-            Case "spes"
-                Dim sql As String = "SELECT FULLNAME, FULLADDRESS, FATHERNAME, MOTHERNAME, DATEISSUED, FATHEROCCU, MOTHEROCCU FROM tbl_spes"
-                Dim pathname As String = "C:\Capstone\BSITCapstone\Reports\RepSpes.rdlc"
-                ReportViewer.ClearanceReport(sql, pathname)
-                ReportViewer.Show()
-            Case "spes1"
-                Dim sql As String = "SELECT FULLNAME, FULLADDRESS, AGE, SCHOOLYEAR, DATEISSUED FROM tbl_spes1"
-                Dim pathname As String = "C:\Capstone\BSITCapstone\Reports\RepSpes1.rdlc"
-                ReportViewer.ClearanceReport(sql, pathname)
-                ReportViewer.Show()
-            Case "residents"
-                Dim sql As String = "SELECT FULLNAME, FULLADDRESS, BIRTHPLACE, BIRTHDATE, AGE, GENDER, CIVILSTATUS, CITIZENSHIP, OCCUPATION FROM tbl_residents"
-                Dim pathname As String = "C:\Capstone\BSITCapstone\Reports\RepResidents.rdlc"
-                ReportViewer.ClearanceReport(sql, pathname)
-                ReportViewer.Show()
+        Select Case CmbPurpose.SelectedIndex
+            Case 1
+                LoadReport("SELECT FULLNAME, FULLADDRESS, PURPOSE, DATEISSUED, CTCNO, ORNO FROM tbl_clearance WHERE paymentstatus = 'Paid' ", "C:\Capstone\Reports\ReportBClearance.rdlc")
+            Case 2
+                LoadReport("SELECT FULLNAME, FULLADDRESS, BUSINESSNAME, BUSINESSLOCATION, DATEISSUED, CTCNO, ORNO FROM tbl_business", "C:\Capstone\Reports\ReportBusinessClearance.rdlc")
+            Case 3
+                LoadReport("SELECT FULLNAME, FULLADDRESS, BIRTHDATE, AGE, DATEISSUED, PURPOSE FROM tbl_indigency", "C:\Capstone\Reports\ReportIndigency.rdlc")
+            Case 4
+                LoadReport("SELECT FULLNAME, FULLADDRESS, DATEISSUED FROM tbl_nonresidency", "C:\Capstone\Reports\ReportNonResidency.rdlc")
+            Case 5
+                LoadReport("SELECT FULLNAME, FULLADDRESS, DATEISSUED, PURPOSE FROM tbl_residency", "C:\Capstone\Reports\ReportResidency.rdlc")
+            Case 6
+                LoadReport("SELECT FULLNAME, FULLADDRESS, NOOFCHILDREN, DATEISSUED FROM tbl_soloparent", "C:\Capstone\Reports\ReportSoloParent.rdlc")
+            Case 7
+                LoadReport("SELECT FULLNAME, FULLADDRESS, NORESIDING, YEARMONTH, DATEISSUED, BIRTHDATE, AGE, WITNESS FROM tbl_oath", "C:\Capstone\Reports\ReportOath.rdlc")
+            Case 8
+                LoadReport("SELECT FULLNAME, FULLADDRESS, FATHERNAME, MOTHERNAME, FATHEROCCU, MOTHEROCCU, DATEISSUED FROM tbl_spes", "C:\Capstone\Reports\ReportSPES.rdlc")
+            Case 9
+                LoadReport("SELECT FULLNAME, FULLADDRESS, AGE, SCHOOLYEAR, DATEISSUED FROM tbl_spes1", "C:\Capstone\Reports\ReportSpes1.rdlc")
         End Select
+
+
     End Sub
 
     Private Sub ReportsList_Load(sender As Object, e As EventArgs) Handles MyBase.Load

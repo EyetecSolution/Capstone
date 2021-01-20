@@ -46,16 +46,20 @@ Public Class BClearance
             Exit Sub
         End If
 
+        If CmbPurpose.Text = "--Choose Purpose--" Then
+            MessageBox.Show("Purpose is required", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
         Try
             If BtnS.Text = "SAVE" Then
                 Await InsertQuery()
                 MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempClearance.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempClearance.docx")
                 ResetTextField()
             Else
                 Await UpdateQuery()
                 MessageBox.Show("Update successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\BSITCapstone\Docs\TempClearance.docx")
+                UpdateWordDocs("C:\Capstone\Docs\TempClearance.docx")
                 ResetTextField()
             End If
         Catch ex As Exception
@@ -110,17 +114,18 @@ Public Class BClearance
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_clearance(FULLNAME,FULLADDRESS, PURPOSE, DATEISSUED, ISSUEDAT, CTCNO, ORNO, VALIDITY, FEES) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @PURPOSE, @DATEISSUED, @ISSUEDAT, @CTCNO, @ORNO, @VALIDITY, @FEES)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_clearance(FULLNAME,FULLADDRESS, PURPOSE, DATEISSUED, ISSUEDAT, CTCNO, ORNO, VALIDITY, FEES, paymentstatus) 
+                                         VALUES(@FULLNAME, @FULLADDRESS, @PURPOSE, @DATEISSUED, @ISSUEDAT, @CTCNO, @ORNO, @VALIDITY, @FEES, @paymentstatus)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
-            mycmd.Parameters.AddWithValue("PURPOSE", CmbPurpose.Text)
+            mycmd.Parameters.AddWithValue("PURPOSE", CmbPurpose.SelectedItem)
             mycmd.Parameters.AddWithValue("DATEISSUED", DateTimePicker2.Value.ToString(dtfrmat))
             mycmd.Parameters.AddWithValue("ISSUEDAT", Txtissued.Text)
             mycmd.Parameters.AddWithValue("CTCNO", TxtCtc.Text)
             mycmd.Parameters.AddWithValue("ORNO", TxtOR.Text)
             mycmd.Parameters.AddWithValue("VALIDITY", TxtValidity.Text)
             mycmd.Parameters.AddWithValue("FEES", TxtFees.Text)
+            mycmd.Parameters.AddWithValue("paymentstatus", "Not Paid")
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
         Return i
@@ -177,5 +182,13 @@ Public Class BClearance
         e.Handled = True
     End Sub
 
+    Private Sub TxtCtc_TextChanged(sender As Object, e As EventArgs) Handles TxtCtc.TextChanged
 
+    End Sub
+
+    Private Sub TxtName_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

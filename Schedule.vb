@@ -252,4 +252,39 @@ Public Class Schedule
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(Attendance)
     End Sub
+
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        TxtName.ResetText()
+        TxtMonday.ResetText()
+        TxtTuesday.ResetText()
+        TxtWednesday.ResetText()
+        TxtThursday.ResetText()
+        TxtFriday.ResetText()
+        TxtSat.ResetText()
+        TxtSunday.ResetText()
+        BtnSave.Text = "SAVE"
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BarangayManagement)
+    End Sub
+
+    Private Sub Guna2HtmlLabel3_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel3.Click
+
+    End Sub
+
+    Private Sub TxtTuesday_TextChanged(sender As Object, e As EventArgs) Handles TxtTuesday.TextChanged
+
+    End Sub
+
+    Private Sub TxtFriday_TextChanged(sender As Object, e As EventArgs) Handles TxtFriday.TextChanged
+
+    End Sub
 End Class

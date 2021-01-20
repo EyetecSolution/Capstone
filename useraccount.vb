@@ -90,7 +90,7 @@ Public Class useraccount
 
     End Sub
 
-    Private Sub useraccount_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub Useraccount_Load(sender As Object, e As EventArgs) Handles Me.Load
         LoadMe()
 
     End Sub

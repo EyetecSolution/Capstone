@@ -23,12 +23,15 @@ Partial Class Schedule
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Schedule))
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -59,6 +62,7 @@ Partial Class Schedule
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
+        Me.Panel1.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,16 +72,40 @@ Partial Class Schedule
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Location = New System.Drawing.Point(-30, 0)
+        Me.Panel1.Controls.Add(Me.Guna2Button4)
+        Me.Panel1.Location = New System.Drawing.Point(4, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(698, 32)
+        Me.Panel1.Size = New System.Drawing.Size(662, 32)
         Me.Panel1.TabIndex = 27
+        '
+        'Guna2Button4
+        '
+        Me.Guna2Button4.CheckedState.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.CheckedState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.CustomImages.CheckedImage = CType(resources.GetObject("Guna2Button4.CustomImages.CheckedImage"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.HoveredImage = CType(resources.GetObject("Guna2Button4.CustomImages.HoveredImage"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.Image = CType(resources.GetObject("Guna2Button4.CustomImages.Image"), System.Drawing.Image)
+        Me.Guna2Button4.CustomImages.ImageOffset = New System.Drawing.Point(4, 0)
+        Me.Guna2Button4.CustomImages.ImageSize = New System.Drawing.Size(24, 24)
+        Me.Guna2Button4.CustomImages.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Button4.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button4.HoverState.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button4.HoverState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Button4.Name = "Guna2Button4"
+        Me.Guna2Button4.ShadowDecoration.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Size = New System.Drawing.Size(47, 32)
+        Me.Guna2Button4.TabIndex = 100
         '
         'Guna2Panel1
         '
         Me.Guna2Panel1.BorderColor = System.Drawing.Color.Gray
         Me.Guna2Panel1.BorderThickness = 5
+        Me.Guna2Panel1.Controls.Add(Me.Guna2Button3)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel12)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel11)
         Me.Guna2Panel1.Controls.Add(Me.DateTimePicker1)
@@ -110,6 +138,31 @@ Partial Class Schedule
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(646, 411)
         Me.Guna2Panel1.TabIndex = 28
+        '
+        'Guna2Button3
+        '
+        Me.Guna2Button3.Animated = True
+        Me.Guna2Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button3.BorderColor = System.Drawing.Color.White
+        Me.Guna2Button3.BorderRadius = 5
+        Me.Guna2Button3.BorderThickness = 1
+        Me.Guna2Button3.CheckedState.Parent = Me.Guna2Button3
+        Me.Guna2Button3.CustomImages.Parent = Me.Guna2Button3
+        Me.Guna2Button3.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button3.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Guna2Button3.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
+        Me.Guna2Button3.Location = New System.Drawing.Point(469, 90)
+        Me.Guna2Button3.Name = "Guna2Button3"
+        Me.Guna2Button3.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Guna2Button3.ShadowDecoration.Enabled = True
+        Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
+        Me.Guna2Button3.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
+        Me.Guna2Button3.Size = New System.Drawing.Size(165, 25)
+        Me.Guna2Button3.TabIndex = 12
+        Me.Guna2Button3.Text = "RESET"
         '
         'Guna2HtmlLabel12
         '
@@ -171,46 +224,46 @@ Partial Class Schedule
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.DarkGray
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.DataGridView1.ColumnHeadersHeight = 30
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle14
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.Location = New System.Drawing.Point(6, 4)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle15
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle16
         Me.DataGridView1.RowTemplate.Height = 30
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(610, 155)
@@ -259,7 +312,7 @@ Partial Class Schedule
         Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
         Me.Guna2Button2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
         Me.Guna2Button2.Size = New System.Drawing.Size(165, 25)
-        Me.Guna2Button2.TabIndex = 90
+        Me.Guna2Button2.TabIndex = 9
         Me.Guna2Button2.Text = "ATTENDANCE"
         '
         'TxtSunday
@@ -270,7 +323,7 @@ Partial Class Schedule
         Me.TxtSunday.Name = "TxtSunday"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtSunday, False)
         Me.TxtSunday.Size = New System.Drawing.Size(134, 23)
-        Me.TxtSunday.TabIndex = 89
+        Me.TxtSunday.TabIndex = 8
         '
         'Guna2HtmlLabel9
         '
@@ -290,7 +343,7 @@ Partial Class Schedule
         Me.TxtSat.Name = "TxtSat"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtSat, False)
         Me.TxtSat.Size = New System.Drawing.Size(134, 23)
-        Me.TxtSat.TabIndex = 87
+        Me.TxtSat.TabIndex = 7
         '
         'Guna2HtmlLabel8
         '
@@ -310,7 +363,7 @@ Partial Class Schedule
         Me.TxtFriday.Name = "TxtFriday"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtFriday, False)
         Me.TxtFriday.Size = New System.Drawing.Size(134, 23)
-        Me.TxtFriday.TabIndex = 85
+        Me.TxtFriday.TabIndex = 6
         '
         'Guna2HtmlLabel6
         '
@@ -330,7 +383,7 @@ Partial Class Schedule
         Me.TxtThursday.Name = "TxtThursday"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtThursday, False)
         Me.TxtThursday.Size = New System.Drawing.Size(134, 23)
-        Me.TxtThursday.TabIndex = 83
+        Me.TxtThursday.TabIndex = 5
         '
         'Guna2HtmlLabel5
         '
@@ -350,7 +403,7 @@ Partial Class Schedule
         Me.TxtWednesday.Name = "TxtWednesday"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtWednesday, False)
         Me.TxtWednesday.Size = New System.Drawing.Size(134, 23)
-        Me.TxtWednesday.TabIndex = 81
+        Me.TxtWednesday.TabIndex = 4
         '
         'Guna2HtmlLabel4
         '
@@ -370,7 +423,7 @@ Partial Class Schedule
         Me.TxtTuesday.Name = "TxtTuesday"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtTuesday, False)
         Me.TxtTuesday.Size = New System.Drawing.Size(134, 23)
-        Me.TxtTuesday.TabIndex = 79
+        Me.TxtTuesday.TabIndex = 3
         '
         'Guna2HtmlLabel3
         '
@@ -390,7 +443,7 @@ Partial Class Schedule
         Me.TxtMonday.Name = "TxtMonday"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtMonday, False)
         Me.TxtMonday.Size = New System.Drawing.Size(134, 23)
-        Me.TxtMonday.TabIndex = 77
+        Me.TxtMonday.TabIndex = 2
         '
         'Guna2HtmlLabel2
         '
@@ -424,7 +477,7 @@ Partial Class Schedule
         Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
         Me.Guna2Button1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
         Me.Guna2Button1.Size = New System.Drawing.Size(165, 25)
-        Me.Guna2Button1.TabIndex = 75
+        Me.Guna2Button1.TabIndex = 10
         Me.Guna2Button1.Text = "PRINT SCHEDULE"
         '
         'BtnSave
@@ -449,7 +502,7 @@ Partial Class Schedule
         Me.BtnSave.ShadowDecoration.Parent = Me.BtnSave
         Me.BtnSave.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
         Me.BtnSave.Size = New System.Drawing.Size(165, 25)
-        Me.BtnSave.TabIndex = 74
+        Me.BtnSave.TabIndex = 11
         Me.BtnSave.Text = "SAVE"
         '
         'Guna2HtmlLabel7
@@ -470,7 +523,7 @@ Partial Class Schedule
         Me.TxtName.Name = "TxtName"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtName, False)
         Me.TxtName.Size = New System.Drawing.Size(349, 23)
-        Me.TxtName.TabIndex = 47
+        Me.TxtName.TabIndex = 1
         '
         'Guna2HtmlLabel1
         '
@@ -507,6 +560,7 @@ Partial Class Schedule
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Schedule"
         Me.Text = "Schedule"
+        Me.Panel1.ResumeLayout(False)
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
         Me.Guna2Panel2.ResumeLayout(False)
@@ -549,4 +603,6 @@ Partial Class Schedule
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
 End Class

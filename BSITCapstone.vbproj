@@ -69,20 +69,59 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>BSITCapstone.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>BSITCapstone.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Emgu.CV, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\Emgu.CV.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\Emgu.Util.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>DLL\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagingToolkit.QRCode">
+      <HintPath>DLL\MessagingToolkit.QRCode.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.4.1\lib\net40\QRCoder.dll</HintPath>
     </Reference>
     <Reference Include="Softgroup.NetResize">
       <HintPath>..\..\..\..\..\Program Files (x86)\Softgroup .Net Forms Resize\Softgroup.NetResize.dll</HintPath>
@@ -108,6 +147,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -191,10 +231,28 @@
     <Compile Include="DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dummy.Designer.vb">
+      <DependentUpon>Dummy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dummy.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormDocument.Designer.vb">
       <DependentUpon>FormDocument.vb</DependentUpon>
     </Compile>
     <Compile Include="FormDocument.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateQR.Designer.vb">
+      <DependentUpon>GenerateQR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateQR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenQRCODE.Designer.vb">
+      <DependentUpon>GenQRCODE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenQRCODE.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HealthMonitoring.Designer.vb">
@@ -299,22 +357,16 @@
     <Compile Include="TanodReports.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="useraccount.Designer.vb">
-      <DependentUpon>useraccount.vb</DependentUpon>
+    <Compile Include="Useraccount.Designer.vb">
+      <DependentUpon>Useraccount.vb</DependentUpon>
     </Compile>
-    <Compile Include="useraccount.vb">
+    <Compile Include="Useraccount.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Residents.Designer.vb">
       <DependentUpon>Residents.vb</DependentUpon>
     </Compile>
     <Compile Include="Residents.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PrintResidentInformation.Designer.vb">
-      <DependentUpon>PrintResidentInformation.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PrintResidentInformation.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HomeContent.Designer.vb">
@@ -378,8 +430,17 @@
     <EmbeddedResource Include="BlotterRecords.resx">
       <DependentUpon>BlotterRecords.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dummy.resx">
+      <DependentUpon>Dummy.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDocument.resx">
       <DependentUpon>FormDocument.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateQR.resx">
+      <DependentUpon>GenerateQR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenQRCODE.resx">
+      <DependentUpon>GenQRCODE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HealthMonitoring.resx">
       <DependentUpon>HealthMonitoring.vb</DependentUpon>
@@ -417,6 +478,7 @@
     <EmbeddedResource Include="Residency.resx">
       <DependentUpon>Residency.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResidentReport.rdlc" />
     <EmbeddedResource Include="Residents.resx">
       <DependentUpon>Residents.vb</DependentUpon>
     </EmbeddedResource>
@@ -435,11 +497,8 @@
     <EmbeddedResource Include="TanodReports.resx">
       <DependentUpon>TanodReports.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="useraccount.resx">
-      <DependentUpon>useraccount.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PrintResidentInformation.resx">
-      <DependentUpon>PrintResidentInformation.vb</DependentUpon>
+    <EmbeddedResource Include="Useraccount.resx">
+      <DependentUpon>Useraccount.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeContent.resx">
       <DependentUpon>HomeContent.vb</DependentUpon>
@@ -476,6 +535,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

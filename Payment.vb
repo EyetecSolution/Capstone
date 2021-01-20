@@ -2,7 +2,20 @@
 Public Class Payment
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
     Public category As String
+    Public tblparam As String = Nothing
+    Async Function UpdateQuery(sql As String) As Task(Of Integer)
+        Dim i As Integer
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
 
+        Using mycmd As New OleDbCommand(sql, con)
+            mycmd.Parameters.AddWithValue("ID", BCHistory.id)
+
+            i = Await mycmd.ExecuteNonQueryAsync
+        End Using
+        Return i
+    End Function
     Private Async Sub LoadMe()
         Dim sql As String = "SELECT * 
                              FROM tbl_payment"
@@ -71,6 +84,8 @@ Public Class Payment
     End Sub
 
     Private Async Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles BtnPayment.Click
+        Dim paid As String = "Paid"
+        Dim sql As String = $"UPDATE {tblparam} SET paymentstatus='" & paid & "' WHERE ID=@ID"
         If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtCash.Text) Then
             MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
@@ -79,6 +94,7 @@ Public Class Payment
         Try
             Await InsertQuery()
             MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Await UpdateQuery(sql)
             ResetTextfield()
             LoadMe()
         Catch ex As Exception
@@ -89,6 +105,8 @@ Public Class Payment
         End Try
 
     End Sub
+
+
 
     Async Function InsertQuery() As Task(Of Integer)
         Dim dtfrmat As String = "MM-dd-yyyy"
@@ -124,6 +142,18 @@ Public Class Payment
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+        Select Case category
+            Case "BARANGAY CLEARANCE"
+                BCHistory.LoadBclearance()
+            Case "BUSINESS CLEARANCE"
+                BCHistory.LoadBusinessClearance()
+            Case "CERTIFICATE OF NON-RESIDENCY"
+                BCHistory.LoadNonRes()
+            Case "CERTIFICATE OF RESIDENCY"
+                BCHistory.LoadNonRes()
+            Case "CERTIFICATE OF SOLO PARENT"
+                BCHistory.LoadSoloParent()
+        End Select
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
     End Sub

@@ -20,42 +20,42 @@ Public Class HomeContent
         ImageSlider1.SlideNext()
     End Sub
 
-    Private Async Sub ImageSlider1_ContextButtonClick(sender As Object, e As DevExpress.Utils.ContextItemClickEventArgs) Handles ImageSlider1.ContextButtonClick
+    Private Sub ImageSlider1_ContextButtonClick(sender As Object, e As DevExpress.Utils.ContextItemClickEventArgs) Handles ImageSlider1.ContextButtonClick
         Dim currentBtn As String = e.Item.Name
-        Select Case currentBtn
-            Case "AddPhotos"
-                If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
-                    Dim mypath As String = FolderBrowserDialog1.SelectedPath
-                    Dim filters As String() = {"*.jpg", "*.png"}
-                    Dim filePaths As String() = filters.SelectMany(Function(f) Directory.GetFiles(mypath, f)).ToArray()
-                    If filePaths.Length > 0 Then
-                        ImageSlider1.Images.Clear()
-                        For Each fle As String In filePaths
-                            ImageSlider1.Images.Add(Image.FromFile(fle))
-                        Next
-                        MessageBox.Show("Images loaded successfully!", "ims", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Await UpdatePath(mypath)
-                    Else
-                        MessageBox.Show("There's something wrong with the directory check if contains of images", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End If
+        'Select Case currentBtn
+        ''    Case "AddPhotos"
+        ''        If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
+        ''            Dim mypath As String = FolderBrowserDialog1.SelectedPath
+        ''            Dim filters As String() = {"*.jpg", "*.png"}
+        ''            Dim filePaths As String() = filters.SelectMany(Function(f) Directory.GetFiles(mypath, f)).ToArray()
+        ''            If filePaths.Length > 0 Then
+        ''                ImageSlider1.Images.Clear()
+        ''                For Each fle As String In filePaths
+        ''                    ImageSlider1.Images.Add(Image.FromFile(fle))
+        ''                Next
+        ''                MessageBox.Show("Images loaded successfully!", "ims", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ''                Await UpdatePath(mypath)
+        ''            Else
+        ''                MessageBox.Show("There's something wrong with the directory check if contains of images", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ''            End If
 
-                End If
+        ''        End If
 
 
-        End Select
+        ''End Select
     End Sub
 
     Private Async Sub HomeContent_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim pth As String = Await RetrievePaths()
-        Dim filters As String() = {"*.jpg", "*.png"}
-        Dim filePaths As String() = filters.SelectMany(Function(f) Directory.GetFiles(pth, f)).ToArray()
-        If filePaths.Length > 0 Then
-            ImageSlider1.Images.Clear()
-            For Each fle As String In filePaths
-                ImageSlider1.Images.Add(Image.FromFile(fle))
-            Next
-        End If
 
+        'Dim pth As String = Await RetrievePaths()
+        'Dim filters As String() = {"*.jpg", "*.png"}
+        'Dim filePaths As String() = filters.SelectMany(Function(f) Directory.GetFiles(pth, f)).ToArray()
+        'If filePaths.Length > 0 Then
+        '    ImageSlider1.Images.Clear()
+        '    For Each fle As String In filePaths
+        '        Dim v = ImageSlider1.Images.Add(Image.FromFile(fle))
+        '    Next
+        'End If
         Dim sql1 As String = "SELECT COUNT(*) FROM tbl_covid WHERE CONDITION='CONFIRMED'"
         Dim sql2 As String = "SELECT COUNT(*) FROM tbl_covid WHERE CONDITION='PUI'"
         Dim sql3 As String = "SELECT COUNT(*) FROM tbl_covid WHERE CONDITION='PUM(ONGOING)'"

@@ -24,6 +24,8 @@ Partial Class BusinessClearance
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.TxtAddress = New System.Windows.Forms.TextBox()
+        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
@@ -55,6 +57,8 @@ Partial Class BusinessClearance
         '
         Me.Guna2Panel1.BorderColor = System.Drawing.Color.Gray
         Me.Guna2Panel1.BorderThickness = 5
+        Me.Guna2Panel1.Controls.Add(Me.TxtAddress)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel10)
         Me.Guna2Panel1.Controls.Add(Me.DateTimePicker1)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Button2)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Button1)
@@ -80,6 +84,26 @@ Partial Class BusinessClearance
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(646, 387)
         Me.Guna2Panel1.TabIndex = 30
+        '
+        'TxtAddress
+        '
+        Me.TxtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtAddress.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtAddress.Location = New System.Drawing.Point(13, 73)
+        Me.TxtAddress.Name = "TxtAddress"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtAddress, False)
+        Me.TxtAddress.Size = New System.Drawing.Size(349, 23)
+        Me.TxtAddress.TabIndex = 113
+        '
+        'Guna2HtmlLabel10
+        '
+        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(13, 57)
+        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
+        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(68, 18)
+        Me.Guna2HtmlLabel10.TabIndex = 112
+        Me.Guna2HtmlLabel10.Text = "ADDRESS :"
         '
         'DateTimePicker1
         '
@@ -107,7 +131,7 @@ Partial Class BusinessClearance
         Me.Guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Guna2Button2.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Location = New System.Drawing.Point(221, 230)
+        Me.Guna2Button2.Location = New System.Drawing.Point(220, 258)
         Me.Guna2Button2.Name = "Guna2Button2"
         Me.Guna2Button2.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Guna2Button2.ShadowDecoration.Enabled = True
@@ -132,7 +156,7 @@ Partial Class BusinessClearance
         Me.Guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Guna2Button1.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Location = New System.Drawing.Point(499, 230)
+        Me.Guna2Button1.Location = New System.Drawing.Point(498, 258)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Guna2Button1.ShadowDecoration.Enabled = True
@@ -157,7 +181,7 @@ Partial Class BusinessClearance
         Me.BtnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnSave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BtnSave.HoverState.Parent = Me.BtnSave
-        Me.BtnSave.Location = New System.Drawing.Point(360, 230)
+        Me.BtnSave.Location = New System.Drawing.Point(359, 258)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.BtnSave.ShadowDecoration.Enabled = True
@@ -202,7 +226,7 @@ Partial Class BusinessClearance
         '
         Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(13, 140)
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(13, 184)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
         Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(89, 18)
         Me.Guna2HtmlLabel6.TabIndex = 105
@@ -214,7 +238,7 @@ Partial Class BusinessClearance
         Me.DateTimePicker2.CustomFormat = "MMMM d      yyyy"
         Me.DateTimePicker2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(13, 156)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(13, 200)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(235, 26)
         Me.DateTimePicker2.TabIndex = 104
@@ -263,7 +287,7 @@ Partial Class BusinessClearance
         '
         Me.TxtBusinesslocation.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtBusinesslocation.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBusinesslocation.Location = New System.Drawing.Point(13, 112)
+        Me.TxtBusinesslocation.Location = New System.Drawing.Point(13, 156)
         Me.TxtBusinesslocation.Name = "TxtBusinesslocation"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtBusinesslocation, False)
         Me.TxtBusinesslocation.Size = New System.Drawing.Size(349, 23)
@@ -273,7 +297,7 @@ Partial Class BusinessClearance
         '
         Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(13, 96)
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(13, 140)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
         Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(141, 18)
         Me.Guna2HtmlLabel3.TabIndex = 97
@@ -283,7 +307,7 @@ Partial Class BusinessClearance
         '
         Me.TxtBusinessname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtBusinessname.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBusinessname.Location = New System.Drawing.Point(13, 73)
+        Me.TxtBusinessname.Location = New System.Drawing.Point(13, 117)
         Me.TxtBusinessname.Name = "TxtBusinessname"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtBusinessname, False)
         Me.TxtBusinessname.Size = New System.Drawing.Size(349, 23)
@@ -293,7 +317,7 @@ Partial Class BusinessClearance
         '
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(13, 57)
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(13, 101)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(105, 18)
         Me.Guna2HtmlLabel2.TabIndex = 95
@@ -303,7 +327,7 @@ Partial Class BusinessClearance
         '
         Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(21, 201)
+        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(21, 212)
         Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
         Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(3, 2)
         Me.Guna2HtmlLabel7.TabIndex = 56
@@ -378,8 +402,6 @@ Partial Class BusinessClearance
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents TxtBusinesslocation As TextBox
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TxtBusinessname As TextBox
-    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents BtnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
@@ -395,4 +417,8 @@ Partial Class BusinessClearance
     Friend WithEvents LblTitle As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
+    Friend WithEvents TxtAddress As TextBox
+    Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents TxtBusinessname As TextBox
+    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class

@@ -145,4 +145,17 @@ Public Class Honorarium
             e.Handled = True
         End If
     End Sub
+
+    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs) Handles TxtName.TextChanged
+
+    End Sub
+
+    Private Sub Txtnet_TextChanged(sender As Object, e As EventArgs) Handles Txtnet.TextChanged
+
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BarangayManagement)
+    End Sub
 End Class
