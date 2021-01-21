@@ -26,14 +26,14 @@ Public Class BClearance
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_clearance
-                                         SET FULLNAME= '" & TxtName.Text & "',
-                                             FULLADDRESS= '" & TxtAddress.Text & "',
-                                             PURPOSE= '" & CmbPurpose.SelectedItem & "',
-                                             DATEISSUED= '" & DateTimePicker2.Value.ToString(frmat) & "',
-                                             CTCNO='" & TxtCtc.Text & "',
-                                             ORNO= '" & TxtOR.Text & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_clearance" &
+                                         " SET FULLNAME= '" & TxtName.Text & "', " &
+                                             "FULLADDRESS= '" & TxtAddress.Text & "', " &
+                                             "PURPOSE= '" & CmbPurpose.SelectedItem & "', " &
+                                             "DATEISSUED= '" & DateTimePicker2.Value.ToString(frmat) & "', " &
+                                             "CTCNO='" & TxtCtc.Text & "', " &
+                                             "ORNO= '" & TxtOR.Text & "'" &
+                                             "WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync
@@ -53,13 +53,13 @@ Public Class BClearance
         Try
             If BtnS.Text = "SAVE" Then
                 Await InsertQuery()
-                MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 UpdateWordDocs("C:\Capstone\Docs\TempClearance.docx")
+                MessageBox.Show("New Barangay Clearance applicant added! and" & vbNewLine & "The Document will available for printing.", "Documents Created", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ResetTextField()
             Else
                 Await UpdateQuery()
-                MessageBox.Show("Update successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 UpdateWordDocs("C:\Capstone\Docs\TempClearance.docx")
+                MessageBox.Show("Clearance updated! and" & vbNewLine & "The Document will available for printing.", "Documents Created", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ResetTextField()
             End If
         Catch ex As Exception
@@ -81,6 +81,15 @@ Public Class BClearance
 
 
     Private Sub UpdateWordDocs(sPath As String)
+
+        Try
+            Dim Word() As Process = Process.GetProcessesByName("WINWORD")
+            For Each Process As Process In Word
+                Process.Kill()
+            Next
+        Catch ex As Exception
+        End Try
+
         Dim dtFormat As String = "MM/d/yyyy"
         Dim monthFrmat As String = "MMMM"
         Dim objWordApp = New Word.Application With {
@@ -103,9 +112,7 @@ Public Class BClearance
 
         wdDoc.Save()
         wdDoc.Close()
-        wdDoc = Nothing
         objWordApp.Quit()
-        objWordApp = Nothing
     End Sub
     Async Function InsertQuery() As Task(Of Integer)
         Dim dtfrmat As String = "MM/d/yyyy"
@@ -114,8 +121,8 @@ Public Class BClearance
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_clearance(FULLNAME,FULLADDRESS, PURPOSE, DATEISSUED, ISSUEDAT, CTCNO, ORNO, VALIDITY, FEES, paymentstatus) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @PURPOSE, @DATEISSUED, @ISSUEDAT, @CTCNO, @ORNO, @VALIDITY, @FEES, @paymentstatus)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_clearance(FULLNAME,FULLADDRESS, PURPOSE, DATEISSUED, ISSUEDAT, CTCNO, ORNO, VALIDITY, FEES, paymentstatus)" &
+                                         "VALUES(@FULLNAME, @FULLADDRESS, @PURPOSE, @DATEISSUED, @ISSUEDAT, @CTCNO, @ORNO, @VALIDITY, @FEES)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("PURPOSE", CmbPurpose.SelectedItem)
@@ -125,7 +132,6 @@ Public Class BClearance
             mycmd.Parameters.AddWithValue("ORNO", TxtOR.Text)
             mycmd.Parameters.AddWithValue("VALIDITY", TxtValidity.Text)
             mycmd.Parameters.AddWithValue("FEES", TxtFees.Text)
-            mycmd.Parameters.AddWithValue("paymentstatus", "Not Paid")
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
         Return i
@@ -190,5 +196,12 @@ Public Class BClearance
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
+    End Sub
+
+
+
+
+    Private Sub BClearance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

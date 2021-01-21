@@ -55,8 +55,8 @@ Public Class Spes1
         UpdateBookMark("address", TxtAddress.Text.Trim, wdDoc)
         UpdateBookMark("age", TxtAge.Text.Trim, wdDoc)
         UpdateBookMark("schoolyear", TxtSchoolYear.Text.Trim, wdDoc)
-        UpdateBookMark("day", $"{DateTimePicker2.Value.Day}th", wdDoc)
-        UpdateBookMark("myear", $"{DateTimePicker2.Value.ToString("Y").ToUpper}", wdDoc)
+        UpdateBookMark("day", DateTimePicker2.Value.Day, wdDoc)
+        UpdateBookMark("myear", DateTimePicker2.Value.ToString("Y").ToUpper, wdDoc)
 
 
 
@@ -102,8 +102,8 @@ Public Class Spes1
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_spes1(FULLNAME,FULLADDRESS, AGE, SCHOOLYEAR, DATEISSUED) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @AGE, @SCHOOLYEAR, @DATEISSUED)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_spes1(FULLNAME,FULLADDRESS, AGE, SCHOOLYEAR, DATEISSUED)" &
+                                         " VALUES(@FULLNAME, @FULLADDRESS, @AGE, @SCHOOLYEAR, @DATEISSUED)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("AGE", TxtAge.Text)
@@ -121,13 +121,13 @@ Public Class Spes1
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_spes1
-                                         SET FULLNAME= '" & TxtName.Text & "',
-                                             FULLADDRESS= '" & TxtAddress.Text & "',
-                                             AGE= '" & TxtAge.Text & "',
-                                             SCHOOLYEAR= '" & TxtSchoolYear.Text & "',
-                                             DATEISSUED= '" & DateTimePicker2.Value & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_spes1" &
+                                         " SET FULLNAME= '" & TxtName.Text & "'," &
+                                             " FULLADDRESS= '" & TxtAddress.Text & "'," &
+                                             " AGE= '" & TxtAge.Text & "'," &
+                                             " SCHOOLYEAR= '" & TxtSchoolYear.Text & "'," &
+                                             " DATEISSUED= '" & DateTimePicker2.Value & "'" &
+                                         " WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync

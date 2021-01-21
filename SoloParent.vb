@@ -15,8 +15,8 @@ Public Class SoloParent
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_soloparent(FULLNAME,FULLADDRESS, NOOFCHILDREN, DATEISSUED) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @NOOFCHILDREND, @DATEISSUED)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_soloparent(FULLNAME,FULLADDRESS, NOOFCHILDREN, DATEISSUED)" &
+                                         " VALUES(@FULLNAME, @FULLADDRESS, @NOOFCHILDREND, @DATEISSUED)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("NOOFCHILDREN", TxtChildNo.Text)
@@ -33,13 +33,12 @@ Public Class SoloParent
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_soloparent
-                                         SET FULLNAME= '" & TxtName.Text & "',
-                                             FULLADDRESS= '" & TxtAddress.Text & "',
-                                             NOOFCHILDREN= '" & TxtChildNo.Text & "',
-                                             DATEISSUED='" & DateTimePicker2.Value & "'
-                                             
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_soloparent" &
+                                         " SET FULLNAME= '" & TxtName.Text & "'," &
+                                             " FULLADDRESS= '" & TxtAddress.Text & "'," &
+                                             " NOOFCHILDREN= '" & TxtChildNo.Text & "'," &
+                                             " DATEISSUED='" & DateTimePicker2.Value & "'" &
+                                         "WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync
@@ -73,7 +72,7 @@ Public Class SoloParent
         UpdateBookMark("name", TxtName.Text.Trim, wdDoc)
         UpdateBookMark("childCount", TxtChildNo.Text.Trim, wdDoc)
         UpdateBookMark("address", TxtAddress.Text.Trim, wdDoc)
-        UpdateBookMark("day", $"{DateTimePicker2.Value.Day}th", wdDoc)
+        UpdateBookMark("day", DateTimePicker2.Value.Day, wdDoc)
         UpdateBookMark("myear", DateTimePicker2.Value.ToString("Y").ToUpper, wdDoc)
 
 

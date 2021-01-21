@@ -13,9 +13,7 @@ Public Class Residents
 
 
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_residents 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT * FROM tbl_residents WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -27,8 +25,7 @@ Public Class Residents
     End Function
 
     Private Async Sub LoadData()
-        Dim sql As String = "SELECT ID, FULLNAME, FULLADDRESS, BIRTHPLACE, BIRTHDATE, AGE, GENDER, CIVILSTATUS, CITIZENSHIP, OCCUPATION
-                             FROM tbl_residents"
+        Dim sql As String = "SELECT ID, FULLNAME, FULLADDRESS, BIRTHPLACE, BIRTHDATE, AGE, GENDER, CIVILSTATUS, CITIZENSHIP, OCCUPATION FROM tbl_residents"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
@@ -89,9 +86,7 @@ Public Class Residents
 
         Dim arrImage As Byte()
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_residents 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT * FROM tbl_residents WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -151,11 +146,7 @@ Public Class Residents
     End Sub
 
     Private Async Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
-        Dim sql As String = "SELECT ID, FULLNAME, FULLADDRESS, BIRTHPLACE, BIRTHDATE, AGE, GENDER, CIVILSTATUS, CITIZENSHIP, OCCUPATION
-                              FROM tbl_residents
-                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
-                                    FULLADDRESS LIKE '" & TxtSearch.Text & "%'"
-
+        Dim sql As String = "SELECT ID, FULLNAME, FULLADDRESS, BIRTHPLACE, BIRTHDATE, AGE, GENDER, CIVILSTATUS, CITIZENSHIP, OCCUPATION FROM tbl_residents WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR FULLADDRESS LIKE '" & TxtSearch.Text & "%'"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
     End Sub

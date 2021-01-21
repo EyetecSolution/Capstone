@@ -86,9 +86,7 @@ Public Class Dashboard
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE notes 
-                                         SET fld_notes = '" & TxtNotes.Text & "'
-                                         WHERE ID=1", con)
+        Using mycmd As New OleDbCommand("UPDATE notes SET fld_notes = '" & TxtNotes.Text & "'  WHERE ID=1", con)
             Dim i As Integer = Await mycmd.ExecuteNonQueryAsync
             Return i
         End Using

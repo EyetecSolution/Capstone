@@ -24,9 +24,7 @@ Public Class OrganActions
 
 
 
-            Using mycmd As New OleDbCommand("UPDATE tbl_officials SET fname=@fname,
-                                                                      photos=@photos
-                                                                  WHERE fname='" & CmbOfficials.SelectedItem & "'", con)
+            Using mycmd As New OleDbCommand("UPDATE tbl_officials SET fname=@fname,photos=@photos WHERE fname='" & CmbOfficials.SelectedItem & "'", con)
                 mycmd.Parameters.AddWithValue("@fname", textName)
                 mycmd.Parameters.AddWithValue("@photos", arrImage)
 
@@ -80,10 +78,7 @@ Public Class OrganActions
 
         Dim arrImage As Byte()
 
-        Using mycmd As New OleDbCommand("SELECT photos
-                                         From tbl_officials
-                                         WHERE fname = '" & strItem & "'", con)
-
+        Using mycmd As New OleDbCommand("SELECT photos  From tbl_officials WHERE fname = '" & strItem & "'", con)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
                 arrImage = myReader("photos")

@@ -9,10 +9,6 @@ Public Class BCHistory
         If con.State = ConnectionState.Closed Then
             con.Open()
         End If
-
-
-
-
         Using mycmd As New OleDbCommand(sql, con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
@@ -31,9 +27,7 @@ Public Class BCHistory
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_clearance 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT * FROM tbl_clearance  WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -54,20 +48,19 @@ Public Class BCHistory
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_business 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT * FROM tbl_business  WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
                 BusinessClearance.TxtName.Text = myReader("FULLNAME")
+                BusinessClearance.TxtAddress.Text = myReader("FULLADDRESS")
                 BusinessClearance.TxtBusinessname.Text = myReader("BUSINESSNAME")
                 BusinessClearance.TxtBusinesslocation.Text = myReader("BUSINESSLOCATION")
                 BusinessClearance.DateTimePicker2.Value = myReader("DATEISSUED")
                 BusinessClearance.TxtOr.Text = myReader("ORNO")
                 BusinessClearance.TxtCtc.Text = myReader("CTCNO")
                 BusinessClearance.DateTimePicker1.Value = myReader("VALIDITY")
-                BusinessClearance.TxtAmount.Text = myReader("AMOUNT")
+                BusinessClearance.TxtAmount.Text = myReader("FEES")
 
             End If
         End Using
@@ -79,9 +72,7 @@ Public Class BCHistory
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_indigency 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT *FROM tbl_indigency  WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -102,9 +93,7 @@ Public Class BCHistory
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_residency 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT * FROM tbl_residency  WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -122,9 +111,7 @@ Public Class BCHistory
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_nonresidency 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT * FROM tbl_nonresidency  WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -141,9 +128,7 @@ Public Class BCHistory
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_soloparent 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT *FROM tbl_soloparent  WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -161,9 +146,7 @@ Public Class BCHistory
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_oath 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT *FROM tbl_oath WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -185,9 +168,7 @@ Public Class BCHistory
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_spes 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT *FROM tbl_spes  WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -208,9 +189,7 @@ Public Class BCHistory
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_spes1
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT *FROM tbl_spes1 WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -238,8 +217,7 @@ Public Class BCHistory
 
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
     Public Async Sub LoadBclearance()
-        Dim sql As String = "SELECT * 
-                             FROM tbl_clearance"
+        Dim sql As String = "SELECT * FROM tbl_clearance"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("FULLNAME").Width = 200
@@ -252,12 +230,10 @@ Public Class BCHistory
         DataGridView1.Columns("CTCNO").HeaderText = "CTC. No."
         DataGridView1.Columns("ORNO").HeaderText = "O.R No."
         DataGridView1.Columns("ORNO").HeaderText = "O.R No."
-        DataGridView1.Columns("paymentstatus").HeaderText = "STATUS"
     End Sub
 
     Public Async Sub LoadIndigency()
-        Dim sql As String = "SELECT * 
-                             FROM tbl_indigency"
+        Dim sql As String = "SELECT * FROM tbl_indigency"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
@@ -273,8 +249,7 @@ Public Class BCHistory
     End Sub
 
     Public Async Sub LoadNonRes()
-        Dim sql As String = "SELECT * 
-                             FROM tbl_nonresidency"
+        Dim sql As String = "SELECT * FROM tbl_nonresidency"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
@@ -289,8 +264,7 @@ Public Class BCHistory
     End Sub
 
     Public Async Sub LoadRes()
-        Dim sql As String = "SELECT * 
-                             FROM tbl_residency"
+        Dim sql As String = "SELECT * FROM tbl_residency"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
@@ -308,8 +282,8 @@ Public Class BCHistory
     End Sub
 
     Public Async Sub LoadSoloParent()
-        Dim sql As String = "SELECT * 
-                             FROM tbl_soloparent"
+        Dim sql As String = "SELECT * FROM tbl_soloparent"
+
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
@@ -326,8 +300,7 @@ Public Class BCHistory
     End Sub
 
     Public Async Sub LoadOATH()
-        Dim sql As String = "SELECT * 
-                             FROM tbl_oath"
+        Dim sql As String = "SELECT * FROM tbl_oath"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
@@ -348,8 +321,7 @@ Public Class BCHistory
     End Sub
 
     Public Async Sub LoadSpes()
-        Dim sql As String = "SELECT * 
-                             FROM tbl_spes"
+        Dim sql As String = "SELECT * FROM tbl_spes"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
@@ -372,8 +344,7 @@ Public Class BCHistory
     End Sub
 
     Public Async Sub LoadSpes1()
-        Dim sql As String = "SELECT * 
-                             FROM tbl_spes1"
+        Dim sql As String = "SELECT * FROM tbl_spes1"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
@@ -392,8 +363,7 @@ Public Class BCHistory
     End Sub
 
     Public Async Sub LoadBusinessClearance()
-        Dim sql As String = "SELECT * 
-                             FROM tbl_business"
+        Dim sql As String = "SELECT * FROM tbl_business"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("FULLNAME").HeaderText = "FULL NAME"
@@ -481,109 +451,83 @@ Public Class BCHistory
         Select Case catTitle
             Case "Barangay Clearance"
                 LoadBclearance()
-                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql)} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", Await LoadDataCount(sql))
             Case "businessc"
                 LoadBusinessClearance()
-                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sqlx)} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", Await LoadDataCount(sqlx))
             Case "indigency"
                 LoadIndigency()
-                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql1)} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", Await LoadDataCount(sql1))
             Case "non-residency"
                 LoadNonRes()
-                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql2)} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", Await LoadDataCount(sql2))
             Case "residency"
                 LoadRes()
-                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql3)} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", Await LoadDataCount(sql3))
             Case "solo-parent"
                 LoadSoloParent()
-                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql4)} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", Await LoadDataCount(sql4))
             Case "OATH"
                 LoadOATH()
-                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql5)} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", Await LoadDataCount(sql5))
             Case "SPES"
                 LoadSpes()
-                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql6)} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", Await LoadDataCount(sql6))
             Case "SPES1"
                 LoadSpes1()
-                LblCount.Text = $"TRANSACTION COUNT ( {Await LoadDataCount(sql7)} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", Await LoadDataCount(sql7))
         End Select
+
     End Sub
 
     Private Async Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
         Select Case catTitle
             Case "Barangay Clearance"
-                Dim sql As String = "SELECT * FROM tbl_clearance
-                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
-                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
-
+                Dim sql As String = "SELECT * FROM tbl_clearance WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
                 Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
                 DataGridView1.DataSource = dtsample
-                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", DataGridView1.Rows.Count)
             Case "businessc"
-                Dim sql As String = "SELECT * FROM tbl_business
-                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
-                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
-
+                Dim sql As String = "SELECT * FROM tbl_business '" & TxtSearch.Text & "%' OR DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
                 Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
                 DataGridView1.DataSource = dtsample
-                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", DataGridView1.Rows.Count)
             Case "indigency"
-                Dim sql As String = "SELECT * FROM tbl_indigency
-                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
-                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
-
+                Dim sql As String = "SELECT * FROM tbl_indigency '" & TxtSearch.Text & "%' OR DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
                 Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
                 DataGridView1.DataSource = dtsample
-                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", DataGridView1.Rows.Count)
             Case "non-residency"
-                Dim sql As String = "SELECT * FROM tbl_nonresidency
-                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
-                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
-
+                Dim sql As String = "SELECT * FROM tbl_nonresidency '" & TxtSearch.Text & "%' OR DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
                 Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
                 DataGridView1.DataSource = dtsample
-                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", DataGridView1.Rows.Count)
             Case "residency"
-                Dim sql As String = "SELECT * FROM tbl_residency
-                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
-                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
-
+                Dim sql As String = "SELECT * FROM tbl_residency '" & TxtSearch.Text & "%' OR DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
                 Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
                 DataGridView1.DataSource = dtsample
-                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", DataGridView1.Rows.Count)
             Case "solo-parent"
-                Dim sql As String = "SELECT * FROM tbl_soloparent
-                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
-                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
-
+                Dim sql As String = "SELECT * FROM tbl_soloparent '" & TxtSearch.Text & "%' OR DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
                 Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
                 DataGridView1.DataSource = dtsample
-                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", DataGridView1.Rows.Count)
             Case "OATH"
-                Dim sql As String = "SELECT * FROM tbl_oath
-                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
-                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
-
+                Dim sql As String = "SELECT * FROM tbl_oath '" & TxtSearch.Text & "%' OR DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
                 Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
                 DataGridView1.DataSource = dtsample
-                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", DataGridView1.Rows.Count)
 
             Case "SPES"
-                Dim sql As String = "SELECT * FROM tbl_spes
-                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
-                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
-
+                Dim sql As String = "SELECT * FROM tbl_spes '" & TxtSearch.Text & "%' OR DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
                 Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
                 DataGridView1.DataSource = dtsample
-                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", DataGridView1.Rows.Count)
             Case "SPES1"
-                Dim sql As String = "SELECT * FROM tbl_spes1
-                              WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR
-                                    DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
-
+                Dim sql As String = "SELECT * FROM tbl_spes1 '" & TxtSearch.Text & "%' OR DATEISSUED  LIKE '" & TxtSearch.Text & "%'"
                 Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
                 DataGridView1.DataSource = dtsample
-                LblCount.Text = $"TRANSACTION COUNT ( {DataGridView1.Rows.Count} )"
+                LblCount.Text = String.Format("TRANSACTION COUNT: ( {0} )", DataGridView1.Rows.Count)
         End Select
 
 

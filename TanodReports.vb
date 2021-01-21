@@ -28,15 +28,15 @@ Public Class TanodReports
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_tanodreport 
-                                         SET reporter_name = '" & TxtName.Text & "',
-                                              case_type = '" & TxtCaseType.Text & "',
-                                              place = '" & TxtLocation.Text & "',
-                                              dtime = '" & TxtDayTime.Text & "',
-                                              main_subject = '" & TxtMainSubject.Text & "',
-                                              involved = '" & TxtInvolved.Text & "',
-                                              statement = '" & TxtStatement.Text & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_tanodreport" &
+                                         " SET reporter_name = '" & TxtName.Text & "'," &
+                                            " case_type = '" & TxtCaseType.Text & "'," &
+                                            " place = '" & TxtLocation.Text & "'," &
+                                            " dtime = '" & TxtDayTime.Text & "'," &
+                                            " main_subject = '" & TxtMainSubject.Text & "'," &
+                                            " involved = '" & TxtInvolved.Text & "'," &
+                                            " statement = '" & TxtStatement.Text & "'" &
+                                         " WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", id)
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
@@ -50,8 +50,8 @@ Public Class TanodReports
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_tanodreport(reporter_name, case_type, place, dtime, main_subject, involved, statement) 
-                                         VALUES(@reporter_name, @case_type, @place, @dtime, @main_subject, @involved, @statement) ", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_tanodreport(reporter_name, case_type, place, dtime, main_subject, involved, statement)" &
+                                         " VALUES(@reporter_name, @case_type, @place, @dtime, @main_subject, @involved, @statement) ", con)
             mycmd.Parameters.AddWithValue("reporter_name", TxtName.Text)
             mycmd.Parameters.AddWithValue("case_type", TxtCaseType.Text)
             mycmd.Parameters.AddWithValue("place", TxtLocation.Text)
@@ -104,8 +104,7 @@ Public Class TanodReports
 
 
     Public Async Sub LoadMe()
-        Dim sql As String = "SELECT *
-                             FROM tbl_tanodreport"
+        Dim sql As String = "SELECT * FROM tbl_tanodreport"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("reporter_name").HeaderText = "TANOD NAME"
@@ -153,9 +152,7 @@ Public Class TanodReports
 
 
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_tanodreport
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT * FROM tbl_tanodreport WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = mycmd.ExecuteReader
             If myReader.Read Then
@@ -171,11 +168,7 @@ Public Class TanodReports
     End Sub
 
     Private Async Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
-        Dim sql As String = "SELECT *
-                              FROM tbl_tanodreport
-                              WHERE reporter_name LIKE '" & TxtSearch.Text & "%'"
-
-
+        Dim sql As String = "SELECT * FROM tbl_tanodreport WHERE reporter_name LIKE '" & TxtSearch.Text & "%'"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
     End Sub

@@ -51,8 +51,8 @@ Public Class HealthMonitoring
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_health(fname,faddress, contactno, temp, q1, q2, q3, q4, q5, q6, q7, q8, datefile) 
-                                         VALUES(@fname, @faddress, @contactno, @temp, @q1, @q2, @q3, @q4, @q5, @q6, @q7, @q8, datefile )", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_health(fname,faddress, contactno, temp, q1, q2, q3, q4, q5, q6, q7, q8, datefile)" &
+                                         "VALUES(@fname, @faddress, @contactno, @temp, @q1, @q2, @q3, @q4, @q5, @q6, @q7, @q8, datefile )", con)
             mycmd.Parameters.AddWithValue("fname", TxtName.Text)
             mycmd.Parameters.AddWithValue("faddress", TxtName.Text)
             mycmd.Parameters.AddWithValue("contactno", TxtContact.Text)

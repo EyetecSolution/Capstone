@@ -25,9 +25,9 @@ Public Class AddNewResident
         Try
 
 
-            Using mycmd As New OleDbCommand("INSERT INTO tbl_residents 
-                                         (FULLNAME, FULLADDRESS,BIRTHPLACE,BIRTHDATE,AGE,GENDER,CIVILSTATUS,CITIZENSHIP, OCCUPATION,PHOTO)
-                                        VALUES(@FULLNAME,@FULLADDRESS,@BIRTHPLACE,@BIRTHDATE,@AGE,@GENDER,@CIVILSTATUS,@CITIZENSHIP, @OCCUPATION,@PHOTO)", con)
+            Using mycmd As New OleDbCommand("INSERT INTO tbl_residents" &
+                                         "(FULLNAME, FULLADDRESS,BIRTHPLACE,BIRTHDATE,AGE,GENDER,CIVILSTATUS,CITIZENSHIP, OCCUPATION,PHOTO)" &
+                                        "VALUES(@FULLNAME,@FULLADDRESS,@BIRTHPLACE,@BIRTHDATE,@AGE,@GENDER,@CIVILSTATUS,@CITIZENSHIP, @OCCUPATION,@PHOTO)", con)
                 With mycmd
                     .Parameters.AddWithValue("@FULLNAME", TxtName.Text)
                     .Parameters.AddWithValue("@FULLADDRESS", TxtAddress.Text)
@@ -95,17 +95,17 @@ Public Class AddNewResident
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_residents 
-                                         SET FULLNAME = '" & TxtName.Text & "',
-                                         FULLADDRESS = '" & TxtAddress.Text & "',
-                                         BIRTHPLACE = '" & TxtBirth.Text & "',
-                                         BIRTHDATE = '" & TxtBdate.Value.ToString(frmat) & "',
-                                         AGE = '" & LabelAge.Text & "',
-                                         GENDER = '" & CmbGender.Text & "',
-                                         CIVILSTATUS = '" & CmbCivilStat.Text & "',
-                                         CITIZENSHIP = '" & TxtCitizen.Text & "',
-                                         OCCUPATION = '" & TxtOccupation.Text & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_residents " &
+                                         "SET FULLNAME = '" & TxtName.Text & "'," &
+                                         "FULLADDRESS = '" & TxtAddress.Text & "'," &
+                                         "BIRTHPLACE = '" & TxtBirth.Text & "'," &
+                                         "BIRTHDATE = '" & TxtBdate.Value.ToString(frmat) & "'," &
+                                         "AGE = '" & LabelAge.Text & "'," &
+                                         "GENDER = '" & CmbGender.Text & "'," &
+                                         "CIVILSTATUS = '" & CmbCivilStat.Text & "'," &
+                                         "CITIZENSHIP = '" & TxtCitizen.Text & "'," &
+                                         "OCCUPATION = '" & TxtOccupation.Text & "'" &
+                                         "WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", txtid.Text)
             If TxtName.Text = "" Or TxtAddress.Text = "" Or TxtBirth.Text = "" Or TxtCitizen.Text = "" Or CmbCivilStat.Text = "" Or CmbGender.Text = "" Then
                 MessageBox.Show("There's some blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Error)

@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+
 Public Class CovidCases
     Dim confirmedCat As String = Nothing
     Public id As Integer
@@ -9,9 +10,7 @@ Public Class CovidCases
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_covid 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT * FROM tbl_covid WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -32,17 +31,14 @@ Public Class CovidCases
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("DELETE 
-                                         FROM tbl_covid 
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("DELETE FROM tbl_covid WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
         End Using
 
     End Function
     Private Async Sub LoadMe()
-        Dim sql As String = "SELECT *
-                             FROM tbl_covid"
+        Dim sql As String = "SELECT * FROM tbl_covid"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("ID").Width = 100
@@ -53,10 +49,6 @@ Public Class CovidCases
         DataGridView1.Columns("GENDER").Width = 200
         DataGridView1.Columns("CONDITION").Width = 250
         DataGridView1.Columns("SYMPTOMS").Width = 250
-
-
-
-
     End Sub
 
 
@@ -104,7 +96,7 @@ Public Class CovidCases
         ElseIf colName = "delete" Then
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
             id = row.Cells("ID").Value
-            Dim msg = MessageBox.Show($"Are you sure do you want to permanently remove Patient #{row.Cells("ID").Value}", "Action Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            Dim msg = MessageBox.Show("Are you sure do you want to permanently remove Patient # " & row.Cells("ID").Value, "Action Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
             If msg = vbYes Then
                 Await DeleteData()
             End If
@@ -112,10 +104,9 @@ Public Class CovidCases
     End Sub
 
     Private Async Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
-        Dim sql As String = "SELECT * FROM tbl_covid
-                             WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' AND CONDITION LIKE '" & confirmedCat & "'"
-        Dim sql1 As String = "SELECT * FROM tbl_covid
-                             WHERE FULLNAME LIKE '" & TxtSearch.Text & "%'"
+        Dim sql As String = "SELECT * FROM tbl_covid WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' AND CONDITION LIKE '" & confirmedCat & "'"
+        Dim sql1 As String = "SELECT * FROM tbl_covid WHERE FULLNAME LIKE '" & TxtSearch.Text & "%'"
+
 
         If CmbCategory.Text = "--Choose Category--" Then
             Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql1))
@@ -145,10 +136,7 @@ Public Class CovidCases
                 confirmedCat = "CONFIRMED"
         End Select
 
-        Dim sql As String = "SELECT * FROM tbl_covid
-                             WHERE CONDITION LIKE '" & confirmedCat & "'"
-
-
+        Dim sql As String = "SELECT * FROM tbl_covid WHERE CONDITION LIKE '" & confirmedCat & "'"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
     End Sub

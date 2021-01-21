@@ -11,9 +11,9 @@ Public Class Organizational
 
         Dim arrImage As Byte()
 
-        Using mycmd As New OleDbCommand("SELECT photos
-                                         From tbl_officials
-                                         WHERE fname = '" & strItem & "'", con)
+        Using mycmd As New OleDbCommand("SELECT photos" &
+                                         " From tbl_officials" &
+                                         " WHERE fname = '" & strItem & "'", con)
 
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then

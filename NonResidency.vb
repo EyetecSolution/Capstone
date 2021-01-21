@@ -11,8 +11,8 @@ Public Class NonResidency
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_nonresidency(FULLNAME,FULLADDRESS,DATEISSUED,FEES,ISSUEDAT) 
-                                         VALUES(@FULLNAME, @FULLADDRESS,@DATEISSUED, @FEES, @ISSUEDAT)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_nonresidency(FULLNAME,FULLADDRESS,DATEISSUED,FEES,ISSUEDAT)" &
+                                         " VALUES(@FULLNAME, @FULLADDRESS,@DATEISSUED, @FEES, @ISSUEDAT)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("DATEISSUED", DateTimePicker2.Value.ToString(dtFrmat))
@@ -32,11 +32,11 @@ Public Class NonResidency
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_nonresidency
-                                         SET FULLNAME= '" & TxtName.Text & "',
-                                             FULLADDRESS= '" & TxtAddress.Text & "',
-                                             DATEISSUED= '" & DateTimePicker2.Value & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_nonresidency" &
+                                         " SET FULLNAME= '" & TxtName.Text & "'," &
+                                             " FULLADDRESS= '" & TxtAddress.Text & "'," &
+                                            " DATEISSUED= '" & DateTimePicker2.Value & "'" &
+                                         " WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync
@@ -69,8 +69,8 @@ Public Class NonResidency
 
         UpdateBookMark("name1", TxtName.Text.Trim, wdDoc)
         UpdateBookMark("address", TxtAddress.Text.Trim, wdDoc)
-        UpdateBookMark("day", $"{DateTimePicker2.Value.Day}th", wdDoc)
-        UpdateBookMark("myear", $"{DateTimePicker2.Value.ToString("Y").ToUpper}", wdDoc)
+        UpdateBookMark("day", DateTimePicker2.Value.Day, wdDoc)
+        UpdateBookMark("myear", DateTimePicker2.Value.ToString("Y").ToUpper, wdDoc)
 
 
 

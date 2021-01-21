@@ -46,8 +46,8 @@ Public Class BlotterRecords
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_blotter(FULLNAME,FULLADDRESS,DESCRIPTION,AGE,GENDER,FILINGDATE,SCHEDULE,BYWHOM) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @DESCRIPTION, @AGE, @GENDER, @FILINGDATE, @SCHEDULE, @BYWHOM)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_blotter(FULLNAME,FULLADDRESS,DESCRIPTION,AGE,GENDER,FILINGDATE,SCHEDULE,BYWHOM)" &
+                                         "VALUES(@FULLNAME, @FULLADDRESS, @DESCRIPTION, @AGE, @GENDER, @FILINGDATE, @SCHEDULE, @BYWHOM)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("DESCRIPTION", TxtDescription.Text)
@@ -57,7 +57,7 @@ Public Class BlotterRecords
             If ChkNone.Checked = True Then
                 mycmd.Parameters.AddWithValue("SCHEDULE", "NONE")
             Else
-                mycmd.Parameters.AddWithValue("SCHEDULE", $"{DateTimePicker2.Value.ToString(dt2frmat)} {DateTimePicker1.Value.ToString(tmefrmat)} TO {DateTimePicker3.Value.ToString(tmefrmat)}")
+                mycmd.Parameters.AddWithValue("SCHEDULE", DateTimePicker2.Value.ToString(dt2frmat) & " " & DateTimePicker1.Value.ToString(tmefrmat) & "TO" & DateTimePicker3.Value.ToString(tmefrmat))
             End If
             mycmd.Parameters.AddWithValue("BYWHOM", TxtWhom.Text)
             i = Await mycmd.ExecuteNonQueryAsync
@@ -92,10 +92,7 @@ Public Class BlotterRecords
     End Sub
 
     Private Async Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
-        Dim sql As String = "SELECT * FROM tbl_blotter
-                             WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR SCHEDULE LIKE '" & TxtSearch.Text & "%'"
-
-
+        Dim sql As String = "SELECT * FROM tbl_blotter  WHERE FULLNAME LIKE '" & TxtSearch.Text & "%' OR SCHEDULE LIKE '" & TxtSearch.Text & "%'"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
     End Sub
@@ -146,9 +143,9 @@ Public Class BlotterRecords
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_blotter
-                                         WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT *" &
+                                         "FROM tbl_blotter" &
+                                         "WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then

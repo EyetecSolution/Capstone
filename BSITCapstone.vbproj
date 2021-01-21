@@ -469,6 +469,7 @@
     <EmbeddedResource Include="PrintPreview.resx">
       <DependentUpon>PrintPreview.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportSchedule.rdlc" />
     <EmbeddedResource Include="ReportsList.resx">
       <DependentUpon>ReportsList.vb</DependentUpon>
     </EmbeddedResource>
@@ -478,7 +479,7 @@
     <EmbeddedResource Include="Residency.resx">
       <DependentUpon>Residency.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResidentReport.rdlc" />
+    <EmbeddedResource Include="Reports\ResidentReport.rdlc" />
     <EmbeddedResource Include="Residents.resx">
       <DependentUpon>Residents.vb</DependentUpon>
     </EmbeddedResource>

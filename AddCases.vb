@@ -9,8 +9,8 @@ Public Class AddCases
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_covid(FULLNAME, FULLADDRESS, AGE, GENDER, CONDITION, SYMPTOMS) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @AGE, @GENDER, @CONDITION, @SYMPTOMS)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_covid(FULLNAME, FULLADDRESS, AGE, GENDER, CONDITION, SYMPTOMS)" &
+                                         "VALUES(@FULLNAME, @FULLADDRESS, @AGE, @GENDER, @CONDITION, @SYMPTOMS)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text.Trim.ToUpper)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text.Trim.ToUpper)
             mycmd.Parameters.AddWithValue("AGE", TxtAge.Text.Trim.ToUpper)
@@ -28,14 +28,14 @@ Public Class AddCases
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_covid
-                                         SET FULLNAME = '" & TxtName.Text & "',
-                                         FULLADDRESS = '" & TxtAddress.Text & "',
-                                         AGE = '" & TxtAge.Text & "',
-                                         GENDER = '" & CmbGender.Text & "',
-                                         CONDITION = '" & ComboBox1.Text & "',
-                                         SYMPTOMS = '" & TxtDescription.Text & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_covid" &
+                                         "SET FULLNAME = '" & TxtName.Text & "'," &
+                                         "FULLADDRESS = '" & TxtAddress.Text & "'," &
+                                         "AGE = '" & TxtAge.Text & "'," &
+                                         "GENDER = '" & CmbGender.Text & "'," &
+                                        " CONDITION = '" & ComboBox1.Text & "'," &
+                                         "SYMPTOMS = '" & TxtDescription.Text & "'" &
+                                         "WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", ID.Text)
             i = Await mycmd.ExecuteNonQueryAsync
         End Using

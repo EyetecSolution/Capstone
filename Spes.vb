@@ -37,8 +37,8 @@ Public Class Spes
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_spes(FULLNAME,FULLADDRESS, FATHERNAME, MOTHERNAME, FATHEROCCU, MOTHEROCCU, DATEISSUED) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @FATHERNAME, @MOTHERNAME, @FATHEROCCU, @MOTHEROCCU, DATEISSUED)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_spes(FULLNAME,FULLADDRESS, FATHERNAME, MOTHERNAME, FATHEROCCU, MOTHEROCCU, DATEISSUED)" &
+                                         " VALUES(@FULLNAME, @FULLADDRESS, @FATHERNAME, @MOTHERNAME, @FATHEROCCU, @MOTHEROCCU, DATEISSUED)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("FATHERNAME", TxtFather.Text)
@@ -59,15 +59,15 @@ Public Class Spes
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_spes
-                                         SET FULLNAME= '" & TxtName.Text & "',
-                                             FULLADDRESS= '" & TxtAddress.Text & "',
-                                             FATHERNAME= '" & TxtFather.Text & "',
-                                             MOTHERNAME= '" & TxtMother.Text & "',
-                                             FATHEROCCU='" & TxtOccu.Text & "',
-                                             MOTHEROCCU= '" & TxtOccu1.Text & "',
-                                             DATEISSUED= '" & DateTimePicker2.Value & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_spes " &
+                                         " SET FULLNAME= '" & TxtName.Text & "'," &
+                                             " FULLADDRESS='" & TxtAddress.Text & "'," &
+                                             " FATHERNAME= '" & TxtFather.Text & "'," &
+                                             " MOTHERNAME= '" & TxtMother.Text & "'," &
+                                             " FATHEROCCU='" & TxtOccu.Text & "'," &
+                                             " MOTHEROCCU= '" & TxtOccu1.Text & "'," &
+                                             " DATEISSUED= '" & DateTimePicker2.Value & "'" &
+                                         "WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync
@@ -110,8 +110,8 @@ Public Class Spes
         UpdateBookMark("mothername", TxtMother.Text.Trim, wdDoc)
         UpdateBookMark("fatheroccupation", TxtOccu.Text.Trim, wdDoc)
         UpdateBookMark("motheroccupation", TxtOccu1.Text.Trim, wdDoc)
-        UpdateBookMark("day", $"{DateTimePicker2.Value.Day}th", wdDoc)
-        UpdateBookMark("myear", $"{DateTimePicker2.Value.ToString("Y").ToUpper}", wdDoc)
+        UpdateBookMark("day", DateTimePicker2.Value.Day, wdDoc)
+        UpdateBookMark("myear", DateTimePicker2.Value.ToString("Y").ToUpper, wdDoc)
 
 
 

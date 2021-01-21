@@ -9,8 +9,7 @@ Public Class useraccount
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("DELETE FROM tbl_users 
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("DELETE FROM tbl_users WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", id)
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
@@ -48,10 +47,7 @@ Public Class useraccount
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_users 
-                                         SET username = '" & TxtUser.Text & "',
-                                             userpass = '" & TxtPass.Text & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_users  SET username = '" & TxtUser.Text & "', userpass = '" & TxtPass.Text & "' WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", id)
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
@@ -76,8 +72,8 @@ Public Class useraccount
     End Function
 
     Private Async Sub LoadMe()
-        Dim sql As String = "SELECT ID, username, userpass
-                             FROM tbl_users"
+        Dim sql As String = "SELECT ID, username, userpass FROM tbl_users"
+
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("ID").Width = 30
@@ -107,7 +103,7 @@ Public Class useraccount
         ElseIf colName = "delete" Then
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
             id = row.Cells("ID").Value
-            Dim msg = MessageBox.Show($"Are you sure do you want to permanenly remove {row.Cells("username").Value}", "Action Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            Dim msg = MessageBox.Show("Are you sure do you want to permanently remove " & row.Cells("username").Value, "Action Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
             If msg = vbYes Then
                 Try
                     Await DeleteQuery()

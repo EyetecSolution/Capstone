@@ -1,7 +1,9 @@
 ﻿Imports System.Data.OleDb
+
 Public Class Schedule
+    Public schedRange As String
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
-    Public id As Integer
+    Public fname As String
     Public Function LoadData(sql As String) As DataTable
         Dim dt = New DataTable
         Try
@@ -21,8 +23,7 @@ Public Class Schedule
     End Function
 
     Private Async Sub LoadData()
-        Dim sql As String = "SELECT *
-                             FROM tbl_schedule"
+        Dim sql As String = "SELECT pstion, fname, mday,tday, wday, thday, fday, satday, sday FROM tbl_schedule WHERE dtsettle= #" & Date.Now.ToString("M/d/yyyy") & "#"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("pstion").HeaderText = "POSITION"
@@ -34,7 +35,6 @@ Public Class Schedule
         DataGridView1.Columns("fday").HeaderText = "Friday"
         DataGridView1.Columns("satday").HeaderText = "Saturday"
         DataGridView1.Columns("sday").HeaderText = "Sunday"
-        DataGridView1.Columns("schedrange").HeaderText = "SCHEDULE RANGE"
 
         DataGridView1.Columns("pstion").Width = 150
         DataGridView1.Columns("fname").Width = 250
@@ -45,7 +45,6 @@ Public Class Schedule
         DataGridView1.Columns("fday").Width = 200
         DataGridView1.Columns("satday").Width = 200
         DataGridView1.Columns("sday").Width = 200
-        DataGridView1.Columns("schedrange").Width = 300
 
 
 
@@ -62,9 +61,9 @@ Public Class Schedule
         Try
 
 
-            Using mycmd As New OleDbCommand("INSERT INTO tbl_schedule 
-                                         (pstion, fname, mday, tday, wday, thday, fday, satday, sday, schedrange)
-                                        VALUES(@pstion, @fname, @mday, @tday, @wday, @thday, @fday, @satday, @sday, @schedrange)", con)
+            Using mycmd As New OleDbCommand("INSERT INTO tbl_schedule" &
+                                         "(pstion, fname, mday, tday, wday, thday, fday, satday, sday, schedrange, dtsettle)" &
+                                        "VALUES(@pstion, @fname, @mday, @tday, @wday, @thday, @fday, @satday, @sday, @schedrange, @dtsettle)", con)
                 With mycmd
                     .Parameters.AddWithValue("@pstion", CmbPurpose.SelectedItem)
                     .Parameters.AddWithValue("@fname", TxtName.Text)
@@ -75,8 +74,8 @@ Public Class Schedule
                     .Parameters.AddWithValue("@fday", TxtFriday.Text)
                     .Parameters.AddWithValue("@satday", TxtSat.Text)
                     .Parameters.AddWithValue("@sday", TxtSunday.Text)
-                    .Parameters.AddWithValue("@schedrange", $"{DateTimePicker2.Value:MMMM d yyyy} TO {DateTimePicker1.Value:MMMM d yyyy}")
-
+                    .Parameters.AddWithValue("@schedrange", DateTimePicker2.Value.ToString("MMMM d yyyy") & " TO " & DateTimePicker1.Value.ToString("MMMM d yyyy"))
+                    .Parameters.AddWithValue("@dtsettle", Date.Now.ToString("M/d/yyyy"))
                     i = Await mycmd.ExecuteNonQueryAsync
 
                 End With
@@ -94,19 +93,19 @@ Public Class Schedule
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_schedule 
-                                         SET pstion = '" & CmbPurpose.SelectedItem & "',
-                                             fname = '" & TxtName.Text & "',
-                                             mday = '" & TxtMonday.Text & "',
-                                             tday = '" & TxtTuesday.Text & "',
-                                             wday = '" & TxtWednesday.Text & "',
-                                             thday = '" & TxtThursday.Text & "',
-                                             fday = '" & TxtFriday.Text & "',
-                                             satday = '" & TxtSat.Text & "',
-                                             sday = '" & TxtSunday.Text & "',
-                                             schedrange = '" & DateTimePicker2.Value.ToString("MMMM dd yyyy") & "TO" & DateTimePicker1.Value.ToString("MMMM d yyyy") & "' 
-                                         WHERE ID=@ID", con)
-            mycmd.Parameters.AddWithValue("ID", id)
+        Using mycmd As New OleDbCommand("UPDATE tbl_schedule " &
+                                         "SET pstion = '" & CmbPurpose.SelectedItem & "'," &
+                                             "fname = '" & TxtName.Text & "'," &
+                                             "mday = '" & TxtMonday.Text & "'," &
+                                             "tday = '" & TxtTuesday.Text & "'," &
+                                             "wday = '" & TxtWednesday.Text & "'," &
+                                             "thday = '" & TxtThursday.Text & "'," &
+                                             "fday = '" & TxtFriday.Text & "'," &
+                                             "satday = '" & TxtSat.Text & "'," &
+                                             "sday = '" & TxtSunday.Text & "'," &
+                                             "schedrange = '" & DateTimePicker2.Value.ToString("MMMM dd yyyy") & "TO" & DateTimePicker1.Value.ToString("MMMM d yyyy") & "' " &
+                                         "WHERE fname=@fname", con)
+            mycmd.Parameters.AddWithValue("ID", fname)
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
         Return i
@@ -129,17 +128,7 @@ Public Class Schedule
         Return dt
     End Function
 
-    Private Async Sub LoadMe()
-        Dim sql As String = "SELECT *
-                             FROM tbl_schedule"
-        Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
-        DataGridView1.DataSource = dtsample
-        DataGridView1.Columns("ID").Width = 30
-        DataGridView1.Columns("position").Width = 250
-        DataGridView1.Columns("fname").Width = 250
-        DataGridView1.Columns("position").HeaderText = "POSITION"
-        DataGridView1.Columns("fname").HeaderText = "FULL NAME"
-    End Sub
+
 
     Sub ResetFields()
         CmbPurpose.Text = "SELECT POSITION"
@@ -207,7 +196,7 @@ Public Class Schedule
             Else
                 Dim selectedRow As DataGridViewRow
                 selectedRow = DataGridView1.Rows(index)
-                id = selectedRow.Cells(0).Value
+                fname = selectedRow.Cells(1).Value
             End If
         Catch ex As Exception
             Throw ex
@@ -220,10 +209,8 @@ Public Class Schedule
 
 
 
-        Using mycmd As New OleDbCommand("SELECT *
-                                         FROM tbl_schedule
-                                         WHERE ID= @ID", con)
-            mycmd.Parameters.AddWithValue("@ID", id)
+        Using mycmd As New OleDbCommand("SELECT * FROM tbl_schedule WHERE fname=@fname", con)
+            mycmd.Parameters.AddWithValue("@ID", fname)
             Dim myReader As OleDbDataReader = mycmd.ExecuteReader
             If myReader.Read Then
                 TxtName.Text = myReader("fname")
@@ -240,9 +227,7 @@ Public Class Schedule
         End Using
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
+  
 
     Private Sub Schedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
@@ -285,6 +270,18 @@ Public Class Schedule
     End Sub
 
     Private Sub TxtFriday_TextChanged(sender As Object, e As EventArgs) Handles TxtFriday.TextChanged
+
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        Dim dt As DateTime = DateTime.Now
+        Dim dtFrmat As String = "MMMM"
+        Dim dtNow As Integer = Date.Now.Day
+        Dim dayofWeeks As Integer = dtNow + 6
+        schedRange = "FROM " & dt.ToString(dtFrmat) & " " & dtNow & " " & Date.Now.Year &
+                                     " TO " & dt.ToString(dtFrmat) & " " & dayofWeeks & " " & Date.Now.Year
+        ReportViewer.reportCheck = "Schedule"
+        ReportsList.LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSchedule.rdlc", "DTSchedule")
 
     End Sub
 End Class

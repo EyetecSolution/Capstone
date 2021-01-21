@@ -23,7 +23,7 @@ Public Class Attendance
     End Function
     Public dt As DateTime = DateAndTime.Now
     Public Async Sub LoadMe(sql As String)
-        LblDate.Text = $"DATE: {dt:MMMM, d yyyy}"
+        LblDate.Text = "DATE:" & dt.ToString("MMMM, d yyyy")
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("pstion").HeaderText = "POSITION"
@@ -38,12 +38,12 @@ Public Class Attendance
     End Sub
 
     Private Sub Attendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim sql As String = $"SELECT pstion, fname, TimeIN, TimeOut FROM tbl_attendance WHERE dt= #" & dt.ToString("M/d/yyyy") & "#"
+        Dim sql As String = "SELECT pstion, fname, TimeIN, TimeOut FROM tbl_attendance WHERE dt= #" & dt.ToString("M/d/yyyy") & "#"
         LoadMe(sql)
     End Sub
 
     Private Sub DTTo_ValueChanged(sender As Object, e As EventArgs) Handles DTTo.ValueChanged
-        Dim sql As String = $"SELECT pstion, fname, TimeIN, TimeOut FROM tbl_attendance WHERE dt= #" & DTTo.Value.ToString("M/d/yyyy") & "#"
+        Dim sql As String = "SELECT pstion, fname, TimeIN, TimeOut FROM tbl_attendance WHERE dt= #" & DTTo.Value.ToString("M/d/yyyy") & "#"
         LoadMe(sql)
     End Sub
 

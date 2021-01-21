@@ -50,6 +50,7 @@ Partial Class BClearance
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -481,6 +482,7 @@ Partial Class BClearance
         Me.Controls.Add(Me.LblTitle)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Panel1)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BClearance"
         Me.ShowInTaskbar = False
@@ -521,4 +523,5 @@ Partial Class BClearance
     Friend WithEvents TxtAddress As TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents LblTitle As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

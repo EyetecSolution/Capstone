@@ -22,18 +22,8 @@ Partial Class ReportViewer
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Me.DtClearanceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        CType(Me.DtClearanceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DtClearanceBindingSource
-        '
-        Me.DtClearanceBindingSource.DataMember = "DtClearance"
-        '
-        'DataSet1
-        '
         '
         'ReportViewer1
         '
@@ -53,10 +43,9 @@ Partial Class ReportViewer
         Me.Name = "ReportViewer"
         Me.Text = "ReportViewer"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.DtClearanceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents DtClearanceBindingSource As BindingSource
+
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
 End Class

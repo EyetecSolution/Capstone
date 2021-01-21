@@ -46,7 +46,7 @@ Public Class GenerateQR
         Dim gen As New QRCodeGenerator
         Dim data = gen.CreateQrCode(TxtName.Text, QRCodeGenerator.ECCLevel.Q)
         Dim code As New QRCode(data)
-        Dim str As String = $"{CmbPurpose.Text}, {TxtName.Text}"
+        Dim str As String = CmbPurpose.Text & ", " & TxtName.Text
         Try
             PictureBox1.Image = code.GetGraphic(6)
             SaveFileDialog1.FileName = TxtName.Text

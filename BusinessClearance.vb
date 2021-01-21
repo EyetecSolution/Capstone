@@ -11,8 +11,8 @@ Public Class BusinessClearance
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_business(FULLNAME, FULLADDRESS, BUSINESSNAME, BUSINESSLOCATION, DATEISSUED, ORNO, CTCNO, VALIDITY, AMOUNT) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @BUSINESSNAME, @BUSINESSLOCATION, @DATEISSUED, @CTCNO, @ORNO, @VALIDITY, @AMOUNT)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_business(FULLNAME, FULLADDRESS, BUSINESSNAME, BUSINESSLOCATION, DATEISSUED, ORNO, CTCNO, VALIDITY, FEES)" &
+                                         "VALUES(@FULLNAME, @FULLADDRESS, @BUSINESSNAME, @BUSINESSLOCATION, @DATEISSUED, @CTCNO, @ORNO, @VALIDITY, @FEES)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("BUSINESSNAME", TxtBusinessname.Text)
@@ -34,16 +34,16 @@ Public Class BusinessClearance
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_business 
-                                         SET FULLNAME= '" & TxtName.Text & "',
-                                             FULLADDRESS= '" & TxtAddress.Text & "',
-                                             BUSINESSNAME= '" & TxtBusinessname.Text & "',
-                                             BUSINESSLOCATION= '" & TxtBusinesslocation.Text & "',
-                                             DATEISSUED= '" & DateTimePicker2.Value.ToString(frmat) & "',
-                                             ORNO='" & TxtOr.Text & "',
-                                             CTCNO= '" & TxtCtc.Text & "',
-                                             VALIDITY='" & DateTimePicker1.Value.ToString(frmat) & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_business" &
+                                         " SET FULLNAME= '" & TxtName.Text & "'," &
+                                             " FULLADDRESS= '" & TxtAddress.Text & "'," &
+                                             " BUSINESSNAME= '" & TxtBusinessname.Text & "'," &
+                                             " BUSINESSLOCATION= '" & TxtBusinesslocation.Text & "'," &
+                                             " DATEISSUED= '" & DateTimePicker2.Value.ToString(frmat) & "'," &
+                                             " ORNO='" & TxtOr.Text & "'," &
+                                             " CTCNO= '" & TxtCtc.Text & "'," &
+                                             " VALIDITY='" & DateTimePicker1.Value.ToString(frmat) & "'" &
+                                         "WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync

@@ -17,8 +17,7 @@ Public Class Payment
         Return i
     End Function
     Private Async Sub LoadMe()
-        Dim sql As String = "SELECT * 
-                             FROM tbl_payment"
+        Dim sql As String = "SELECT * FROM tbl_payment"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("fname").Width = 100
@@ -84,8 +83,6 @@ Public Class Payment
     End Sub
 
     Private Async Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles BtnPayment.Click
-        Dim paid As String = "Paid"
-        Dim sql As String = $"UPDATE {tblparam} SET paymentstatus='" & paid & "' WHERE ID=@ID"
         If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtCash.Text) Then
             MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
@@ -94,7 +91,6 @@ Public Class Payment
         Try
             Await InsertQuery()
             MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Await UpdateQuery(sql)
             ResetTextfield()
             LoadMe()
         Catch ex As Exception
@@ -117,13 +113,13 @@ Public Class Payment
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_payment(fname,faddress, dateissued, amount, cash, category, change) 
-                                         VALUES(@fname, @faddress, @dateissued, @amount, @cash, @category, @change)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_payment(fname,faddress, dateissued, amount, cash, category, change)" &
+                                         " VALUES(@fname, @faddress, @dateissued, @amount, @cash, @category, @change)", con)
             mycmd.Parameters.AddWithValue("fname", TxtName.Text)
             mycmd.Parameters.AddWithValue("faddress", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("dateissued", dt.ToString(dtfrmat))
-            mycmd.Parameters.AddWithValue("amount", Cint(TxtAmount.Text))
-            mycmd.Parameters.AddWithValue("cash", Cint(TxtCash.Text))
+            mycmd.Parameters.AddWithValue("amount", CInt(TxtAmount.Text))
+            mycmd.Parameters.AddWithValue("cash", CInt(TxtCash.Text))
             mycmd.Parameters.AddWithValue("category", category)
             mycmd.Parameters.AddWithValue("change", CDbl(TxtChange.Text))
 
@@ -175,10 +171,7 @@ Public Class Payment
     Private Async Sub CmbCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbCategory.SelectedIndexChanged
 
 
-        Dim sql As String = "SELECT * FROM tbl_payment
-                             WHERE category LIKE '" & CmbCategory.SelectedItem & "'"
-
-
+        Dim sql As String = "SELECT * FROM tbl_payment WHERE category LIKE '" & CmbCategory.SelectedItem & "'"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
     End Sub

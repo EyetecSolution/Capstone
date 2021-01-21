@@ -30,7 +30,7 @@ Public Class OATH
         UpdateBookMark("yearmonth", CmbPurpose.SelectedItem.Trim, wdDoc)
         UpdateBookMark("yearmonth2", CmbPurpose.SelectedItem.Trim, wdDoc)
         UpdateBookMark("today", DateTimePicker2.Value.Day, wdDoc)
-        UpdateBookMark("today2", $"{DateTimePicker1.Value.Day}", wdDoc)
+        UpdateBookMark("today2", DateTimePicker1.Value.Day, wdDoc)
         UpdateBookMark("myear", DateTimePicker2.Value.ToString("Y").ToUpper, wdDoc)
         UpdateBookMark("myear2", DateTimePicker2.Value.ToString("Y").ToUpper, wdDoc)
         UpdateBookMark("date", DateTimePicker2.Value.ToString("MMMM d yyyy"), wdDoc)
@@ -54,8 +54,8 @@ Public Class OATH
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_oath(FULLNAME,FULLADDRESS, NORESIDING,  YEARMONTH, DATEISSUED,BIRTHDATE, AGE, WITNESS) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @NORESIDING, @YEARMONTH, @DATEISSUED, @BIRTHDATE, @AGE, @WITNESS)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_oath(FULLNAME,FULLADDRESS, NORESIDING,  YEARMONTH, DATEISSUED,BIRTHDATE, AGE, WITNESS)" &
+                                         " VALUES(@FULLNAME, @FULLADDRESS, @NORESIDING, @YEARMONTH, @DATEISSUED, @BIRTHDATE, @AGE, @WITNESS)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("NORESIDING", TxtResiding.Text)
@@ -76,16 +76,16 @@ Public Class OATH
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_oath
-                                         SET FULLNAME= '" & TxtName.Text & "',
-                                             FULLADDRESS= '" & TxtAddress.Text & "',
-                                             NORESIDING= '" & TxtResiding.Text & "',
-                                             YEARMONTH= '" & CmbPurpose.SelectedItem & "',
-                                             DATEISSUED='" & DateTimePicker2.Value & "',
-                                             BIRTHDATE='" & DateTimePicker2.Value & "',
-                                             AGE= '" & TxtAge.Text & "',
-                                             WITNESS= '" & TxtWitness.Text & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_oath" &
+                                         " SET FULLNAME= '" & TxtName.Text & "'," &
+                                             " FULLADDRESS= '" & TxtAddress.Text & "'," &
+                                             " NORESIDING= '" & TxtResiding.Text & "'," &
+                                             " YEARMONTH= '" & CmbPurpose.SelectedItem & "'," &
+                                             " DATEISSUED='" & DateTimePicker2.Value & "'," &
+                                             " BIRTHDATE='" & DateTimePicker2.Value & "'," &
+                                             " AGE= '" & TxtAge.Text & "'," &
+                                             " WITNESS= '" & TxtWitness.Text & "'" &
+                                         " WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync

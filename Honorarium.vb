@@ -4,6 +4,7 @@ Public Class Honorarium
     Public id As Integer
 
 
+
     Public Function LoadDataTable(sql As String) As DataTable
         Dim dt = New DataTable
         Try
@@ -24,8 +25,7 @@ Public Class Honorarium
 
 
     Public Async Sub LoadMe()
-        Dim sql As String = "SELECT *
-                             FROM tbl_payroll"
+        Dim sql As String = "SELECT * FROM tbl_payroll"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("pstion").HeaderText = "POSITION"
@@ -53,8 +53,8 @@ Public Class Honorarium
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_payroll(pstion, fname,honorarium,deduction,r_date,net_pay) 
-                                         VALUES(@pstion, @fname, @honorarium, @deduction, @r_date, @net_pay) ", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_payroll(pstion, fname,honorarium,deduction,r_date,net_pay) " &
+                                         "VALUES(@pstion, @fname, @honorarium, @deduction, @r_date, @net_pay) ", con)
             mycmd.Parameters.AddWithValue("pstion", CmbPurpose.SelectedItem)
             mycmd.Parameters.AddWithValue("fname", TxtName.Text)
             mycmd.Parameters.AddWithValue("honorarium", Format(Val(TxtHonor.Text), "#,###,##0.00"))
@@ -92,7 +92,6 @@ Public Class Honorarium
             MessageBox.Show("Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
             LoadMe()
             ResetFields()
-
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -127,11 +126,7 @@ Public Class Honorarium
 
 
     Private Async Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
-        Dim sql As String = "SELECT *
-                              FROM tbl_payroll
-                              WHERE fname LIKE '" & TxtSearch.Text & "%'"
-
-
+        Dim sql As String = "SELECT * FROM tbl_payroll WHERE fname LIKE '" & TxtSearch.Text & "%'"
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
     End Sub
@@ -158,4 +153,6 @@ Public Class Honorarium
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BarangayManagement)
     End Sub
+
+
 End Class

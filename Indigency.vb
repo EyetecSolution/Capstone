@@ -10,14 +10,14 @@ Public Class Indigency
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_indigency
-                                         SET FULLNAME= '" & TxtName.Text & "',
-                                             FULLADDRESS= '" & TxtAddress.Text & "',
-                                             BIRTHDATE= '" & DateTimePicker1.Value & "',
-                                             AGE= '" & TxtAge.Text & "',
-                                             DATEISSUED='" & DateTimePicker2.Value & "',
-                                             PURPOSE= '" & CmbPurpose.Text & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_indigency" &
+                                         " SET FULLNAME= '" & TxtName.Text & "'," &
+                                            " FULLADDRESS= '" & TxtAddress.Text & "'," &
+                                             " BIRTHDATE= '" & DateTimePicker1.Value & "'," &
+                                             " AGE= '" & TxtAge.Text & "'," &
+                                             " DATEISSUED='" & DateTimePicker2.Value & "'," &
+                                             " PURPOSE= '" & CmbPurpose.Text & "'" &
+                                         " WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync
@@ -32,8 +32,8 @@ Public Class Indigency
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_indigency(FULLNAME,FULLADDRESS, BIRTHDATE,  AGE, DATEISSUED, PURPOSE) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @BIRTHDATE, @AGE, @DATEISSUED, @PURPOSE)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_indigency(FULLNAME,FULLADDRESS, BIRTHDATE,  AGE, DATEISSUED, PURPOSE)" &
+                                         "VALUES(@FULLNAME, @FULLADDRESS, @BIRTHDATE, @AGE, @DATEISSUED, @PURPOSE)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("BIRTHDATE", DateTimePicker1.Value.ToString(dtFrmat))
@@ -59,7 +59,7 @@ Public Class Indigency
                 UpdateWordDocs("C:\Capstone\Docs\TempIndigency.docx")
                 ResetTextField()
             Catch ex As Exception
-
+                MessageBox.Show(ex.Message)
             End Try
         Else
             Try
@@ -68,7 +68,7 @@ Public Class Indigency
                 UpdateWordDocs("C:\Capstone\Docs\TempIndigency.docx")
                 ResetTextField()
             Catch ex As Exception
-
+                MessageBox.Show(ex.Message)
             End Try
         End If
 
@@ -104,8 +104,8 @@ Public Class Indigency
         UpdateBookMark("age", TxtAge.Text.Trim, wdDoc)
         UpdateBookMark("address", TxtAddress.Text.Trim, wdDoc)
         UpdateBookMark("purpose", CmbPurpose.Text.Trim, wdDoc)
-        UpdateBookMark("day", $"{DateTimePicker2.Value.Day}th", wdDoc)
-        UpdateBookMark("myear", $"{DateTimePicker2.Value.ToString("Y").ToUpper}", wdDoc)
+        UpdateBookMark("day", DateTimePicker2.Value.Day, wdDoc)
+        UpdateBookMark("myear", DateTimePicker2.Value.ToString("Y").ToUpper, wdDoc)
 
 
         wdDoc.Save()

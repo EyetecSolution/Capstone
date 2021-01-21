@@ -38,12 +38,12 @@ Public Class Residency
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("UPDATE tbl_residency
-                                         SET FULLNAME= '" & TxtName.Text & "',
-                                             FULLADDRESS= '" & TxtAddress.Text & "',
-                                             PURPOSE= '" & TxtPurpose.Text & "',
-                                             DATEISSUED='" & DateTimePicker2.Value & "'
-                                         WHERE ID=@ID", con)
+        Using mycmd As New OleDbCommand("UPDATE tbl_residency" &
+                                         " SET FULLNAME= '" & TxtName.Text & "'," &
+                                             " FULLADDRESS= '" & TxtAddress.Text & "'," &
+                                             " PURPOSE= '" & TxtPurpose.Text & "'," &
+                                             " DATEISSUED='" & DateTimePicker2.Value & "'" &
+                                         " WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync
@@ -58,8 +58,8 @@ Public Class Residency
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_residency(FULLNAME,FULLADDRESS, PURPOSE, DATEISSUED, FEES) 
-                                         VALUES(@FULLNAME, @FULLADDRESS, @PURPOSE, @DATEISSUED, @FEES)", con)
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_residency(FULLNAME,FULLADDRESS, PURPOSE, DATEISSUED, FEES)" &
+                                         " VALUES(@FULLNAME, @FULLADDRESS, @PURPOSE, @DATEISSUED, @FEES)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
             mycmd.Parameters.AddWithValue("PURPOSE", TxtPurpose.Text)
@@ -100,8 +100,8 @@ Public Class Residency
         UpdateBookMark("name2", TxtName.Text.Trim, wdDoc)
         UpdateBookMark("address", TxtAddress.Text.Trim, wdDoc)
         UpdateBookMark("purpose", TxtPurpose.Text.Trim, wdDoc)
-        UpdateBookMark("day", $"{DateTimePicker2.Value.Day}th", wdDoc)
-        UpdateBookMark("myear", $"{DateTimePicker2.Value.ToString("Y").ToUpper}", wdDoc)
+        UpdateBookMark("day", DateTimePicker2.Value.Day, wdDoc)
+        UpdateBookMark("myear", DateTimePicker2.Value.ToString("Y").ToUpper, wdDoc)
 
 
 

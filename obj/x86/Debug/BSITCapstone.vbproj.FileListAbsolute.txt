@@ -106,7 +106,6 @@ C:\Capstone\bin\x86\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.
 C:\Capstone\bin\x86\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Capstone\bin\x86\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Capstone\bin\x86\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Capstone\obj\x86\Debug\BSITCapstone.vbprojAssemblyReference.cache
 C:\Capstone\obj\x86\Debug\BSITCapstone.vbproj.ResolveComReference.cache
 C:\Capstone\obj\x86\Debug\BSITCapstone.AddCases.resources
 C:\Capstone\obj\x86\Debug\BSITCapstone.AddNewResident.resources
@@ -118,6 +117,7 @@ C:\Capstone\obj\x86\Debug\BSITCapstone.BusinessClearance.resources
 C:\Capstone\obj\x86\Debug\BSITCapstone.CovidCases.resources
 C:\Capstone\obj\x86\Debug\BSITCapstone.Dashboard.resources
 C:\Capstone\obj\x86\Debug\BSITCapstone.BlotterRecords.resources
+C:\Capstone\obj\x86\Debug\BSITCapstone.Dummy.resources
 C:\Capstone\obj\x86\Debug\BSITCapstone.FormDocument.resources
 C:\Capstone\obj\x86\Debug\BSITCapstone.GenerateQR.resources
 C:\Capstone\obj\x86\Debug\BSITCapstone.GenQRCODE.resources
@@ -151,7 +151,4 @@ C:\Capstone\obj\x86\Debug\BSITCapstone.vbproj.CopyComplete
 C:\Capstone\obj\x86\Debug\BSITCapstone.exe
 C:\Capstone\obj\x86\Debug\BSITCapstone.xml
 C:\Capstone\obj\x86\Debug\BSITCapstone.pdb
-C:\Capstone\obj\x86\Debug\BSITCapstone.Dummy.resources
-C:\Capstone\bin\x86\Debug\Emgu.CV.xml
-C:\Capstone\bin\x86\Debug\Emgu.CV.UI.xml
-C:\Capstone\bin\x86\Debug\Emgu.Util.xml
+C:\Capstone\obj\x86\Debug\BSITCapstone.vbprojAssemblyReference.cache
