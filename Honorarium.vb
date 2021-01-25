@@ -1,15 +1,15 @@
-﻿Imports System.Data.OleDb
+﻿Imports Word = Microsoft.Office.Interop.Word
 Public Class Honorarium
-    ReadOnly con As New OleDbConnection(My.Settings.strCon)
+    ReadOnly con As New System.Data.OleDb.OleDbConnection(My.Settings.strCon)
     Public id As Integer
 
 
 
     Public Function LoadDataTable(sql As String) As DataTable
-        Dim dt = New DataTable
+        Dim dt = New System.Data.DataTable
         Try
-            Using dbcon As New OleDbConnection(My.Settings.strCon)
-                Using cmd As New OleDbCommand(sql, dbcon)
+            Using dbcon As New System.Data.OleDb.OleDbConnection(My.Settings.strCon)
+                Using cmd As New System.Data.OleDb.OleDbCommand(sql, dbcon)
                     dbcon.Open()
                     dt.Load(cmd.ExecuteReader())
                 End Using
@@ -19,14 +19,13 @@ Public Class Honorarium
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Database Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
         Return dt
     End Function
 
 
     Public Async Sub LoadMe()
         Dim sql As String = "SELECT * FROM tbl_payroll"
-        Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
+        Dim dtsample As System.Data.DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
         DataGridView1.Columns("pstion").HeaderText = "POSITION"
         DataGridView1.Columns("fname").HeaderText = "NAME"
@@ -53,7 +52,7 @@ Public Class Honorarium
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_payroll(pstion, fname,honorarium,deduction,r_date,net_pay) " &
+        Using mycmd As New System.Data.OleDb.OleDbCommand("INSERT INTO tbl_payroll(pstion, fname,honorarium,deduction,r_date,net_pay) " &
                                          "VALUES(@pstion, @fname, @honorarium, @deduction, @r_date, @net_pay) ", con)
             mycmd.Parameters.AddWithValue("pstion", CmbPurpose.SelectedItem)
             mycmd.Parameters.AddWithValue("fname", TxtName.Text)
@@ -67,7 +66,7 @@ Public Class Honorarium
     End Function
     Private Sub Honorarium_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim dt As DateTime = DateAndTime.Now
-        TxtRecieved.Text = dt.ToString("ddd, MMMM d yyyy h:mm tt")
+        TxtRecieved.Text = dt.ToString("MMMM d yyyy")
         LoadMe()
     End Sub
 
@@ -88,6 +87,7 @@ Public Class Honorarium
         End If
 
         Try
+
             Await InsertQuery()
             MessageBox.Show("Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
             LoadMe()
@@ -141,13 +141,6 @@ Public Class Honorarium
         End If
     End Sub
 
-    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs) Handles TxtName.TextChanged
-
-    End Sub
-
-    Private Sub Txtnet_TextChanged(sender As Object, e As EventArgs) Handles Txtnet.TextChanged
-
-    End Sub
 
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
         Dashboard.activefrm.Close()
@@ -155,4 +148,71 @@ Public Class Honorarium
     End Sub
 
 
+    Public Sub UpdateBookMark(BookmarkUpdate As String, TextToUse As String, WordApp As Object)
+
+        Dim BMRange As Word.Range
+        BMRange = WordApp.Bookmarks(BookmarkUpdate).Range
+        BMRange.Text = TextToUse
+        WordApp.Bookmarks.Add(BookmarkUpdate, BMRange)
+
+    End Sub
+
+
+
+    Private Sub UpdateWordDocs(sPath As String)
+        Dim objWordApp = New Word.Application With {
+            .Visible = False
+        }
+        Dim wdDoc As Word.Document = objWordApp.Documents.Open(sPath, [ReadOnly]:=False)
+        wdDoc = objWordApp.ActiveDocument
+
+        UpdateBookMark("name", TxtName.Text.Trim, wdDoc)
+        UpdateBookMark("position", CmbPurpose.Text.Trim, wdDoc)
+        UpdateBookMark("date", TxtRecieved.Text.Trim, wdDoc)
+
+        UpdateBookMark("deduct1", Format(TxtDeduct.Text, "#, ##0.00"), wdDoc)
+        UpdateBookMark("salary", Format(TxtHonor.Text, "#,##0.00"), wdDoc)
+        UpdateBookMark("netpay", Txtnet.Text, wdDoc)
+        UpdateBookMark("totaldeduct", Format(TxtDeduct.Text, "#, ##0.00"), wdDoc)
+
+
+        wdDoc.Save()
+        wdDoc.Close()
+        wdDoc = Nothing
+        objWordApp.Quit()
+        objWordApp = Nothing
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        Try
+            Dim Word() As Process = Process.GetProcessesByName("WINWORD")
+            For Each Process As Process In Word
+                Process.Kill()
+            Next
+        Catch ex As Exception
+        End Try
+        Try
+            UpdateWordDocs("C:\Capstone\Docs\TempPayslip.docx")
+            Dim app As Word.Application
+            Dim doc As Word.Document
+            Dim p As New PrintDialog
+            app = New Word.Application
+            app.WordBasic.FilePrintSetup(Printer:=p.PrinterSettings.PrinterName, DoNotSetAsSysDefault:=1)
+
+            Dim m As Object = System.Reflection.Missing.Value
+            doc = app.Documents.Open("C:\Capstone\Docs\TempPayslip.docx", m, m, m, m, m, m, m, m, m, m, m)
+            app.PrintOut()
+            app.Documents.Close()
+
+            'Quit word application
+            app.Quit()
+
+            'Release 
+            app = Nothing
+        Catch ex As Exception
+
+        End Try
+
+
+    End Sub
 End Class

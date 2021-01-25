@@ -14,7 +14,6 @@ Public Class BCHistory
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
                 Payment.TxtName.Text = myReader("FULLNAME")
-                Payment.TxtAddress.Text = myReader("FULLADDRESS")
                 Payment.TxtDate.Text = myReader("DATEISSUED")
                 Payment.TxtAmount.Text = Format(myReader("FEES"), "0.00")
             End If
@@ -168,7 +167,7 @@ Public Class BCHistory
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *FROM tbl_spes  WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT * FROM tbl_spes  WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
@@ -586,48 +585,7 @@ Public Class BCHistory
 
     End Sub
 
-    Private Async Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles BtnPayment.Click
 
-        Select Case catTitle
-            Case "Barangay Clearance"
-                Await PaymentDetails("SELECT * FROM tbl_clearance WHERE ID=@ID")
-                Dashboard.activefrm.Hide()
-                Dashboard.OpenFormChild(Payment)
-                Payment.category = "BARANGAY CLEARANCE"
-                Payment.tblparam = "tbl_clearance"
-            Case "businessc"
-                Await PaymentDetails("SELECT * FROM tbl_business WHERE ID=@ID")
-                Dashboard.activefrm.Hide()
-                Dashboard.OpenFormChild(Payment)
-                Payment.category = "BUSINESS CLEARANCE"
-                Payment.tblparam = "tbl_business"
-            Case "non-residency"
-                Await PaymentDetails("SELECT * FROM tbl_nonresidency WHERE ID=@ID")
-                Dashboard.activefrm.Hide()
-                Dashboard.OpenFormChild(Payment)
-                Payment.category = "CERTIFICATE OF NON-RESIDENCY"
-                Payment.tblparam = "tbl_nonresidency"
-            Case "residency"
-                Await PaymentDetails("SELECT * FROM tbl_residency WHERE ID=@ID")
-                Dashboard.activefrm.Hide()
-                Dashboard.OpenFormChild(Payment)
-                Payment.category = "CERTIFICATE OF RESIDENCY"
-                Payment.tblparam = "tbl_residency"
-            Case "solo-parent"
-                Await PaymentDetails("SELECT * FROM tbl_soloparent WHERE ID=@ID")
-                Dashboard.activefrm.Hide()
-                Dashboard.OpenFormChild(Payment)
-                Payment.category = "CERTIFICATE OF SOLO PARENT"
-                Payment.tblparam = "tbl_soloparent"
-            Case "OATH"
-                Await PaymentDetails("SELECT * FROM tbl_soloparent WHERE ID=@ID")
-                Dashboard.activefrm.Hide()
-                Dashboard.OpenFormChild(Payment)
-                Payment.category = "CERTIFICATE OF SOLO PARENT"
-        End Select
-
-
-    End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         Dim index As Integer

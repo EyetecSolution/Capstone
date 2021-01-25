@@ -27,7 +27,6 @@ Partial Class Dashboard
         Me.PanelSlider = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.SeparatorLine = New Guna.UI2.WinForms.Guna2Separator()
         Me.BtnSlide = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.BtnQR = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnReports = New Guna.UI2.WinForms.Guna2Button()
@@ -54,6 +53,7 @@ Partial Class Dashboard
         Me.LabelDate = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.SeparatorLine = New Guna.UI2.WinForms.Guna2Separator()
         Me.PanelSlider.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
@@ -115,14 +115,6 @@ Partial Class Dashboard
         Me.Guna2Panel5.Size = New System.Drawing.Size(366, 67)
         Me.Guna2Panel5.TabIndex = 1
         '
-        'SeparatorLine
-        '
-        Me.SeparatorLine.FillColor = System.Drawing.Color.Firebrick
-        Me.SeparatorLine.Location = New System.Drawing.Point(22, 7)
-        Me.SeparatorLine.Name = "SeparatorLine"
-        Me.SeparatorLine.Size = New System.Drawing.Size(323, 10)
-        Me.SeparatorLine.TabIndex = 4
-        '
         'BtnSlide
         '
         Me.BtnSlide.Animated = True
@@ -155,7 +147,7 @@ Partial Class Dashboard
         Me.BtnQR.ForeColor = System.Drawing.Color.White
         Me.BtnQR.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnQR.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.BtnQR.HoverState.Image = CType(resources.GetObject("Guna2Button1.HoverState.Image"), System.Drawing.Image)
+        Me.BtnQR.HoverState.Image = CType(resources.GetObject("BtnQR.HoverState.Image"), System.Drawing.Image)
         Me.BtnQR.HoverState.Parent = Me.BtnQR
         Me.BtnQR.Image = CType(resources.GetObject("BtnQR.Image"), System.Drawing.Image)
         Me.BtnQR.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -165,7 +157,7 @@ Partial Class Dashboard
         Me.BtnQR.ShadowDecoration.Parent = Me.BtnQR
         Me.BtnQR.Size = New System.Drawing.Size(366, 53)
         Me.BtnQR.TabIndex = 23
-        Me.BtnQR.Text = "QRCODE"
+        Me.BtnQR.Text = "Face Recognition"
         Me.BtnQR.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.BtnQR.TextOffset = New System.Drawing.Point(5, 0)
         '
@@ -483,7 +475,7 @@ Partial Class Dashboard
         Me.PanelContent.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelContent.Location = New System.Drawing.Point(366, 0)
         Me.PanelContent.Name = "PanelContent"
-        Me.PanelContent.Size = New System.Drawing.Size(857, 708)
+        Me.PanelContent.Size = New System.Drawing.Size(857, 709)
         Me.PanelContent.TabIndex = 2
         '
         'Guna2Panel2
@@ -589,6 +581,14 @@ Partial Class Dashboard
         '
         Me.Timer2.Enabled = True
         '
+        'SeparatorLine
+        '
+        Me.SeparatorLine.FillColor = System.Drawing.Color.Firebrick
+        Me.SeparatorLine.Location = New System.Drawing.Point(22, 7)
+        Me.SeparatorLine.Name = "SeparatorLine"
+        Me.SeparatorLine.Size = New System.Drawing.Size(323, 10)
+        Me.SeparatorLine.TabIndex = 4
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -635,7 +635,6 @@ Partial Class Dashboard
     Friend WithEvents BtnHome As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents SeparatorLine As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
@@ -648,4 +647,5 @@ Partial Class Dashboard
     Friend WithEvents Timer2 As Timer
     Friend WithEvents BtnReports As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents BtnQR As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents SeparatorLine As Guna.UI2.WinForms.Guna2Separator
 End Class

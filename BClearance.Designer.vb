@@ -189,7 +189,7 @@ Partial Class BClearance
         '
         Me.TxtFees.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtFees.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtFees.DefaultText = "50.00"
+        Me.TxtFees.DefaultText = "0"
         Me.TxtFees.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.TxtFees.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.TxtFees.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -207,7 +207,7 @@ Partial Class BClearance
         Me.TxtFees.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtFees.PlaceholderText = ""
         Me.TxtFees.SelectedText = ""
-        Me.TxtFees.SelectionStart = 5
+        Me.TxtFees.SelectionStart = 1
         Me.TxtFees.ShadowDecoration.Parent = Me.TxtFees
         Me.TxtFees.Size = New System.Drawing.Size(98, 30)
         Me.TxtFees.TabIndex = 37

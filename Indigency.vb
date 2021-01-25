@@ -55,8 +55,9 @@ Public Class Indigency
         If BtnS.Text = "SAVE" Then
             Try
                 Await InsertQuery()
-                MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                 UpdateWordDocs("C:\Capstone\Docs\TempIndigency.docx")
+                MessageBox.Show("Certificate of Indigency added." & vbNewLine & "The Document will available for printing." & vbNewLine & "Any Other Transaction? " & TxtName.Text, "BSMIMS", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)

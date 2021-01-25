@@ -1,65 +1,30 @@
-﻿Imports System.Data.OleDb
+﻿
+Imports Word = Microsoft.Office.Interop.Word
+
+
 Public Class Payment
-    ReadOnly con As New OleDbConnection(My.Settings.strCon)
+    ReadOnly con As New System.Data.OleDb.OleDbConnection(My.Settings.strCon)
     Public category As String
     Public tblparam As String = Nothing
+    Dim accumulator As Integer = 0
+
     Async Function UpdateQuery(sql As String) As Task(Of Integer)
         Dim i As Integer
         If con.State = ConnectionState.Closed Then
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand(sql, con)
+        Using mycmd As New System.Data.OleDb.OleDbCommand(sql, con)
             mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
         Return i
     End Function
-    Private Async Sub LoadMe()
-        Dim sql As String = "SELECT * FROM tbl_payment"
-        Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
-        DataGridView1.DataSource = dtsample
-        DataGridView1.Columns("fname").Width = 100
-        DataGridView1.Columns("faddress").Width = 200
-        DataGridView1.Columns("dateissued").Width = 100
-        DataGridView1.Columns("amount").Width = 100
-        DataGridView1.Columns("cash").Width = 100
-        DataGridView1.Columns("category").Width = 200
-        DataGridView1.Columns("change").Width = 100
-        DataGridView1.Columns("fname").HeaderText = "FULL NAME"
-        DataGridView1.Columns("faddress").HeaderText = "FULL ADDRESS"
-        DataGridView1.Columns("dateissued").HeaderText = "DATE ISSUED"
-        DataGridView1.Columns("amount").HeaderText = "AMOUNT"
-        DataGridView1.Columns("cash").HeaderText = "CASH"
-        DataGridView1.Columns("category").HeaderText = "CATEGORY"
-        DataGridView1.Columns("change").HeaderText = "CHANGE"
 
 
 
-
-
-    End Sub
-
-    Public Function LoadDataTable(sql As String) As DataTable
-        Dim dt = New DataTable
-        Try
-            Using dbcon As New OleDbConnection(My.Settings.strCon)
-                Using cmd As New OleDbCommand(sql, dbcon)
-                    dbcon.Open()
-                    dt.Load(cmd.ExecuteReader())
-                End Using
-                dbcon.Close()
-            End Using
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Database Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
-        Return dt
-    End Function
-
-    Private Sub TxtAddress_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtAddress.KeyPress
+    Private Sub TxtAddress_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = True
     End Sub
 
@@ -81,7 +46,6 @@ Public Class Payment
 
         If TxtCash.Text = "" Then TxtChange.Text = "0.00"
     End Sub
-
     Private Async Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles BtnPayment.Click
         If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtCash.Text) Then
             MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -90,38 +54,41 @@ Public Class Payment
 
         Try
             Await InsertQuery()
+            UpdateWordDocs("C:\Capstone\Docs\TempReceipt.docx")
             MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
             ResetTextfield()
-            LoadMe()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.Message )
         Finally
             con.Close()
 
         End Try
 
+
+
+
+
     End Sub
 
 
 
-    Async Function InsertQuery() As Task(Of Integer)
-        Dim dtfrmat As String = "MM-dd-yyyy"
-        Dim dt As DateTime = CDate(TxtDate.Text)
+
+    Public Async Function InsertQuery() As Task(Of Integer)
+        Dim docsCollection() As String = {TextBox10.Text, TextBox11.Text, TextBox12.Text, TextBox13.Text, TextBox14.Text, TextBox15.Text, TextBox16.Text, TextBox17.Text}
 
         Dim i As Integer
         If con.State = ConnectionState.Closed Then
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_payment(fname,faddress, dateissued, amount, cash, category, change)" &
-                                         " VALUES(@fname, @faddress, @dateissued, @amount, @cash, @category, @change)", con)
+        Using mycmd As New System.Data.OleDb.OleDbCommand("INSERT INTO tbl_payment(fname, DATEISSUED, total_amount, cash, issued_document, change)" &
+                                         " VALUES(@fname, @DATEISSUED, @total_amount, @cash, @issued_document, @change)", con)
             mycmd.Parameters.AddWithValue("fname", TxtName.Text)
-            mycmd.Parameters.AddWithValue("faddress", TxtAddress.Text)
-            mycmd.Parameters.AddWithValue("dateissued", dt.ToString(dtfrmat))
-            mycmd.Parameters.AddWithValue("amount", CInt(TxtAmount.Text))
-            mycmd.Parameters.AddWithValue("cash", CInt(TxtCash.Text))
-            mycmd.Parameters.AddWithValue("category", category)
-            mycmd.Parameters.AddWithValue("change", CDbl(TxtChange.Text))
+            mycmd.Parameters.AddWithValue("DATEISSUED", Date.Now.ToString("M/d/yyyy"))
+            mycmd.Parameters.AddWithValue("total_amount", Val(TxtAmount.Text))
+            mycmd.Parameters.AddWithValue("cash", Val(TxtCash.Text))
+            mycmd.Parameters.AddWithValue("issued_document", String.Join(", ", docsCollection))
+            mycmd.Parameters.AddWithValue("change", TxtChange.Text)
 
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
@@ -130,33 +97,13 @@ Public Class Payment
 
     Public Sub ResetTextfield()
         TxtName.ResetText()
-        TxtAddress.ResetText()
         TxtDate.ResetText()
         TxtAmount.ResetText()
         TxtCash.ResetText()
         TxtChange.ResetText()
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
-        Select Case category
-            Case "BARANGAY CLEARANCE"
-                BCHistory.LoadBclearance()
-            Case "BUSINESS CLEARANCE"
-                BCHistory.LoadBusinessClearance()
-            Case "CERTIFICATE OF NON-RESIDENCY"
-                BCHistory.LoadNonRes()
-            Case "CERTIFICATE OF RESIDENCY"
-                BCHistory.LoadNonRes()
-            Case "CERTIFICATE OF SOLO PARENT"
-                BCHistory.LoadSoloParent()
-        End Select
-        Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(BCHistory)
-    End Sub
 
-    Private Sub TxtChange_TextChanged(sender As Object, e As EventArgs) Handles TxtChange.TextChanged
-
-    End Sub
 
     Private Sub TxtCash_TextChanged(sender As Object, e As EventArgs) Handles TxtCash.TextChanged
 
@@ -164,17 +111,56 @@ Public Class Payment
 
     End Sub
 
-    Private Sub Payment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadMe()
+
+
+
+
+    Public Sub UpdateBookMark(BookmarkUpdate As String, TextToUse As String, WordApp As Object)
+
+        Dim BMRange As Word.Range
+        BMRange = WordApp.Bookmarks(BookmarkUpdate).Range
+        BMRange.Text = TextToUse
+        WordApp.Bookmarks.Add(BookmarkUpdate, BMRange)
     End Sub
 
-    Private Async Sub CmbCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbCategory.SelectedIndexChanged
 
 
-        Dim sql As String = "SELECT * FROM tbl_payment WHERE category LIKE '" & CmbCategory.SelectedItem & "'"
-        Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
-        DataGridView1.DataSource = dtsample
+    Private Sub UpdateWordDocs(sPath As String)
+
+        Dim objWordApp = New Word.Application With {
+           .Visible = False
+       }
+        Dim wdDoc As Word.Document = objWordApp.Documents.Open(sPath, [ReadOnly]:=False)
+        wdDoc = objWordApp.ActiveDocument
+
+        UpdateBookMark("date", Date.Now.ToString("MMMM d yyyy"), wdDoc)
+        UpdateBookMark("name", TxtName.Text.Trim, wdDoc)
+        UpdateBookMark("space0", TextBox10.Text, wdDoc)
+        UpdateBookMark("space1", TextBox11.Text, wdDoc)
+        UpdateBookMark("space2", TextBox12.Text, wdDoc)
+        UpdateBookMark("space3", TextBox13.Text, wdDoc)
+        UpdateBookMark("space4", TextBox14.Text, wdDoc)
+        UpdateBookMark("space5", TextBox15.Text, wdDoc)
+        UpdateBookMark("space6", TextBox16.Text, wdDoc)
+        UpdateBookMark("space7", TextBox17.Text, wdDoc)
+
+        UpdateBookMark("pay0", TextBox1.Text.Trim, wdDoc)
+        UpdateBookMark("pay1", TextBox2.Text.Trim, wdDoc)
+        UpdateBookMark("pay2", TextBox3.Text.Trim, wdDoc)
+        UpdateBookMark("pay3", TextBox4.Text.Trim, wdDoc)
+        UpdateBookMark("pay4", TextBox5.Text.Trim, wdDoc)
+        UpdateBookMark("pay5", TextBox6.Text.Trim, wdDoc)
+        UpdateBookMark("pay6", TextBox7.Text.Trim, wdDoc)
+        UpdateBookMark("pay7", TextBox8.Text.Trim, wdDoc)
+        UpdateBookMark("total", Total.Text.Trim, wdDoc)
+
+
+
+        wdDoc.Save()
+        wdDoc.Close()
+        wdDoc = Nothing
+        objWordApp.Quit()
+        objWordApp = Nothing
     End Sub
-
 
 End Class

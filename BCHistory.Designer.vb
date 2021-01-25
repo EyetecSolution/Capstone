@@ -37,7 +37,6 @@ Partial Class BCHistory
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
         Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.BtnPayment = New Guna.UI2.WinForms.Guna2Button()
         Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -209,7 +208,6 @@ Partial Class BCHistory
         Me.Guna2Panel1.BorderColor = System.Drawing.Color.Gray
         Me.Guna2Panel1.BorderThickness = 5
         Me.Guna2Panel1.Controls.Add(Me.DataGridView1)
-        Me.Guna2Panel1.Controls.Add(Me.BtnPayment)
         Me.Guna2Panel1.Controls.Add(Me.TxtSearch)
         Me.Guna2Panel1.Controls.Add(Me.BtnSave)
         Me.Guna2Panel1.Controls.Add(Me.BtnView)
@@ -218,32 +216,6 @@ Partial Class BCHistory
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(646, 381)
         Me.Guna2Panel1.TabIndex = 30
-        '
-        'BtnPayment
-        '
-        Me.BtnPayment.Animated = True
-        Me.BtnPayment.BackColor = System.Drawing.Color.Transparent
-        Me.BtnPayment.BorderColor = System.Drawing.Color.White
-        Me.BtnPayment.BorderRadius = 5
-        Me.BtnPayment.BorderThickness = 1
-        Me.BtnPayment.CheckedState.Parent = Me.BtnPayment
-        Me.BtnPayment.CustomImages.Parent = Me.BtnPayment
-        Me.BtnPayment.FillColor = System.Drawing.Color.Maroon
-        Me.BtnPayment.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPayment.ForeColor = System.Drawing.Color.White
-        Me.BtnPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnPayment.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.BtnPayment.HoverState.Parent = Me.BtnPayment
-        Me.BtnPayment.Location = New System.Drawing.Point(316, 30)
-        Me.BtnPayment.Name = "BtnPayment"
-        Me.BtnPayment.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.BtnPayment.ShadowDecoration.Enabled = True
-        Me.BtnPayment.ShadowDecoration.Parent = Me.BtnPayment
-        Me.BtnPayment.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.BtnPayment.Size = New System.Drawing.Size(138, 25)
-        Me.BtnPayment.TabIndex = 28
-        Me.BtnPayment.Text = "GO TO PAYMENT"
-        Me.BtnPayment.Visible = False
         '
         'TxtSearch
         '
@@ -312,7 +284,6 @@ Partial Class BCHistory
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents TxtSearch As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents BtnPayment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents LblTitle As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
 End Class

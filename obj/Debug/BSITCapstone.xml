@@ -6,183 +6,340 @@ BSITCapstone
 </name>
 </assembly>
 <members>
-<member name="T:BSITCapstone.DataSet1.DTBusinessClearanceDataTable">
-	<summary>
-Represents the strongly named DataTable class.
+<member name="T:BSITCapstone.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
-</member><member name="T:BSITCapstone.DataSet1.DTBarangayClearanceDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTIndigencyDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTNonResidencyDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTOathDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTPaymentDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTPayrollDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTResidencyDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTResidentsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTScheduleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTSoloParentDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTSpesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTSpes1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTBusinessClearanceRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTBarangayClearanceRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTIndigencyRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTNonResidencyRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTOathRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTPaymentRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTPayrollRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTResidencyRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTResidentsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTScheduleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTSoloParentRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTSpesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTSpes1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTBusinessClearanceRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTBarangayClearanceRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTIndigencyRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTNonResidencyRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTOathRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTPaymentRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTPayrollRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTResidencyRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTResidentsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTScheduleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTSoloParentRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTSpesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1.DTSpes1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:BSITCapstone.DataSet1">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="P:BSITCapstone.My.Resources.Resources.ResourceManager">
-	<summary>
+</member>
+<member name="P:BSITCapstone.My.Resources.Resources.ResourceManager">
+<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
-</member><member name="P:BSITCapstone.My.Resources.Resources.Culture">
-	<summary>
+</member>
+<member name="P:BSITCapstone.My.Resources.Resources.Culture">
+<summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
-</member><member name="P:BSITCapstone.My.Resources.Resources.strKey">
-	<summary>
-  Looks up a localized string similar to xXOcAQCK0lzZkLVnvECLooo2PzvnmaVZkBuk+a4s65GYtLkOtECrGK7BL5XEQ80NXwgfPuKRhg5iKLNJhDDI1eqJk+mrcIjpXa0sAEw0pKItMvXvzsgA9dc5UwHVlowe7QEl1HR1XWSu/CxGUqiSlJEsTJNh1l7MqHJeIFNBuGK/oBF3UEO8YumsSfGXgqXRLPteCyIdztL5n5qEEmkwI6psIgC/awi3I4nDL7kQEt6edzCMyjIVBL41y1uqBizbj8FNtc6dCBemCWNDVr5QRL/lRZJyEsN3G0Pkm47gCrrD4A9CTFIlURSlpTrhN99z16JXzYVUZUgwFUi0A8XEJ21f8h6Bts0aLzdaJQ6VDQiLdj3Wy7HTSIcJ216+dhIuCq31JUK64IuEARzeUtTRI4Y7eT9mo6A1dppVWxZoms4a9R7XkNBPWb/8QI1HzU/zPzGV2yoU5JTruRB7BQ2UCu1Vqv3oQu+iBGvJ9PlXACbsrAdndMPpLLXLt8oQ07iX [rest of string was truncated]";.
+</member>
+<member name="P:BSITCapstone.My.Resources.Resources.strKey">
+<summary>
+  Looks up a localized string similar to xXOcAQCK0lzZkLVnvECLooo2PzvnmaVZkBuk+a4s65GYtLkOtECrGK7BL5XEQ80NXwgfPuKRhg5iKLNJhDDI1eqJk+mrcIjpXa0sAEw0pKItMvXvzsgA9dc5UwHVlowe7QEl1HR1XWSu/CxGUqiSlJEsTJNh1l7MqHJeIFNBuGK/oBF3UEO8YumsSfGXgqXRLPteCyIdztL5n5qEEmkwI6psIgC/awi3I4nDL7kQEt6edzCMyjIVBL41y1uqBizbj8FNtc6dCBemCWNDVr5QRL/lRZJyEsN3G0Pkm47gCrrD4A9CTFIlURSlpTrhN99z16JXzYVUZUgwFUi0A8XEJ21f8h6Bts0aLzdaJQ6VDQiLdj3Wy7HTSIcJ216+dhIuCq31JUK64IuEARzeUtTRI4Y7eT9mo6A1dppVWxZoms4a9R7XkNBPWb/8QI1HzU/zPzGV2yoU5JTruRB7BQ2UCu1Vqv3oQu+iBGvJ9PlXACbsrAdndMPpLLXLt8oQ07iX [rest of string was truncated]&quot;;.
 </summary>
-</member><member name="T:BSITCapstone.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
+</member>
+<member name="T:BSITCapstone.DataSet1">
+<summary>
+Represents a strongly typed in-memory cache of data.
 </summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTBusinessClearanceDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTBarangayClearanceDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTIndigencyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTNonResidencyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTOathDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTPaymentDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTPayrollDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTResidencyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTSoloParentDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTSpesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTSpes1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTResidentsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTScheduleDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTBusinessClearanceRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTBarangayClearanceRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTIndigencyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTNonResidencyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTOathRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTPaymentRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTPayrollRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTResidencyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTSoloParentRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTSpesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTSpes1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTResidentsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTScheduleRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTBusinessClearanceRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTBarangayClearanceRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTIndigencyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTNonResidencyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTOathRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTPaymentRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTPayrollRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTResidencyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTSoloParentRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTSpesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTSpes1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTResidentsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.DataSet1.DTScheduleRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BSITCapstone.FaceRecognition.EigenObjectRecognizer">
+ <summary>
+ An object recognizer using PCA (Principle Components Analysis)
+ </summary>
+</member>
+<member name="P:BSITCapstone.FaceRecognition.EigenObjectRecognizer.EigenImages">
+ <summary>
+ Get the eigen vectors that form the eigen space
+ </summary>
+ <remarks>The set method is primary used for deserialization, do not attemps to set it unless you know what you are doing</remarks>
+</member>
+<member name="P:BSITCapstone.FaceRecognition.EigenObjectRecognizer.Labels">
+ <summary>
+ Get or set the labels for the corresponding training image
+ </summary>
+</member>
+<member name="P:BSITCapstone.FaceRecognition.EigenObjectRecognizer.EigenDistanceThreshold">
+ <summary>
+ Get or set the eigen distance threshold.
+ The smaller the number, the more likely an examined image will be treated as unrecognized object. 
+ Set it to a huge number (e.g. 5000) and the recognizer will always treated the examined image as one of the known object. 
+ </summary>
+</member>
+<member name="P:BSITCapstone.FaceRecognition.EigenObjectRecognizer.AverageImage">
+ <summary>
+ Get the average Image. 
+ </summary>
+ <remarks>The set method is primary used for deserialization, do not attemps to set it unless you know what you are doing</remarks>
+</member>
+<member name="P:BSITCapstone.FaceRecognition.EigenObjectRecognizer.EigenValues">
+ <summary>
+ Get the eigen values of each of the training image
+ </summary>
+ <remarks>The set method is primary used for deserialization, do not attemps to set it unless you know what you are doing</remarks>
+</member>
+<member name="M:BSITCapstone.FaceRecognition.EigenObjectRecognizer.#ctor(Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Byte}[],Emgu.CV.Structure.MCvTermCriteria@)">
+ <summary>
+ Create an object recognizer using the specific tranning data and parameters, it will always return the most similar object
+ </summary>
+ <param name="images">The images used for training, each of them should be the same size. It's recommended the images are histogram normalized</param>
+ <param name="termCrit">The criteria for recognizer training</param>
+</member>
+<member name="M:BSITCapstone.FaceRecognition.EigenObjectRecognizer.#ctor(Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Byte}[],System.String[],Emgu.CV.Structure.MCvTermCriteria@)">
+ <summary>
+ Create an object recognizer using the specific tranning data and parameters, it will always return the most similar object
+ </summary>
+ <param name="images">The images used for training, each of them should be the same size. It's recommended the images are histogram normalized</param>
+ <param name="labels">The labels corresponding to the images</param>
+ <param name="termCrit">The criteria for recognizer training</param>
+</member>
+<member name="M:BSITCapstone.FaceRecognition.EigenObjectRecognizer.#ctor(Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Byte}[],System.String[],System.Double,Emgu.CV.Structure.MCvTermCriteria@)">
+ <summary>
+ Create an object recognizer using the specific tranning data and parameters
+ </summary>
+ <param name="images">The images used for training, each of them should be the same size. It's recommended the images are histogram normalized</param>
+ <param name="labels">The labels corresponding to the images</param>
+ <param name="eigenDistanceThreshold">
+ The eigen distance threshold, (0, ~1000].
+ The smaller the number, the more likely an examined image will be treated as unrecognized object. 
+ If the threshold is &lt; 0, the recognizer will always treated the examined image as one of the known object. 
+ </param>
+ <param name="termCrit">The criteria for recognizer training</param>
+</member>
+<member name="M:BSITCapstone.FaceRecognition.EigenObjectRecognizer.CalcEigenObjects(Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Byte}[],Emgu.CV.Structure.MCvTermCriteria@,Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Single}[]@,Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Single}@)">
+ <summary>
+ Caculate the eigen images for the specific traning image
+ </summary>
+ <param name="trainingImages">The images used for training </param>
+ <param name="termCrit">The criteria for tranning</param>
+ <param name="eigenImages">The resulting eigen images</param>
+ <param name="avg">The resulting average image</param>
+</member>
+<member name="M:BSITCapstone.FaceRecognition.EigenObjectRecognizer.EigenDecomposite(Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Byte},Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Single}[],Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Single})">
+ <summary>
+ Decompose the image as eigen values, using the specific eigen vectors
+ </summary>
+ <param name="src">The image to be decomposed</param>
+ <param name="eigenImages">The eigen images</param>
+ <param name="avg">The average images</param>
+ <returns>Eigen values of the decomposed image</returns>
+</member>
+<member name="M:BSITCapstone.FaceRecognition.EigenObjectRecognizer.EigenProjection(System.Single[])">
+ <summary>
+ Given the eigen value, reconstruct the projected image
+ </summary>
+ <param name="eigenValue">The eigen values</param>
+ <returns>The projected image</returns>
+</member>
+<member name="M:BSITCapstone.FaceRecognition.EigenObjectRecognizer.GetEigenDistances(Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Byte})">
+ <summary>
+ Get the Euclidean eigen-distance between <paramref name="image"/> and every other image in the database
+ </summary>
+ <param name="image">The image to be compared from the training images</param>
+ <returns>An array of eigen distance from every image in the training images</returns>
+</member>
+<member name="M:BSITCapstone.FaceRecognition.EigenObjectRecognizer.FindMostSimilarObject(Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Byte},System.Int32@,System.Single@,System.String@)">
+ <summary>
+ Given the <paramref name="image"/> to be examined, find in the database the most similar object, return the index and the eigen distance
+ </summary>
+ <param name="image">The image to be searched from the database</param>
+ <param name="index">The index of the most similar object</param>
+ <param name="eigenDistance">The eigen distance of the most similar object</param>
+ <param name="label">The label of the specific image</param>
+</member>
+<member name="M:BSITCapstone.FaceRecognition.EigenObjectRecognizer.Recognize(Emgu.CV.Image{Emgu.CV.Structure.Gray,System.Byte})">
+ <summary>
+ Try to recognize the image and return its label
+ </summary>
+ <param name="image">The image to be recognized</param>
+ <returns>
+ String.Empty, if not recognized;
+ Label of the corresponding image, otherwise
+ </returns>
 </member>
 </members>
 </doc>

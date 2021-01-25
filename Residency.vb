@@ -13,8 +13,16 @@ Public Class Residency
         If BtnS.Text = "SAVE" Then
             Try
                 Await InsertQuery()
-                MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                 UpdateWordDocs("C:\Capstone\Docs\TempResidency.docx")
+                Dim i = MessageBox.Show("Certificate of Residency added." & vbNewLine & "The Document will available for printing." & vbNewLine & "Any Other Transaction? " & TxtName.Text, "BSMIMS", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+                If i = vbYes Then
+                    Dashboard.activefrm.Hide()
+                    Dashboard.OpenFormChild(FormDocument)
+                Else
+                    Dashboard.activefrm.Hide()
+                    Dashboard.OpenFormChild(Payment)
+                End If
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -135,5 +143,9 @@ Public Class Residency
         End If
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BCHistory)
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
     End Sub
 End Class

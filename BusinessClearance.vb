@@ -110,8 +110,16 @@ Public Class BusinessClearance
         Try
             If BtnSave.Text = "SAVE" Then
                 Await InsertQuery()
-                MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                 UpdateWordDocs("C:\Capstone\Docs\TempBusinessC.docx")
+                Dim i = MessageBox.Show("Barangay Clearance added." & vbNewLine & "The Document will available for printing." & vbNewLine & "Any Other Transaction? " & TxtName.Text, "BSMIMS", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+                If i = vbYes Then
+                    Dashboard.activefrm.Hide()
+                    Dashboard.OpenFormChild(FormDocument)
+                Else
+                    Dashboard.activefrm.Hide()
+                    Dashboard.OpenFormChild(Payment)
+                End If
                 ResetTextFields()
             Else
                 Await UpdateQuery()
@@ -154,5 +162,11 @@ Public Class BusinessClearance
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(Residents)
+        Residents.BtnUse.Visible = True
     End Sub
 End Class

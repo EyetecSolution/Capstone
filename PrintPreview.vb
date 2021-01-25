@@ -25,7 +25,10 @@ Public Class PrintPreview
                 LoadDocs("C:\Capstone\Docs\TempJobOath.docx")
             Case "healthmonitoring"
                 LoadDocs("C:\Capstone\Docs\TempHealthMonitoring.docx")
-
+            Case "Honorarium"
+                LoadDocs("C:\Capstone\Docs\TempPayslip.docx")
+            Case "Reciept"
+                LoadDocs("C:\Capstone\Docs\TempReceipt.docx")
 
         End Select
     End Sub

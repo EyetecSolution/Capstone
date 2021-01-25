@@ -89,8 +89,16 @@ Public Class NonResidency
         If BtnS.Text = "SAVE" Then
             Try
                 Await InsertQuery()
-                MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                 UpdateWordDocs("C:\Capstone\Docs\TempNonresidency.docx")
+                Dim i = MessageBox.Show("Certificate of Non-Residency added." & vbNewLine & "The Document will available for printing." & vbNewLine & "Any Other Transaction? " & TxtName.Text, "BSMIMS", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+                If i = vbYes Then
+                    Dashboard.activefrm.Hide()
+                    Dashboard.OpenFormChild(FormDocument)
+                Else
+                    Dashboard.activefrm.Hide()
+                    Dashboard.OpenFormChild(Payment)
+                End If
                 ResetTextField()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)

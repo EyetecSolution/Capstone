@@ -54,10 +54,13 @@ Public Class ReportsList
             Case 6
                 LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSoloParent.rdlc", "DTSoloParent")
             Case 7
-                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSPES.rdlc", "DTSpes")
+                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportOath.rdlc", "DTSpes")
             Case 8
-                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSpes1.rdlc", "DTSpes1")
-
+                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSPES.rdlc", "DTSpes1")
+            Case 9
+                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSpes1.rdlc", "DTPayment")
+            Case 10
+                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportTotal.rdlc", "DTPayment")
         End Select
 
 
@@ -87,12 +90,19 @@ Public Class ReportsList
             LoadDbase("SELECT FULLNAME, FULLADDRESS, FATHERNAME, MOTHERNAME, FATHEROCCU, MOTHEROCCU, DATEISSUED FROM tbl_spes")
         ElseIf CmbPurpose.SelectedIndex = 9 Then
             LoadDbase("SELECT FULLNAME, FULLADDRESS, AGE, SCHOOLYEAR, DATEISSUED FROM tbl_spes1")
+        ElseIf CmbPurpose.SelectedIndex = 10 Then
+            LoadDbase("SELECT fname, DATEISSUED, total_amount, issued_document FROM tbl_payment")
         End If
     End Sub
 
     Private Sub CmbStreets_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbStreets.SelectedIndexChanged
         If CmbPurpose.Text = "SELECT REPORT" Then
             MessageBox.Show("Please select report before searching the street Thank you!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        If CmbPurpose.SelectedIndex = 10 Then
+            MessageBox.Show("No [FULLADDRESS] Field From " & CmbPurpose.SelectedItem, "Search Failed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -133,4 +143,10 @@ Public Class ReportsList
         End If
         dbase.DefaultView.RowFilter = "DATEISSUED >= '" & DTFrom.Value.ToString("M/d/yyyy") & "' and DATEISSUED <= '" & DTTo.Value.ToString("M/d/yyyy") & "'"
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+
 End Class

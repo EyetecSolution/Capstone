@@ -47,15 +47,20 @@ Public Class HomeContent
 
     Private Async Sub HomeContent_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        Dim pth As String = Await RetrievePaths()
-        Dim filters As String() = {"*.jpg", "*.png"}
-        Dim filePaths As String() = filters.SelectMany(Function(f) Directory.GetFiles(pth, f)).ToArray()
-        If filePaths.Length > 0 Then
-            ImageSlider1.Images.Clear()
-            For Each fle As String In filePaths
-                Dim v = ImageSlider1.Images.Add(Image.FromFile(fle))
-            Next
-        End If
+
+        Try
+            Dim pth As String = Await RetrievePaths()
+            Dim filters As String() = {"*.jpg", "*.png"}
+            Dim filePaths As String() = filters.SelectMany(Function(f) Directory.GetFiles(pth, f)).ToArray()
+            If filePaths.Length > 0 Then
+                ImageSlider1.Images.Clear()
+                For Each fle As String In filePaths
+                    Dim v = ImageSlider1.Images.Add(Image.FromFile(fle))
+                Next
+            End If
+        Catch ex As Exception
+
+        End Try
         Dim sql1 As String = "SELECT COUNT(*) FROM tbl_covid WHERE CONDITION='CONFIRMED'"
         Dim sql2 As String = "SELECT COUNT(*) FROM tbl_covid WHERE CONDITION='PUI'"
         Dim sql3 As String = "SELECT COUNT(*) FROM tbl_covid WHERE CONDITION='PUM(ONGOING)'"

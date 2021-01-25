@@ -1,4 +1,11 @@
 ﻿Partial Class DataSet1
+    Partial Public Class DTPaymentDataTable
+        Private Sub DTPaymentDataTable_DTPaymentRowChanging(sender As Object, e As DTPaymentRowChangeEvent) Handles Me.DTPaymentRowChanging
+
+        End Sub
+
+    End Class
+
     Partial Public Class DTScheduleDataTable
         Private Sub DTScheduleDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
             If (e.Column.ColumnName = Me.sdayColumn.ColumnName) Then

@@ -40,8 +40,8 @@ Partial Class Residency
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Guna2Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -269,15 +269,6 @@ Partial Class Residency
         '
         Me.NetResize1.ParentControl = Me
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Location = New System.Drawing.Point(-18, 4)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(678, 32)
-        Me.Panel1.TabIndex = 40
-        '
         'LblTitle
         '
         Me.LblTitle.BackColor = System.Drawing.Color.Transparent
@@ -288,6 +279,15 @@ Partial Class Residency
         Me.LblTitle.Size = New System.Drawing.Size(403, 29)
         Me.LblTitle.TabIndex = 56
         Me.LblTitle.Text = "CERTIFICATE OF RESIDENCY FORM"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Maroon
+        Me.Panel1.Location = New System.Drawing.Point(-18, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(678, 32)
+        Me.Panel1.TabIndex = 40
         '
         'Residency
         '

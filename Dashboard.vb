@@ -262,7 +262,7 @@ Public Class Dashboard
     End Sub
 
     Private Sub BtnQR_Click(sender As Object, e As EventArgs) Handles BtnQR.Click
-        GenQRCODE.ShowDialog()
+        FaceRecognition.ShowDialog()
         If PanelSlider.Width = 50 Then
             ActiveButton(BtnQR)
         End If

@@ -3,7 +3,6 @@ Imports Microsoft.Office.Interop.Word
 Imports Word = Microsoft.Office.Interop.Word
 
 Public Class BClearance
-
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Dashboard.activefrm.Close()
@@ -40,7 +39,12 @@ Public Class BClearance
         End Using
         Return i
     End Function
+
+
+
     Private Async Sub BtnS_Click(sender As Object, e As EventArgs) Handles BtnS.Click
+        Dim price As Integer = Val(TxtFees.Text)
+
         If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtAddress.Text) Or String.IsNullOrEmpty(TxtCtc.Text) Or String.IsNullOrEmpty(TxtOR.Text) Then
             MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
@@ -54,12 +58,13 @@ Public Class BClearance
             If BtnS.Text = "SAVE" Then
                 Await InsertQuery()
                 UpdateWordDocs("C:\Capstone\Docs\TempClearance.docx")
-                MessageBox.Show("New Barangay Clearance applicant added! and" & vbNewLine & "The Document will available for printing.", "Documents Created", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Barangay Clearance added." & vbNewLine & "The Document will available for printing.", "BSMIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ResetTextField()
             Else
                 Await UpdateQuery()
                 UpdateWordDocs("C:\Capstone\Docs\TempClearance.docx")
                 MessageBox.Show("Clearance updated! and" & vbNewLine & "The Document will available for printing.", "Documents Created", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                 ResetTextField()
             End If
         Catch ex As Exception
@@ -121,7 +126,7 @@ Public Class BClearance
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("INSERT INTO tbl_clearance(FULLNAME,FULLADDRESS, PURPOSE, DATEISSUED, ISSUEDAT, CTCNO, ORNO, VALIDITY, FEES, paymentstatus)" &
+        Using mycmd As New OleDbCommand("INSERT INTO tbl_clearance(FULLNAME,FULLADDRESS, PURPOSE, DATEISSUED, ISSUEDAT, CTCNO, ORNO, VALIDITY, FEES)" &
                                          "VALUES(@FULLNAME, @FULLADDRESS, @PURPOSE, @DATEISSUED, @ISSUEDAT, @CTCNO, @ORNO, @VALIDITY, @FEES)", con)
             mycmd.Parameters.AddWithValue("FULLNAME", TxtName.Text)
             mycmd.Parameters.AddWithValue("FULLADDRESS", TxtAddress.Text)
@@ -188,20 +193,33 @@ Public Class BClearance
         e.Handled = True
     End Sub
 
-    Private Sub TxtCtc_TextChanged(sender As Object, e As EventArgs) Handles TxtCtc.TextChanged
-
-    End Sub
-
     Private Sub TxtName_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
 
+    Private Sub CmbPurpose_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbPurpose.SelectedIndexChanged
+        Dim purpose As Integer = CmbPurpose.SelectedIndex
 
-
-
-    Private Sub BClearance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Select Case purpose
+            Case 0
+                TxtFees.Text = 50
+            Case 1
+                TxtFees.Text = 350
+            Case 2
+                TxtFees.Text = 50
+            Case 3
+                TxtFees.Text = 50
+            Case 4
+                TxtFees.Text = 50
+            Case 5
+                TxtFees.Text = 50
+            Case 6
+                TxtFees.Text = 50
+            Case 7
+                TxtFees.Text = 50
+        End Select
     End Sub
+
 End Class

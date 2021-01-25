@@ -26,24 +26,22 @@ Public Class Attendance
         LblDate.Text = "DATE:" & dt.ToString("MMMM, d yyyy")
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
-        DataGridView1.Columns("pstion").HeaderText = "POSITION"
         DataGridView1.Columns("fname").HeaderText = "EMPLOYEE"
         DataGridView1.Columns("TimeIN").HeaderText = "TIME IN"
         DataGridView1.Columns("TimeOut").HeaderText = "TIME OUT"
 
-        DataGridView1.Columns("pstion").Width = 300
         DataGridView1.Columns("fname").Width = 300
         DataGridView1.Columns("TimeIn").Width = 100
         DataGridView1.Columns("TimeOut").Width = 100
     End Sub
 
     Private Sub Attendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim sql As String = "SELECT pstion, fname, TimeIN, TimeOut FROM tbl_attendance WHERE dt= #" & dt.ToString("M/d/yyyy") & "#"
+        Dim sql As String = "SELECT fname, TimeIN, TimeOut FROM tbl_attendance WHERE dt= #" & dt.ToString("M/d/yyyy") & "#"
         LoadMe(sql)
     End Sub
 
     Private Sub DTTo_ValueChanged(sender As Object, e As EventArgs) Handles DTTo.ValueChanged
-        Dim sql As String = "SELECT pstion, fname, TimeIN, TimeOut FROM tbl_attendance WHERE dt= #" & DTTo.Value.ToString("M/d/yyyy") & "#"
+        Dim sql As String = "SELECT fname, TimeIN, TimeOut FROM tbl_attendance WHERE dt= #" & DTTo.Value.ToString("M/d/yyyy") & "#"
         LoadMe(sql)
     End Sub
 
@@ -53,5 +51,7 @@ Public Class Attendance
         Dashboard.OpenFormChild(BarangayManagement)
     End Sub
 
+    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
 
+    End Sub
 End Class
