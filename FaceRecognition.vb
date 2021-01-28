@@ -278,9 +278,7 @@ Public Class FaceRecognition
         con.Open()
         Dim dt As DateTime = DateTime.Now
         Try
-            Using cmd As New OleDbCommand("UPDATE tbl_attendance SET TimeOut=@TimeOut WHERE fname=@fname AND TimeOut IS NULL AND dt=#" & Date.Now.ToString("M/d/yyyy") & "#", con)
-                cmd.Parameters.AddWithValue("@fname", label4.Text.Trim)
-                cmd.Parameters.AddWithValue("@TimeOut", dt.ToString("h:mm:ss tt"))
+            Using cmd As New OleDbCommand("UPDATE tbl_attendance SET TimeOut= '" & dt.ToString("h:mm:ss tt") & "' WHERE fname='" & label4.Text & "' AND dt=#" & Date.Now.ToString("M/d/yyyy") & "#", con)
                 cmd.ExecuteNonQuery()
             End Using
         Catch ex As Exception
@@ -290,6 +288,7 @@ Public Class FaceRecognition
 
     Public Function CheckIfExistToday(sql As String)
         Dim i As Integer
+
         If con.State = ConnectionState.Open Then
             con.Close()
         End If
@@ -315,7 +314,7 @@ Public Class FaceRecognition
             Using cmd As New OleDbCommand("INSERT INTO tbl_attendance(fname, TimeIN, TimeOut, dt) VALUES(@fname, @TimeIN, @TimeOut, @dt)", con)
                 cmd.Parameters.AddWithValue("@fname", label4.Text.Trim)
                 cmd.Parameters.AddWithValue("@TimeIN", dt.ToString("h:mm:ss tt"))
-                cmd.Parameters.AddWithValue("@TimeOut", "")
+                cmd.Parameters.AddWithValue("@TimeOut", "---")
                 cmd.Parameters.AddWithValue("@dt", dt.ToString("M/d/yyyy"))
                 cmd.ExecuteNonQuery()
             End Using
@@ -325,30 +324,21 @@ Public Class FaceRecognition
     End Sub
 
     Private Sub btnTimeIN_Click(sender As Object, e As EventArgs) Handles btnTimeIN.Click
-        Dim i As Integer = CheckIfExistToday("SELECT COUNT(*) FROM tbl_attendance WHERE fname= '" & label4.Text.Trim & "' AND TimeIN IS NOT NULL AND dt = #" & Date.Now.ToString("M/d/yyyy") & "#")
-        If i > 0 Then
-            MessageBox.Show("Employee already Time In", "Attendance", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        Else
-            InsertTime()
+        Dim dt As DateTime = DateTime.Now
 
-        End If
-    End Sub
-
-    Private Sub btnTimeOut_Click(sender As Object, e As EventArgs) Handles btnTimeOut.Click
-        Dim i As Integer = CheckIfExistToday("SELECT COUNT(*) FROM tbl_attendance WHERE fname= '" & label4.Text.Trim & "' AND TimeOut='---' AND dt = #" & Date.Now.ToString("M/d/yyyy") & "#")
-        If i > 0 Then
-            MessageBox.Show("Employee already Time Out", "Attendance", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        Else
-            MessageBox.Show("Time Out Successfull", "Attendance", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-        End If
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+        InsertTime()
+        MessageBox.Show($"TIME IN {dt.ToString("h:mm:ss tt")}", "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
     End Sub
 
     Private Sub FaceRecognition_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub BtnTimeOut_Click(sender As Object, e As EventArgs) Handles btnTimeOut.Click
+        Dim dt As DateTime = DateTime.Now
+        UpdateTime()
+        MessageBox.Show($"TIME OUT {dt.ToString("h:mm:ss tt")}", "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
     End Sub
 
@@ -420,7 +410,7 @@ Public Class FaceRecognition
             labels.Add(TextBox1.Text)
 
             'Show face added in gray scale
-            ImageBox1.Image = TrainedFace
+            ImageBox3.Image = TrainedFace
 
             'Write the number of triained faces in a file text for further load
             File.WriteAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", trainingImages.ToArray().Length.ToString() & "%")
@@ -433,7 +423,7 @@ Public Class FaceRecognition
 
             MessageBox.Show(TextBox1.Text + "´s face detected and added :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information)
             TextBox1.Text = ""
-            ImageBox1.Image = Nothing
+            ImageBox3.Image = Nothing
         Catch ex As Exception
             MessageBox.Show("Enable the face detection first", "Training Fail", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
@@ -445,12 +435,16 @@ Public Class FaceRecognition
 
         NamePersons.Add("")
 
+        Try
+            currentFrame = grabber.QueryFrame().Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC)
+            gray = currentFrame.Convert(Of Gray, [Byte])()
+        Catch ex As Exception
 
+        End Try
         'Get the current frame form capture device
-        currentFrame = grabber.QueryFrame().Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC)
 
         'Convert it to Grayscale
-        gray = currentFrame.Convert(Of Gray, [Byte])()
+
 
         'Face Detector
         Dim facesDetected As MCvAvgComp()() = gray.DetectHaarCascade(face, 1.2, 10, Emgu.CV.CvEnum.HAAR_DETECTION_TYPE.DO_CANNY_PRUNING, New Size(20, 20))

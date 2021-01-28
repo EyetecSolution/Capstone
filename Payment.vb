@@ -47,6 +47,13 @@ Public Class Payment
         If TxtCash.Text = "" Then TxtChange.Text = "0.00"
     End Sub
     Private Async Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles BtnPayment.Click
+        Try
+            Dim Word() As Process = Process.GetProcessesByName("WINWORD")
+            For Each Process As Process In Word
+                Process.Kill()
+            Next
+        Catch ex As Exception
+        End Try
         If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtCash.Text) Then
             MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
@@ -54,19 +61,13 @@ Public Class Payment
 
         Try
             Await InsertQuery()
-            UpdateWordDocs("C:\Capstone\Docs\TempReceipt.docx")
-            MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            PrintNow()
+            MessageBox.Show("Payment successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
             ResetTextfield()
         Catch ex As Exception
-            MessageBox.Show(ex.Message )
-        Finally
-            con.Close()
+
 
         End Try
-
-
-
-
 
     End Sub
 
@@ -87,7 +88,7 @@ Public Class Payment
             mycmd.Parameters.AddWithValue("DATEISSUED", Date.Now.ToString("M/d/yyyy"))
             mycmd.Parameters.AddWithValue("total_amount", Val(TxtAmount.Text))
             mycmd.Parameters.AddWithValue("cash", Val(TxtCash.Text))
-            mycmd.Parameters.AddWithValue("issued_document", String.Join(", ", docsCollection))
+            mycmd.Parameters.AddWithValue("issued_document", String.Join(" ", docsCollection))
             mycmd.Parameters.AddWithValue("change", TxtChange.Text)
 
             i = Await mycmd.ExecuteNonQueryAsync
@@ -152,7 +153,7 @@ Public Class Payment
         UpdateBookMark("pay5", TextBox6.Text.Trim, wdDoc)
         UpdateBookMark("pay6", TextBox7.Text.Trim, wdDoc)
         UpdateBookMark("pay7", TextBox8.Text.Trim, wdDoc)
-        UpdateBookMark("total", Total.Text.Trim, wdDoc)
+        UpdateBookMark("total", TextBox9.Text.Trim, wdDoc)
 
 
 
@@ -163,4 +164,33 @@ Public Class Payment
         objWordApp = Nothing
     End Sub
 
+    Sub PrintNow()
+        Try
+            UpdateWordDocs("C:\Capstone\Docs\TempReceipt.docx")
+            Dim app As Word.Application
+            Dim doc As Word.Document
+            Dim p As New PrintDialog
+            app = New Word.Application
+            app.WordBasic.FilePrintSetup(Printer:=p.PrinterSettings.PrinterName, DoNotSetAsSysDefault:=1)
+
+            Dim m As Object = System.Reflection.Missing.Value
+            doc = app.Documents.Open("C:\Capstone\Docs\TempReceipt.docx", m, m, m, m, m, m, m, m, m, m, m)
+            app.PrintOut()
+            app.Documents.Close()
+
+            'Quit word application
+            app.Quit()
+
+            'Release 
+            app = Nothing
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(FormDocument)
+    End Sub
 End Class

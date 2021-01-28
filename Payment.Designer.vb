@@ -31,10 +31,11 @@ Partial Class Payment
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.PanelP = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Total = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
@@ -47,6 +48,14 @@ Partial Class Payment
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel10 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.BtnBack = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnPayment = New Guna.UI2.WinForms.Guna2Button()
         Me.TxtChange = New System.Windows.Forms.TextBox()
@@ -57,15 +66,6 @@ Partial Class Payment
         Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
         Me.Label5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.PanelP.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
@@ -109,7 +109,7 @@ Partial Class Payment
         '
         Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(32, 77)
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(32, 87)
         Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
         Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(111, 18)
         Me.Guna2HtmlLabel4.TabIndex = 29
@@ -119,7 +119,7 @@ Partial Class Payment
         '
         Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(228, 77)
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(228, 87)
         Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
         Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(43, 18)
         Me.Guna2HtmlLabel5.TabIndex = 30
@@ -129,7 +129,7 @@ Partial Class Payment
         '
         Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(431, 77)
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(431, 87)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
         Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(64, 18)
         Me.Guna2HtmlLabel6.TabIndex = 31
@@ -169,24 +169,25 @@ Partial Class Payment
         Me.Guna2Panel5.BackColor = System.Drawing.Color.White
         Me.Guna2Panel5.BorderColor = System.Drawing.Color.Black
         Me.Guna2Panel5.BorderThickness = 2
-        Me.Guna2Panel5.Controls.Add(Me.Total)
-        Me.Guna2Panel5.Location = New System.Drawing.Point(411, 369)
+        Me.Guna2Panel5.Controls.Add(Me.TextBox9)
+        Me.Guna2Panel5.Location = New System.Drawing.Point(409, 377)
         Me.Guna2Panel5.Name = "Guna2Panel5"
+        Me.Guna2Panel5.Padding = New System.Windows.Forms.Padding(3)
         Me.Guna2Panel5.ShadowDecoration.Parent = Me.Guna2Panel5
         Me.Guna2Panel5.Size = New System.Drawing.Size(176, 31)
         Me.Guna2Panel5.TabIndex = 64
         '
-        'Total
+        'TextBox9
         '
-        Me.Total.AutoSize = False
-        Me.Total.BackColor = System.Drawing.Color.Transparent
-        Me.Total.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Total.Location = New System.Drawing.Point(5, 7)
-        Me.Total.Name = "Total"
-        Me.Total.Size = New System.Drawing.Size(167, 21)
-        Me.Total.TabIndex = 14
-        Me.Total.Text = Nothing
-        Me.Total.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.TextBox9.BackColor = System.Drawing.Color.White
+        Me.TextBox9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TextBox9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox9.Location = New System.Drawing.Point(3, 3)
+        Me.TextBox9.Name = "TextBox9"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox9, False)
+        Me.TextBox9.Size = New System.Drawing.Size(170, 26)
+        Me.TextBox9.TabIndex = 61
+        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Guna2Panel4
         '
@@ -194,7 +195,7 @@ Partial Class Payment
         Me.Guna2Panel4.BorderColor = System.Drawing.Color.Black
         Me.Guna2Panel4.BorderThickness = 2
         Me.Guna2Panel4.Controls.Add(Me.Guna2HtmlLabel8)
-        Me.Guna2Panel4.Location = New System.Drawing.Point(33, 368)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(33, 377)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
         Me.Guna2Panel4.Size = New System.Drawing.Size(376, 31)
@@ -230,15 +231,25 @@ Partial Class Payment
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(176, 189)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(176, 199)
         Me.Guna2Panel1.TabIndex = 61
+        '
+        'TextBox8
+        '
+        Me.TextBox8.BackColor = System.Drawing.Color.White
+        Me.TextBox8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox8.Location = New System.Drawing.Point(2, 173)
+        Me.TextBox8.Name = "TextBox8"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox8, False)
+        Me.TextBox8.Size = New System.Drawing.Size(172, 23)
+        Me.TextBox8.TabIndex = 60
+        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox7
         '
         Me.TextBox7.BackColor = System.Drawing.Color.White
-        Me.TextBox7.Dock = System.Windows.Forms.DockStyle.Top
         Me.TextBox7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(2, 140)
+        Me.TextBox7.Location = New System.Drawing.Point(2, 148)
         Me.TextBox7.Name = "TextBox7"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox7, False)
         Me.TextBox7.Size = New System.Drawing.Size(172, 23)
@@ -248,9 +259,8 @@ Partial Class Payment
         'TextBox6
         '
         Me.TextBox6.BackColor = System.Drawing.Color.White
-        Me.TextBox6.Dock = System.Windows.Forms.DockStyle.Top
         Me.TextBox6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(2, 117)
+        Me.TextBox6.Location = New System.Drawing.Point(2, 124)
         Me.TextBox6.Name = "TextBox6"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox6, False)
         Me.TextBox6.Size = New System.Drawing.Size(172, 23)
@@ -260,9 +270,8 @@ Partial Class Payment
         'TextBox5
         '
         Me.TextBox5.BackColor = System.Drawing.Color.White
-        Me.TextBox5.Dock = System.Windows.Forms.DockStyle.Top
         Me.TextBox5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(2, 94)
+        Me.TextBox5.Location = New System.Drawing.Point(2, 100)
         Me.TextBox5.Name = "TextBox5"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox5, False)
         Me.TextBox5.Size = New System.Drawing.Size(172, 23)
@@ -272,9 +281,8 @@ Partial Class Payment
         'TextBox4
         '
         Me.TextBox4.BackColor = System.Drawing.Color.White
-        Me.TextBox4.Dock = System.Windows.Forms.DockStyle.Top
         Me.TextBox4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(2, 71)
+        Me.TextBox4.Location = New System.Drawing.Point(2, 76)
         Me.TextBox4.Name = "TextBox4"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox4, False)
         Me.TextBox4.Size = New System.Drawing.Size(172, 23)
@@ -284,9 +292,8 @@ Partial Class Payment
         'TextBox3
         '
         Me.TextBox3.BackColor = System.Drawing.Color.White
-        Me.TextBox3.Dock = System.Windows.Forms.DockStyle.Top
         Me.TextBox3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(2, 48)
+        Me.TextBox3.Location = New System.Drawing.Point(2, 52)
         Me.TextBox3.Name = "TextBox3"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox3, False)
         Me.TextBox3.Size = New System.Drawing.Size(172, 23)
@@ -296,9 +303,8 @@ Partial Class Payment
         'TextBox2
         '
         Me.TextBox2.BackColor = System.Drawing.Color.White
-        Me.TextBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.TextBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(2, 25)
+        Me.TextBox2.Location = New System.Drawing.Point(2, 28)
         Me.TextBox2.Name = "TextBox2"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox2, False)
         Me.TextBox2.Size = New System.Drawing.Size(172, 23)
@@ -308,9 +314,8 @@ Partial Class Payment
         'TextBox1
         '
         Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(2, 2)
+        Me.TextBox1.Location = New System.Drawing.Point(2, 4)
         Me.TextBox1.Name = "TextBox1"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox1, False)
         Me.TextBox1.Size = New System.Drawing.Size(172, 23)
@@ -382,8 +387,99 @@ Partial Class Payment
         Me.Guna2Panel10.Name = "Guna2Panel10"
         Me.Guna2Panel10.Padding = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel10.ShadowDecoration.Parent = Me.Guna2Panel10
-        Me.Guna2Panel10.Size = New System.Drawing.Size(376, 189)
+        Me.Guna2Panel10.Size = New System.Drawing.Size(376, 199)
         Me.Guna2Panel10.TabIndex = 59
+        '
+        'TextBox17
+        '
+        Me.TextBox17.BackColor = System.Drawing.Color.White
+        Me.TextBox17.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox17.Location = New System.Drawing.Point(2, 173)
+        Me.TextBox17.Name = "TextBox17"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox17, False)
+        Me.TextBox17.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox17.TabIndex = 61
+        Me.TextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox16
+        '
+        Me.TextBox16.BackColor = System.Drawing.Color.White
+        Me.TextBox16.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox16.Location = New System.Drawing.Point(2, 149)
+        Me.TextBox16.Name = "TextBox16"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox16, False)
+        Me.TextBox16.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox16.TabIndex = 60
+        Me.TextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox15
+        '
+        Me.TextBox15.BackColor = System.Drawing.Color.White
+        Me.TextBox15.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox15.Location = New System.Drawing.Point(2, 125)
+        Me.TextBox15.Name = "TextBox15"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox15, False)
+        Me.TextBox15.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox15.TabIndex = 59
+        Me.TextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox14
+        '
+        Me.TextBox14.BackColor = System.Drawing.Color.White
+        Me.TextBox14.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox14.Location = New System.Drawing.Point(2, 101)
+        Me.TextBox14.Name = "TextBox14"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox14, False)
+        Me.TextBox14.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox14.TabIndex = 58
+        Me.TextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox13
+        '
+        Me.TextBox13.BackColor = System.Drawing.Color.White
+        Me.TextBox13.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox13.Location = New System.Drawing.Point(2, 77)
+        Me.TextBox13.Name = "TextBox13"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox13, False)
+        Me.TextBox13.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox13.TabIndex = 57
+        Me.TextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox12
+        '
+        Me.TextBox12.BackColor = System.Drawing.Color.White
+        Me.TextBox12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox12.Location = New System.Drawing.Point(2, 53)
+        Me.TextBox12.Name = "TextBox12"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox12, False)
+        Me.TextBox12.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox12.TabIndex = 56
+        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox11
+        '
+        Me.TextBox11.BackColor = System.Drawing.Color.White
+        Me.TextBox11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox11.Location = New System.Drawing.Point(2, 29)
+        Me.TextBox11.Name = "TextBox11"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox11, False)
+        Me.TextBox11.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox11.TabIndex = 55
+        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox10
+        '
+        Me.TextBox10.AutoCompleteCustomSource.AddRange(New String() {"BRGY.CLEARANCE", "BUSINESS CLEARANCE", "CERT. OF INDIGENCY", "CERT. OF RESIDENCY", "CERT. OF NON-RESIDENCY", "CERT. OF SOLO PARENT"})
+        Me.TextBox10.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.TextBox10.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.TextBox10.BackColor = System.Drawing.Color.White
+        Me.TextBox10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox10.Location = New System.Drawing.Point(2, 5)
+        Me.TextBox10.Name = "TextBox10"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox10, False)
+        Me.TextBox10.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox10.TabIndex = 54
+        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'BtnBack
         '
@@ -400,7 +496,7 @@ Partial Class Payment
         Me.BtnBack.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnBack.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BtnBack.HoverState.Parent = Me.BtnBack
-        Me.BtnBack.Location = New System.Drawing.Point(383, 404)
+        Me.BtnBack.Location = New System.Drawing.Point(383, 418)
         Me.BtnBack.Name = "BtnBack"
         Me.BtnBack.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.BtnBack.ShadowDecoration.Enabled = True
@@ -425,7 +521,7 @@ Partial Class Payment
         Me.BtnPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnPayment.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BtnPayment.HoverState.Parent = Me.BtnPayment
-        Me.BtnPayment.Location = New System.Drawing.Point(483, 404)
+        Me.BtnPayment.Location = New System.Drawing.Point(483, 418)
         Me.BtnPayment.Name = "BtnPayment"
         Me.BtnPayment.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.BtnPayment.ShadowDecoration.Enabled = True
@@ -438,7 +534,7 @@ Partial Class Payment
         'TxtChange
         '
         Me.TxtChange.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtChange.Location = New System.Drawing.Point(431, 94)
+        Me.TxtChange.Location = New System.Drawing.Point(431, 104)
         Me.TxtChange.Name = "TxtChange"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtChange, False)
         Me.TxtChange.Size = New System.Drawing.Size(152, 27)
@@ -448,7 +544,7 @@ Partial Class Payment
         'TxtCash
         '
         Me.TxtCash.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCash.Location = New System.Drawing.Point(228, 96)
+        Me.TxtCash.Location = New System.Drawing.Point(228, 106)
         Me.TxtCash.Name = "TxtCash"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtCash, False)
         Me.TxtCash.Size = New System.Drawing.Size(152, 27)
@@ -458,7 +554,7 @@ Partial Class Payment
         'TxtAmount
         '
         Me.TxtAmount.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAmount.Location = New System.Drawing.Point(32, 96)
+        Me.TxtAmount.Location = New System.Drawing.Point(32, 106)
         Me.TxtAmount.Name = "TxtAmount"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtAmount, False)
         Me.TxtAmount.Size = New System.Drawing.Size(152, 27)
@@ -512,117 +608,6 @@ Partial Class Payment
         Me.Label5.Text = Nothing
         Me.Label5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox10
-        '
-        Me.TextBox10.AutoCompleteCustomSource.AddRange(New String() {"BRGY.CLEARANCE", "BUSINESS CLEARANCE", "CERT. OF INDIGENCY", "CERT. OF RESIDENCY", "CERT. OF NON-RESIDENCY", "CERT. OF SOLO PARENT"})
-        Me.TextBox10.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox10.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.TextBox10.BackColor = System.Drawing.Color.White
-        Me.TextBox10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(2, 2)
-        Me.TextBox10.Name = "TextBox10"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox10, False)
-        Me.TextBox10.Size = New System.Drawing.Size(372, 23)
-        Me.TextBox10.TabIndex = 54
-        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox11
-        '
-        Me.TextBox11.BackColor = System.Drawing.Color.White
-        Me.TextBox11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.Location = New System.Drawing.Point(2, 25)
-        Me.TextBox11.Name = "TextBox11"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox11, False)
-        Me.TextBox11.Size = New System.Drawing.Size(372, 23)
-        Me.TextBox11.TabIndex = 55
-        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox12
-        '
-        Me.TextBox12.BackColor = System.Drawing.Color.White
-        Me.TextBox12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.Location = New System.Drawing.Point(2, 48)
-        Me.TextBox12.Name = "TextBox12"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox12, False)
-        Me.TextBox12.Size = New System.Drawing.Size(372, 23)
-        Me.TextBox12.TabIndex = 56
-        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox13
-        '
-        Me.TextBox13.BackColor = System.Drawing.Color.White
-        Me.TextBox13.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox13.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.Location = New System.Drawing.Point(2, 71)
-        Me.TextBox13.Name = "TextBox13"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox13, False)
-        Me.TextBox13.Size = New System.Drawing.Size(372, 23)
-        Me.TextBox13.TabIndex = 57
-        Me.TextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox14
-        '
-        Me.TextBox14.BackColor = System.Drawing.Color.White
-        Me.TextBox14.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox14.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.Location = New System.Drawing.Point(2, 94)
-        Me.TextBox14.Name = "TextBox14"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox14, False)
-        Me.TextBox14.Size = New System.Drawing.Size(372, 23)
-        Me.TextBox14.TabIndex = 58
-        Me.TextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox15
-        '
-        Me.TextBox15.BackColor = System.Drawing.Color.White
-        Me.TextBox15.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox15.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox15.Location = New System.Drawing.Point(2, 117)
-        Me.TextBox15.Name = "TextBox15"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox15, False)
-        Me.TextBox15.Size = New System.Drawing.Size(372, 23)
-        Me.TextBox15.TabIndex = 59
-        Me.TextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox16
-        '
-        Me.TextBox16.BackColor = System.Drawing.Color.White
-        Me.TextBox16.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox16.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox16.Location = New System.Drawing.Point(2, 140)
-        Me.TextBox16.Name = "TextBox16"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox16, False)
-        Me.TextBox16.Size = New System.Drawing.Size(372, 23)
-        Me.TextBox16.TabIndex = 60
-        Me.TextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox17
-        '
-        Me.TextBox17.BackColor = System.Drawing.Color.White
-        Me.TextBox17.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox17.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox17.Location = New System.Drawing.Point(2, 163)
-        Me.TextBox17.Name = "TextBox17"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox17, False)
-        Me.TextBox17.Size = New System.Drawing.Size(372, 23)
-        Me.TextBox17.TabIndex = 61
-        Me.TextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox8
-        '
-        Me.TextBox8.BackColor = System.Drawing.Color.White
-        Me.TextBox8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(2, 163)
-        Me.TextBox8.Name = "TextBox8"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox8, False)
-        Me.TextBox8.Size = New System.Drawing.Size(172, 23)
-        Me.TextBox8.TabIndex = 60
-        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Payment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -637,6 +622,7 @@ Partial Class Payment
         Me.PanelP.ResumeLayout(False)
         Me.PanelP.PerformLayout()
         Me.Guna2Panel5.ResumeLayout(False)
+        Me.Guna2Panel5.PerformLayout()
         Me.Guna2Panel4.ResumeLayout(False)
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
@@ -693,4 +679,5 @@ Partial Class Payment
     Friend WithEvents TextBox12 As TextBox
     Friend WithEvents TextBox11 As TextBox
     Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents TextBox9 As TextBox
 End Class

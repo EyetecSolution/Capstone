@@ -51,6 +51,7 @@ Partial Class BClearance
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -473,6 +474,12 @@ Partial Class BClearance
         Me.Guna2HtmlLabel1.TabIndex = 11
         Me.Guna2HtmlLabel1.Text = "FULL NAME :"
         '
+        'BackgroundWorker1
+        '
+        '
+        'BackgroundWorker2
+        '
+        '
         'BClearance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -524,4 +531,5 @@ Partial Class BClearance
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents LblTitle As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
 End Class

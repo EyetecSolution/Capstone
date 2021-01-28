@@ -262,7 +262,8 @@ Public Class Dashboard
     End Sub
 
     Private Sub BtnQR_Click(sender As Object, e As EventArgs) Handles BtnQR.Click
-        FaceRecognition.ShowDialog()
+        activefrm.Close()
+        OpenFormChild(FaceRecognition)
         If PanelSlider.Width = 50 Then
             ActiveButton(BtnQR)
         End If

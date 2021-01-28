@@ -14,7 +14,7 @@ Public Class CovidCases
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
-                AddCases.ID.Text = myReader("ID")
+                'AddCases.ID.Text = myReader("ID")
                 AddCases.TxtName.Text = myReader("FULLNAME")
                 AddCases.TxtAddress.Text = myReader("FULLADDRESS")
                 AddCases.CmbGender.Text = myReader("GENDER")
@@ -90,7 +90,7 @@ Public Class CovidCases
             id = row.Cells("ID").Value
             Await RetrieveData()
             AddCases.BtnSave.Text = "UPDATE"
-            Dashboard.activefrm.Close()
+            Dashboard.activefrm.Hide()
             Dashboard.OpenFormChild(AddCases)
 
         ElseIf colName = "delete" Then
@@ -147,5 +147,14 @@ Public Class CovidCases
 
     Private Sub CmbCategory_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CmbCategory.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub Guna2ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Guna2CircleButton1_Click(sender As Object, e As EventArgs) Handles Guna2CircleButton1.Click
+        LoadMe()
+
     End Sub
 End Class

@@ -76,7 +76,7 @@ Public Class useraccount
 
         Dim dtsample As DataTable = Await Task(Of DataTable).Run(Function() LoadDataTable(sql))
         DataGridView1.DataSource = dtsample
-        DataGridView1.Columns("ID").Width = 30
+        DataGridView1.Columns("ID").Width = 50
         DataGridView1.Columns("username").Width = 250
         DataGridView1.Columns("userpass").Width = 250
         DataGridView1.Columns("username").HeaderText = "USERNAME"
@@ -98,7 +98,6 @@ Public Class useraccount
             id = row.Cells("ID").Value
             TxtUser.Text = row.Cells("username").Value
             TxtPass.Text = row.Cells("userpass").Value
-            TxtConfirm.Text = row.Cells("userpass").Value
             BtnBack.Text = "UPDATE"
         ElseIf colName = "delete" Then
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
@@ -107,64 +106,21 @@ Public Class useraccount
             If msg = vbYes Then
                 Try
                     Await DeleteQuery()
+
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)
+                Finally
+                    LoadMe()
                 End Try
 
 
             End If
         End If
+        LoadMe()
     End Sub
 
-    Private Sub ChkShowPass_CheckedChanged(sender As Object, e As EventArgs) Handles ChkShowPass.CheckedChanged
-        If TxtPass.PasswordChar = "*" And TxtConfirm.PasswordChar = "*" Then
-            TxtPass.PasswordChar = ""
-            TxtConfirm.PasswordChar = ""
-        Else
-            TxtPass.PasswordChar = "*"
-            TxtConfirm.PasswordChar = "*"
-        End If
-    End Sub
 
-    Private Async Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
-        If String.IsNullOrEmpty(TxtUser.Text) Or String.IsNullOrEmpty(TxtPass.Text) Or String.IsNullOrEmpty(TxtConfirm.Text) Then
-            MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        ElseIf TxtConfirm.Text <> TxtPass.Text Then
-            MessageBox.Show("Password doesn't match", "ValueError", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        Else
-
-            If BtnBack.Text = "UPDATE" Then
-                Try
-                    Dim i As Integer = Await UpdateQuery()
-                    MessageBox.Show("Updated Successfully!", "BSIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    BtnBack.Text = "SAVE"
-                    clear()
-                    LoadMe()
-                Catch ex As Exception
-                    MessageBox.Show("Error Occured on Database: " & vbNewLine & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
-            Else
-                Dim i As Integer = Await UserExist()
-                If i > 0 Then
-                    MessageBox.Show("User Already exist please change your username", "User Exist", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    TxtUser.ResetText()
-                    Exit Sub
-                End If
-                Try
-                    Await InsertQuery()
-                    MessageBox.Show("New user added Successfully!", "BSIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    BtnBack.Text = "SAVE"
-                    clear()
-                    LoadMe()
-                Catch ex As Exception
-                    MessageBox.Show("Error Occured on Database: " & vbNewLine & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
-
-            End If
-        End If
-    End Sub
-
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
         BtnBack.Text = "SAVE"
         Clear()
     End Sub
@@ -172,6 +128,79 @@ Public Class useraccount
     Sub Clear()
         TxtUser.ResetText()
         TxtPass.ResetText()
-        TxtConfirm.ResetText()
+    End Sub
+
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Try
+            Dim fileBackupDestination As String = "C:\Capstone\Dbase\IMSDbase" & Format(Now, "yyyy-M-d") & ".mdb"
+            Dim databaseFile As String = "C:\Capstone\Dbase\IMSDbase.mdb"
+            FileCopy(databaseFile, fileBackupDestination)
+            MessageBox.Show("Database backup has been successfully", "Finished", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+
+    End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        Try
+            Dim restorefile As String = "C:\Capstone\Dbase\IMSDbase.mdb"
+            Dim msgText As String
+            OpenFileDialog1.Filter = "Access |*.mdb"
+            If OpenFileDialog1.ShowDialog = DialogResult.OK Then
+                msgText = "Are you sure you want to restore your database? it will overwrite your database since the backup have made."
+                If MessageBox.Show(msgText, "Restore", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = DialogResult.OK Then
+                    FileCopy(OpenFileDialog1.FileName, restorefile)
+                    MessageBox.Show("Database has been restore", "Finished", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Async  Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+        If String.IsNullOrEmpty(TxtUser.Text) Or String.IsNullOrEmpty(TxtPass.Text) Then
+            MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+
+        If BtnBack.Text = "UPDATE" Then
+            Try
+                Dim i As Integer = Await UpdateQuery()
+                MessageBox.Show("Updated Successfully!", "BSIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                BtnBack.Text = "SAVE"
+                Clear()
+                LoadMe()
+            Catch ex As Exception
+                MessageBox.Show("Error Occured on Database: " & vbNewLine & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else
+            Dim i As Integer = Await UserExist()
+            If i > 0 Then
+                MessageBox.Show("User Already exist please change your username", "User Exist", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                TxtUser.ResetText()
+                Exit Sub
+            End If
+            Try
+                Await InsertQuery()
+                MessageBox.Show("New user added Successfully!", "BSIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                BtnBack.Text = "SAVE"
+                Clear()
+                LoadMe()
+            Catch ex As Exception
+                MessageBox.Show("Error Occured on Database: " & vbNewLine & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+        End If
+    End Sub
+
+    Private Sub Guna2CircleButton1_Click(sender As Object, e As EventArgs) Handles Guna2CircleButton1.Click
+        LoadMe()
+
     End Sub
 End Class

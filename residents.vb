@@ -176,10 +176,10 @@ Public Class Residents
                 BClearance.TxtAddress.Text = ResidentAddress
             Case "businessc"
                 Dashboard.activefrm.Close()
-                Dashboard.OpenFormChild(BClearance)
+                Dashboard.OpenFormChild(BusinessClearance)
                 Await RetrieveData1()
-                BClearance.TxtName.Text = ResidentName
-                BClearance.TxtAddress.Text = ResidentAddress
+                BusinessClearance.TxtName.Text = ResidentName
+                BusinessClearance.TxtAddress.Text = ResidentAddress
             Case "indigency"
                 Dashboard.activefrm.Close()
                 Dashboard.OpenFormChild(Indigency)

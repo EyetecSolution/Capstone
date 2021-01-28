@@ -54,11 +54,11 @@ Public Class ReportsList
             Case 6
                 LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSoloParent.rdlc", "DTSoloParent")
             Case 7
-                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportOath.rdlc", "DTSpes")
+                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportOath.rdlc", "DTOath")
             Case 8
-                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSPES.rdlc", "DTSpes1")
+                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSPES.rdlc", "DTSpes")
             Case 9
-                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSpes1.rdlc", "DTPayment")
+                LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSpes1.rdlc", "DTSpes1")
             Case 10
                 LoadReport(DataGridView1, "C:\Capstone\Reports\ReportTotal.rdlc", "DTPayment")
         End Select

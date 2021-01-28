@@ -58,7 +58,7 @@ Public Class BCHistory
                 BusinessClearance.DateTimePicker2.Value = myReader("DATEISSUED")
                 BusinessClearance.TxtOr.Text = myReader("ORNO")
                 BusinessClearance.TxtCtc.Text = myReader("CTCNO")
-                BusinessClearance.DateTimePicker1.Value = myReader("VALIDITY")
+                BusinessClearance.TextBox1.Text = myReader("VALIDITY")
                 BusinessClearance.TxtAmount.Text = myReader("FEES")
 
             End If

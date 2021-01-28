@@ -29,14 +29,14 @@ Public Class AddCases
         End If
 
         Using mycmd As New OleDbCommand("UPDATE tbl_covid" &
-                                         "SET FULLNAME = '" & TxtName.Text & "'," &
-                                         "FULLADDRESS = '" & TxtAddress.Text & "'," &
-                                         "AGE = '" & TxtAge.Text & "'," &
-                                         "GENDER = '" & CmbGender.Text & "'," &
+                                         " SET FULLNAME = '" & TxtName.Text & "'," &
+                                         " FULLADDRESS = '" & TxtAddress.Text & "'," &
+                                         " AGE = '" & TxtAge.Text & "'," &
+                                         " GENDER = '" & CmbGender.Text & "'," &
                                         " CONDITION = '" & ComboBox1.Text & "'," &
-                                         "SYMPTOMS = '" & TxtDescription.Text & "'" &
-                                         "WHERE ID=@ID", con)
-            mycmd.Parameters.AddWithValue("ID", ID.Text)
+                                         " SYMPTOMS = '" & TxtDescription.Text & "'" &
+                                         " WHERE ID=@ID", con)
+            mycmd.Parameters.AddWithValue("ID", CovidCases.id)
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
         Return i
@@ -65,7 +65,7 @@ Public Class AddCases
 
     End Sub
 
-    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs)
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(CovidCases)
     End Sub
@@ -100,5 +100,10 @@ Public Class AddCases
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub Guna2Button4_Click_1(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(CovidCases)
     End Sub
 End Class

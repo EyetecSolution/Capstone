@@ -24,9 +24,9 @@ Partial Class BusinessClearance
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.TxtAddress = New System.Windows.Forms.TextBox()
         Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
@@ -49,7 +49,9 @@ Partial Class BusinessClearance
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
-        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,10 +60,10 @@ Partial Class BusinessClearance
         '
         Me.Guna2Panel1.BorderColor = System.Drawing.Color.Gray
         Me.Guna2Panel1.BorderThickness = 5
+        Me.Guna2Panel1.Controls.Add(Me.TextBox1)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Button3)
         Me.Guna2Panel1.Controls.Add(Me.TxtAddress)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel10)
-        Me.Guna2Panel1.Controls.Add(Me.DateTimePicker1)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Button2)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Button1)
         Me.Guna2Panel1.Controls.Add(Me.BtnSave)
@@ -87,6 +89,26 @@ Partial Class BusinessClearance
         Me.Guna2Panel1.Size = New System.Drawing.Size(646, 387)
         Me.Guna2Panel1.TabIndex = 30
         '
+        'Guna2Button3
+        '
+        Me.Guna2Button3.CheckedState.Parent = Me.Guna2Button3
+        Me.Guna2Button3.CustomImages.Parent = Me.Guna2Button3
+        Me.Guna2Button3.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button3.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button3.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Guna2Button3.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
+        Me.Guna2Button3.Location = New System.Drawing.Point(308, 34)
+        Me.Guna2Button3.Name = "Guna2Button3"
+        Me.Guna2Button3.ShadowDecoration.Enabled = True
+        Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
+        Me.Guna2Button3.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
+        Me.Guna2Button3.Size = New System.Drawing.Size(84, 23)
+        Me.Guna2Button3.TabIndex = 114
+        Me.Guna2Button3.Text = "SEARCH"
+        '
         'TxtAddress
         '
         Me.TxtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -106,17 +128,6 @@ Partial Class BusinessClearance
         Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(68, 18)
         Me.Guna2HtmlLabel10.TabIndex = 112
         Me.Guna2HtmlLabel10.Text = "ADDRESS :"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.CustomFormat = "MMMM d      yyyy"
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(414, 112)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(215, 26)
-        Me.DateTimePicker1.TabIndex = 111
         '
         'Guna2Button2
         '
@@ -378,25 +389,22 @@ Partial Class BusinessClearance
         '
         Me.NetResize1.ParentControl = Me
         '
-        'Guna2Button3
+        'BackgroundWorker1
         '
-        Me.Guna2Button3.CheckedState.Parent = Me.Guna2Button3
-        Me.Guna2Button3.CustomImages.Parent = Me.Guna2Button3
-        Me.Guna2Button3.FillColor = System.Drawing.Color.Maroon
-        Me.Guna2Button3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Guna2Button3.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
-        Me.Guna2Button3.Location = New System.Drawing.Point(308, 34)
-        Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.ShadowDecoration.Enabled = True
-        Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
-        Me.Guna2Button3.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.Guna2Button3.Size = New System.Drawing.Size(84, 23)
-        Me.Guna2Button3.TabIndex = 114
-        Me.Guna2Button3.Text = "SEARCH"
+        '
+        'BackgroundWorker2
+        '
+        '
+        'TextBox1
+        '
+        Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(414, 113)
+        Me.TextBox1.Name = "TextBox1"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox1, False)
+        Me.TextBox1.Size = New System.Drawing.Size(215, 23)
+        Me.TextBox1.TabIndex = 115
+        Me.TextBox1.Text = "3 MONTHS"
         '
         'BusinessClearance
         '
@@ -437,11 +445,13 @@ Partial Class BusinessClearance
     Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents LblTitle As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
     Friend WithEvents TxtAddress As TextBox
     Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents TxtBusinessname As TextBox
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents TextBox1 As TextBox
 End Class

@@ -14,36 +14,6 @@ Public Class HealthMonitoring
     End Sub
 
 
-
-    Private Sub UpdateWordDocs(sPath As String)
-        Dim dt As DateTime = DateTime.Now
-        Dim objWordApp = New Word.Application With {
-            .Visible = False
-        }
-        Dim wdDoc As Word.Document = objWordApp.Documents.Open(sPath, [ReadOnly]:=False)
-        wdDoc = objWordApp.ActiveDocument
-
-        UpdateBookMark("name", TxtName.Text.Trim, wdDoc)
-        UpdateBookMark("address", TxtAddress.Text.Trim, wdDoc)
-        UpdateBookMark("contact", TxtContact.Text.Trim, wdDoc)
-        UpdateBookMark("temp", TxtTemp.Text.Trim, wdDoc)
-        UpdateBookMark("q1", Cmb1.SelectedItem, wdDoc)
-        UpdateBookMark("q2", Cmb2.SelectedItem, wdDoc)
-        UpdateBookMark("q3", Cmb3.SelectedItem, wdDoc)
-        UpdateBookMark("q4", Cmb4.SelectedItem, wdDoc)
-        UpdateBookMark("q5", Cmb5.SelectedItem, wdDoc)
-        UpdateBookMark("q6", Cmb6.SelectedItem, wdDoc)
-        UpdateBookMark("q7", Cmb7.SelectedItem, wdDoc)
-        UpdateBookMark("q8", Cmb8.SelectedItem, wdDoc)
-        UpdateBookMark("date", dt.ToString("MMMM d yyyy"), wdDoc)
-
-
-        wdDoc.Save()
-        wdDoc.Close()
-        wdDoc = Nothing
-        objWordApp.Quit()
-        objWordApp = Nothing
-    End Sub
     Async Function InsertQuery() As Task(Of Integer)
         Dim dt As DateTime = DateTime.Now
         Dim i As Integer
@@ -95,7 +65,6 @@ Public Class HealthMonitoring
         Try
             Await InsertQuery()
             MessageBox.Show("Health Monitoring Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            UpdateWordDocs("C:\Capstone\Docs\TempHealthMonitoring.docx")
             ResetFields()
         Catch ex As Exception
             MessageBox.Show(ex.Message)

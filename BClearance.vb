@@ -3,11 +3,12 @@ Imports Microsoft.Office.Interop.Word
 Imports Word = Microsoft.Office.Interop.Word
 
 Public Class BClearance
+
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(residents)
-        residents.BtnUse.Visible = True
+        Dashboard.OpenFormChild(Residents)
+        Residents.BtnUse.Visible = True
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
@@ -56,15 +57,14 @@ Public Class BClearance
         End If
         Try
             If BtnS.Text = "SAVE" Then
+                PassData()
                 Await InsertQuery()
-                UpdateWordDocs("C:\Capstone\Docs\TempClearance.docx")
-                MessageBox.Show("Barangay Clearance added." & vbNewLine & "The Document will available for printing.", "BSMIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                BackgroundWorker1.RunWorkerAsync()
                 ResetTextField()
             Else
+                PassData()
                 Await UpdateQuery()
-                UpdateWordDocs("C:\Capstone\Docs\TempClearance.docx")
-                MessageBox.Show("Clearance updated! and" & vbNewLine & "The Document will available for printing.", "Documents Created", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                BackgroundWorker2.RunWorkerAsync()
                 ResetTextField()
             End If
         Catch ex As Exception
@@ -84,7 +84,20 @@ Public Class BClearance
     End Sub
 
 
-
+    Public fname, address, dtoday, myear, orNo, ctcNo, issuedmain, issued1, purpose As String
+    Public Sub PassData()
+        Dim dtFormat As String = "MM/d/yyyy"
+        Dim monthFrmat As String = "MMMM"
+        fname = TxtName.Text
+        address = TxtAddress.Text
+        dtoday = DateTimePicker2.Value.Day.ToString()
+        myear = DateTimePicker2.Value.ToString("Y").ToUpper
+        orNo = TxtOR.Text.Trim
+        ctcNo = TxtCtc.Text.Trim
+        issuedmain = DateTimePicker2.Value.ToString(dtFormat)
+        issued1 = DateTimePicker2.Value.ToString(dtFormat)
+        purpose = CmbPurpose.Text
+    End Sub
     Private Sub UpdateWordDocs(sPath As String)
 
         Try
@@ -95,25 +108,24 @@ Public Class BClearance
         Catch ex As Exception
         End Try
 
-        Dim dtFormat As String = "MM/d/yyyy"
-        Dim monthFrmat As String = "MMMM"
+
         Dim objWordApp = New Word.Application With {
             .Visible = False
         }
         Dim wdDoc As Word.Document = objWordApp.Documents.Open(sPath, [ReadOnly]:=False)
         wdDoc = objWordApp.ActiveDocument
 
-        UpdateBookMark("fName", TxtName.Text.Trim, wdDoc)
-        UpdateBookMark("fName2", TxtName.Text.Trim, wdDoc)
-        UpdateBookMark("fName3", TxtName.Text.Trim, wdDoc)
-        UpdateBookMark("fAddress", TxtAddress.Text.Trim, wdDoc)
-        UpdateBookMark("dtoday", DateTimePicker2.Value.Day.ToString(), wdDoc)
-        UpdateBookMark("mYear", DateTimePicker2.Value.ToString("Y").ToUpper, wdDoc)
-        UpdateBookMark("orNo", TxtOR.Text.Trim, wdDoc)
-        UpdateBookMark("ctcNo", TxtCtc.Text.Trim, wdDoc)
-        UpdateBookMark("issuedmain", DateTimePicker2.Value.ToString(dtFormat), wdDoc)
-        UpdateBookMark("issued1", DateTimePicker2.Value.ToString(dtFormat), wdDoc)
-        UpdateBookMark("Purpose", CmbPurpose.Text, wdDoc)
+        UpdateBookMark("fName", fname, wdDoc)
+        UpdateBookMark("fName2", fname, wdDoc)
+        UpdateBookMark("fName3", fname, wdDoc)
+        UpdateBookMark("fAddress", address, wdDoc)
+        UpdateBookMark("dtoday", dtoday, wdDoc)
+        UpdateBookMark("mYear", myear, wdDoc)
+        UpdateBookMark("orNo", orNo, wdDoc)
+        UpdateBookMark("ctcNo", ctcNo, wdDoc)
+        UpdateBookMark("issuedmain", issuedmain, wdDoc)
+        UpdateBookMark("issued1", issued1, wdDoc)
+        UpdateBookMark("Purpose", purpose, wdDoc)
 
         wdDoc.Save()
         wdDoc.Close()
@@ -222,4 +234,23 @@ Public Class BClearance
         End Select
     End Sub
 
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+        UpdateWordDocs("C:\Capstone\Docs\TempClearance.docx")
+    End Sub
+
+    Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
+        MessageBox.Show("Barangay Clearance added." & vbNewLine & "The Document will available for printing.", "BSMIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub BClearance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CheckForIllegalCrossThreadCalls = False
+    End Sub
+
+    Private Sub BackgroundWorker2_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker2.DoWork
+        UpdateWordDocs("C:\Capstone\Docs\TempClearance.docx")
+    End Sub
+
+    Private Sub BackgroundWorker2_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker2.RunWorkerCompleted
+        MessageBox.Show("Clearance updated! and" & vbNewLine & "The Document will available for printing.", "Documents Created", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
 End Class

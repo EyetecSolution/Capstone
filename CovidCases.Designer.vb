@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CovidCases
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,16 +20,17 @@ Partial Class CovidCases
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CovidCases))
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
+        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -38,29 +39,49 @@ Partial Class CovidCases
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.CmbCategory = New System.Windows.Forms.ComboBox()
+        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2CircleButton1 = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
+        Me.Guna2Panel3.SuspendLayout()
+        Me.Guna2Panel2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Location = New System.Drawing.Point(-7, -1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(763, 32)
-        Me.Panel1.TabIndex = 22
         '
         'NetResize1
         '
         Me.NetResize1.ParentControl = Me
         '
+        'Guna2HtmlLabel3
+        '
+        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Elephant", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.White
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(289, 4)
+        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
+        Me.NetResize1.SetResizeFont(Me.Guna2HtmlLabel3, False)
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(293, 40)
+        Me.Guna2HtmlLabel3.TabIndex = 56
+        Me.Guna2HtmlLabel3.Text = "COVID-19 CASES"
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Elephant", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.White
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(264, 9)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.NetResize1.SetResizeFont(Me.Guna2HtmlLabel1, False)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(293, 40)
+        Me.Guna2HtmlLabel1.TabIndex = 55
+        Me.Guna2HtmlLabel1.Text = "COVID-19 CASES"
+        '
         'TxtSearch
         '
         Me.TxtSearch.Animated = True
         Me.TxtSearch.BackColor = System.Drawing.Color.Transparent
-        Me.TxtSearch.BorderColor = System.Drawing.Color.Gray
+        Me.TxtSearch.BorderColor = System.Drawing.Color.Black
         Me.TxtSearch.BorderRadius = 10
         Me.TxtSearch.BorderThickness = 2
         Me.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -79,7 +100,7 @@ Partial Class CovidCases
         Me.TxtSearch.IconLeftOffset = New System.Drawing.Point(30, 0)
         Me.TxtSearch.IconRight = CType(resources.GetObject("TxtSearch.IconRight"), System.Drawing.Image)
         Me.TxtSearch.IconRightOffset = New System.Drawing.Point(15, 0)
-        Me.TxtSearch.Location = New System.Drawing.Point(13, 22)
+        Me.TxtSearch.Location = New System.Drawing.Point(11, 9)
         Me.TxtSearch.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.TxtSearch.Name = "TxtSearch"
         Me.TxtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -90,16 +111,15 @@ Partial Class CovidCases
         Me.TxtSearch.ShadowDecoration.Enabled = True
         Me.TxtSearch.ShadowDecoration.Parent = Me.TxtSearch
         Me.TxtSearch.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.TxtSearch.Size = New System.Drawing.Size(317, 28)
+        Me.TxtSearch.Size = New System.Drawing.Size(297, 30)
         Me.TxtSearch.TabIndex = 24
         '
         'BtnSave
         '
         Me.BtnSave.Animated = True
         Me.BtnSave.BackColor = System.Drawing.Color.Transparent
-        Me.BtnSave.BorderColor = System.Drawing.Color.White
         Me.BtnSave.BorderRadius = 10
-        Me.BtnSave.BorderThickness = 1
+        Me.BtnSave.BorderThickness = 2
         Me.BtnSave.CheckedState.Parent = Me.BtnSave
         Me.BtnSave.CustomImages.Parent = Me.BtnSave
         Me.BtnSave.FillColor = System.Drawing.Color.Maroon
@@ -108,7 +128,7 @@ Partial Class CovidCases
         Me.BtnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnSave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BtnSave.HoverState.Parent = Me.BtnSave
-        Me.BtnSave.Location = New System.Drawing.Point(577, 20)
+        Me.BtnSave.Location = New System.Drawing.Point(601, 9)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.BtnSave.ShadowDecoration.Enabled = True
@@ -125,50 +145,50 @@ Partial Class CovidCases
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.DarkGray
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.DataGridView1.ColumnHeadersHeight = 30
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.edit, Me.delete})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle18
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(13, 51)
+        Me.DataGridView1.Location = New System.Drawing.Point(13, 58)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle20
         Me.DataGridView1.RowTemplate.Height = 30
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(696, 369)
+        Me.DataGridView1.Size = New System.Drawing.Size(696, 317)
         Me.DataGridView1.TabIndex = 24
         '
         'edit
@@ -192,60 +212,106 @@ Partial Class CovidCases
         'Guna2HtmlLabel7
         '
         Me.Guna2HtmlLabel7.BackColor = System.Drawing.SystemColors.Control
-        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel7.ForeColor = System.Drawing.Color.Black
-        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(28, 36)
+        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel7.ForeColor = System.Drawing.Color.DimGray
+        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(28, 103)
         Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
-        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(219, 34)
+        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(127, 29)
         Me.Guna2HtmlLabel7.TabIndex = 45
-        Me.Guna2HtmlLabel7.Text = "LIST OF PATIENT'S"
+        Me.Guna2HtmlLabel7.Text = "Patient's List"
         '
         'Guna2Panel1
         '
-        Me.Guna2Panel1.BorderColor = System.Drawing.Color.DimGray
-        Me.Guna2Panel1.BorderThickness = 5
+        Me.Guna2Panel1.BorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel1.BorderThickness = 4
+        Me.Guna2Panel1.Controls.Add(Me.Guna2CircleButton1)
         Me.Guna2Panel1.Controls.Add(Me.CmbCategory)
-        Me.Guna2Panel1.Controls.Add(Me.BtnSave)
         Me.Guna2Panel1.Controls.Add(Me.DataGridView1)
-        Me.Guna2Panel1.Controls.Add(Me.TxtSearch)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(12, 50)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(12, 112)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(724, 433)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(724, 391)
         Me.Guna2Panel1.TabIndex = 44
         '
         'CmbCategory
         '
-        Me.CmbCategory.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbCategory.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbCategory.FormattingEnabled = True
         Me.CmbCategory.Items.AddRange(New Object() {"PUM(CLEAR)", "PUM(ONGOING)", "PUI'S", "DEATH'S", "RECOVERED", "CONFIRMED CASES"})
-        Me.CmbCategory.Location = New System.Drawing.Point(360, 22)
+        Me.CmbCategory.Location = New System.Drawing.Point(516, 33)
         Me.CmbCategory.Name = "CmbCategory"
-        Me.CmbCategory.Size = New System.Drawing.Size(187, 27)
+        Me.CmbCategory.Size = New System.Drawing.Size(193, 24)
         Me.CmbCategory.TabIndex = 41
         Me.CmbCategory.Text = "--Choose Category--"
+        '
+        'Guna2Panel3
+        '
+        Me.Guna2Panel3.BackColor = System.Drawing.Color.Maroon
+        Me.Guna2Panel3.BorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel3.BorderThickness = 5
+        Me.Guna2Panel3.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(3, 0)
+        Me.Guna2Panel3.Name = "Guna2Panel3"
+        Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
+        Me.Guna2Panel3.Size = New System.Drawing.Size(743, 41)
+        Me.Guna2Panel3.TabIndex = 57
+        '
+        'Guna2CircleButton1
+        '
+        Me.Guna2CircleButton1.BorderThickness = 2
+        Me.Guna2CircleButton1.CheckedState.Parent = Me.Guna2CircleButton1
+        Me.Guna2CircleButton1.CustomImages.Parent = Me.Guna2CircleButton1
+        Me.Guna2CircleButton1.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2CircleButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2CircleButton1.ForeColor = System.Drawing.Color.White
+        Me.Guna2CircleButton1.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.Guna2CircleButton1.HoverState.CustomBorderColor = System.Drawing.Color.Black
+        Me.Guna2CircleButton1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Guna2CircleButton1.HoverState.Image = CType(resources.GetObject("Guna2CircleButton1.HoverState.Image"), System.Drawing.Image)
+        Me.Guna2CircleButton1.HoverState.Parent = Me.Guna2CircleButton1
+        Me.Guna2CircleButton1.Image = CType(resources.GetObject("Guna2CircleButton1.Image"), System.Drawing.Image)
+        Me.Guna2CircleButton1.Location = New System.Drawing.Point(692, 5)
+        Me.Guna2CircleButton1.Name = "Guna2CircleButton1"
+        Me.Guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CircleButton1.ShadowDecoration.Parent = Me.Guna2CircleButton1
+        Me.Guna2CircleButton1.Size = New System.Drawing.Size(27, 18)
+        Me.Guna2CircleButton1.TabIndex = 42
+        '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.BorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel2.BorderThickness = 2
+        Me.Guna2Panel2.Controls.Add(Me.TxtSearch)
+        Me.Guna2Panel2.Controls.Add(Me.BtnSave)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(3, 50)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
+        Me.Guna2Panel2.Size = New System.Drawing.Size(743, 47)
+        Me.Guna2Panel2.TabIndex = 58
         '
         'CovidCases
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(748, 515)
+        Me.ClientSize = New System.Drawing.Size(748, 513)
+        Me.Controls.Add(Me.Guna2Panel2)
+        Me.Controls.Add(Me.Guna2Panel3)
         Me.Controls.Add(Me.Guna2HtmlLabel7)
         Me.Controls.Add(Me.Guna2Panel1)
-        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "CovidCases"
         Me.Text = "Form1"
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
+        Me.Guna2Panel3.ResumeLayout(False)
+        Me.Guna2Panel3.PerformLayout()
+        Me.Guna2Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
     Friend WithEvents BtnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents DataGridView1 As DataGridView
@@ -255,4 +321,9 @@ Partial Class CovidCases
     Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents CmbCategory As ComboBox
+    Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2CircleButton1 As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
 End Class

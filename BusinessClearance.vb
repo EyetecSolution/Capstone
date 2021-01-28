@@ -2,6 +2,8 @@
 Imports Microsoft.Office.Interop.Word
 Imports Word = Microsoft.Office.Interop.Word
 Public Class BusinessClearance
+    Public fullname, businessn, businessloc, day, myear, num1, num2, dtissued, valid, amount As String
+
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
 
     Async Function InsertQuery() As Task(Of Integer)
@@ -20,8 +22,8 @@ Public Class BusinessClearance
             mycmd.Parameters.AddWithValue("DATEISSUED", DateTimePicker2.Value.ToString(dtfrmat))
             mycmd.Parameters.AddWithValue("CTCNO", TxtCtc.Text)
             mycmd.Parameters.AddWithValue("ORNO", TxtOr.Text)
-            mycmd.Parameters.AddWithValue("VALIDITY", DateTimePicker1.Value.ToString(dtfrmat))
-            mycmd.Parameters.AddWithValue("FEES", TxtAmount.Text)
+            mycmd.Parameters.AddWithValue("VALIDITY", TextBox1.Text)
+            mycmd.Parameters.AddWithValue("FEES", CDbl(TxtAmount.Text))
             i = Await mycmd.ExecuteNonQueryAsync
         End Using
         Return i
@@ -42,7 +44,7 @@ Public Class BusinessClearance
                                              " DATEISSUED= '" & DateTimePicker2.Value.ToString(frmat) & "'," &
                                              " ORNO='" & TxtOr.Text & "'," &
                                              " CTCNO= '" & TxtCtc.Text & "'," &
-                                             " VALIDITY='" & DateTimePicker1.Value.ToString(frmat) & "'" &
+                                             " VALIDITY='" & TextBox1.Text & "'" &
                                          "WHERE ID=@ID", con)
             mycmd.Parameters.AddWithValue("ID", BCHistory.id)
 
@@ -50,7 +52,6 @@ Public Class BusinessClearance
         End Using
         Return i
     End Function
-
 
     Public Sub UpdateBookMark(BookmarkUpdate As String, TextToUse As String, WordApp As Object)
 
@@ -61,28 +62,40 @@ Public Class BusinessClearance
 
     End Sub
 
+    Public Sub PassData()
+        Dim dtFormat As String = "MM/d/yyyy"
+        Dim monthFrmat As String = "MMMM"
+        fullname = TxtName.Text
+        businessn = TxtBusinessname.Text.Trim
+        businessloc = TxtBusinesslocation.Text.Trim
+        day = DateTimePicker2.Value.Day
+        myear = DateTimePicker2.Value.ToString("Y")
+        num1 = TxtOr.Text
+        num2 = TxtCtc.Text
+        dtissued = DateTimePicker2.Value.ToString(dtFormat)
+        valid = TextBox1.Text
+        amount = TxtAmount.Text
+    End Sub
 
 
     Private Sub UpdateWordDocs(sPath As String)
-        Dim dtFormat As String = "MM/d/yyyy"
-        Dim monthFrmat As String = "MMMM"
+
         Dim objWordApp = New Word.Application With {
             .Visible = False
         }
         Dim wdDoc As Word.Document = objWordApp.Documents.Open(sPath, [ReadOnly]:=False)
         wdDoc = objWordApp.ActiveDocument
 
-        UpdateBookMark("applicant", TxtName.Text.Trim, wdDoc)
-        UpdateBookMark("businessname", TxtBusinessname.Text.Trim, wdDoc)
-        UpdateBookMark("businesslocation", TxtBusinesslocation.Text.Trim, wdDoc)
-        UpdateBookMark("day", DateTimePicker2.Value.Day, wdDoc)
-        UpdateBookMark("myear", DateTimePicker2.Value.ToString("Y"), wdDoc)
-        UpdateBookMark("myear", DateTimePicker2.Value.ToString("Y"), wdDoc)
-        UpdateBookMark("num1", TxtOr.Text, wdDoc)
-        UpdateBookMark("num2", TxtCtc.Text, wdDoc)
-        UpdateBookMark("dtissued", DateTimePicker2.Value.ToString(dtFormat), wdDoc)
-        UpdateBookMark("valid", DateTimePicker1.Value.ToString("MMMM d yyyy"), wdDoc)
-        UpdateBookMark("amount", TxtAmount.Text, wdDoc)
+        UpdateBookMark("applicant", fullname, wdDoc)
+        UpdateBookMark("businessname", businessn, wdDoc)
+        UpdateBookMark("businesslocation", businessloc, wdDoc)
+        UpdateBookMark("day", day, wdDoc)
+        UpdateBookMark("myear", myear, wdDoc)
+        UpdateBookMark("num1", num1, wdDoc)
+        UpdateBookMark("num2", num2, wdDoc)
+        UpdateBookMark("dtissued", dtissued, wdDoc)
+        UpdateBookMark("valid", valid, wdDoc)
+        UpdateBookMark("amount", amount, wdDoc)
 
 
         wdDoc.Save()
@@ -91,6 +104,8 @@ Public Class BusinessClearance
         objWordApp.Quit()
         objWordApp = Nothing
     End Sub
+
+
     Sub ResetTextFields()
         TxtName.ResetText()
         TxtBusinessname.ResetText()
@@ -110,21 +125,12 @@ Public Class BusinessClearance
         Try
             If BtnSave.Text = "SAVE" Then
                 Await InsertQuery()
-
-                UpdateWordDocs("C:\Capstone\Docs\TempBusinessC.docx")
-                Dim i = MessageBox.Show("Barangay Clearance added." & vbNewLine & "The Document will available for printing." & vbNewLine & "Any Other Transaction? " & TxtName.Text, "BSMIMS", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
-                If i = vbYes Then
-                    Dashboard.activefrm.Hide()
-                    Dashboard.OpenFormChild(FormDocument)
-                Else
-                    Dashboard.activefrm.Hide()
-                    Dashboard.OpenFormChild(Payment)
-                End If
+                BackgroundWorker1.RunWorkerAsync()
                 ResetTextFields()
             Else
+                PassData()
                 Await UpdateQuery()
-                MessageBox.Show("Update successfully.", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                UpdateWordDocs("C:\Capstone\Docs\TempBusinessC.docx")
+                BackgroundWorker2.RunWorkerAsync()
                 ResetTextFields()
             End If
         Catch ex As Exception
@@ -145,6 +151,7 @@ Public Class BusinessClearance
         PrintPreview.checkLoad = "businessc"
         PrintPreview.Show()
     End Sub
+
 
     Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
@@ -168,5 +175,25 @@ Public Class BusinessClearance
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(Residents)
         Residents.BtnUse.Visible = True
+    End Sub
+
+    Private Sub BusinessClearance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CheckForIllegalCrossThreadCalls = False
+    End Sub
+
+    Private Sub BackgroundWorker2_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker2.DoWork
+        UpdateWordDocs("C:\Capstone\Docs\TempBusinessC.docx")
+    End Sub
+
+    Private Sub BackgroundWorker2_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker2.RunWorkerCompleted
+        MessageBox.Show("Update Succesfully" & vbNewLine & "The Document will available for printing.", "BSMIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+        UpdateWordDocs("C:\Capstone\Docs\TempBusinessC.docx")
+    End Sub
+
+    Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
+        MessageBox.Show("Business clearance added. " & vbNewLine & "The Document will available for printing.", "BSMIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class

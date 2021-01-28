@@ -533,7 +533,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Format(Fields!dateissued.Value, "MMMM d yyyy")</Value>
+                            <Value>=Fields!dateissued.Value</Value>
                             <Style>
                               <FontSize>9pt</FontSize>
                             </Style>
