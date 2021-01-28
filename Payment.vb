@@ -86,7 +86,7 @@ Public Class Payment
                                          " VALUES(@fname, @DATEISSUED, @total_amount, @cash, @issued_document, @change)", con)
             mycmd.Parameters.AddWithValue("fname", TxtName.Text)
             mycmd.Parameters.AddWithValue("DATEISSUED", Date.Now.ToString("M/d/yyyy"))
-            mycmd.Parameters.AddWithValue("total_amount", Val(TxtAmount.Text))
+            mycmd.Parameters.AddWithValue("total_amount", Val(TextBox9.Text))
             mycmd.Parameters.AddWithValue("cash", Val(TxtCash.Text))
             mycmd.Parameters.AddWithValue("issued_document", String.Join(" ", docsCollection))
             mycmd.Parameters.AddWithValue("change", TxtChange.Text)

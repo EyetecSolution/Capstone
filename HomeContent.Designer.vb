@@ -614,7 +614,6 @@ Partial Class HomeContent
     End Sub
     Friend WithEvents Timer1 As Timer
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
-    Friend WithEvents ImageSlider1 As DevExpress.XtraEditors.Controls.ImageSlider
     Friend WithEvents PanelSlide As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents CovidPanel As Guna.UI2.WinForms.Guna2Panel
@@ -649,4 +648,5 @@ Partial Class HomeContent
     Friend WithEvents Guna2Panel12 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents LblPUMO As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel12 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Private WithEvents ImageSlider1 As DevExpress.XtraEditors.Controls.ImageSlider
 End Class

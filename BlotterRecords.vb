@@ -143,9 +143,7 @@ Public Class BlotterRecords
             con.Open()
         End If
 
-        Using mycmd As New OleDbCommand("SELECT *" &
-                                         "FROM tbl_blotter" &
-                                         "WHERE ID= @ID", con)
+        Using mycmd As New OleDbCommand("SELECT * FROM tbl_blotter WHERE ID= @ID", con)
             mycmd.Parameters.AddWithValue("@ID", id)
             Dim myReader As OleDbDataReader = Await mycmd.ExecuteReaderAsync
             If myReader.Read Then
