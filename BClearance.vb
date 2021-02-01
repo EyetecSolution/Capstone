@@ -11,7 +11,7 @@ Public Class BClearance
         Residents.BtnUse.Visible = True
     End Sub
 
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs)
 
         If BCHistory.catTitle = "Barangay Clearance" Then
             BCHistory.LoadBclearance()
@@ -43,7 +43,7 @@ Public Class BClearance
 
 
 
-    Private Async Sub BtnS_Click(sender As Object, e As EventArgs) Handles BtnS.Click
+    Private Async Sub BtnS_Click(sender As Object, e As EventArgs)
         Dim price As Integer = Val(TxtFees.Text)
 
         If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtAddress.Text) Or String.IsNullOrEmpty(TxtCtc.Text) Or String.IsNullOrEmpty(TxtOR.Text) Then
@@ -56,7 +56,7 @@ Public Class BClearance
             Exit Sub
         End If
         Try
-            If BtnS.Text = "SAVE" Then
+            If BtnSa.Text = "SAVE" Then
                 PassData()
                 Await InsertQuery()
                 BackgroundWorker1.RunWorkerAsync()
@@ -164,7 +164,7 @@ Public Class BClearance
         CmbPurpose.ResetText()
     End Sub
 
-    Private Sub BtnPreview_Click(sender As Object, e As EventArgs) Handles BtnPreview.Click
+    Private Sub BtnPreview_Click(sender As Object, e As EventArgs)
         PrintPreview.checkLoad = "BClearance"
         PrintPreview.Show()
     End Sub
@@ -201,11 +201,86 @@ Public Class BClearance
         e.Handled = True
     End Sub
 
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
+
+
+    End Sub
+
+    Private Async Sub BtnS_Click_1(sender As Object, e As EventArgs) Handles BtnSa.Click
+        Dim price As Integer = Val(TxtFees.Text)
+
+        If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtAddress.Text) Or String.IsNullOrEmpty(TxtCtc.Text) Or String.IsNullOrEmpty(TxtOR.Text) Then
+            MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        If CmbPurpose.Text = "--Choose Purpose--" Then
+            MessageBox.Show("Purpose is required", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+        Try
+            If BtnSa.Text = "SAVE" Then
+                PassData()
+                Await InsertQuery()
+                BackgroundWorker1.RunWorkerAsync()
+                ResetTextField()
+            Else
+                PassData()
+                Await UpdateQuery()
+                BackgroundWorker2.RunWorkerAsync()
+                ResetTextField()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnPreview_Click_1(sender As Object, e As EventArgs) Handles BtnPreviewa.Click
+        PrintPreview.checkLoad = "BClearance"
+        PrintPreview.Show()
+    End Sub
+
+    Private Sub BtnSa_MouseHover(sender As Object, e As EventArgs) Handles BtnSa.MouseHover
+        BtnSa.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnSa_MouseLeave(sender As Object, e As EventArgs) Handles BtnSa.MouseLeave
+        BtnSa.ImageSize = New Size(30, 30)
+    End Sub
+
+    Private Sub BtnPreviewa_MouseHover(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseHover
+        BtnPreviewa.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnPreviewa_MouseLeave(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseLeave
+        BtnPreviewa.ImageSize = New Size(30, 30)
+    End Sub
+
+    Private Sub TxtCtc_TextChanged(sender As Object, e As EventArgs) Handles TxtCtc.TextChanged
+
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        If BCHistory.catTitle = "Barangay Clearance" Then
+            BCHistory.LoadBclearance()
+        End If
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BCHistory)
+    End Sub
+
+    Private Sub Guna2Button1_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button1.MouseHover
+        Guna2Button1.ImageSize = New Size(55, 55)
+    End Sub
+
+    Private Sub Guna2Button1_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button1.MouseLeave
+        Guna2Button1.ImageSize = New Size(45, 45)
+    End Sub
+
     Private Sub TxtValidity_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtValidity.KeyPress
         e.Handled = True
     End Sub
 
-    Private Sub TxtName_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+    Private Sub TxtName_KeyPress_1(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
@@ -220,7 +295,7 @@ Public Class BClearance
             Case 1
                 TxtFees.Text = 350
             Case 2
-                TxtFees.Text = 50
+                TxtFees.Text = 350
             Case 3
                 TxtFees.Text = 50
             Case 4

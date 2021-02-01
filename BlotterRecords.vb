@@ -157,4 +157,9 @@ Public Class BlotterRecords
             End If
         End Using
     End Function
+
+    Private Sub Guna2CircleButton1_Click(sender As Object, e As EventArgs)
+
+
+    End Sub
 End Class

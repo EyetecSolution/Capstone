@@ -36,15 +36,15 @@ Public Class Schedule
         DataGridView1.Columns("satday").HeaderText = "Saturday"
         DataGridView1.Columns("sday").HeaderText = "Sunday"
 
-        DataGridView1.Columns("pstion").Width = 150
-        DataGridView1.Columns("fname").Width = 250
+        DataGridView1.Columns("pstion").Width = 300
+        DataGridView1.Columns("fname").Width = 350
         DataGridView1.Columns("mday").Width = 200
         DataGridView1.Columns("tday").Width = 200
         DataGridView1.Columns("wday").Width = 200
         DataGridView1.Columns("thday").Width = 200
-        DataGridView1.Columns("fday").Width = 200
-        DataGridView1.Columns("satday").Width = 200
-        DataGridView1.Columns("sday").Width = 200
+        DataGridView1.Columns("fday").Width = 350
+        DataGridView1.Columns("satday").Width = 350
+        DataGridView1.Columns("sday").Width = 350
 
 
 
@@ -142,51 +142,8 @@ Public Class Schedule
         TxtSunday.ResetText()
     End Sub
 
-    Private Async Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        If String.IsNullOrEmpty(TxtName.Text) Or CmbPurpose.Text = "SELECT POSITION" Then
-            MessageBox.Show("Name field and position is required!", "Checking", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
-
-
-
-        If con.State = ConnectionState.Closed Then
-            con.Open()
-        End If
-
-        If BtnSave.Text = "SAVE" Then
-            Try
-                Await InsertQuery()
-                MessageBox.Show("Scheduling successfully saved.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                LoadData()
-                ResetFields()
-            Catch ex As Exception
-
-            Finally
-                con.Close()
-
-            End Try
-        Else
-            Try
-                Await UpdateQuery()
-                MessageBox.Show("Scheduling successfully saved.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                LoadData()
-                ResetFields()
-                BtnSave.Text = "SAVE"
-            Catch ex As Exception
-
-            Finally
-                con.Close()
-
-            End Try
-        End If
-
-
-    End Sub
-
-
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        BtnSave.Text = "UPDATE"
+        BtnSavee.Text = "UPDATE"
         Dim index As Integer
         Try
 
@@ -227,7 +184,7 @@ Public Class Schedule
         End Using
     End Sub
 
-  
+
 
     Private Sub Schedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
@@ -238,7 +195,7 @@ Public Class Schedule
         Dashboard.OpenFormChild(Attendance)
     End Sub
 
-    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
@@ -253,27 +210,35 @@ Public Class Schedule
         TxtFriday.ResetText()
         TxtSat.ResetText()
         TxtSunday.ResetText()
-        BtnSave.Text = "SAVE"
+        BtnSavee.Text = "SAVE"
     End Sub
 
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
-        Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(BarangayManagement)
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub Guna2HtmlLabel3_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel3.Click
 
     End Sub
 
-    Private Sub TxtTuesday_TextChanged(sender As Object, e As EventArgs) Handles TxtTuesday.TextChanged
+    Private Sub TxtTuesday_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub TxtFriday_TextChanged(sender As Object, e As EventArgs) Handles TxtFriday.TextChanged
+    Private Sub TxtFriday_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BarangayManagement)
+    End Sub
+
+    Private Sub BtnPreviewa_Click(sender As Object, e As EventArgs) Handles BtnPreviewa.Click
         Dim dt As DateTime = DateTime.Now
         Dim dtFrmat As String = "MMMM"
         Dim dtNow As Integer = Date.Now.Day
@@ -283,5 +248,69 @@ Public Class Schedule
         ReportViewer.reportCheck = "Schedule"
         ReportsList.LoadReport(DataGridView1, "C:\Capstone\Reports\ReportSchedule.rdlc", "DTSchedule")
 
+    End Sub
+
+    Private Async Sub BtnSavee_Click(sender As Object, e As EventArgs) Handles BtnSavee.Click
+        If String.IsNullOrEmpty(TxtName.Text) Or CmbPurpose.Text = "SELECT POSITION" Then
+            MessageBox.Show("Name field and position is required!", "Checking", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
+
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+
+        If BtnSavee.Text = "" Then
+            Try
+                Await InsertQuery()
+                MessageBox.Show("Scheduling successfully saved.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                LoadData()
+                ResetFields()
+            Catch ex As Exception
+
+            Finally
+                con.Close()
+
+            End Try
+        Else
+            Try
+                Await UpdateQuery()
+                MessageBox.Show("Scheduling successfully saved.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                LoadData()
+                ResetFields()
+                BtnSavee.Text = ""
+            Catch ex As Exception
+
+            Finally
+                con.Close()
+
+            End Try
+        End If
+
+    End Sub
+
+    Private Sub Guna2Button5_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button5.MouseHover
+        Guna2Button5.ImageSize = New Size(50, 50)
+    End Sub
+
+    Private Sub Guna2Button5_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button5.MouseLeave
+        Guna2Button5.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnSavee_MouseHover(sender As Object, e As EventArgs) Handles BtnSavee.MouseHover
+        BtnSavee.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnSavee_MouseLeave(sender As Object, e As EventArgs) Handles BtnSavee.MouseLeave
+        BtnSavee.ImageSize = New Size(30, 30)
+    End Sub
+
+    Private Sub BtnPreviewa_MouseHover(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseHover
+        BtnPreviewa.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnPreviewa_MouseLeave(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseLeave
+        BtnPreviewa.ImageSize = New Size(30, 30)
     End Sub
 End Class

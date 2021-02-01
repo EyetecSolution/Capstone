@@ -57,7 +57,7 @@ Public Class Dashboard
         Dim tme As DateTime = DateTime.Now
 
 
-        LabelTime.Text = "TIME: " + tme.ToLongTimeString()
+        LabelTime.Text = " " + tme.ToLongTimeString()
 
 
         If LabelMarque.Location.X + LabelMarque.Width < 0 Then
@@ -150,7 +150,7 @@ Public Class Dashboard
 
     Private Sub ActiveButton(ctrl As Guna.UI2.WinForms.Guna2Button)
         Dim arrCtrl() As Guna.UI2.WinForms.Guna2Button =
-        {BtnHome, BtnBM, BtnCert, BtnResidents, BtnRecords, BtnReports, BtnCovid, BtnUsers}
+        {BtnHome, BtnBM, BtnCert, BtnResidents, BtnRecords, BtnReports, BtnCovid, BtnUsers, BtnQR, BtnPayment}
 
 
 
@@ -266,6 +266,18 @@ Public Class Dashboard
         OpenFormChild(FaceRecognition)
         If PanelSlider.Width = 50 Then
             ActiveButton(BtnQR)
+        End If
+    End Sub
+
+    Private Sub LabelTime_Click(sender As Object, e As EventArgs) Handles LabelTime.Click
+
+    End Sub
+
+    Private Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles BtnPayment.Click
+        activefrm.Close()
+        OpenFormChild(Payment)
+        If PanelSlider.Width = 50 Then
+            ActiveButton(BtnPayment)
         End If
     End Sub
 End Class

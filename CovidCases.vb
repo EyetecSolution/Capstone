@@ -89,7 +89,7 @@ Public Class CovidCases
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
             id = row.Cells("ID").Value
             Await RetrieveData()
-            AddCases.BtnSave.Text = "UPDATE"
+            AddCases.BtnSa.Text = "UPDATE"
             Dashboard.activefrm.Hide()
             Dashboard.OpenFormChild(AddCases)
 

@@ -80,43 +80,16 @@ Public Class Honorarium
 
 
 
-    Private Async Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        If CmbPurpose.Text = "SELECT POSITION" Or TxtName.Text = "" Then
-            MessageBox.Show("Position and Name field is required!", "Checking", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
-
-        Try
-
-            Await InsertQuery()
-            MessageBox.Show("Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            LoadMe()
-            ResetFields()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
 
 
-    End Sub
-
-    Private Sub TxtDeduct_TextChanged(sender As Object, e As EventArgs) Handles TxtDeduct.TextChanged
-
-        Txtnet.Text = Format(Val(TxtHonor.Text) - Val(TxtDeduct.Text), "#,###,##0.00")
-    End Sub
-
-    Private Sub TxtHonor_TextChanged(sender As Object, e As EventArgs) Handles TxtHonor.TextChanged
-
-        Txtnet.Text = Format(Val(TxtHonor.Text), "#,###,##0.00")
-    End Sub
-
-    Private Sub TxtDeduct_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtDeduct.KeyPress
+    Private Sub TxtDeduct_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
 
     End Sub
 
-    Private Sub TxtHonor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtHonor.KeyPress
+    Private Sub TxtHonor_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
@@ -135,16 +108,15 @@ Public Class Honorarium
 
     End Sub
 
-    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
 
 
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
-        Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(BarangayManagement)
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
+
     End Sub
 
 
@@ -183,7 +155,7 @@ Public Class Honorarium
         objWordApp = Nothing
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
         Try
             Dim Word() As Process = Process.GetProcessesByName("WINWORD")
             For Each Process As Process In Word
@@ -214,5 +186,91 @@ Public Class Honorarium
         End Try
 
 
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BarangayManagement)
+    End Sub
+
+    Private Sub BtnPreviewa_Click(sender As Object, e As EventArgs) Handles BtnPreviewa.Click
+        Try
+            Dim Word() As Process = Process.GetProcessesByName("WINWORD")
+            For Each Process As Process In Word
+                Process.Kill()
+            Next
+        Catch ex As Exception
+        End Try
+        Try
+            UpdateWordDocs("C:\Capstone\Docs\TempPayslip.docx")
+            Dim app As Word.Application
+            Dim doc As Word.Document
+            Dim p As New PrintDialog
+            app = New Word.Application
+            app.WordBasic.FilePrintSetup(Printer:=p.PrinterSettings.PrinterName, DoNotSetAsSysDefault:=1)
+
+            Dim m As Object = System.Reflection.Missing.Value
+            doc = app.Documents.Open("C:\Capstone\Docs\TempPayslip.docx", m, m, m, m, m, m, m, m, m, m, m)
+            app.PrintOut()
+            app.Documents.Close()
+
+            'Quit word application
+            app.Quit()
+
+            'Release 
+            app = Nothing
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Async Sub BtnSa_Click(sender As Object, e As EventArgs) Handles BtnSa.Click
+        If CmbPurpose.Text = "SELECT POSITION" Or TxtName.Text = "" Then
+            MessageBox.Show("Position and Name field is required!", "Checking", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
+        Try
+
+            Await InsertQuery()
+            MessageBox.Show("Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            LoadMe()
+            ResetFields()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub Guna2Button2_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button2.MouseHover
+        Guna2Button2.ImageSize = New Size(55, 55)
+    End Sub
+
+    Private Sub Guna2Button2_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button2.MouseLeave
+        Guna2Button2.ImageSize = New Size(45, 45)
+    End Sub
+
+    Private Sub BtnSa_MouseHover(sender As Object, e As EventArgs) Handles BtnSa.MouseHover
+        BtnSa.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnSa_MouseLeave(sender As Object, e As EventArgs) Handles BtnSa.MouseLeave
+        BtnSa.ImageSize = New Size(30, 30)
+    End Sub
+
+    Private Sub BtnPreviewa_MouseHover(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseHover
+        BtnPreviewa.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnPreviewa_MouseLeave(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseLeave
+        BtnPreviewa.ImageSize = New Size(30, 30)
+    End Sub
+
+    Private Sub TxtHonor_TextChanged_1(sender As Object, e As EventArgs) Handles TxtHonor.TextChanged
+        Txtnet.Text = Format(Val(TxtHonor.Text), "#,###,##0.00")
+    End Sub
+
+    Private Sub TxtDeduct_TextChanged_1(sender As Object, e As EventArgs) Handles TxtDeduct.TextChanged
+        Txtnet.Text = Format(Val(TxtHonor.Text) - Val(TxtDeduct.Text), "#,###,##0.00")
     End Sub
 End Class

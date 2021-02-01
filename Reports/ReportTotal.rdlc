@@ -100,7 +100,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CTC NO.</Value>
+                              <Value>AMOUNT</Value>
                               <Style>
                                 <FontFamily>Arial Black</FontFamily>
                                 <FontSize>9pt</FontSize>

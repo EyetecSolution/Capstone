@@ -141,29 +141,29 @@ Public Class AddNewResident
         End If
     End Sub
 
-    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs)
 
         Me.Close()
-        Dashboard.OpenFormChild(residents)
+        Dashboard.OpenFormChild(Residents)
 
         Select Case BCHistory.catTitle
             Case "Barangay Clearance"
-                residents.BtnUse.Visible = True
+                Residents.BtnUse.Visible = True
             'Case "businessc"
             Case "indigency"
-                residents.BtnUse.Visible = True
+                Residents.BtnUse.Visible = True
             Case "non-residency"
-                residents.BtnUse.Visible = True
+                Residents.BtnUse.Visible = True
             Case "residency"
-                residents.BtnUse.Visible = True
+                Residents.BtnUse.Visible = True
             Case "solo-parent"
-                residents.BtnUse.Visible = True
+                Residents.BtnUse.Visible = True
             Case "SPES"
-                residents.BtnUse.Visible = True
+                Residents.BtnUse.Visible = True
             Case "SPES1"
-                residents.BtnUse.Visible = True
+                Residents.BtnUse.Visible = True
             Case "OATH"
-                residents.BtnUse.Visible = True
+                Residents.BtnUse.Visible = True
         End Select
     End Sub
 
@@ -177,5 +177,34 @@ Public Class AddNewResident
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(Residents)
+    End Sub
+
+    Private Sub Guna2HtmlLabel6_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel6.Click
+
+    End Sub
+
+    Private Sub CmbGender_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbGender.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel8_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel8.Click
+
+    End Sub
+
+    Private Sub CmbCivilStat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbCivilStat.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Guna2Button4_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button4.MouseHover
+        Guna2Button4.ImageSize = New Size(55, 55)
+    End Sub
+
+    Private Sub Guna2Button4_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button4.MouseLeave
+        Guna2Button4.ImageSize = New Size(45, 45)
     End Sub
 End Class

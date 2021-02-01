@@ -4,13 +4,13 @@ Imports Word = Microsoft.Office.Interop.Word
 Public Class Spes
 
     ReadOnly con As New OleDbConnection(My.Settings.strCon)
-    Private Async Sub BtnS_Click(sender As Object, e As EventArgs) Handles BtnS.Click
+    Private Async Sub BtnS_Click(sender As Object, e As EventArgs)
         If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtAddress.Text) Or String.IsNullOrEmpty(TxtFather.Text) Or String.IsNullOrEmpty(TxtMother.Text) Then
             MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
-        If BtnS.Text = "SAVE" Then
+        If BtnSa.Text = "SAVE" Then
             Try
                 Await InsertQuery()
                 MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -122,7 +122,7 @@ Public Class Spes
         objWordApp = Nothing
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs)
         PrintPreview.checkLoad = "SPES"
         PrintPreview.Show()
     End Sub
@@ -133,25 +133,25 @@ Public Class Spes
         residents.BtnUse.Visible = True
     End Sub
 
-    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub TxtFather_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtFather.KeyPress
+    Private Sub TxtFather_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub TxtMother_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtMother.KeyPress
+    Private Sub TxtMother_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs)
         If BCHistory.catTitle = "SPES" Then
             BCHistory.LoadSpes()
         End If
@@ -159,5 +159,75 @@ Public Class Spes
         Dashboard.OpenFormChild(BCHistory)
     End Sub
 
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub BtnPreviewa_Click(sender As Object, e As EventArgs) Handles BtnPreviewa.Click
+        PrintPreview.checkLoad = "SPES"
+        PrintPreview.Show()
+    End Sub
+
+    Private Async Sub BtnSaA_Click(sender As Object, e As EventArgs) Handles BtnSa.Click
+        If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtAddress.Text) Or String.IsNullOrEmpty(TxtFather.Text) Or String.IsNullOrEmpty(TxtMother.Text) Then
+            MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        If BtnSa.Text = "SAVE" Then
+            Try
+                Await InsertQuery()
+                MessageBox.Show("Data successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                UpdateWordDocs("C:\Capstone\Docs\TempSpes.docx")
+                ResetTextField()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        Else
+            Try
+                Await UpdateQuery()
+                MessageBox.Show("Update successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                UpdateWordDocs("C:\Capstone\Docs\TempSpes.docx")
+                ResetTextField()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End If
+    End Sub
+
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TxtMother.TextChanged
+
+    End Sub
+
+    Private Sub BtnSa_MouseHover(sender As Object, e As EventArgs) Handles BtnSa.MouseHover
+        BtnSa.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnSa_MouseLeave(sender As Object, e As EventArgs) Handles BtnSa.MouseLeave
+        BtnSa.ImageSize = New Size(30, 30)
+    End Sub
+
+    Private Sub BtnPreviewa_MouseHover(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseHover
+        BtnPreviewa.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnPreviewa_MouseLeave(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseLeave
+        BtnPreviewa.ImageSize = New Size(30, 30)
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        If BCHistory.catTitle = "SPES" Then
+            BCHistory.LoadSpes()
+        End If
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BCHistory)
+    End Sub
+
+    Private Sub Guna2Button1_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button1.MouseHover
+        Guna2Button1.ImageSize = New Size(55, 55)
+    End Sub
+
+    Private Sub Guna2Button1_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button1.MouseLeave
+        Guna2Button1.ImageSize = New Size(45, 45)
+    End Sub
 End Class

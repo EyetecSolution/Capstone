@@ -112,15 +112,34 @@ Public Class OATH
         residents.BtnUse.Visible = True
     End Sub
 
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
-        If BCHistory.catTitle = "OATH" Then
-            BCHistory.LoadOATH()
-        End If
-        Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(BCHistory)
+
+    Sub ResetTextField()
+        TxtName.ResetText()
+        TxtAddress.ResetText()
+        TxtAge.ResetText()
+        CmbPurpose.ResetText()
     End Sub
 
-    Private Async Sub BtnS_Click(sender As Object, e As EventArgs) Handles BtnS.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub BtnPreviewa_Click(sender As Object, e As EventArgs) Handles BtnPreviewa.Click
+        PrintPreview.checkLoad = "OATH"
+        PrintPreview.Show()
+    End Sub
+
+    Private Async Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles BtnS.Click
         If String.IsNullOrEmpty(TxtName.Text) Or String.IsNullOrEmpty(TxtAddress.Text) Or String.IsNullOrEmpty(TxtAge.Text) Or String.IsNullOrEmpty(CmbPurpose.Text) Or String.IsNullOrEmpty(TxtResiding.Text) Or String.IsNullOrEmpty(TxtWitness.Text) Then
             MessageBox.Show("There's blank field you need to fill out!", "Field Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
@@ -145,21 +164,36 @@ Public Class OATH
             End Try
         End If
     End Sub
-    Sub ResetTextField()
-        TxtName.ResetText()
-        TxtAddress.ResetText()
-        TxtAge.ResetText()
-        CmbPurpose.ResetText()
+
+    Private Sub BtnS_MouseHover(sender As Object, e As EventArgs) Handles BtnS.MouseHover
+        BtnS.ImageSize = New Size(40, 40)
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
-        PrintPreview.checkLoad = "OATH"
-        PrintPreview.Show()
+    Private Sub BtnS_MouseLeave(sender As Object, e As EventArgs) Handles BtnS.MouseLeave
+        BtnS.ImageSize = New Size(30, 30)
     End Sub
 
-    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
-        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
-            e.Handled = True
+    Private Sub BtnPreviewa_MouseHover(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseHover
+        BtnPreviewa.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnPreviewa_MouseLeave(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseLeave
+        BtnPreviewa.ImageSize = New Size(30, 30)
+    End Sub
+
+    Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        If BCHistory.catTitle = "OATH" Then
+            BCHistory.LoadOATH()
         End If
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BCHistory)
+    End Sub
+
+    Private Sub Guna2Button1_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button1.MouseHover
+        Guna2Button1.ImageSize = New Size(55, 55)
+    End Sub
+
+    Private Sub Guna2Button1_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button1.MouseLeave
+        Guna2Button1.ImageSize = New Size(45, 45)
     End Sub
 End Class

@@ -189,7 +189,7 @@ Public Class Payment
 
     End Sub
 
-    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs)
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(FormDocument)
     End Sub

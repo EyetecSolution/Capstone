@@ -87,7 +87,11 @@ Public Class Organizational
 
     End Sub
 
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BarangayManagement)
     End Sub

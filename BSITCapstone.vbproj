@@ -561,6 +561,15 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Reports\ReportBClearance.rdlc" />
+    <None Include="Reports\ReportBusinessClearance.rdlc" />
+    <None Include="Reports\ReportIndigency.rdlc" />
+    <None Include="Reports\ReportNonResidency.rdlc" />
+    <None Include="Reports\ReportOath.rdlc" />
+    <None Include="Reports\ReportResidency.rdlc" />
+    <None Include="Reports\ReportSoloParent.rdlc" />
+    <None Include="Reports\ReportSPES.rdlc" />
+    <None Include="Reports\ReportSpes1.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

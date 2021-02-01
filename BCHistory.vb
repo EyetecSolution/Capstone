@@ -538,47 +538,47 @@ Public Class BCHistory
         Select Case catTitle
             Case "Barangay Clearance"
                 Await RetrieveDataBarangayC(id)
-                BClearance.BtnS.Text = "UPDATE"
+                'BClearance.BtnSa.Text = "UPDATE"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(BClearance)
             Case "businessc"
                 Await RetrieveDataBusiness(id)
-                BusinessClearance.BtnSave.Text = "UPDATE"
+                'BusinessClearance.BtnSave.Text = "UPDATE"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(BusinessClearance)
             Case "indigency"
                 Await RetrieveDataIndigency(id)
-                Indigency.BtnS.Text = "UPDATE"
+                'Indigency.BtnS.Text = "UPDATE"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(Indigency)
             Case "non-residency"
                 Await RetrieveNonResidency(id)
-                NonResidency.BtnS.Text = "UPDATE"
+                'NonResidency.BtnS.Text = "UPDATE"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(NonResidency)
             Case "residency"
                 Await RetrieveResidency(id)
-                Residency.BtnS.Text = "UPDATE"
+                'Residency.BtnS.Text = "UPDATE"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(Residency)
             Case "solo-parent"
                 Await RetrieveSoloParent(id)
-                SoloParent.BtnS.Text = "UPDATE"
+                'SoloParent.BtnS.Text = "UPDATE"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(SoloParent)
             Case "OATH"
                 Await RetrieveOATH(id)
-                OATH.BtnS.Text = "UPDATE"
+                ' OATH.BtnS.Text = "UPDATE"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(OATH)
             Case "SPES"
                 Await RetrieveSpes(id)
-                Spes.BtnS.Text = "UPDATE"
+                ' Spes.BtnS.Text = "UPDATE"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(Spes)
             Case "SPES1"
                 Await RetrieveSpes1(id)
-                Spes1.BtnS.Text = "UPDATE"
+                ' Spes1.BtnS.Text = "UPDATE"
                 Dashboard.activefrm.Hide()
                 Dashboard.OpenFormChild(Spes1)
         End Select
@@ -608,8 +608,21 @@ Public Class BCHistory
 
     End Sub
 
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(FormDocument)
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(FormDocument)
+    End Sub
+
+    Private Sub Guna2Button1_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button1.MouseHover
+        Guna2Button1.ImageSize = New Size(55, 55)
+    End Sub
+
+    Private Sub Guna2Button1_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button1.MouseLeave
+        Guna2Button1.ImageSize = New Size(45, 45)
     End Sub
 End Class

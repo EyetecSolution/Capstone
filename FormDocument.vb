@@ -2,22 +2,22 @@
 
     Sub AddSpaces()
         Btn1.Text = "BARANGAY                        CLEARANCE"
-        Btn3.Text = "CERTIFICATE                              OF INDIGENCY"
+        Btn3.Text = "CERTIFICATE                                                       OF INDIGENCY"
+        Btn4.Text = "CERTIFICATE                                                       OF RESIDENCY"
+        Btn5.Text = "CERTIFICATE                                                       OF NON RESIDENCY"
+        Btn6.Text = "CERTIFICATE                                                       OF SOLO PARENT"
+        Btn7.Text = "SPES                                                              (School Youth)"
+        Btn8.Text = "SPES                                                   (Out of School Youth)"
+        Btn9.Text = "OATH                                                   OF UNDERTAKING/         CERTIFICATION"
+    End Sub
+    Sub RemoveSpace()
+        Btn1.Text = "BARANGAY                   CLEARANCE"
+        Btn3.Text = "CERTIFICATE                                 OF INDIGENCY"
         Btn4.Text = "CERTIFICATE                              OF RESIDENCY"
         Btn5.Text = "CERTIFICATE                              OF NON RESIDENCY"
         Btn6.Text = "CERTIFICATE                              OF SOLO PARENT"
-        Btn7.Text = "SPES                                             (For School Youth)"
-        Btn8.Text = "SPES                                                   (For Out of School Youth)"
-        Btn9.Text = "OATH                                          OF UNDERTAKING/         CERTIFICATION"
-    End Sub
-    Sub RemoveSpace()
-        Btn1.Text = "BARANGAY               CLEARANCE"
-        Btn3.Text = "CERTIFICATE                       OF INDIGENCY"
-        Btn4.Text = "CERTIFICATE                   OF RESIDENCY"
-        Btn5.Text = "CERTIFICATE OF             NON RESIDENCY"
-        Btn6.Text = "CERTIFICATE OF           SOLO PARENT"
-        Btn7.Text = "SPES                             (For School Youth)"
-        Btn8.Text = "SPES                                     (For Out of School Youth)"
+        Btn7.Text = "SPES                                     (School Youth)"
+        Btn8.Text = "SPES                                     (Out of School Youth)"
         Btn9.Text = "OATH                                          OF UNDERTAKING/         CERTIFICATION"
     End Sub
 
@@ -100,8 +100,84 @@
         Dashboard.OpenFormChild(BCHistory)
     End Sub
 
-    Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs)
         Dashboard.activefrm.Hide()
         Dashboard.OpenFormChild(Payment)
+    End Sub
+
+    Private Sub FormDocument_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Btn1_MouseHover(sender As Object, e As EventArgs) Handles Btn1.MouseHover
+        Btn1.ImageSize = New Size(50, 50)
+    End Sub
+
+    Private Sub Btn1_MouseLeave(sender As Object, e As EventArgs) Handles Btn1.MouseLeave
+        Btn1.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub Btn2_MouseHover(sender As Object, e As EventArgs) Handles Btn2.MouseHover
+        Btn2.ImageSize = New Size(50, 50)
+    End Sub
+
+    Private Sub Btn2_MouseLeave(sender As Object, e As EventArgs) Handles Btn2.MouseLeave
+        Btn2.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub Btn6_MouseHover(sender As Object, e As EventArgs) Handles Btn6.MouseHover
+        Btn6.ImageSize = New Size(50, 50)
+    End Sub
+
+    Private Sub Btn6_MouseLeave(sender As Object, e As EventArgs) Handles Btn6.MouseLeave
+        Btn6.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub Btn4_MouseHover(sender As Object, e As EventArgs) Handles Btn4.MouseHover
+        Btn4.ImageSize = New Size(50, 50)
+    End Sub
+
+    Private Sub Btn4_MouseLeave(sender As Object, e As EventArgs) Handles Btn4.MouseLeave
+        Btn4.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub Btn5_MouseHover(sender As Object, e As EventArgs) Handles Btn5.MouseHover
+        Btn5.ImageSize = New Size(50, 50)
+    End Sub
+
+    Private Sub Btn5_MouseLeave(sender As Object, e As EventArgs) Handles Btn5.MouseLeave
+        Btn5.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub Btn3_MouseHover(sender As Object, e As EventArgs) Handles Btn3.MouseHover
+        Btn3.ImageSize = New Size(50, 50)
+    End Sub
+
+    Private Sub Btn3_MouseLeave(sender As Object, e As EventArgs) Handles Btn3.MouseLeave
+        Btn3.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub Btn7_MouseHover(sender As Object, e As EventArgs) Handles Btn7.MouseHover
+        Btn7.ImageSize = New Size(50, 50)
+    End Sub
+
+    Private Sub Btn7_MouseLeave(sender As Object, e As EventArgs) Handles Btn7.MouseLeave
+        Btn7.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub Btn8_MouseHover(sender As Object, e As EventArgs) Handles Btn8.MouseHover
+        Btn8.ImageSize = New Size(50, 50)
+    End Sub
+
+    Private Sub Btn8_MouseLeave(sender As Object, e As EventArgs) Handles Btn8.MouseLeave
+        Btn8.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub Btn9_MouseHover(sender As Object, e As EventArgs) Handles Btn9.MouseHover
+        Btn9.ImageSize = New Size(50, 50)
+    End Sub
+
+    Private Sub Btn9_MouseLeave(sender As Object, e As EventArgs) Handles Btn9.MouseLeave
+        Btn9.ImageSize = New Size(40, 40)
     End Sub
 End Class

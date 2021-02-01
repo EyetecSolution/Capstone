@@ -110,8 +110,8 @@ C:\Capstone\obj\x86\Debug\BSITCapstone.vbproj.CopyComplete
 C:\Capstone\obj\x86\Debug\BSITCapstone.exe
 C:\Capstone\obj\x86\Debug\BSITCapstone.xml
 C:\Capstone\obj\x86\Debug\BSITCapstone.pdb
-C:\Capstone\obj\x86\Debug\RdlCompile.cache
-C:\Capstone\obj\x86\Debug\RdlCompile.compiled
 C:\Capstone\bin\x86\Debug\Emgu.CV.xml
 C:\Capstone\bin\x86\Debug\Emgu.CV.UI.xml
 C:\Capstone\bin\x86\Debug\Emgu.Util.xml
+C:\Capstone\obj\x86\Debug\RdlCompile.cache
+C:\Capstone\obj\x86\Debug\RdlCompile.compiled

@@ -64,7 +64,6 @@ Public Class BusinessClearance
 
     Public Sub PassData()
         Dim dtFormat As String = "MM/d/yyyy"
-        Dim monthFrmat As String = "MMMM"
         fullname = TxtName.Text
         businessn = TxtBusinessname.Text.Trim
         businessloc = TxtBusinesslocation.Text.Trim
@@ -139,12 +138,8 @@ Public Class BusinessClearance
 
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        If BCHistory.catTitle = "businessc" Then
-            BCHistory.LoadBusinessClearance()
-        End If
-        Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(BCHistory)
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
@@ -152,20 +147,74 @@ Public Class BusinessClearance
         PrintPreview.Show()
     End Sub
 
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
 
-    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
+
+    End Sub
+
+    Private Sub TxtAmount_TextChanged(sender As Object, e As EventArgs) Handles TxtAmount.TextChanged
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel9_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel9.Click
+
+    End Sub
+
+    Private Sub Guna2Button2_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button2.MouseHover
+        Guna2Button2.ImageSize = New Size(40, 40)
+    End Sub
+
+
+
+    Private Sub Guna2Button2_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button2.MouseLeave
+        Guna2Button2.ImageSize = New Size(30, 30)
+
+    End Sub
+
+    Private Sub Guna2Button2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Guna2Button2.KeyPress
+
+    End Sub
+
+    Private Sub BtnSave_MouseHover(sender As Object, e As EventArgs) Handles BtnSave.MouseHover
+        BtnSave.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnSave_MouseLeave(sender As Object, e As EventArgs) Handles BtnSave.MouseLeave
+        BtnSave.ImageSize = New Size(30, 30)
+    End Sub
+
+    Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        If BCHistory.catTitle = "businessc" Then
+            BCHistory.LoadBusinessClearance()
+        End If
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BCHistory)
+    End Sub
+
+    Private Sub Guna2Button1_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button1.MouseHover
+        Guna2Button1.ImageSize = New Size(55, 55)
+    End Sub
+
+    Private Sub Guna2Button1_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button1.MouseLeave
+        Guna2Button1.ImageSize = New Size(45, 45)
+    End Sub
+
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub TxtOr_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtOr.KeyPress
+    Private Sub TxtOr_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub TxtCtc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCtc.KeyPress
+    Private Sub TxtCtc_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If

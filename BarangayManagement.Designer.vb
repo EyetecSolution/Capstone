@@ -24,37 +24,34 @@ Partial Class BarangayManagement
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BarangayManagement))
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Btn1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
+        Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2VSeparator1 = New Guna.UI2.WinForms.Guna2VSeparator()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label = New System.Windows.Forms.Label()
-        Me.LblMission = New System.Windows.Forms.Label()
+        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.LblMissionn = New System.Windows.Forms.Label()
         Me.LblVision = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LblMisyon = New System.Windows.Forms.Label()
+        Me.LblPananaw = New System.Windows.Forms.Label()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
+        Me.Guna2Panel3.SuspendLayout()
+        Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Location = New System.Drawing.Point(-9, 2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(751, 41)
-        Me.Panel1.TabIndex = 21
         '
         'Btn1
         '
         Me.Btn1.Animated = True
-        Me.Btn1.BorderColor = System.Drawing.Color.White
         Me.Btn1.BorderRadius = 8
-        Me.Btn1.BorderThickness = 2
+        Me.Btn1.BorderThickness = 3
         Me.Btn1.CheckedState.Parent = Me.Btn1
         Me.Btn1.CustomBorderColor = System.Drawing.Color.White
         Me.Btn1.CustomImages.Parent = Me.Btn1
@@ -67,11 +64,11 @@ Partial Class BarangayManagement
         Me.Btn1.HoverState.Parent = Me.Btn1
         Me.Btn1.Image = CType(resources.GetObject("Btn1.Image"), System.Drawing.Image)
         Me.Btn1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Btn1.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Btn1.Location = New System.Drawing.Point(12, 74)
+        Me.Btn1.ImageSize = New System.Drawing.Size(35, 35)
+        Me.Btn1.Location = New System.Drawing.Point(16, 56)
         Me.Btn1.Name = "Btn1"
         Me.Btn1.ShadowDecoration.Parent = Me.Btn1
-        Me.Btn1.Size = New System.Drawing.Size(207, 68)
+        Me.Btn1.Size = New System.Drawing.Size(185, 68)
         Me.Btn1.TabIndex = 22
         Me.Btn1.Text = "SCHEDULE"
         Me.Btn1.TextOffset = New System.Drawing.Point(15, 0)
@@ -79,9 +76,8 @@ Partial Class BarangayManagement
         'Guna2Button2
         '
         Me.Guna2Button2.Animated = True
-        Me.Guna2Button2.BorderColor = System.Drawing.Color.White
         Me.Guna2Button2.BorderRadius = 8
-        Me.Guna2Button2.BorderThickness = 2
+        Me.Guna2Button2.BorderThickness = 3
         Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
         Me.Guna2Button2.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
@@ -94,11 +90,11 @@ Partial Class BarangayManagement
         Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
         Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
         Me.Guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button2.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Guna2Button2.Location = New System.Drawing.Point(12, 148)
+        Me.Guna2Button2.ImageSize = New System.Drawing.Size(35, 35)
+        Me.Guna2Button2.Location = New System.Drawing.Point(16, 160)
         Me.Guna2Button2.Name = "Guna2Button2"
         Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Size = New System.Drawing.Size(207, 68)
+        Me.Guna2Button2.Size = New System.Drawing.Size(185, 68)
         Me.Guna2Button2.TabIndex = 24
         Me.Guna2Button2.Text = "HEALTH                                MONITORING"
         Me.Guna2Button2.TextOffset = New System.Drawing.Point(15, 0)
@@ -106,9 +102,8 @@ Partial Class BarangayManagement
         'Guna2Button3
         '
         Me.Guna2Button3.Animated = True
-        Me.Guna2Button3.BorderColor = System.Drawing.Color.White
         Me.Guna2Button3.BorderRadius = 8
-        Me.Guna2Button3.BorderThickness = 2
+        Me.Guna2Button3.BorderThickness = 3
         Me.Guna2Button3.CheckedState.Parent = Me.Guna2Button3
         Me.Guna2Button3.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Button3.CustomImages.Parent = Me.Guna2Button3
@@ -121,11 +116,11 @@ Partial Class BarangayManagement
         Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
         Me.Guna2Button3.Image = CType(resources.GetObject("Guna2Button3.Image"), System.Drawing.Image)
         Me.Guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button3.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Guna2Button3.Location = New System.Drawing.Point(12, 222)
+        Me.Guna2Button3.ImageSize = New System.Drawing.Size(35, 35)
+        Me.Guna2Button3.Location = New System.Drawing.Point(16, 261)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
-        Me.Guna2Button3.Size = New System.Drawing.Size(207, 68)
+        Me.Guna2Button3.Size = New System.Drawing.Size(185, 68)
         Me.Guna2Button3.TabIndex = 25
         Me.Guna2Button3.Text = "TANOD REPORTS"
         Me.Guna2Button3.TextOffset = New System.Drawing.Point(15, 0)
@@ -134,12 +129,23 @@ Partial Class BarangayManagement
         '
         Me.NetResize1.ParentControl = Me
         '
+        'Guna2HtmlLabel12
+        '
+        Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Engravers MT", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel12.ForeColor = System.Drawing.Color.White
+        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(192, 6)
+        Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
+        Me.NetResize1.SetResizeFont(Me.Guna2HtmlLabel12, False)
+        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(573, 39)
+        Me.Guna2HtmlLabel12.TabIndex = 55
+        Me.Guna2HtmlLabel12.Text = "BARANGAY MANAGEMENT"
+        '
         'Guna2Button4
         '
         Me.Guna2Button4.Animated = True
-        Me.Guna2Button4.BorderColor = System.Drawing.Color.White
         Me.Guna2Button4.BorderRadius = 8
-        Me.Guna2Button4.BorderThickness = 2
+        Me.Guna2Button4.BorderThickness = 3
         Me.Guna2Button4.CheckedState.Parent = Me.Guna2Button4
         Me.Guna2Button4.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Button4.CustomImages.Parent = Me.Guna2Button4
@@ -152,11 +158,11 @@ Partial Class BarangayManagement
         Me.Guna2Button4.HoverState.Parent = Me.Guna2Button4
         Me.Guna2Button4.Image = CType(resources.GetObject("Guna2Button4.Image"), System.Drawing.Image)
         Me.Guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button4.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Guna2Button4.Location = New System.Drawing.Point(12, 296)
+        Me.Guna2Button4.ImageSize = New System.Drawing.Size(33, 33)
+        Me.Guna2Button4.Location = New System.Drawing.Point(16, 358)
         Me.Guna2Button4.Name = "Guna2Button4"
         Me.Guna2Button4.ShadowDecoration.Parent = Me.Guna2Button4
-        Me.Guna2Button4.Size = New System.Drawing.Size(207, 68)
+        Me.Guna2Button4.Size = New System.Drawing.Size(185, 68)
         Me.Guna2Button4.TabIndex = 26
         Me.Guna2Button4.Text = "PAYROLL                                HONORARIUM"
         Me.Guna2Button4.TextOffset = New System.Drawing.Point(15, 0)
@@ -165,17 +171,16 @@ Partial Class BarangayManagement
         '
         Me.Guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Guna2VSeparator1.FillThickness = 2
-        Me.Guna2VSeparator1.Location = New System.Drawing.Point(249, 61)
+        Me.Guna2VSeparator1.Location = New System.Drawing.Point(212, 56)
         Me.Guna2VSeparator1.Name = "Guna2VSeparator1"
-        Me.Guna2VSeparator1.Size = New System.Drawing.Size(10, 403)
+        Me.Guna2VSeparator1.Size = New System.Drawing.Size(10, 469)
         Me.Guna2VSeparator1.TabIndex = 27
         '
         'Guna2Button1
         '
         Me.Guna2Button1.Animated = True
-        Me.Guna2Button1.BorderColor = System.Drawing.Color.White
         Me.Guna2Button1.BorderRadius = 8
-        Me.Guna2Button1.BorderThickness = 2
+        Me.Guna2Button1.BorderThickness = 3
         Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
         Me.Guna2Button1.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
@@ -188,70 +193,136 @@ Partial Class BarangayManagement
         Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
         Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
         Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button1.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Guna2Button1.Location = New System.Drawing.Point(12, 370)
+        Me.Guna2Button1.ImageSize = New System.Drawing.Size(37, 37)
+        Me.Guna2Button1.Location = New System.Drawing.Point(16, 457)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Size = New System.Drawing.Size(207, 68)
+        Me.Guna2Button1.Size = New System.Drawing.Size(185, 68)
         Me.Guna2Button1.TabIndex = 23
         Me.Guna2Button1.Text = "ORGANIZATIONAL                      CHART"
         Me.Guna2Button1.TextOffset = New System.Drawing.Point(15, 0)
         '
-        'Panel2
+        'Guna2Panel3
         '
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Panel2.Controls.Add(Me.Label)
-        Me.Panel2.Controls.Add(Me.LblMission)
-        Me.Panel2.Controls.Add(Me.LblVision)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(265, 61)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(455, 403)
-        Me.Panel2.TabIndex = 28
+        Me.Guna2Panel3.BackColor = System.Drawing.Color.Maroon
+        Me.Guna2Panel3.BorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel3.BorderThickness = 5
+        Me.Guna2Panel3.Controls.Add(Me.Guna2HtmlLabel12)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel3.Name = "Guna2Panel3"
+        Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
+        Me.Guna2Panel3.Size = New System.Drawing.Size(733, 41)
+        Me.Guna2Panel3.TabIndex = 61
         '
-        'Label
+        'LblMissionn
         '
-        Me.Label.BackColor = System.Drawing.Color.Transparent
-        Me.Label.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label.Location = New System.Drawing.Point(180, 187)
-        Me.Label.Name = "Label"
-        Me.Label.Size = New System.Drawing.Size(115, 23)
-        Me.Label.TabIndex = 3
-        Me.Label.Text = "VISION"
-        Me.Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblMission
-        '
-        Me.LblMission.BackColor = System.Drawing.Color.Transparent
-        Me.LblMission.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblMission.Location = New System.Drawing.Point(24, 215)
-        Me.LblMission.Name = "LblMission"
-        Me.LblMission.Size = New System.Drawing.Size(408, 170)
-        Me.LblMission.TabIndex = 2
-        Me.LblMission.Text = "The vision of Barangay San Miguel"
-        Me.LblMission.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LblMissionn.BackColor = System.Drawing.Color.Transparent
+        Me.LblMissionn.Font = New System.Drawing.Font("Lucida Calligraphy", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblMissionn.Location = New System.Drawing.Point(30, 49)
+        Me.LblMissionn.Name = "LblMissionn"
+        Me.LblMissionn.Size = New System.Drawing.Size(452, 58)
+        Me.LblMissionn.TabIndex = 1
+        Me.LblMissionn.Text = "MISSION"
+        Me.LblMissionn.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'LblVision
         '
         Me.LblVision.BackColor = System.Drawing.Color.Transparent
-        Me.LblVision.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblVision.Location = New System.Drawing.Point(24, 39)
+        Me.LblVision.Font = New System.Drawing.Font("Lucida Calligraphy", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblVision.Location = New System.Drawing.Point(30, 243)
         Me.LblVision.Name = "LblVision"
-        Me.LblVision.Size = New System.Drawing.Size(408, 148)
-        Me.LblVision.TabIndex = 1
-        Me.LblVision.Text = "The vision of Barangay San Miguel"
+        Me.LblVision.Size = New System.Drawing.Size(452, 100)
+        Me.LblVision.TabIndex = 2
+        Me.LblVision.Text = "VISION"
         Me.LblVision.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Label1
+        'LblMisyon
         '
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(180, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(120, 23)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "MISSION"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LblMisyon.BackColor = System.Drawing.Color.Transparent
+        Me.LblMisyon.Font = New System.Drawing.Font("Lucida Calligraphy", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblMisyon.Location = New System.Drawing.Point(30, 144)
+        Me.LblMisyon.Name = "LblMisyon"
+        Me.LblMisyon.Size = New System.Drawing.Size(452, 69)
+        Me.LblMisyon.TabIndex = 4
+        Me.LblMisyon.Text = "MISYON"
+        Me.LblMisyon.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'LblPananaw
+        '
+        Me.LblPananaw.BackColor = System.Drawing.Color.Transparent
+        Me.LblPananaw.Font = New System.Drawing.Font("Lucida Calligraphy", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblPananaw.Location = New System.Drawing.Point(30, 372)
+        Me.LblPananaw.Name = "LblPananaw"
+        Me.LblPananaw.Size = New System.Drawing.Size(452, 111)
+        Me.LblPananaw.TabIndex = 5
+        Me.LblPananaw.Text = "PANANAW"
+        Me.LblPananaw.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.BackgroundImage = CType(resources.GetObject("Guna2Panel1.BackgroundImage"), System.Drawing.Image)
+        Me.Guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel4)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel3)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel2)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.Guna2Panel1.Controls.Add(Me.LblMissionn)
+        Me.Guna2Panel1.Controls.Add(Me.LblVision)
+        Me.Guna2Panel1.Controls.Add(Me.LblPananaw)
+        Me.Guna2Panel1.Controls.Add(Me.LblMisyon)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(219, 47)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
+        Me.Guna2Panel1.Size = New System.Drawing.Size(514, 495)
+        Me.Guna2Panel1.TabIndex = 62
+        '
+        'Guna2HtmlLabel4
+        '
+        Me.Guna2HtmlLabel4.AutoSize = False
+        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Engravers MT", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(62, 343)
+        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(399, 28)
+        Me.Guna2HtmlLabel4.TabIndex = 13
+        Me.Guna2HtmlLabel4.Text = "PANANAW"
+        Me.Guna2HtmlLabel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Guna2HtmlLabel3
+        '
+        Me.Guna2HtmlLabel3.AutoSize = False
+        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Engravers MT", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(62, 216)
+        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(399, 28)
+        Me.Guna2HtmlLabel3.TabIndex = 12
+        Me.Guna2HtmlLabel3.Text = "VISION"
+        Me.Guna2HtmlLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.AutoSize = False
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Engravers MT", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(62, 115)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(399, 28)
+        Me.Guna2HtmlLabel2.TabIndex = 11
+        Me.Guna2HtmlLabel2.Text = "MISYON"
+        Me.Guna2HtmlLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.AutoSize = False
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Engravers MT", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(62, 20)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(399, 28)
+        Me.Guna2HtmlLabel1.TabIndex = 10
+        Me.Guna2HtmlLabel1.Text = "MISSION"
+        Me.Guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BarangayManagement
         '
@@ -259,36 +330,42 @@ Partial Class BarangayManagement
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(732, 476)
-        Me.Controls.Add(Me.Panel2)
+        Me.ClientSize = New System.Drawing.Size(731, 543)
+        Me.Controls.Add(Me.Guna2Panel1)
+        Me.Controls.Add(Me.Guna2Panel3)
         Me.Controls.Add(Me.Guna2VSeparator1)
         Me.Controls.Add(Me.Guna2Button4)
         Me.Controls.Add(Me.Guna2Button3)
         Me.Controls.Add(Me.Guna2Button2)
         Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.Btn1)
-        Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BarangayManagement"
         Me.Text = "BarangayManagement"
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
+        Me.Guna2Panel3.ResumeLayout(False)
+        Me.Guna2Panel3.PerformLayout()
+        Me.Guna2Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Btn1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
     Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2VSeparator1 As Guna.UI2.WinForms.Guna2VSeparator
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2HtmlLabel12 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents LblMissionn As Label
     Friend WithEvents LblVision As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label As Label
-    Friend WithEvents LblMission As Label
+    Friend WithEvents LblPananaw As Label
+    Friend WithEvents LblMisyon As Label
+    Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class

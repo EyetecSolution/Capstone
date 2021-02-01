@@ -24,12 +24,17 @@ Partial Class Payment
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.PanelP = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.TxtName = New System.Windows.Forms.TextBox()
+        Me.TxtDate = New System.Windows.Forms.TextBox()
+        Me.TxtAmount = New System.Windows.Forms.TextBox()
+        Me.TxtChange = New System.Windows.Forms.TextBox()
+        Me.TxtCash = New System.Windows.Forms.TextBox()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
@@ -56,17 +61,13 @@ Partial Class Payment
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.BtnBack = New Guna.UI2.WinForms.Guna2Button()
         Me.BtnPayment = New Guna.UI2.WinForms.Guna2Button()
-        Me.TxtChange = New System.Windows.Forms.TextBox()
-        Me.TxtCash = New System.Windows.Forms.TextBox()
-        Me.TxtAmount = New System.Windows.Forms.TextBox()
-        Me.TxtDate = New System.Windows.Forms.TextBox()
-        Me.TxtName = New System.Windows.Forms.TextBox()
-        Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
+        Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Label5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.PanelP.SuspendLayout()
+        Me.Guna2Panel7.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
@@ -74,32 +75,24 @@ Partial Class Payment
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel10.SuspendLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2HtmlLabel1
         '
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(32, 34)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(42, 12)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(80, 18)
         Me.Guna2HtmlLabel1.TabIndex = 12
         Me.Guna2HtmlLabel1.Text = "FULL NAME :"
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Location = New System.Drawing.Point(-82, -1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(730, 32)
-        Me.Panel1.TabIndex = 26
-        '
         'Guna2HtmlLabel3
         '
         Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(431, 34)
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(441, 12)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
         Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(39, 18)
         Me.Guna2HtmlLabel3.TabIndex = 28
@@ -109,7 +102,7 @@ Partial Class Payment
         '
         Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(32, 87)
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(41, 66)
         Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
         Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(111, 18)
         Me.Guna2HtmlLabel4.TabIndex = 29
@@ -119,7 +112,7 @@ Partial Class Payment
         '
         Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(228, 87)
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(237, 66)
         Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
         Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(43, 18)
         Me.Guna2HtmlLabel5.TabIndex = 30
@@ -129,7 +122,7 @@ Partial Class Payment
         '
         Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(431, 87)
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(441, 66)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
         Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(64, 18)
         Me.Guna2HtmlLabel6.TabIndex = 31
@@ -137,31 +130,89 @@ Partial Class Payment
         '
         'PanelP
         '
-        Me.PanelP.BorderColor = System.Drawing.Color.Gray
+        Me.PanelP.BorderColor = System.Drawing.Color.Black
         Me.PanelP.BorderThickness = 5
+        Me.PanelP.Controls.Add(Me.Guna2Panel7)
         Me.PanelP.Controls.Add(Me.Guna2Panel5)
         Me.PanelP.Controls.Add(Me.Guna2Panel4)
         Me.PanelP.Controls.Add(Me.Guna2Panel1)
         Me.PanelP.Controls.Add(Me.Guna2Panel3)
         Me.PanelP.Controls.Add(Me.Guna2Panel2)
         Me.PanelP.Controls.Add(Me.Guna2Panel10)
-        Me.PanelP.Controls.Add(Me.BtnBack)
         Me.PanelP.Controls.Add(Me.BtnPayment)
-        Me.PanelP.Controls.Add(Me.TxtChange)
-        Me.PanelP.Controls.Add(Me.TxtCash)
-        Me.PanelP.Controls.Add(Me.TxtAmount)
-        Me.PanelP.Controls.Add(Me.TxtDate)
-        Me.PanelP.Controls.Add(Me.TxtName)
-        Me.PanelP.Controls.Add(Me.Guna2HtmlLabel4)
-        Me.PanelP.Controls.Add(Me.Guna2HtmlLabel6)
-        Me.PanelP.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.PanelP.Controls.Add(Me.Guna2HtmlLabel5)
-        Me.PanelP.Controls.Add(Me.Guna2HtmlLabel3)
         Me.PanelP.Location = New System.Drawing.Point(12, 53)
         Me.PanelP.Name = "PanelP"
         Me.PanelP.ShadowDecoration.Parent = Me.PanelP
-        Me.PanelP.Size = New System.Drawing.Size(614, 466)
+        Me.PanelP.Size = New System.Drawing.Size(707, 466)
         Me.PanelP.TabIndex = 32
+        '
+        'Guna2Panel7
+        '
+        Me.Guna2Panel7.BorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel7.BorderThickness = 2
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel3)
+        Me.Guna2Panel7.Controls.Add(Me.TxtName)
+        Me.Guna2Panel7.Controls.Add(Me.TxtDate)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel5)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel6)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel4)
+        Me.Guna2Panel7.Controls.Add(Me.TxtAmount)
+        Me.Guna2Panel7.Controls.Add(Me.TxtChange)
+        Me.Guna2Panel7.Controls.Add(Me.TxtCash)
+        Me.Guna2Panel7.Location = New System.Drawing.Point(34, 26)
+        Me.Guna2Panel7.Name = "Guna2Panel7"
+        Me.Guna2Panel7.ShadowDecoration.Parent = Me.Guna2Panel7
+        Me.Guna2Panel7.Size = New System.Drawing.Size(640, 118)
+        Me.Guna2Panel7.TabIndex = 65
+        '
+        'TxtName
+        '
+        Me.TxtName.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtName.Location = New System.Drawing.Point(42, 29)
+        Me.TxtName.Name = "TxtName"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtName, False)
+        Me.TxtName.Size = New System.Drawing.Size(348, 27)
+        Me.TxtName.TabIndex = 48
+        '
+        'TxtDate
+        '
+        Me.TxtDate.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtDate.Location = New System.Drawing.Point(441, 29)
+        Me.TxtDate.Name = "TxtDate"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtDate, False)
+        Me.TxtDate.Size = New System.Drawing.Size(152, 27)
+        Me.TxtDate.TabIndex = 50
+        '
+        'TxtAmount
+        '
+        Me.TxtAmount.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtAmount.Location = New System.Drawing.Point(41, 81)
+        Me.TxtAmount.Name = "TxtAmount"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtAmount, False)
+        Me.TxtAmount.Size = New System.Drawing.Size(152, 27)
+        Me.TxtAmount.TabIndex = 51
+        Me.TxtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtChange
+        '
+        Me.TxtChange.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtChange.Location = New System.Drawing.Point(441, 81)
+        Me.TxtChange.Name = "TxtChange"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtChange, False)
+        Me.TxtChange.Size = New System.Drawing.Size(152, 27)
+        Me.TxtChange.TabIndex = 53
+        Me.TxtChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtCash
+        '
+        Me.TxtCash.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCash.Location = New System.Drawing.Point(237, 81)
+        Me.TxtCash.Name = "TxtCash"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtCash, False)
+        Me.TxtCash.Size = New System.Drawing.Size(152, 27)
+        Me.TxtCash.TabIndex = 52
+        Me.TxtCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Guna2Panel5
         '
@@ -170,7 +221,7 @@ Partial Class Payment
         Me.Guna2Panel5.BorderColor = System.Drawing.Color.Black
         Me.Guna2Panel5.BorderThickness = 2
         Me.Guna2Panel5.Controls.Add(Me.TextBox9)
-        Me.Guna2Panel5.Location = New System.Drawing.Point(409, 377)
+        Me.Guna2Panel5.Location = New System.Drawing.Point(497, 379)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.Padding = New System.Windows.Forms.Padding(3)
         Me.Guna2Panel5.ShadowDecoration.Parent = Me.Guna2Panel5
@@ -180,12 +231,12 @@ Partial Class Payment
         'TextBox9
         '
         Me.TextBox9.BackColor = System.Drawing.Color.White
-        Me.TextBox9.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TextBox9.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox9.Location = New System.Drawing.Point(3, 3)
         Me.TextBox9.Name = "TextBox9"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox9, False)
-        Me.TextBox9.Size = New System.Drawing.Size(170, 26)
+        Me.TextBox9.Size = New System.Drawing.Size(170, 27)
         Me.TextBox9.TabIndex = 61
         Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -195,10 +246,10 @@ Partial Class Payment
         Me.Guna2Panel4.BorderColor = System.Drawing.Color.Black
         Me.Guna2Panel4.BorderThickness = 2
         Me.Guna2Panel4.Controls.Add(Me.Guna2HtmlLabel8)
-        Me.Guna2Panel4.Location = New System.Drawing.Point(33, 377)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(35, 379)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
-        Me.Guna2Panel4.Size = New System.Drawing.Size(376, 31)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(456, 31)
         Me.Guna2Panel4.TabIndex = 63
         '
         'Guna2HtmlLabel8
@@ -208,7 +259,7 @@ Partial Class Payment
         Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(3, 5)
         Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(369, 21)
+        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(451, 21)
         Me.Guna2HtmlLabel8.TabIndex = 13
         Me.Guna2HtmlLabel8.Text = "TOTAL"
         Me.Guna2HtmlLabel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -227,7 +278,7 @@ Partial Class Payment
         Me.Guna2Panel1.Controls.Add(Me.TextBox2)
         Me.Guna2Panel1.Controls.Add(Me.TextBox1)
         Me.Guna2Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Panel1.Location = New System.Drawing.Point(410, 177)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(498, 179)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
@@ -318,7 +369,7 @@ Partial Class Payment
         Me.TextBox1.Location = New System.Drawing.Point(2, 4)
         Me.TextBox1.Name = "TextBox1"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox1, False)
-        Me.TextBox1.Size = New System.Drawing.Size(172, 23)
+        Me.TextBox1.Size = New System.Drawing.Size(173, 23)
         Me.TextBox1.TabIndex = 53
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -328,7 +379,7 @@ Partial Class Payment
         Me.Guna2Panel3.BorderColor = System.Drawing.Color.Black
         Me.Guna2Panel3.BorderThickness = 2
         Me.Guna2Panel3.Controls.Add(Me.Guna2HtmlLabel7)
-        Me.Guna2Panel3.Location = New System.Drawing.Point(410, 148)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(498, 150)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
         Me.Guna2Panel3.Size = New System.Drawing.Size(176, 31)
@@ -341,7 +392,7 @@ Partial Class Payment
         Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(5, 5)
         Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
-        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(167, 21)
+        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(170, 21)
         Me.Guna2HtmlLabel7.TabIndex = 14
         Me.Guna2HtmlLabel7.Text = "PRICE"
         Me.Guna2HtmlLabel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -352,10 +403,10 @@ Partial Class Payment
         Me.Guna2Panel2.BorderColor = System.Drawing.Color.Black
         Me.Guna2Panel2.BorderThickness = 2
         Me.Guna2Panel2.Controls.Add(Me.Guna2HtmlLabel2)
-        Me.Guna2Panel2.Location = New System.Drawing.Point(32, 148)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(34, 150)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(376, 31)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(457, 31)
         Me.Guna2Panel2.TabIndex = 61
         '
         'Guna2HtmlLabel2
@@ -365,7 +416,7 @@ Partial Class Payment
         Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(3, 5)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(369, 21)
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(452, 21)
         Me.Guna2HtmlLabel2.TabIndex = 13
         Me.Guna2HtmlLabel2.Text = "NATURE OF COLLECTION"
         Me.Guna2HtmlLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -383,11 +434,11 @@ Partial Class Payment
         Me.Guna2Panel10.Controls.Add(Me.TextBox12)
         Me.Guna2Panel10.Controls.Add(Me.TextBox11)
         Me.Guna2Panel10.Controls.Add(Me.TextBox10)
-        Me.Guna2Panel10.Location = New System.Drawing.Point(32, 177)
+        Me.Guna2Panel10.Location = New System.Drawing.Point(34, 179)
         Me.Guna2Panel10.Name = "Guna2Panel10"
         Me.Guna2Panel10.Padding = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel10.ShadowDecoration.Parent = Me.Guna2Panel10
-        Me.Guna2Panel10.Size = New System.Drawing.Size(376, 199)
+        Me.Guna2Panel10.Size = New System.Drawing.Size(457, 199)
         Me.Guna2Panel10.TabIndex = 59
         '
         'TextBox17
@@ -397,7 +448,7 @@ Partial Class Payment
         Me.TextBox17.Location = New System.Drawing.Point(2, 173)
         Me.TextBox17.Name = "TextBox17"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox17, False)
-        Me.TextBox17.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox17.Size = New System.Drawing.Size(453, 23)
         Me.TextBox17.TabIndex = 61
         Me.TextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -408,7 +459,7 @@ Partial Class Payment
         Me.TextBox16.Location = New System.Drawing.Point(2, 149)
         Me.TextBox16.Name = "TextBox16"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox16, False)
-        Me.TextBox16.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox16.Size = New System.Drawing.Size(453, 23)
         Me.TextBox16.TabIndex = 60
         Me.TextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -419,7 +470,7 @@ Partial Class Payment
         Me.TextBox15.Location = New System.Drawing.Point(2, 125)
         Me.TextBox15.Name = "TextBox15"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox15, False)
-        Me.TextBox15.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox15.Size = New System.Drawing.Size(453, 23)
         Me.TextBox15.TabIndex = 59
         Me.TextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -430,7 +481,7 @@ Partial Class Payment
         Me.TextBox14.Location = New System.Drawing.Point(2, 101)
         Me.TextBox14.Name = "TextBox14"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox14, False)
-        Me.TextBox14.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox14.Size = New System.Drawing.Size(453, 23)
         Me.TextBox14.TabIndex = 58
         Me.TextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -441,7 +492,7 @@ Partial Class Payment
         Me.TextBox13.Location = New System.Drawing.Point(2, 77)
         Me.TextBox13.Name = "TextBox13"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox13, False)
-        Me.TextBox13.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox13.Size = New System.Drawing.Size(453, 23)
         Me.TextBox13.TabIndex = 57
         Me.TextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -452,7 +503,7 @@ Partial Class Payment
         Me.TextBox12.Location = New System.Drawing.Point(2, 53)
         Me.TextBox12.Name = "TextBox12"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox12, False)
-        Me.TextBox12.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox12.Size = New System.Drawing.Size(453, 23)
         Me.TextBox12.TabIndex = 56
         Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -463,7 +514,7 @@ Partial Class Payment
         Me.TextBox11.Location = New System.Drawing.Point(2, 29)
         Me.TextBox11.Name = "TextBox11"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox11, False)
-        Me.TextBox11.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox11.Size = New System.Drawing.Size(453, 23)
         Me.TextBox11.TabIndex = 55
         Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -477,124 +528,50 @@ Partial Class Payment
         Me.TextBox10.Location = New System.Drawing.Point(2, 5)
         Me.TextBox10.Name = "TextBox10"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox10, False)
-        Me.TextBox10.Size = New System.Drawing.Size(372, 23)
+        Me.TextBox10.Size = New System.Drawing.Size(453, 23)
         Me.TextBox10.TabIndex = 54
         Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'BtnBack
-        '
-        Me.BtnBack.Animated = True
-        Me.BtnBack.BackColor = System.Drawing.Color.Transparent
-        Me.BtnBack.BorderColor = System.Drawing.Color.White
-        Me.BtnBack.BorderRadius = 5
-        Me.BtnBack.BorderThickness = 1
-        Me.BtnBack.CheckedState.Parent = Me.BtnBack
-        Me.BtnBack.CustomImages.Parent = Me.BtnBack
-        Me.BtnBack.FillColor = System.Drawing.Color.Maroon
-        Me.BtnBack.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBack.ForeColor = System.Drawing.Color.White
-        Me.BtnBack.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnBack.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.BtnBack.HoverState.Parent = Me.BtnBack
-        Me.BtnBack.Location = New System.Drawing.Point(383, 418)
-        Me.BtnBack.Name = "BtnBack"
-        Me.BtnBack.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.BtnBack.ShadowDecoration.Enabled = True
-        Me.BtnBack.ShadowDecoration.Parent = Me.BtnBack
-        Me.BtnBack.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.BtnBack.Size = New System.Drawing.Size(94, 25)
-        Me.BtnBack.TabIndex = 55
-        Me.BtnBack.Text = "BACK"
         '
         'BtnPayment
         '
         Me.BtnPayment.Animated = True
         Me.BtnPayment.BackColor = System.Drawing.Color.Transparent
-        Me.BtnPayment.BorderColor = System.Drawing.Color.White
         Me.BtnPayment.BorderRadius = 5
-        Me.BtnPayment.BorderThickness = 1
+        Me.BtnPayment.BorderThickness = 2
         Me.BtnPayment.CheckedState.Parent = Me.BtnPayment
         Me.BtnPayment.CustomImages.Parent = Me.BtnPayment
         Me.BtnPayment.FillColor = System.Drawing.Color.Maroon
         Me.BtnPayment.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnPayment.ForeColor = System.Drawing.Color.White
+        Me.BtnPayment.HoverState.BorderColor = System.Drawing.Color.Black
         Me.BtnPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnPayment.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.BtnPayment.HoverState.ForeColor = System.Drawing.Color.Black
         Me.BtnPayment.HoverState.Parent = Me.BtnPayment
-        Me.BtnPayment.Location = New System.Drawing.Point(483, 418)
+        Me.BtnPayment.Location = New System.Drawing.Point(527, 422)
         Me.BtnPayment.Name = "BtnPayment"
         Me.BtnPayment.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.BtnPayment.ShadowDecoration.Enabled = True
         Me.BtnPayment.ShadowDecoration.Parent = Me.BtnPayment
         Me.BtnPayment.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.BtnPayment.Size = New System.Drawing.Size(103, 25)
+        Me.BtnPayment.Size = New System.Drawing.Size(149, 27)
         Me.BtnPayment.TabIndex = 54
         Me.BtnPayment.Text = "PROCEED"
-        '
-        'TxtChange
-        '
-        Me.TxtChange.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtChange.Location = New System.Drawing.Point(431, 104)
-        Me.TxtChange.Name = "TxtChange"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtChange, False)
-        Me.TxtChange.Size = New System.Drawing.Size(152, 27)
-        Me.TxtChange.TabIndex = 53
-        Me.TxtChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtCash
-        '
-        Me.TxtCash.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCash.Location = New System.Drawing.Point(228, 106)
-        Me.TxtCash.Name = "TxtCash"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtCash, False)
-        Me.TxtCash.Size = New System.Drawing.Size(152, 27)
-        Me.TxtCash.TabIndex = 52
-        Me.TxtCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtAmount
-        '
-        Me.TxtAmount.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAmount.Location = New System.Drawing.Point(32, 106)
-        Me.TxtAmount.Name = "TxtAmount"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtAmount, False)
-        Me.TxtAmount.Size = New System.Drawing.Size(152, 27)
-        Me.TxtAmount.TabIndex = 51
-        Me.TxtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtDate
-        '
-        Me.TxtDate.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDate.Location = New System.Drawing.Point(431, 55)
-        Me.TxtDate.Name = "TxtDate"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtDate, False)
-        Me.TxtDate.Size = New System.Drawing.Size(151, 27)
-        Me.TxtDate.TabIndex = 50
-        '
-        'TxtName
-        '
-        Me.TxtName.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtName.Location = New System.Drawing.Point(32, 55)
-        Me.TxtName.Name = "TxtName"
-        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtName, False)
-        Me.TxtName.Size = New System.Drawing.Size(348, 27)
-        Me.TxtName.TabIndex = 48
-        '
-        'LblTitle
-        '
-        Me.LblTitle.BackColor = System.Drawing.SystemColors.Control
-        Me.LblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblTitle.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTitle.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.LblTitle.Location = New System.Drawing.Point(44, 39)
-        Me.LblTitle.Name = "LblTitle"
-        Me.LblTitle.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.LblTitle.Size = New System.Drawing.Size(136, 36)
-        Me.LblTitle.TabIndex = 32
-        Me.LblTitle.Text = "PAYMENT"
         '
         'NetResize1
         '
         Me.NetResize1.ParentControl = Me
+        '
+        'Guna2HtmlLabel12
+        '
+        Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Engravers MT", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel12.ForeColor = System.Drawing.Color.White
+        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(308, 6)
+        Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
+        Me.NetResize1.SetResizeFont(Me.Guna2HtmlLabel12, False)
+        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(218, 39)
+        Me.Guna2HtmlLabel12.TabIndex = 55
+        Me.Guna2HtmlLabel12.Text = "PAYMENT"
         '
         'Label5
         '
@@ -608,19 +585,31 @@ Partial Class Payment
         Me.Label5.Text = Nothing
         Me.Label5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Guna2Panel6
+        '
+        Me.Guna2Panel6.BackColor = System.Drawing.Color.Maroon
+        Me.Guna2Panel6.BorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel6.BorderThickness = 5
+        Me.Guna2Panel6.Controls.Add(Me.Guna2HtmlLabel12)
+        Me.Guna2Panel6.Location = New System.Drawing.Point(-1, 0)
+        Me.Guna2Panel6.Name = "Guna2Panel6"
+        Me.Guna2Panel6.ShadowDecoration.Parent = Me.Guna2Panel6
+        Me.Guna2Panel6.Size = New System.Drawing.Size(733, 41)
+        Me.Guna2Panel6.TabIndex = 60
+        '
         'Payment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(637, 531)
-        Me.Controls.Add(Me.LblTitle)
+        Me.ClientSize = New System.Drawing.Size(731, 532)
+        Me.Controls.Add(Me.Guna2Panel6)
         Me.Controls.Add(Me.PanelP)
-        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Payment"
         Me.Text = "Payment"
         Me.PanelP.ResumeLayout(False)
-        Me.PanelP.PerformLayout()
+        Me.Guna2Panel7.ResumeLayout(False)
+        Me.Guna2Panel7.PerformLayout()
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel5.PerformLayout()
         Me.Guna2Panel4.ResumeLayout(False)
@@ -631,19 +620,18 @@ Partial Class Payment
         Me.Guna2Panel10.ResumeLayout(False)
         Me.Guna2Panel10.PerformLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel6.ResumeLayout(False)
+        Me.Guna2Panel6.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents PanelP As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents LblTitle As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents TxtChange As TextBox
     Friend WithEvents TxtCash As TextBox
     Friend WithEvents TxtAmount As TextBox
@@ -651,7 +639,6 @@ Partial Class Payment
     Friend WithEvents TxtName As TextBox
     Friend WithEvents NetResize1 As Softgroup.NetResize.NetResize
     Friend WithEvents BtnPayment As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents BtnBack As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
@@ -680,4 +667,7 @@ Partial Class Payment
     Friend WithEvents TextBox11 As TextBox
     Friend WithEvents TextBox10 As TextBox
     Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2HtmlLabel12 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
 End Class

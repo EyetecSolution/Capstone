@@ -23,11 +23,11 @@ Partial Class HomeContent
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ContextButton1 As DevExpress.Utils.ContextButton = New DevExpress.Utils.ContextButton()
+        Dim ContextButton4 As DevExpress.Utils.ContextButton = New DevExpress.Utils.ContextButton()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HomeContent))
-        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip4 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem4 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem4 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.ImageSlider1 = New DevExpress.XtraEditors.Controls.ImageSlider()
@@ -98,26 +98,26 @@ Partial Class HomeContent
         Me.ImageSlider1.AllowLooping = True
         Me.ImageSlider1.AutoSlide = DevExpress.XtraEditors.Controls.AutoSlide.Forward
         Me.ImageSlider1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        ContextButton1.AnimationType = DevExpress.Utils.ContextAnimationType.OpacityAnimation
-        ContextButton1.AppearanceHover.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        ContextButton1.AppearanceHover.Options.UseImage = True
-        ContextButton1.AppearanceNormal.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        ContextButton1.AppearanceNormal.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        ContextButton1.AppearanceNormal.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ContextButton1.AppearanceNormal.Options.UseBackColor = True
-        ContextButton1.AppearanceNormal.Options.UseFont = True
-        ContextButton1.Id = New System.Guid("51bf049b-76be-4ca8-8bfc-51f71371b2c7")
-        ContextButton1.ImageOptions.HoverImage = CType(resources.GetObject("resource.HoverImage"), System.Drawing.Image)
-        ContextButton1.ImageOptions.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
-        ContextButton1.Name = "AddPhotos"
-        ToolTipTitleItem1.Text = "Add Photos"
-        ToolTipItem1.ImageOptions.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
-        ToolTipItem1.LeftIndent = 6
-        ToolTipItem1.Text = "Select folder to load photos in your slider"
-        SuperToolTip1.Items.Add(ToolTipTitleItem1)
-        SuperToolTip1.Items.Add(ToolTipItem1)
-        ContextButton1.SuperTip = SuperToolTip1
-        Me.ImageSlider1.ContextButtons.Add(ContextButton1)
+        ContextButton4.AnimationType = DevExpress.Utils.ContextAnimationType.OpacityAnimation
+        ContextButton4.AppearanceHover.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        ContextButton4.AppearanceHover.Options.UseImage = True
+        ContextButton4.AppearanceNormal.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        ContextButton4.AppearanceNormal.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        ContextButton4.AppearanceNormal.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ContextButton4.AppearanceNormal.Options.UseBackColor = True
+        ContextButton4.AppearanceNormal.Options.UseFont = True
+        ContextButton4.Id = New System.Guid("51bf049b-76be-4ca8-8bfc-51f71371b2c7")
+        ContextButton4.ImageOptions.HoverImage = CType(resources.GetObject("resource.HoverImage"), System.Drawing.Image)
+        ContextButton4.ImageOptions.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        ContextButton4.Name = "AddPhotos"
+        ToolTipTitleItem4.Text = "Add Photos"
+        ToolTipItem4.ImageOptions.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
+        ToolTipItem4.LeftIndent = 6
+        ToolTipItem4.Text = "Select folder to load photos in your slider"
+        SuperToolTip4.Items.Add(ToolTipTitleItem4)
+        SuperToolTip4.Items.Add(ToolTipItem4)
+        ContextButton4.SuperTip = SuperToolTip4
+        Me.ImageSlider1.ContextButtons.Add(ContextButton4)
         Me.ImageSlider1.CurrentImageIndex = 0
         Me.ImageSlider1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ImageSlider1.Images.Add(CType(resources.GetObject("ImageSlider1.Images"), System.Drawing.Image))
@@ -130,8 +130,10 @@ Partial Class HomeContent
         'PanelSlide
         '
         Me.PanelSlide.BackColor = System.Drawing.Color.White
+        Me.PanelSlide.BorderColor = System.Drawing.Color.Black
         Me.PanelSlide.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash
         Me.PanelSlide.Controls.Add(Me.ImageSlider1)
+        Me.PanelSlide.CustomBorderColor = System.Drawing.Color.Black
         Me.PanelSlide.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSlide.Location = New System.Drawing.Point(0, 0)
         Me.PanelSlide.Name = "PanelSlide"
@@ -174,6 +176,7 @@ Partial Class HomeContent
         '
         Me.Guna2Panel2.BackColor = System.Drawing.Color.Maroon
         Me.Guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Guna2Panel2.BorderColor = System.Drawing.Color.Black
         Me.Guna2Panel2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash
         Me.Guna2Panel2.Controls.Add(Me.Guna2Panel8)
         Me.Guna2Panel2.Controls.Add(Me.Guna2Panel3)
@@ -182,6 +185,7 @@ Partial Class HomeContent
         Me.Guna2Panel2.Controls.Add(Me.Guna2Panel6)
         Me.Guna2Panel2.Controls.Add(Me.Guna2Panel1)
         Me.Guna2Panel2.Controls.Add(Me.Guna2HtmlLabel2)
+        Me.Guna2Panel2.CustomBorderColor = System.Drawing.Color.Black
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel2.Location = New System.Drawing.Point(1, 1)
         Me.Guna2Panel2.Name = "Guna2Panel2"

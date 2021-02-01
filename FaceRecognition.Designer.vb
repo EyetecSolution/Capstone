@@ -37,7 +37,6 @@ Partial Class FaceRecognition
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.imageBoxFrameGrabber = New Emgu.CV.UI.ImageBox()
         Me.ImageBox3 = New Emgu.CV.UI.ImageBox()
         Me.button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -53,24 +52,27 @@ Partial Class FaceRecognition
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.NetResize1 = New Softgroup.NetResize.NetResize(Me.components)
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.LblTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.imageBoxFrameGrabber = New Emgu.CV.UI.ImageBox()
         CType(Me.ImageBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ImageBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.imageBoxFrameGrabber, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ImageBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel3.SuspendLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
+        Me.Guna2Panel1.SuspendLayout()
+        CType(Me.imageBoxFrameGrabber, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ImageBox1
@@ -113,6 +115,7 @@ Partial Class FaceRecognition
         Me.TxtName.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtName.Location = New System.Drawing.Point(6, 154)
         Me.TxtName.Name = "TxtName"
+        Me.NetResize1.SetResizeTextBoxMultiline(Me.TxtName, False)
         Me.TxtName.Size = New System.Drawing.Size(290, 23)
         Me.TxtName.TabIndex = 77
         Me.TxtName.Text = "UNKNOWN"
@@ -251,21 +254,12 @@ Partial Class FaceRecognition
         Me.Panel1.Size = New System.Drawing.Size(648, 31)
         Me.Panel1.TabIndex = 29
         '
-        'imageBoxFrameGrabber
-        '
-        Me.imageBoxFrameGrabber.Location = New System.Drawing.Point(14, 3)
-        Me.imageBoxFrameGrabber.Name = "imageBoxFrameGrabber"
-        Me.imageBoxFrameGrabber.Size = New System.Drawing.Size(245, 216)
-        Me.imageBoxFrameGrabber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imageBoxFrameGrabber.TabIndex = 2
-        Me.imageBoxFrameGrabber.TabStop = False
-        '
         'ImageBox3
         '
-        Me.ImageBox3.Location = New System.Drawing.Point(3, 4)
+        Me.ImageBox3.Location = New System.Drawing.Point(3, 3)
         Me.ImageBox3.Name = "ImageBox3"
-        Me.ImageBox3.Size = New System.Drawing.Size(192, 126)
-        Me.ImageBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ImageBox3.Size = New System.Drawing.Size(192, 125)
+        Me.ImageBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ImageBox3.TabIndex = 31
         Me.ImageBox3.TabStop = False
         '
@@ -280,8 +274,9 @@ Partial Class FaceRecognition
         Me.button1.FillColor = System.Drawing.Color.Maroon
         Me.button1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.button1.ForeColor = System.Drawing.Color.White
+        Me.button1.HoverState.BorderColor = System.Drawing.Color.Black
         Me.button1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.button1.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.button1.HoverState.ForeColor = System.Drawing.Color.Black
         Me.button1.HoverState.Parent = Me.button1
         Me.button1.Location = New System.Drawing.Point(314, 25)
         Me.button1.Name = "button1"
@@ -297,7 +292,7 @@ Partial Class FaceRecognition
         '
         Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(12, 172)
+        Me.TextBox1.Location = New System.Drawing.Point(12, 192)
         Me.TextBox1.Name = "TextBox1"
         Me.NetResize1.SetResizeTextBoxMultiline(Me.TextBox1, False)
         Me.TextBox1.Size = New System.Drawing.Size(279, 23)
@@ -307,7 +302,7 @@ Partial Class FaceRecognition
         '
         Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(12, 156)
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(12, 176)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
         Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(80, 18)
         Me.Guna2HtmlLabel6.TabIndex = 93
@@ -324,8 +319,9 @@ Partial Class FaceRecognition
         Me.btnTimeOut.FillColor = System.Drawing.Color.Maroon
         Me.btnTimeOut.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTimeOut.ForeColor = System.Drawing.Color.White
+        Me.btnTimeOut.HoverState.BorderColor = System.Drawing.Color.Black
         Me.btnTimeOut.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnTimeOut.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.btnTimeOut.HoverState.ForeColor = System.Drawing.Color.Black
         Me.btnTimeOut.HoverState.Parent = Me.btnTimeOut
         Me.btnTimeOut.Location = New System.Drawing.Point(458, 65)
         Me.btnTimeOut.Name = "btnTimeOut"
@@ -348,8 +344,9 @@ Partial Class FaceRecognition
         Me.btnTimeIN.FillColor = System.Drawing.Color.Maroon
         Me.btnTimeIN.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTimeIN.ForeColor = System.Drawing.Color.White
+        Me.btnTimeIN.HoverState.BorderColor = System.Drawing.Color.Black
         Me.btnTimeIN.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnTimeIN.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.btnTimeIN.HoverState.ForeColor = System.Drawing.Color.Black
         Me.btnTimeIN.HoverState.Parent = Me.btnTimeIN
         Me.btnTimeIN.Location = New System.Drawing.Point(314, 65)
         Me.btnTimeIN.Name = "btnTimeIN"
@@ -373,10 +370,11 @@ Partial Class FaceRecognition
         Me.button2.FillColor = System.Drawing.Color.Maroon
         Me.button2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.button2.ForeColor = System.Drawing.Color.White
+        Me.button2.HoverState.BorderColor = System.Drawing.Color.Black
         Me.button2.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.button2.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.button2.HoverState.ForeColor = System.Drawing.Color.Black
         Me.button2.HoverState.Parent = Me.button2
-        Me.button2.Location = New System.Drawing.Point(12, 201)
+        Me.button2.Location = New System.Drawing.Point(12, 221)
         Me.button2.Name = "button2"
         Me.button2.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.button2.ShadowDecoration.Enabled = True
@@ -391,7 +389,7 @@ Partial Class FaceRecognition
         Me.label3.BackColor = System.Drawing.Color.Transparent
         Me.label3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label3.ForeColor = System.Drawing.Color.Red
-        Me.label3.Location = New System.Drawing.Point(202, 74)
+        Me.label3.Location = New System.Drawing.Point(72, 80)
         Me.label3.Name = "label3"
         Me.label3.Size = New System.Drawing.Size(12, 21)
         Me.label3.TabIndex = 15
@@ -401,7 +399,7 @@ Partial Class FaceRecognition
         '
         Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(22, 76)
+        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(22, 65)
         Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
         Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(176, 18)
         Me.Guna2HtmlLabel9.TabIndex = 14
@@ -412,7 +410,7 @@ Partial Class FaceRecognition
         Me.label4.BackColor = System.Drawing.Color.Transparent
         Me.label4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label4.ForeColor = System.Drawing.Color.Navy
-        Me.label4.Location = New System.Drawing.Point(22, 49)
+        Me.label4.Location = New System.Drawing.Point(22, 38)
         Me.label4.Name = "label4"
         Me.label4.Size = New System.Drawing.Size(101, 21)
         Me.label4.TabIndex = 13
@@ -437,20 +435,20 @@ Partial Class FaceRecognition
         Me.Guna2Panel3.BorderColor = System.Drawing.Color.Black
         Me.Guna2Panel3.BorderThickness = 5
         Me.Guna2Panel3.Controls.Add(Me.Guna2HtmlLabel8)
-        Me.Guna2Panel3.Location = New System.Drawing.Point(1, 0)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(-1, 0)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
-        Me.Guna2Panel3.Size = New System.Drawing.Size(640, 41)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(643, 41)
         Me.Guna2Panel3.TabIndex = 57
         '
         'Guna2HtmlLabel8
         '
         Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Elephant", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Engravers MT", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel8.ForeColor = System.Drawing.Color.White
-        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(206, 8)
+        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(236, 8)
         Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(378, 40)
+        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(439, 39)
         Me.Guna2HtmlLabel8.TabIndex = 55
         Me.Guna2HtmlLabel8.Text = "FACE RECOGNITION"
         '
@@ -458,29 +456,67 @@ Partial Class FaceRecognition
         '
         Me.NetResize1.ParentControl = Me
         '
-        'Guna2Panel1
+        'LblTitle
         '
-        Me.Guna2Panel1.BorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel1.BorderThickness = 4
-        Me.Guna2Panel1.Controls.Add(Me.imageBoxFrameGrabber)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(12, 55)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(274, 222)
-        Me.Guna2Panel1.TabIndex = 58
+        Me.LblTitle.BackColor = System.Drawing.Color.Transparent
+        Me.LblTitle.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTitle.ForeColor = System.Drawing.Color.DimGray
+        Me.LblTitle.Location = New System.Drawing.Point(332, 54)
+        Me.LblTitle.Name = "LblTitle"
+        Me.NetResize1.SetResizeFont(Me.LblTitle, False)
+        Me.LblTitle.Size = New System.Drawing.Size(72, 25)
+        Me.LblTitle.TabIndex = 98
+        Me.LblTitle.Text = "Register"
+        '
+        'Guna2HtmlLabel10
+        '
+        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel10.ForeColor = System.Drawing.Color.DimGray
+        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(33, 339)
+        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
+        Me.NetResize1.SetResizeFont(Me.Guna2HtmlLabel10, False)
+        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(57, 25)
+        Me.Guna2HtmlLabel10.TabIndex = 99
+        Me.Guna2HtmlLabel10.Text = "Result"
+        '
+        'Guna2HtmlLabel11
+        '
+        Me.Guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel11.ForeColor = System.Drawing.Color.Black
+        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(138, 153)
+        Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
+        Me.NetResize1.SetResizeFont(Me.Guna2HtmlLabel11, False)
+        Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(54, 17)
+        Me.Guna2HtmlLabel11.TabIndex = 99
+        Me.Guna2HtmlLabel11.Text = "PICTURE"
+        '
+        'Guna2HtmlLabel12
+        '
+        Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel12.ForeColor = System.Drawing.Color.Black
+        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(19, 48)
+        Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
+        Me.NetResize1.SetResizeFont(Me.Guna2HtmlLabel12, False)
+        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(58, 17)
+        Me.Guna2HtmlLabel12.TabIndex = 100
+        Me.Guna2HtmlLabel12.Text = "CAMERA"
         '
         'Guna2Panel2
         '
         Me.Guna2Panel2.BorderColor = System.Drawing.Color.Black
         Me.Guna2Panel2.BorderThickness = 4
+        Me.Guna2Panel2.Controls.Add(Me.Guna2HtmlLabel11)
         Me.Guna2Panel2.Controls.Add(Me.Guna2Panel4)
         Me.Guna2Panel2.Controls.Add(Me.button2)
         Me.Guna2Panel2.Controls.Add(Me.TextBox1)
         Me.Guna2Panel2.Controls.Add(Me.Guna2HtmlLabel6)
-        Me.Guna2Panel2.Location = New System.Drawing.Point(315, 55)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(321, 60)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(303, 252)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(303, 267)
         Me.Guna2Panel2.TabIndex = 96
         '
         'Guna2Panel4
@@ -488,7 +524,7 @@ Partial Class FaceRecognition
         Me.Guna2Panel4.BorderColor = System.Drawing.Color.Black
         Me.Guna2Panel4.BorderThickness = 4
         Me.Guna2Panel4.Controls.Add(Me.ImageBox3)
-        Me.Guna2Panel4.Location = New System.Drawing.Point(52, 18)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(52, 20)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
         Me.Guna2Panel4.Size = New System.Drawing.Size(198, 132)
@@ -505,40 +541,37 @@ Partial Class FaceRecognition
         Me.Guna2Panel5.Controls.Add(Me.label3)
         Me.Guna2Panel5.Controls.Add(Me.label4)
         Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel9)
-        Me.Guna2Panel5.Location = New System.Drawing.Point(12, 325)
+        Me.Guna2Panel5.Location = New System.Drawing.Point(18, 345)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.ShadowDecoration.Parent = Me.Guna2Panel5
         Me.Guna2Panel5.Size = New System.Drawing.Size(606, 117)
         Me.Guna2Panel5.TabIndex = 99
         '
-        'LblTitle
+        'Guna2Panel1
         '
-        Me.LblTitle.BackColor = System.Drawing.Color.Transparent
-        Me.LblTitle.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTitle.ForeColor = System.Drawing.Color.DimGray
-        Me.LblTitle.Location = New System.Drawing.Point(329, 48)
-        Me.LblTitle.Name = "LblTitle"
-        Me.NetResize1.SetResizeFont(Me.LblTitle, False)
-        Me.LblTitle.Size = New System.Drawing.Size(72, 25)
-        Me.LblTitle.TabIndex = 98
-        Me.LblTitle.Text = "Register"
+        Me.Guna2Panel1.BorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel1.BorderThickness = 4
+        Me.Guna2Panel1.Controls.Add(Me.imageBoxFrameGrabber)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(19, 60)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
+        Me.Guna2Panel1.Size = New System.Drawing.Size(274, 266)
+        Me.Guna2Panel1.TabIndex = 58
         '
-        'Guna2HtmlLabel10
+        'imageBoxFrameGrabber
         '
-        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel10.ForeColor = System.Drawing.Color.DimGray
-        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(27, 319)
-        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
-        Me.NetResize1.SetResizeFont(Me.Guna2HtmlLabel10, False)
-        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(57, 25)
-        Me.Guna2HtmlLabel10.TabIndex = 99
-        Me.Guna2HtmlLabel10.Text = "Result"
+        Me.imageBoxFrameGrabber.Location = New System.Drawing.Point(3, 3)
+        Me.imageBoxFrameGrabber.Name = "imageBoxFrameGrabber"
+        Me.imageBoxFrameGrabber.Size = New System.Drawing.Size(268, 260)
+        Me.imageBoxFrameGrabber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imageBoxFrameGrabber.TabIndex = 2
+        Me.imageBoxFrameGrabber.TabStop = False
         '
         'FaceRecognition
         '
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(642, 450)
+        Me.ClientSize = New System.Drawing.Size(641, 479)
+        Me.Controls.Add(Me.Guna2HtmlLabel12)
         Me.Controls.Add(Me.Guna2HtmlLabel10)
         Me.Controls.Add(Me.LblTitle)
         Me.Controls.Add(Me.Guna2Panel5)
@@ -553,17 +586,17 @@ Partial Class FaceRecognition
         CType(Me.ImageBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.imageBoxFrameGrabber, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ImageBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel3.ResumeLayout(False)
         Me.Guna2Panel3.PerformLayout()
         CType(Me.NetResize1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel2.PerformLayout()
         Me.Guna2Panel4.ResumeLayout(False)
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel5.PerformLayout()
+        Me.Guna2Panel1.ResumeLayout(False)
+        CType(Me.imageBoxFrameGrabber, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -583,7 +616,6 @@ Partial Class FaceRecognition
     Friend WithEvents TxtName As TextBox
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents CmbPurpose As ComboBox
-    Friend WithEvents imageBoxFrameGrabber As Emgu.CV.UI.ImageBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents button1 As Guna.UI2.WinForms.Guna2Button
@@ -602,7 +634,10 @@ Partial Class FaceRecognition
     Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents LblTitle As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel12 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel11 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents imageBoxFrameGrabber As Emgu.CV.UI.ImageBox
 End Class

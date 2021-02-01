@@ -51,30 +51,18 @@ Public Class AddCases
         TxtAge.ResetText()
     End Sub
 
-    Private Async Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
 
-        If BtnSave.Text = "UPDATE" Then
-            Await UpdateQuery()
-            MessageBox.Show("Patient Updated Successfully", "BSMIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            ResetFields()
-        Else
-            Await InsertQuery()
-            MessageBox.Show("Patient Added Successfully", "BSMIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            ResetFields()
-        End If
-
-    End Sub
 
     Private Sub BtnBack_Click(sender As Object, e As EventArgs)
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(CovidCases)
     End Sub
 
-    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs) Handles TxtName.TextChanged
+    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
@@ -92,18 +80,60 @@ Public Class AddCases
         e.Handled = True
     End Sub
 
-    Private Sub TxtAge_TextChanged(sender As Object, e As EventArgs) Handles TxtAge.TextChanged
+    Private Sub TxtAge_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub TxtAge_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtAge.KeyPress
+    Private Sub TxtAge_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub Guna2Button4_Click_1(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+    Private Sub Guna2Button4_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(CovidCases)
+    End Sub
+
+    Private Sub Guna2Button1_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button1.MouseHover
+        Guna2Button1.ImageSize = New Size(55, 55)
+    End Sub
+
+    Private Sub Guna2Button1_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button1.MouseLeave
+        Guna2Button1.ImageSize = New Size(45, 45)
+    End Sub
+
+    Private Sub TxtAge_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles TxtAge.KeyPress
+        If Not IsNumeric(TxtAge.Text) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Async Sub BtnSa_Click(sender As Object, e As EventArgs) Handles BtnSa.Click
+        If BtnSa.Text = "UPDATE" Then
+            Await UpdateQuery()
+            MessageBox.Show("Patient Updated Successfully", "BSMIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ResetFields()
+        Else
+            Await InsertQuery()
+            MessageBox.Show("Patient Added Successfully", "BSMIMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ResetFields()
+        End If
+    End Sub
+
+    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
+
+    End Sub
+
+    Private Sub BtnSa_MouseHover(sender As Object, e As EventArgs) Handles BtnSa.MouseHover
+        BtnSa.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnSa_MouseLeave(sender As Object, e As EventArgs) Handles BtnSa.MouseLeave
+        BtnSa.ImageSize = New Size(30, 30)
     End Sub
 End Class

@@ -73,34 +73,6 @@ Public Class TanodReports
         TxtMainSubject.ResetText()
         TxtStatement.ResetText()
     End Sub
-    Private Async Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        If String.IsNullOrEmpty(TxtName.Text) Then
-            MessageBox.Show("Name field is required!", "Checking", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
-
-        If BtnSave.Text = "SAVE" Then
-            Try
-                Await InsertQuery()
-                MessageBox.Show("Report Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                LoadMe()
-                ResetFields()
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            End Try
-        Else
-            Try
-                Await UpdateQuery()
-                MessageBox.Show("Report Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                LoadMe()
-                BtnSave.Text = "SAVE"
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            End Try
-        End If
-
-    End Sub
-
 
 
     Public Async Sub LoadMe()
@@ -129,7 +101,7 @@ Public Class TanodReports
 
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        BtnSave.Text = "UPDATE"
+        BtnSa.Text = "UPDATE"
         Dim index As Integer
         Try
 
@@ -173,18 +145,69 @@ Public Class TanodReports
         DataGridView1.DataSource = dtsample
     End Sub
 
-    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs) Handles TxtName.TextChanged
+    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtName.KeyPress
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not e.KeyChar = "." AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Dashboard.activefrm.Close()
         Dashboard.OpenFormChild(BarangayManagement)
+    End Sub
+
+    Private Async Sub BtnSa_Click(sender As Object, e As EventArgs) Handles BtnSa.Click
+        If String.IsNullOrEmpty(TxtName.Text) Then
+            MessageBox.Show("Name field is required!", "Checking", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
+        If BtnSa.Text = "" Then
+            Try
+                Await InsertQuery()
+                MessageBox.Show("Report Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                LoadMe()
+                ResetFields()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        Else
+            Try
+                Await UpdateQuery()
+                MessageBox.Show("Report Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                LoadMe()
+                BtnSa.Text = ""
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End If
+    End Sub
+
+    Private Sub Guna2Button1_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button1.MouseHover
+        Guna2Button1.ImageSize = New Size(55, 55)
+    End Sub
+
+    Private Sub Guna2Button1_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button1.MouseLeave
+        Guna2Button1.ImageSize = New Size(45, 45)
+    End Sub
+
+    Private Sub BtnSa_MouseHover(sender As Object, e As EventArgs) Handles BtnSa.MouseHover
+        BtnSa.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnSa_MouseLeave(sender As Object, e As EventArgs) Handles BtnSa.MouseLeave
+        BtnSa.ImageSize = New Size(30, 30)
+    End Sub
+
+    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
+
     End Sub
 End Class

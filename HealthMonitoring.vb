@@ -48,42 +48,6 @@ Public Class HealthMonitoring
         TxtTemp.ResetText()
     End Sub
 
-    Private Async Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-
-        If Cmb1.Text = "SELECT" Or
-           Cmb2.Text = "SELECT" Or
-           Cmb3.Text = "SELECT" Or
-           Cmb4.Text = "SELECT" Or
-           Cmb5.Text = "SELECT" Or
-           Cmb6.Text = "SELECT" Or
-           Cmb7.Text = "SELECT" Or
-           Cmb8.Text = "SELECT" Then
-            MessageBox.Show("Make sure the selected answer is not 'SELECT'", "Checking", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Exit Sub
-        End If
-
-        Try
-            Await InsertQuery()
-            MessageBox.Show("Health Monitoring Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            ResetFields()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        PrintPreview.checkLoad = "healthmonitoring"
-        PrintPreview.Show()
-    End Sub
-
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
-        Dashboard.activefrm.Close()
-        Dashboard.OpenFormChild(BarangayManagement)
-    End Sub
-
-    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs) Handles TxtName.TextChanged
-
-    End Sub
 
     Private Sub TxtContact_TextChanged(sender As Object, e As EventArgs) Handles TxtContact.TextChanged
 
@@ -108,7 +72,7 @@ Public Class HealthMonitoring
     End Sub
 
     Private Sub Cmb1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Cmb1.KeyPress
-        e.Handled = True 
+        e.Handled = True
     End Sub
 
     Private Sub Cmb2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Cmb2.KeyPress
@@ -137,5 +101,61 @@ Public Class HealthMonitoring
 
     Private Sub Cmb8_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Cmb8.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Dashboard.activefrm.Close()
+        Dashboard.OpenFormChild(BarangayManagement)
+    End Sub
+
+    Private Sub BtnPreviewa_Click(sender As Object, e As EventArgs) Handles BtnPreviewa.Click
+        PrintPreview.checkLoad = "healthmonitoring"
+        PrintPreview.Show()
+    End Sub
+
+    Private Async Sub BtnSa_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+        If Cmb1.Text = "SELECT" Or
+         Cmb2.Text = "SELECT" Or
+         Cmb3.Text = "SELECT" Or
+         Cmb4.Text = "SELECT" Or
+         Cmb5.Text = "SELECT" Or
+         Cmb6.Text = "SELECT" Or
+         Cmb7.Text = "SELECT" Or
+         Cmb8.Text = "SELECT" Then
+            MessageBox.Show("Make sure the selected answer is not 'SELECT'", "Checking", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Exit Sub
+        End If
+
+        Try
+            Await InsertQuery()
+            MessageBox.Show("Health Monitoring Successfully saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ResetFields()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Guna2Button2_MouseHover(sender As Object, e As EventArgs) Handles Guna2Button2.MouseHover
+        Guna2Button2.ImageSize = New Size(55, 55)
+    End Sub
+
+    Private Sub Guna2Button2_MouseLeave(sender As Object, e As EventArgs) Handles Guna2Button2.MouseLeave
+        Guna2Button2.ImageSize = New Size(45, 45)
+    End Sub
+
+    Private Sub BtnSave_MouseHover(sender As Object, e As EventArgs) Handles BtnSave.MouseHover
+        BtnSave.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnSave_MouseLeave(sender As Object, e As EventArgs) Handles BtnSave.MouseLeave
+        BtnSave.ImageSize = New Size(30, 30)
+    End Sub
+
+    Private Sub BtnPreviewa_MouseHover(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseHover
+        BtnPreviewa.ImageSize = New Size(40, 40)
+    End Sub
+
+    Private Sub BtnPreviewa_MouseLeave(sender As Object, e As EventArgs) Handles BtnPreviewa.MouseLeave
+        BtnPreviewa.ImageSize = New Size(30, 30)
     End Sub
 End Class

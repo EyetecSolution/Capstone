@@ -165,6 +165,10 @@ Public Class Residents
 
     End Sub
 
+    Private Sub Guna2CircleButton1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
     Private Async Sub BtnUse_Click(sender As Object, e As EventArgs) Handles BtnUse.Click
         BtnUse.Visible = False
         Select Case BCHistory.catTitle
