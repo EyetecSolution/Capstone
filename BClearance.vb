@@ -178,21 +178,6 @@ Public Class BClearance
     Private Sub CmbPurpose_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CmbPurpose.KeyPress
         e.Handled = True
     End Sub
-
-
-    Private Sub TxtCtc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCtc.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub TxtOR_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtOR.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
-
-
     Private Sub TxtFees_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtFees.KeyPress
         e.Handled = True
     End Sub

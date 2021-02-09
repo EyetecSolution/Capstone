@@ -88,9 +88,9 @@ Partial Class Indigency
         Me.BtnSearch.FillColor = System.Drawing.Color.Maroon
         Me.BtnSearch.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSearch.ForeColor = System.Drawing.Color.White
-        Me.BtnSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnSearch.HoverState.BorderColor = System.Drawing.Color.Black
         Me.BtnSearch.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnSearch.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnSearch.HoverState.ForeColor = System.Drawing.Color.Black
         Me.BtnSearch.HoverState.Parent = Me.BtnSearch
         Me.BtnSearch.Location = New System.Drawing.Point(565, 57)
         Me.BtnSearch.Name = "BtnSearch"

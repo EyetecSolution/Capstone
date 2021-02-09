@@ -108,7 +108,7 @@ Public Class AddCases
     End Sub
 
     Private Sub TxtAge_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles TxtAge.KeyPress
-        If Not IsNumeric(TxtAge.Text) Then
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub

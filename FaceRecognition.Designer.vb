@@ -412,9 +412,9 @@ Partial Class FaceRecognition
         Me.label4.ForeColor = System.Drawing.Color.Navy
         Me.label4.Location = New System.Drawing.Point(22, 38)
         Me.label4.Name = "label4"
-        Me.label4.Size = New System.Drawing.Size(101, 21)
+        Me.label4.Size = New System.Drawing.Size(86, 21)
         Me.label4.TabIndex = 13
-        Me.label4.Text = "RENE B. LARA"
+        Me.label4.Text = "UNKNOWN"
         '
         'Guna2HtmlLabel7
         '

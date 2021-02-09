@@ -283,7 +283,7 @@ Partial Class BCHistory
         Me.LblTitle.BackColor = System.Drawing.Color.Transparent
         Me.LblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblTitle.ForeColor = System.Drawing.Color.Black
-        Me.LblTitle.Location = New System.Drawing.Point(12, 120)
+        Me.LblTitle.Location = New System.Drawing.Point(12, 117)
         Me.LblTitle.Name = "LblTitle"
         Me.LblTitle.Size = New System.Drawing.Size(81, 31)
         Me.LblTitle.TabIndex = 111

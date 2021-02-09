@@ -273,4 +273,16 @@ Public Class Honorarium
     Private Sub TxtDeduct_TextChanged_1(sender As Object, e As EventArgs) Handles TxtDeduct.TextChanged
         Txtnet.Text = Format(Val(TxtHonor.Text) - Val(TxtDeduct.Text), "#,###,##0.00")
     End Sub
+
+    Private Sub TxtHonor_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles TxtHonor.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtDeduct_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles TxtDeduct.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

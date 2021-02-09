@@ -102,11 +102,11 @@ Public Class Spes
         Dim wdDoc As Word.Document = objWordApp.Documents.Open(sPath, [ReadOnly]:=False)
         wdDoc = objWordApp.ActiveDocument
 
-        UpdateBookMark("name", TxtName.Text.Trim, wdDoc)
+        UpdateBookMark("guardian", TxtName.Text.Trim, wdDoc)
         UpdateBookMark("name1", TxtName.Text.Trim, wdDoc)
         UpdateBookMark("address", TxtAddress.Text.Trim, wdDoc)
         UpdateBookMark("fathername", TxtFather.Text.Trim, wdDoc)
-        UpdateBookMark("guardian", TxtFather.Text.Trim, wdDoc)
+        UpdateBookMark("name", TxtFather.Text.Trim, wdDoc)
         UpdateBookMark("mothername", TxtMother.Text.Trim, wdDoc)
         UpdateBookMark("fatheroccupation", TxtOccu.Text.Trim, wdDoc)
         UpdateBookMark("motheroccupation", TxtOccu1.Text.Trim, wdDoc)

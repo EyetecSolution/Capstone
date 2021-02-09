@@ -29,15 +29,19 @@ Partial Class OrganActions
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.TxtName = New System.Windows.Forms.TextBox()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'CmbOfficials
         '
         Me.CmbOfficials.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbOfficials.FormattingEnabled = True
+        Me.CmbOfficials.Items.AddRange(New Object() {"HON. RAY AN C. TESORO", "DARE JOHN F. CALACDAY", "ARLET T. VILLAMOR", "HON. JAIME R. PILAPIL", "HON. TITO A. ROBLES", "HON. JOEL R. PILAPIL", "HON. MARCELINO I. CAWICAAN", "HON. MONCHITO M. VALLESTERO", "HON. KEREN E. CRUZADO", "HON. CLINT B. BUENAVENTURA", "HON. BRANDO P. TESORO"})
         Me.CmbOfficials.Location = New System.Drawing.Point(12, 59)
         Me.CmbOfficials.Name = "CmbOfficials"
         Me.CmbOfficials.Size = New System.Drawing.Size(225, 27)
@@ -58,6 +62,9 @@ Partial Class OrganActions
         '
         'BtnSave
         '
+        Me.BtnSave.BackColor = System.Drawing.Color.Transparent
+        Me.BtnSave.BorderRadius = 5
+        Me.BtnSave.BorderThickness = 2
         Me.BtnSave.CheckedState.Parent = Me.BtnSave
         Me.BtnSave.CustomImages.Parent = Me.BtnSave
         Me.BtnSave.FillColor = System.Drawing.Color.Maroon
@@ -97,6 +104,9 @@ Partial Class OrganActions
         '
         'Guna2Button1
         '
+        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button1.BorderRadius = 5
+        Me.Guna2Button1.BorderThickness = 2
         Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
         Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
         Me.Guna2Button1.FillColor = System.Drawing.Color.Maroon
@@ -115,25 +125,64 @@ Partial Class OrganActions
         Me.Guna2Button1.TabIndex = 49
         Me.Guna2Button1.Text = "UPLOAD"
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Maroon
-        Me.Panel1.Location = New System.Drawing.Point(-4, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 15)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(405, 32)
-        Me.Panel1.TabIndex = 50
-        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel1.BorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel1.BorderThickness = 3
+        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel12)
+        Me.Guna2Panel1.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
+        Me.Guna2Panel1.Size = New System.Drawing.Size(383, 34)
+        Me.Guna2Panel1.TabIndex = 50
+        '
+        'Guna2HtmlLabel12
+        '
+        Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Engravers MT", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel12.ForeColor = System.Drawing.Color.White
+        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(132, 4)
+        Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
+        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(122, 27)
+        Me.Guna2HtmlLabel12.TabIndex = 56
+        Me.Guna2HtmlLabel12.Text = "MODIFY"
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button2.BorderRadius = 5
+        Me.Guna2Button2.BorderThickness = 2
+        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
+        Me.Guna2Button2.FillColor = System.Drawing.Color.Maroon
+        Me.Guna2Button2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Guna2Button2.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Location = New System.Drawing.Point(28, 172)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.ShadowDecoration.Enabled = True
+        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
+        Me.Guna2Button2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 5)
+        Me.Guna2Button2.Size = New System.Drawing.Size(76, 27)
+        Me.Guna2Button2.TabIndex = 51
+        Me.Guna2Button2.Text = "ADD"
         '
         'OrganActions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(384, 212)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Guna2Button2)
+        Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.TxtName)
         Me.Controls.Add(Me.Guna2HtmlLabel1)
@@ -144,6 +193,8 @@ Partial Class OrganActions
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OrganActions"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel1.ResumeLayout(False)
+        Me.Guna2Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -155,6 +206,8 @@ Partial Class OrganActions
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents TxtName As TextBox
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2HtmlLabel12 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
 End Class
